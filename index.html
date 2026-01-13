@@ -1135,42 +1135,8 @@ if ('IntersectionObserver' in window) {
   revealItems.forEach(el => observer.observe(el));
 }
 
- const popup = document.getElementById('legalPopup');
-  const title = document.getElementById('legalTitle');
-  const content = document.getElementById('legalContent');
-  const closeBtn = popup.querySelector('.legal-close');
 
-  const popupData = {
-    privacy: {
-      title: 'Privacy Policy',
-      content: `
-        <p>Kami menghormati privasi Anda. Data yang dikirim melalui website ini
-        hanya digunakan untuk keperluan komunikasi dan penawaran bisnis.</p>
-        <p>Kami tidak membagikan data Anda kepada pihak ketiga tanpa izin.</p>
-      `
-    },
-    terms: {
-      title: 'Terms & Conditions',
-      content: `
-        <p>Semua informasi di website ini bersifat informatif dan dapat berubah
-        sewaktu-waktu tanpa pemberitahuan.</p>
-        <p>Pemesanan dianggap sah setelah adanya persetujuan tertulis.</p>
-      `
-    },
-    faq: {
-      title: 'Frequently Asked Questions',
-      content: `
-        <ul>
-          <li>MOQ mulai dari 200 pcs</li>
-          <li>Lead time produksi 4–6 minggu</li>
-          <li>Fully custom ukuran & finishing</li>
-          <li>Konsultasi gratis sebelum produksi</li>
-        </ul>
-      `
-    }
-  };
-
-  document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
   const popup = document.getElementById('legalPopup');
   const title = document.getElementById('legalTitle');
@@ -1201,7 +1167,7 @@ if ('IntersectionObserver' in window) {
           <li>MOQ mulai dari 200 pcs</li>
           <li>Lead time produksi 4–6 minggu</li>
           <li>Fully custom ukuran & finishing</li>
-          <li>Konsultasi gratis sebelum produksi</li>
+          <li>Konsultasi gratis</li>
         </ul>
       `
     }
@@ -1211,8 +1177,11 @@ if ('IntersectionObserver' in window) {
     link.addEventListener('click', e => {
       e.preventDefault();
       const key = link.dataset.popup;
+      if (!popupData[key]) return;
+
       title.textContent = popupData[key].title;
       content.innerHTML = popupData[key].content;
+
       popup.classList.add('show');
       popup.setAttribute('aria-hidden', 'false');
     });
@@ -1234,6 +1203,8 @@ if ('IntersectionObserver' in window) {
   });
 
 });
+
+
 
 
 
