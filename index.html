@@ -174,11 +174,6 @@
       transition:transform .16s var(--ease);
     }
     .btn-primary2:active,.btn-primary2:hover{transform:translateY(-3px)}
-    .btn-ghost{
-      border:1px solid rgba(255,255,255,0.06);
-      background:transparent;
-      padding:12px 20px;border-radius:999px;color:#fff;font-weight:700;text-decoration:none;
-    }
 
     .hero-stats{display:flex; gap:18px; margin-top:18px}
     .stat{
@@ -779,6 +774,58 @@ body.menu-open {
   cursor: pointer;
 }
 
+/* === RFQ SELECT STYLE (CONSISTENT WITH INPUT) === */
+select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background-color: #000;
+  color: #fff;
+  font-size: 14px;
+  font-family: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Dropdown arrow (minimal & premium) */
+select {
+  background-image:
+    linear-gradient(45deg, transparent 50%, #666 50%),
+    linear-gradient(135deg, #666 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(50% - 3px),
+    calc(100% - 12px) calc(50% - 3px);
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 40px;
+}
+
+select:focus {
+  outline: none;
+  border-color: #e63946;
+}
+/* === SELECT CONSISTENCY PATCH === */
+select {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.04);
+  line-height: 1.4;
+}
+/* === iOS SAFARI SELECT FIX === */
+select {
+  -webkit-appearance: none;
+  -webkit-border-radius: 10px;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select option {
+  background: #000;
+  color: #fff;
+}
 
   </style>
 </head>
@@ -807,7 +854,7 @@ body.menu-open {
         <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Open menu">☰</button>
         </nav>
       </div>
-    </div>
+    
   </header>
 
   <!-- OFFCANVAS MOBILE MENU -->
@@ -1054,7 +1101,7 @@ body.menu-open {
 
       <label for="rfq-industry">Industry</label>
       <select id="rfq-industry" name="industry" required>
-        <option value="">Select industry</option>
+        <option value="" disabled selected hidden>Select industry</option>
         <option>Beauty / Skincare</option>
         <option>Fashion / Lifestyle</option>
         <option>Gourmet / Food</option>
@@ -1064,7 +1111,7 @@ body.menu-open {
 
       <label for="rfq-box">Packaging Type</label>
       <select id="rfq-box" name="boxType" required>
-        <option value="">Select packaging type</option>
+        <option value=""disabled selected hidden>Select packaging type</option>
         <option>Rigid / Hardbox</option>
         <option>Hardbox with Insert</option>
         <option>Custom Shape Hardbox</option>
