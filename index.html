@@ -955,7 +955,7 @@ body.menu-open {
     <div class="container footer-row">
       <p>© 2026 deartbox Packaging — Part of PT. Xerography Indonesia — All rights reserved</p>
       <div style="display:flex;gap:16px;align-items:center">
-        <a href="#" style="color:var(--muted);text-decoration:none;font-size:13px" onclick="openModal('privacy'); return false;">Privacy</a>
+        <a href="#" style="color:var(--muted);text-decoration:none;font-size:13px">Privacy</a>
         <a href="#terms" style="color:var(--muted);text-decoration:none;font-size:13px">Terms</a>
         <a href="#faq" style="color:var(--muted);text-decoration:none;font-size:13px">FAQ</a>
       </div>
@@ -1080,39 +1080,7 @@ if ('IntersectionObserver' in window) {
 
   revealItems.forEach(el => observer.observe(el));
 }
-function openModal(type) {
-  document.getElementById('modal' + capitalize(type)).classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
 
-function closeModal(type) {
-  document.getElementById('modal' + capitalize(type)).classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-function capitalize(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
-// Close on outside click
-document.querySelectorAll('.modal').forEach(modal => {
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-  });
-});
-
-// Close with Escape key
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    document.querySelectorAll('.modal.active').forEach(m => {
-      m.classList.remove('active');
-      document.body.style.overflow = '';
-    });
-  }
-});
 
 
     // Accessibility: prefer-reduced-motion handled by CSS
