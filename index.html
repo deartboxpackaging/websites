@@ -877,7 +877,7 @@ body.menu-open {
     <p style="color:var(--muted);max-width:60ch;margin:12px auto 20px">
       Konsultasikan spesifikasi, MOQ, dan estimasi biaya bersama tim deartbox.
     </p>
-    <a href="https://wa.me/6281234567890?text=Halo%20deartbox%2C%20saya%20ingin%20konsultasi%20hardbox%20packaging." 
+    <a href="https://wa.me/628195181427?text=Halo%20deartbox%2C%20saya%20ingin%20konsultasi%20hardbox%20packaging." 
     target="_blank" 
     class="btn-primary2"
     rel="noopener"
@@ -928,8 +928,9 @@ body.menu-open {
         </form>
 
         <aside class="card" aria-labelledby="officeTitle">
-          <h3 id="officeTitle">Office — Jabodetabek</h3>
-          <p style="color:var(--muted)">Jl. Gotoh No. 123, Jakarta</p>
+          <h3 id="officeTitle">Workshop — R&D </h3>
+          <p style="color:var(--muted)">Jl. Gandaria 1 No.3, Gandaria Utara, Kec. Kby. Baru, 
+            Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12130</p>
 
           <div style="margin-top:18px">
             <h4>Quick Facts</h4>
@@ -954,7 +955,7 @@ body.menu-open {
     <div class="container footer-row">
       <p>© 2026 deartbox Packaging — Part of PT. Xerography Indonesia — All rights reserved</p>
       <div style="display:flex;gap:16px;align-items:center">
-        <a href="#privacy" style="color:var(--muted);text-decoration:none;font-size:13px">Privacy</a>
+        <a href="#" style="color:var(--muted);text-decoration:none;font-size:13px" onclick="openModal('privacy'); return false;">Privacy</a>
         <a href="#terms" style="color:var(--muted);text-decoration:none;font-size:13px">Terms</a>
         <a href="#faq" style="color:var(--muted);text-decoration:none;font-size:13px">FAQ</a>
       </div>
@@ -1079,7 +1080,39 @@ if ('IntersectionObserver' in window) {
 
   revealItems.forEach(el => observer.observe(el));
 }
+function openModal(type) {
+  document.getElementById('modal' + capitalize(type)).classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
 
+function closeModal(type) {
+  document.getElementById('modal' + capitalize(type)).classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+// Close on outside click
+document.querySelectorAll('.modal').forEach(modal => {
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+});
+
+// Close with Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal.active').forEach(m => {
+      m.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  }
+});
 
 
     // Accessibility: prefer-reduced-motion handled by CSS
@@ -1087,7 +1120,7 @@ if ('IntersectionObserver' in window) {
 
   <!-- STICKY MOBILE CTA -->
 <a
-  href="https://wa.me/6281234567890?text=Halo%20deartbox%2C%20saya%20ingin%20konsultasi%20hardbox%20packaging."
+  href="https://wa.me/628195181427?text=Halo%20deartbox%2C%20saya%20ingin%20konsultasi%20hardbox%20packaging."
   class="sticky-cta"
   aria-label="Chat via WhatsApp"
   target="_blank"
@@ -1096,6 +1129,17 @@ if ('IntersectionObserver' in window) {
   Konsultasi via WhatsApp
 </a>
 
+<div id="modalPrivacy" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Privacy Policy</h3>
+      <button class="modal-close" onclick="closeModal('privacy')">×</button>
+    </div>
+    <div class="modal-body">
+      <p>Your privacy content here...</p>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
