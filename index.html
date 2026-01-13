@@ -664,10 +664,6 @@ body.menu-open {
 .offcanvas nav a:active {
   transform: scale(0.97);
 }
-/* ===============================
-   FINAL CONVERSION – STICKY CTA
-   (MOBILE ONLY / NO LAYOUT CHANGE)
-   =============================== */
 
 /* ===============================
    FIX STICKY CTA (MOBILE SAFE)
@@ -1265,24 +1261,51 @@ body.menu-open {
     }
 
 /* ===============================
-   STICKY CTA VISIBILITY (FIXED)
+   STICKY CTA VISIBILITY — FINAL
    =============================== */
 document.addEventListener('DOMContentLoaded', () => {
   const stickyCTA = document.querySelector('.sticky-cta');
   if (!stickyCTA) return;
 
-  const toggleStickyCTA = () => {
-    if (window.scrollY > window.innerHeight * 0.65) {
-      stickyCTA.classList.add('show');
-    } else {
-      stickyCTA.classList.remove('show');
-    }
+  let baseViewportHeight = window.innerHeight;
+
+  const isKeyboardOpen = () => {
+    return window.innerHeight < baseViewportHeight * 0.75;
   };
 
-  // run once on load
-  toggleStickyCTA();
+  const isNearBottom = () => {
+    const threshold = 120; // px before bottom
+    return (
+      window.innerHeight + window.scrollY >=
+      document.body.offsetHeight - threshold
+    );
+  };
+
+  const toggleStickyCTA = () => {
+    // HIDE conditions
+    if (
+      isKeyboardOpen() ||
+      isNearBottom() ||
+      window.scrollY < window.innerHeight * 0.65
+    ) {
+      stickyCTA.classList.remove('show');
+      return;
+    }
+
+    // SHOW condition
+    stickyCTA.classList.add('show');
+  };
+
+  // Update base height on orientation change
+  window.addEventListener('resize', () => {
+    baseViewportHeight = Math.max(baseViewportHeight, window.innerHeight);
+    toggleStickyCTA();
+  });
 
   window.addEventListener('scroll', toggleStickyCTA, { passive: true });
+
+  // run once
+  toggleStickyCTA();
 });
 
 /* ===============================
@@ -1402,7 +1425,7 @@ function handleRFQ(e) {
 
   form.reset();
 }
-
+(window.innerHeight + window.scrollY) >= (document.body.offsetHeight - threshold)
 
 
     // Accessibility: prefer-reduced-motion handled by CSS
