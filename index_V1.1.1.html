@@ -1018,6 +1018,102 @@
         animation: none !important;
       }
     }
+    .footer-social {
+      display: flex;
+      gap: 18px;
+      margin-top: 3px;
+    }
+
+    .footer-social a {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.06);
+      transition: all .25s ease;
+    }
+
+    .footer-social svg {
+      width: 18px;
+      height: 18px;
+      fill: #ffffff;
+      opacity: .85;
+    }
+
+    .footer-social a:hover {
+      background: rgba(201,162,77,0.2); /* gold accent */
+      transform: translateY(-2px);
+    }
+
+    .footer-social a:hover svg {
+      opacity: 1;
+    }
+    #backToTop {
+    position: fixed;
+    right: 24px;
+    bottom: 96px; /* aman dari sticky WA */
+    width: 52px;
+    height: 52px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    z-index: 120;
+
+    background: linear-gradient(
+      135deg,
+      rgba(255,255,255,0.12),
+      rgba(255,255,255,0.04)
+    );
+    backdrop-filter: blur(6px);
+
+    display: grid;
+    place-items: center;
+
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+    pointer-events: none;
+
+    transition:
+      opacity .35s var(--ease-premium),
+      transform .35s var(--ease-premium),
+      background .25s ease;
+  }
+
+  #backToTop svg {
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+    opacity: .85;
+    transition: transform .25s ease, opacity .25s ease;
+  }
+
+  /* muncul */
+  #backToTop.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+
+  /* hover – ga kaku */
+  #backToTop:hover {
+    background: linear-gradient(
+      135deg,
+      rgba(230,57,70,0.35),
+      rgba(166,22,26,0.25)
+    );
+  }
+
+  #backToTop:hover svg {
+    transform: translateY(-3px);
+    opacity: 1;
+  }
+
+  /* klik feel */
+  #backToTop:active {
+    transform: scale(0.92);
+  }
+
   </style>
   
   <!-- 4. SECURITY HEADERS -->
@@ -1056,12 +1152,12 @@
           </div>
         </a>
 
-        <div class="nav-links" aria-hidden="false">
+        <div class="nav-links">
           <a href="#services">Services</a>
           <a href="#portfolio">Portfolio</a>
           <a href="#process">Our Process</a>
           <a href="#contact">Contact</a>
-          <a class="cta" href="#contact">Request Quote</a>
+          <a class="cta" href="#rfq">Request Quote</a>
         </div>
 
         <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Open menu">☰</button>
@@ -1158,7 +1254,7 @@
 
         <div class="card">
            <img 
-              src="assets/images/services/services3.webp" 
+              src="assets/images/manufacturing/premium3.webp" 
               alt="Hardbox premium custom produksi deartbox" 
               loading="lazy"
               width="400"
@@ -1175,7 +1271,7 @@
       <div class="grid-3">
         <div class="card">
           <img 
-              src="assets/images/services/services3.webp" 
+              src="assets/images/manufacturing/rigidbox1.webp" 
               alt="Hardbox premium custom produksi deartbox" 
               loading="lazy"
               width="400"
@@ -1187,7 +1283,7 @@
 
         <div class="card">
           <img 
-              src="assets/images/services/services3.webp" 
+              src="assets/images/manufacturing/custominsert1.webp" 
               alt="Hardbox premium custom produksi deartbox" 
               loading="lazy"
               width="400"
@@ -1199,7 +1295,7 @@
 
         <div class="card">
           <img 
-              src="assets/images/services/services3.webp" 
+              src="assets/images/manufacturing/semiauto2.webp" 
               alt="Hardbox premium custom produksi deartbox" 
               loading="lazy"
               width="400"
@@ -1211,7 +1307,7 @@
 
         <div class="card">
           <img 
-              src="assets/images/services/services3.webp" 
+              src="assets/images/manufacturing/premium1.webp" 
               alt="Hardbox premium custom produksi deartbox" 
               loading="lazy"
               width="400"
@@ -1223,7 +1319,7 @@
 
         <div class="card">
           <img 
-              src="assets/images/services/services3.webp" 
+              src="assets/images/manufacturing/qc2.webp" 
               alt="Hardbox premium custom produksi deartbox" 
               loading="lazy"
               width="400"
@@ -1235,7 +1331,7 @@
 
         <div class="card">
           <img 
-              src="assets/images/services/services3.webp" 
+              src="assets/images/manufacturing/moq1.webp" 
               alt="Hardbox premium custom produksi deartbox" 
               loading="lazy"
               width="400"
@@ -1403,10 +1499,7 @@
 
           <div class="form-actions">
             <button type="submit" class="btn btn-submit">Request Quote</button>
-            <a href="https://wa.me/628195181427?text=Halo%20deartbox%2C%20saya%20ingin%20request%20custom%20hardbox%20quote." 
-               target="_blank" 
-               rel="noopener" 
-               class="btn btn-download">WhatsApp Us</a>
+           
           </div>
 
           <p class="hero-trust">Typical response within 24 hours • Consultation is free</p>
@@ -1482,6 +1575,19 @@
 
   <footer>
     <div class="container footer-row">
+      <div class="footer-social">
+        <a href="https://www.instagram.com/de_artbox" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10zm6.5-.5a1 1 0 10-1 1 1 1 0 001-1z"/></svg>
+        </a>
+
+        <a href="https://www.linkedin.com/in/deartbox-packaging-b08696376/" target="_blank" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 110 5 2.5 2.5 0 010-5zM3 9h4v12H3zm7 0h4v1.7c.6-1 2-2 4-2 4 0 5 2.6 5 6v6h-4v-5.3c0-1.3 0-3-2-3s-2.3 1.5-2.3 2.9V21h-4z"/></svg>
+        </a>
+
+        <a href="https://wa.me/628195181427" target="_blank" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.9 14.5L2 22l5.7-1.1A10 10 0 1012 2zm5.3 14.2c-.2.6-1.3 1.1-1.8 1.2-.5.1-1 .1-1.7-.1a13 13 0 01-5.7-3.9 6.6 6.6 0 01-1.4-3.5c0-1.8.9-2.6 1.2-2.9.3-.3.7-.4.9-.4h.7c.2 0 .5 0 .7.5l.9 2.1c.1.3.1.5 0 .7-.1.2-.2.4-.4.6l-.4.5c-.1.2-.3.4-.1.7a8.4 8.4 0 003.5 3c .3 .1 .5 .1 .7 -.1l .8 -.9c .2 -.2 .4 -.2 .7 -.1l 2 .8c .3 .6 .5 .6 .8 -.6l -3 -8c -3 -8 -6 -8 -9 -8z"/></svg>
+        </a>
+      </div>
       <p>© 2026 deartbox Packaging — Part of PT. Xerography Indonesia — All rights reserved</p>
       <div style="display:flex;gap:16px;align-items:center">
         <a href="#" style="color:var(--muted);text-decoration:none;font-size:13px" data-popup="privacy">Privacy</a>
@@ -1632,7 +1738,7 @@
               imageObserver.unobserve(img);
             }
           });
-        });
+        }, { rootMargin: '200px 0px' });
 
         lazyImages.forEach(function(img) {
           imageObserver.observe(img);
@@ -1782,8 +1888,53 @@
             event_category: 'Performance'
           });
         }
+                function handleRFQ(e) {
+          e.preventDefault();
+          const form = e.target;
+          const data = new FormData(form);
+
+          const msg = `
+        Halo deartbox,
+        Saya ingin request quotation:
+
+        Nama: ${data.get('name')}
+        Brand: ${data.get('brand')}
+        Industry: ${data.get('industry')}
+        Box: ${data.get('boxType')}
+        Qty: ${data.get('quantity')}
+        Brief: ${data.get('message')}
+          `;
+
+          window.open(
+            'https://wa.me/628195181427?text=' + encodeURIComponent(msg),
+            '_blank'
+          );
+        }
       });
     })();
   </script>
+  <button id="backToTop" aria-label="Back to top">
+   <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 4l-7 7h4v9h6v-9h4z"/>
+  </svg>
+</button>
+<script>
+  const backToTop = document.getElementById('backToTop');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
 </body>
 </html>
