@@ -226,12 +226,18 @@
       gap:24px;
     }
 
-    .card{
-      background:var(--card);
-      border-radius:12px;
-      padding:20px;
-      border:1px solid rgba(255,255,255,0.03);
-    }
+    /* ✅ SOLUSI: Satu definisi saja */
+  .card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid rgba(255,255,255,0.03);
+  transition: transform .25s var(--ease);
+  }
+
+  .card:hover {
+  transform: translateY(-4px);
+  }
 
     .service-icon{
       width:56px;height:56px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));font-size:22px;
@@ -384,9 +390,7 @@ section {
 }
 
 /* ---------- CARD & GRID RHYTHM ---------- */
-.card {
-  padding: 24px;
-}
+
 
 .grid-3 {
   gap: 28px;
@@ -437,9 +441,7 @@ form textarea {
     margin-bottom: 24px;
   }
 
-  .card {
-    padding: 20px;
-  }
+  
 }
 
 /* ---------- SMALL MOBILE ---------- */
@@ -492,17 +494,6 @@ a, button {
   transform: translateY(1px) scale(0.98);
 }
 
-/* ---------- CARD HOVER DEPTH ---------- */
-.card {
-  transition:
-    transform .22s var(--ease),
-    box-shadow .22s var(--ease);
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 24px 50px rgba(0,0,0,0.55);
-}
 
 /* ---------- PORTFOLIO IMAGE LIFT ---------- */
 .portfolio-item {
