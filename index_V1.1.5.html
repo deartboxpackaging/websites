@@ -1512,9 +1512,1031 @@ section .grid-3 .card p {
     transform: none;
   }
 }
+/* =========================================
+   PROSES PRODUKSI - FIGMA REDESIGN
+========================================= */
 
+.process-hero {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px;
+}
 
+.process-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, rgba(230,57,70,0.12), rgba(166,22,26,0.08));
+  border: 1px solid rgba(230,57,70,0.2);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #e63946;
+  margin-bottom: 16px;
+}
 
+.process-title {
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 14px;
+  letter-spacing: -0.02em;
+}
+
+.process-subtitle {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.process-visual {
+  margin: 48px 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(230,57,70,0.04), rgba(166,22,26,0.02));
+  padding: 28px;
+}
+
+.process-visual img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Timeline */
+.process-timeline {
+  max-width: 820px;
+  margin: 64px auto 48px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.timeline-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e63946, #a4161a);
+  box-shadow: 0 0 0 4px rgba(230,57,70,0.15);
+  flex-shrink: 0;
+}
+
+.timeline-line {
+  width: 2px;
+  flex: 1;
+  background: linear-gradient(180deg, rgba(230,57,70,0.3), transparent);
+  margin-top: 8px;
+}
+
+.timeline-item:last-child .timeline-line {
+  display: none;
+}
+
+.timeline-content {
+  padding-bottom: 12px;
+}
+
+.timeline-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #e63946;
+  margin-bottom: 8px;
+}
+
+.timeline-content h3 {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+
+.timeline-content p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+/* =========================================
+   PROSES PRODUKSI - FIGMA REDESIGN
+========================================= */
+
+.process-hero {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px;
+}
+
+.process-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, rgba(230,57,70,0.12), rgba(166,22,26,0.08));
+  border: 1px solid rgba(230,57,70,0.2);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #e63946;
+  margin-bottom: 16px;
+}
+
+.process-title {
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 14px;
+  letter-spacing: -0.02em;
+}
+
+.process-subtitle {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.process-visual {
+  margin: 48px 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(230,57,70,0.04), rgba(166,22,26,0.02));
+  padding: 28px;
+}
+
+.process-visual img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Timeline */
+.process-timeline {
+  max-width: 820px;
+  margin: 64px auto 48px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.timeline-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e63946, #a4161a);
+  box-shadow: 0 0 0 4px rgba(230,57,70,0.15);
+  flex-shrink: 0;
+}
+
+.timeline-line {
+  width: 2px;
+  flex: 1;
+  background: linear-gradient(180deg, rgba(230,57,70,0.3), transparent);
+  margin-top: 8px;
+}
+
+.timeline-item:last-child .timeline-line {
+  display: none;
+}
+
+.timeline-content {
+  padding-bottom: 12px;
+}
+
+.timeline-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #e63946;
+  margin-bottom: 8px;
+}
+
+.timeline-content h3 {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+
+.timeline-content p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+/* =========================================
+   PROSES PRODUKSI - FIGMA REDESIGN
+========================================= */
+
+.process-hero {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px;
+}
+
+.process-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, rgba(230,57,70,0.12), rgba(166,22,26,0.08));
+  border: 1px solid rgba(230,57,70,0.2);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #e63946;
+  margin-bottom: 16px;
+}
+
+.process-title {
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 14px;
+  letter-spacing: -0.02em;
+}
+
+.process-subtitle {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.process-visual {
+  margin: 48px 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(230,57,70,0.04), rgba(166,22,26,0.02));
+  padding: 28px;
+}
+
+.process-visual img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Timeline */
+.process-timeline {
+  max-width: 820px;
+  margin: 64px auto 48px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.timeline-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e63946, #a4161a);
+  box-shadow: 0 0 0 4px rgba(230,57,70,0.15);
+  flex-shrink: 0;
+}
+
+.timeline-line {
+  width: 2px;
+  flex: 1;
+  background: linear-gradient(180deg, rgba(230,57,70,0.3), transparent);
+  margin-top: 8px;
+}
+
+.timeline-item:last-child .timeline-line {
+  display: none;
+}
+
+.timeline-content {
+  padding-bottom: 12px;
+}
+
+.timeline-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #e63946;
+  margin-bottom: 8px;
+}
+
+.timeline-content h3 {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+
+.timeline-content p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+.timeline-meta {
+display: flex;
+gap: 16px;
+flex-wrap: wrap;
+font-size: 13px;
+color: rgba(255,255,255,0.6);
+}
+.timeline-meta span {
+display: flex;
+align-items: center;
+gap: 6px;
+}
+/* Process CTA Card */
+.process-cta-card {
+background: linear-gradient(135deg, rgba(230,57,70,0.08), rgba(166,22,26,0.05));
+border: 1px solid rgba(230,57,70,0.15);
+border-radius: 18px;
+padding: 32px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 24px;
+margin-top: 56px;
+}
+.process-cta-content h3 {
+font-size: 21px;
+margin: 0 0 6px;
+}
+.process-cta-content p {
+font-size: 14px;
+color: var(--muted);
+margin: 0;
+}
+.btn-arrow {
+padding: 12px 24px;
+background: linear-gradient(90deg, #e63946, #a4161a);
+color: #fff;
+text-decoration: none;
+border-radius: 999px;
+font-weight: 700;
+font-size: 14px;
+white-space: nowrap;
+transition: transform .25s ease, box-shadow .25s ease;
+}
+.btn-arrow:hover {
+transform: translateY(-2px);
+box-shadow: 0 12px 30px rgba(230,57,70,0.3);
+}
+/* =========================================
+RFQ SECTION - REDESIGN
+========================================= */
+.rfq-section {
+background: linear-gradient(180deg, transparent, rgba(230,57,70,0.02));
+border-radius: 24px;
+padding: 72px var(--container-pad);
+}
+.rfq-header {
+text-align: center;
+max-width: 680px;
+margin: 0 auto 48px;
+}
+.rfq-badge {
+display: inline-block;
+padding: 6px 14px;
+background: linear-gradient(135deg, rgba(230,57,70,0.12), rgba(166,22,26,0.08));
+border: 1px solid rgba(230,57,70,0.2);
+border-radius: 999px;
+font-size: 12px;
+font-weight: 600;
+letter-spacing: 0.05em;
+text-transform: uppercase;
+color: #e63946;
+margin-bottom: 16px;
+}
+.rfq-header h2 {
+font-size: clamp(26px, 4vw, 36px);
+font-weight: 800;
+margin: 0 0 12px;
+letter-spacing: -0.02em;
+}
+.rfq-header p {
+font-size: 15px;
+color: var(--muted);
+margin: 0;
+line-height: 1.6;
+}
+.rfq-layout {
+display: grid;
+grid-template-columns: 1.4fr 1fr;
+gap: 36px;
+align-items: start;
+}
+/* Form Styling */
+.rfq-form {
+background: rgba(255,255,255,0.02);
+border: 1px solid rgba(255,255,255,0.04);
+border-radius: 20px;
+padding: 32px;
+}
+.form-row {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 16px;
+margin-bottom: 16px;
+}
+.form-field {
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+.form-field label {
+font-size: 13px;
+font-weight: 600;
+color: rgba(255,255,255,0.85);
+margin: 0;
+}
+.form-field input,
+.form-field select,
+.form-field textarea {
+padding: 12px 16px;
+background: rgba(255,255,255,0.03);
+border: 1px solid rgba(255,255,255,0.08);
+border-radius: 10px;
+color: #fff;
+font-size: 14px;
+font-family: inherit;
+transition: all .2s ease;
+margin: 0;
+}
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+outline: none;
+border-color: rgba(230,57,70,0.5);
+background: rgba(255,255,255,0.04);
+box-shadow: 0 0 0 3px rgba(230,57,70,0.1);
+}
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+color: rgba(255,255,255,0.35);
+}
+.form-field textarea {
+resize: vertical;
+min-height: 120px;
+line-height: 1.6;
+}
+.btn-submit-modern {
+width: 100%;
+padding: 14px 24px;
+background: linear-gradient(90deg, #e63946, #a4161a);
+color: #fff;
+border: none;
+border-radius: 12px;
+font-weight: 700;
+font-size: 15px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+margin-top: 20px;
+transition: all .25s ease;
+}
+.btn-submit-modern:hover {
+transform: translateY(-2px);
+box-shadow: 0 16px 36px rgba(230,57,70,0.3);
+}
+.btn-submit-modern:active {
+transform: translateY(0);
+}
+.form-note {
+text-align: center;
+font-size: 12px;
+color: var(--muted);
+margin: 16px 0 0;
+line-height: 1.6;
+}
+/* Sidebar */
+.rfq-sidebar {
+display: flex;
+flex-direction: column;
+gap: 20px;
+position: sticky;
+top: 120px;
+}
+.rfq-info-card {
+background: rgba(255,255,255,0.02);
+border: 1px solid rgba(255,255,255,0.04);
+border-radius: 16px;
+padding: 24px;
+}
+.rfq-info-card h4 {
+font-size: 16px;
+font-weight: 700;
+margin: 0 0 16px;
+}
+.rfq-steps-list {
+list-style: none;
+padding: 0;
+margin: 0;
+display: flex;
+flex-direction: column;
+gap: 18px;
+}
+.rfq-steps-list li {
+display: flex;
+gap: 14px;
+align-items: flex-start;
+}
+.step-number {
+width: 28px;
+height: 28px;
+border-radius: 50%;
+background: linear-gradient(135deg, rgba(230,57,70,0.15), rgba(166,22,26,0.1));
+display: grid;
+place-items: center;
+font-size: 13px;
+font-weight: 700;
+color: #e63946;
+flex-shrink: 0;
+}
+.rfq-steps-list strong {
+display: block;
+font-size: 14px;
+margin-bottom: 3px;
+}
+.rfq-steps-list p {
+font-size: 13px;
+color: var(--muted);
+margin: 0;
+line-height: 1.5;
+}
+.rfq-benefits-list {
+list-style: none;
+padding: 0;
+margin: 0;
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+.rfq-benefits-list li {
+display: flex;
+gap: 12px;
+align-items: flex-start;
+font-size: 13.5px;
+line-height: 1.6;
+color: rgba(255,255,255,0.8);
+}
+.rfq-benefits-list svg {
+flex-shrink: 0;
+color: #e63946;
+margin-top: 2px;
+}
+.rfq-contact-quick {
+background: linear-gradient(135deg, rgba(230,57,70,0.08), rgba(166,22,26,0.05));
+border: 1px solid rgba(230,57,70,0.15);
+border-radius: 14px;
+padding: 20px;
+text-align: center;
+}
+.rfq-contact-quick p {
+font-size: 13px;
+color: var(--muted);
+margin: 0 0 12px;
+}
+.btn-wa-compact {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 10px 18px;
+background: #25d366;
+color: #fff;
+text-decoration: none;
+border-radius: 999px;
+font-size: 13px;
+font-weight: 700;
+transition: transform .2s ease;
+}
+.btn-wa-compact:hover {
+transform: translateY(-2px);
+}
+/* =========================================
+CONTACT SECTION - REDESIGN
+========================================= */
+.contact-section {
+background: linear-gradient(180deg, rgba(230,57,70,0.02), transparent);
+border-radius: 24px;
+padding: 72px var(--container-pad);
+}
+.contact-header {
+text-align: center;
+max-width: 680px;
+margin: 0 auto 56px;
+}
+.contact-badge {
+display: inline-block;
+padding: 6px 14px;
+background: linear-gradient(135deg, rgba(230,57,70,0.12), rgba(166,22,26,0.08));
+border: 1px solid rgba(230,57,70,0.2);
+border-radius: 999px;
+font-size: 12px;
+font-weight: 600;
+letter-spacing: 0.05em;
+text-transform: uppercase;
+color: #e63946;
+margin-bottom: 16px;
+}
+.contact-header h2 {
+font-size: clamp(26px, 4vw, 36px);
+font-weight: 800;
+margin: 0 0 12px;
+letter-spacing: -0.02em;
+}
+.contact-header p {
+font-size: 15px;
+color: var(--muted);
+margin: 0;
+line-height: 1.6;
+}
+.contact-grid-modern {
+display: grid;
+grid-template-columns: 1.5fr 1fr;
+gap: 32px;
+align-items: start;
+}
+.contact-cards {
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+.contact-card {
+background: rgba(255,255,255,0.02);
+border: 1px solid rgba(255,255,255,0.04);
+border-radius: 16px;
+padding: 24px;
+display: flex;
+gap: 18px;
+transition: all .3s ease;
+}
+.contact-card:hover {
+transform: translateY(-4px);
+border-color: rgba(230,57,70,0.2);
+box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+.contact-card-icon {
+width: 48px;
+height: 48px;
+border-radius: 12px;
+background: linear-gradient(135deg, rgba(230,57,70,0.12), rgba(166,22,26,0.08));
+display: grid;
+place-items: center;
+flex-shrink: 0;
+color: #e63946;
+}
+.contact-card-content h4 {
+font-size: 16px;
+font-weight: 700;
+margin: 0 0 8px;
+}
+.contact-card-content p {
+font-size: 13.5px;
+color: var(--muted);
+line-height: 1.6;
+margin: 0 0 10px;
+}
+.contact-link {
+font-size: 14px;
+color: #e63946;
+text-decoration: none;
+font-weight: 600;
+display: inline-flex;
+align-items: center;
+gap: 6px;
+transition: transform .2s ease;
+}
+.contact-link:hover {
+transform: translateX(4px);
+}
+/* Sidebar */
+.contact-sidebar-modern {
+display: flex;
+flex-direction: column;
+gap: 20px;
+position: sticky;
+top: 120px;
+}
+.quick-facts-card {
+background: rgba(255,255,255,0.02);
+border: 1px solid rgba(255,255,255,0.04);
+border-radius: 16px;
+padding: 24px;
+}
+.quick-facts-card h4 {
+font-size: 16px;
+font-weight: 700;
+margin: 0 0 18px;
+}
+.fact-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 16px;
+}
+.fact-item {
+display: flex;
+flex-direction: column;
+gap: 6px;
+}
+.fact-label {
+font-size: 12px;
+color: var(--muted);
+text-transform: uppercase;
+letter-spacing: 0.05em;
+}
+.fact-value {
+font-size: 18px;
+font-weight: 700;
+color: #e63946;
+}
+.cta-card-modern {
+background: linear-gradient(135deg, rgba(230,57,70,0.08), rgba(166,22,26,0.05));
+border: 1px solid rgba(230,57,70,0.15);
+border-radius: 16px;
+padding: 24px;
+text-align: center;
+}
+.cta-card-modern h4 {
+font-size: 17px;
+font-weight: 700;
+margin: 0 0 8px;
+}
+.cta-card-modern p {
+font-size: 13.5px;
+color: var(--muted);
+margin: 0 0 18px;
+}
+.cta-buttons-stack {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+.btn-primary-modern {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+padding: 12px 20px;
+background: #25d366;
+color: #fff;
+text-decoration: none;
+border-radius: 10px;
+font-weight: 700;
+font-size: 14px;
+transition: transform .2s ease;
+}
+.btn-primary-modern:hover {
+transform: translateY(-2px);
+}
+.btn-secondary-modern {
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 12px 20px;
+background: rgba(255,255,255,0.04);
+border: 1px solid rgba(255,255,255,0.08);
+color: #fff;
+text-decoration: none;
+border-radius: 10px;
+font-weight: 700;
+font-size: 14px;
+transition: all .2s ease;
+}
+.btn-secondary-modern:hover {
+background: rgba(255,255,255,0.06);
+transform: translateY(-2px);
+}
+/* =========================================
+FOOTER - MODERN REDESIGN
+========================================= */
+.footer-modern {
+background: linear-gradient(180deg, transparent, rgba(0,0,0,0.6));
+border-top: 1px solid rgba(255,255,255,0.04);
+padding: 64px 0 28px;
+margin-top: 80px;
+}
+.footer-main {
+display: grid;
+grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+gap: 48px;
+margin-bottom: 48px;
+}
+.footer-brand {
+max-width: 320px;
+}
+.footer-logo {
+display: flex;
+align-items: center;
+gap: 12px;
+margin-bottom: 16px;
+}
+.footer-logo img {
+width: 40px;
+height: 40px;
+border-radius: 8px;
+}
+.footer-logo strong {
+display: block;
+font-size: 17px;
+font-weight: 700;
+}
+.footer-logo span {
+display: block;
+font-size: 12px;
+color: var(--muted);
+}
+.footer-tagline {
+font-size: 13.5px;
+line-height: 1.7;
+color: var(--muted);
+margin: 0 0 20px;
+}
+.footer-social-modern {
+display: flex;
+gap: 10px;
+}
+.footer-social-modern a {
+width: 38px;
+height: 38px;
+border-radius: 10px;
+background: rgba(255,255,255,0.04);
+display: grid;
+place-items: center;
+transition: all .2s ease;
+color: rgba(255,255,255,0.6);
+}
+.footer-social-modern a:hover {
+background: rgba(230,57,70,0.15);
+color: #e63946;
+transform: translateY(-2px);
+}
+.footer-social-modern svg {
+width: 18px;
+height: 18px;
+}
+.footer-column h4 {
+font-size: 14px;
+font-weight: 700;
+margin: 0 0 16px;
+text-transform: uppercase;
+letter-spacing: 0.05em;
+color: rgba(255,255,255,0.9);
+}
+.footer-column ul {
+list-style: none;
+padding: 0;
+margin: 0;
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+.footer-column ul li a {
+font-size: 13.5px;
+color: var(--muted);
+text-decoration: none;
+transition: color .2s ease;
+display: inline-block;
+}
+.footer-column ul li a:hover {
+color: #fff;
+transform: translateX(4px);
+}
+.footer-contact-list {
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+.footer-contact-list li {
+display: flex;
+gap: 10px;
+align-items: flex-start;
+font-size: 13px;
+color: var(--muted);
+}
+.footer-contact-list svg {
+flex-shrink: 0;
+margin-top: 2px;
+color: rgba(230,57,70,0.6);
+}
+.footer-bottom {
+border-top: 1px solid rgba(255,255,255,0.04);
+padding-top: 24px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 20px;
+flex-wrap: wrap;
+}
+.footer-bottom p {
+font-size: 13px;
+color: var(--muted);
+margin: 0;
+}
+.footer-badges {
+display: flex;
+gap: 12px;
+align-items: center;
+}
+.footer-badge-item {
+font-size: 12px;
+color: rgba(255,255,255,0.5);
+padding: 6px 12px;
+background: rgba(255,255,255,0.02);
+border-radius: 6px;
+border: 1px solid rgba(255,255,255,0.04);
+}
+/* =========================================
+RESPONSIVE - MOBILE OPTIMIZATION
+========================================= */
+@media (max-width: 980px) {
+.process-cta-card {
+flex-direction: column;
+text-align: center;
+}
+.timeline-item {
+grid-template-columns: 32px 1fr;
+gap: 16px;
+}
+.rfq-layout,
+.contact-grid-modern {
+grid-template-columns: 1fr;
+}
+.rfq-sidebar,
+.contact-sidebar-modern {
+position: static;
+}
+.form-row {
+grid-template-columns: 1fr;
+}
+.footer-main {
+grid-template-columns: 1fr 1fr;
+gap: 32px;
+}
+.footer-brand {
+grid-column: 1 / -1;
+max-width: 100%;
+}
+}
+@media (max-width: 640px) {
+.process-section,
+.rfq-section,
+.contact-section {
+padding: 56px var(--container-pad);
+}
+.fact-grid {
+grid-template-columns: 1fr;
+}
+.footer-main {
+grid-template-columns: 1fr;
+}
+.footer-bottom {
+flex-direction: column;
+text-align: center;
+}
+}
   </style>
   
   <!-- 4. SECURITY HEADERS -->
@@ -1877,195 +2899,486 @@ section .grid-3 .card p {
       </div>
     </section>
 
+    <!-- ============================================
+         PROSES PRODUKSI - FIGMA GRADE REDESIGN
+    ============================================= -->
     <section id="process" class="container" data-reveal>
-      <h2 class="section-title">Proses Produksi Kami</h2>
-      <img 
+      <div class="process-hero">
+        <div class="process-badge">Behind the Scenes</div>
+        <h2 class="process-title">How We Craft Your Premium Packaging</h2>
+        <p class="process-subtitle">From concept to delivery — transparent, professional, and built for scale.</p>
+      </div>
+
+      <div class="process-visual">
+        <img 
           src="assets/images/process/flow.webp" 
-          alt="Packaging manufacturing process flow"
+          alt="deartbox packaging production workflow"
           loading="lazy"
-          width="auto"
+          width="1200"
           height="auto"
           decoding="async">
-      <div class="process-list" role="list">
-        <div class="process-step card" role="listitem">
-          <h4>1. Konsultasi & Brief</h4>
-          <p style="color:var(--muted)">Diskusi kebutuhan brand, target market, dan pemilihan material.</p>
+      </div>
+
+      <div class="process-timeline">
+        
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-content">
+            <span class="timeline-label">Step 01</span>
+            <h3>Discovery & Brief</h3>
+            <p>We discuss your brand positioning, target audience, material preferences, and budget constraints. This shapes the entire production strategy.</p>
+            <div class="timeline-meta">
+              <span>⏱ 1-2 days</span>
+              <span>💬 Free consultation</span>
+            </div>
+          </div>
         </div>
-        <div class="process-step card" role="listitem">
-          <h4>2. Prototyping & Sampling</h4>
-          <p style="color:var(--muted)">Pembuatan sample dummy fisik untuk memastikan kualitas sebelum produksi.</p>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-content">
+            <span class="timeline-label">Step 02</span>
+            <h3>Design & Material Selection</h3>
+            <p>Technical drawing, dieline setup, and material specification. We provide recommendations based on your product protection needs and brand aesthetics.</p>
+            <div class="timeline-meta">
+              <span>⏱ 3-5 days</span>
+              <span>📐 Technical spec included</span>
+            </div>
+          </div>
         </div>
-        <div class="process-step card" role="listitem">
-          <h4>3. Produksi & Quality Control</h4>
-          <p style="color:var(--muted)">Produksi terkontrol dengan standar kualitas yang konsisten.</p>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-content">
+            <span class="timeline-label">Step 03</span>
+            <h3>Physical Sample & Approval</h3>
+            <p>Dummy sample creation for structure validation. This ensures correct dimensions, material feel, and assembly before full production begins.</p>
+            <div class="timeline-meta">
+              <span>⏱ 7-10 days</span>
+              <span>📦 Physical dummy provided</span>
+            </div>
+          </div>
         </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-content">
+            <span class="timeline-label">Step 04</span>
+            <h3>Production & Quality Control</h3>
+            <p>Full-scale manufacturing with in-line quality checks. Every box goes through inspection for print accuracy, structural integrity, and finishing quality.</p>
+            <div class="timeline-meta">
+              <span>⏱ 4-6 weeks</span>
+              <span>✓ Quality guaranteed</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="process-cta-card">
+        <div class="process-cta-content">
+          <h3>Ready to Start Your Project?</h3>
+          <p>Let's discuss your packaging needs — no commitment required.</p>
+        </div>
+        <a href="#rfq" class="btn-arrow">Get Started →</a>
       </div>
     </section>
-    
-    <section id="rfq" class="container" data-reveal>
-      <h2 class="section-title">Request Harga Hardbox Custom</h2>
 
-      <div class="contact-grid rfq-grid">
+    <!-- ============================================
+         REQUEST QUOTE - REDESIGN
+    ============================================= -->
+    <section id="rfq" class="container rfq-section" data-reveal>
+      <div class="rfq-header">
+        <div class="rfq-badge">Start Here</div>
+        <h2>Request Custom Quote</h2>
+        <p>Share your project details and we'll provide a tailored proposal within 24 hours.</p>
+      </div>
 
+      <div class="rfq-layout">
+        
         <!-- LEFT: FORM -->
-        <form id="rfqForm" class="card">
+        <form id="rfqForm" class="rfq-form" onsubmit="handleRfq(event)">
+          
+          <div class="form-row">
+            <div class="form-field">
+              <label for="rfq-name">Your Name</label>
+              <input id="rfq-name" name="name" type="text" required placeholder="John Doe" autocomplete="name">
+            </div>
 
-          <div class="field">
-            <label for="rfq-name">Your Name</label>
-            <input id="rfq-name" name="name" type="text" required placeholder="Your name" autocomplete="name">
+            <div class="form-field">
+              <label for="rfq-email">Business Email</label>
+              <input id="rfq-email" name="email" type="email" required placeholder="hello@yourbrand.com" autocomplete="email">
+            </div>
           </div>
 
-          <div class="field">
-            <label for="rfq-email">Business Email</label>
-            <input id="rfq-email" name="email" type="email" required placeholder="email@company.com" autocomplete="email">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="rfq-brand">Brand / Company</label>
+              <input id="rfq-brand" name="brand" type="text" placeholder="Your brand name">
+            </div>
+
+            <div class="form-field">
+              <label for="rfq-industry">Industry</label>
+              <select id="rfq-industry" name="industry" required>
+                <option value="" disabled selected hidden>Select industry</option>
+                <option>Beauty / Skincare</option>
+                <option>Fashion / Lifestyle</option>
+                <option>Gourmet / Food</option>
+                <option>Electronics / Tech</option>
+                <option>Corporate / Gift</option>
+                <option>Other</option>
+              </select>
+            </div>
           </div>
 
-          <div class="field">
-            <label for="rfq-brand">Brand / Company</label>
-            <input id="rfq-brand" name="brand" type="text" placeholder="Brand or company name">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="rfq-box">Packaging Type</label>
+              <select id="rfq-box" name="boxType" required>
+                <option value="" disabled selected hidden>Select type</option>
+                <option>Rigid / Hardbox</option>
+                <option>Hardbox with Custom Insert</option>
+                <option>Magnetic Closure Box</option>
+                <option>Drawer Box</option>
+                <option>Book-Style Box</option>
+                <option>Custom Shape</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="rfq-qty">Quantity (MOQ: 200 pcs)</label>
+              <input id="rfq-qty" name="quantity" type="number" min="200" placeholder="e.g. 500">
+            </div>
           </div>
 
-          <div class="field">
-            <label for="rfq-industry">Industry</label>
-            <select id="rfq-industry" name="industry" required>
-              <option value="" disabled selected hidden>Select industry</option>
-              <option>Beauty / Skincare</option>
-              <option>Fashion / Lifestyle</option>
-              <option>Gourmet / Food</option>
-              <option>Corporate / Gift</option>
-              <option>Other</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="rfq-box">Packaging Type</label>
-            <select id="rfq-box" name="boxType" required>
-              <option value="" disabled selected hidden>Select packaging type</option>
-              <option>Rigid / Hardbox</option>
-              <option>Hardbox with Insert</option>
-              <option>Custom Shape Hardbox</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="rfq-qty">Estimated Quantity (MOQ starts from 200 pcs)</label>
-            <input id="rfq-qty" name="quantity" type="number" min="200" placeholder="e.g. 500">
-          </div>
-
-          <div class="field">
-            <label for="rfq-message">Project Brief / Requirements</label>
+          <div class="form-field">
+            <label for="rfq-message">Project Brief</label>
             <textarea
               id="rfq-message"
               name="message"
               rows="5"
-              placeholder="Size, material, finishing, target launch date, or any notes"
+              placeholder="Tell us about your product, desired box dimensions, finishing preferences, and target launch date..."
               required></textarea>
           </div>
 
-          <div class="form-actions">
-            <button type="submit" class="btn btn-submit">Request Quote</button>
-          </div>
+          <button type="submit" class="btn-submit-modern">
+            <span>Send Request</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M1 8h14M9 2l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
 
-          <p class="hero-trust">
-            Respon dalam 24 jam • Konsultasi gratis • Tanpa syarat
+          <p class="form-note">
+            ⚡ Response within 24 hours • 🔒 Your data is protected • ✓ No spam, ever
           </p>
 
         </form>
 
-        <!-- RIGHT: WHAT HAPPENS NEXT -->
-        <aside class="card rfq-info">
-          <h3>Apa Selanjutnya?</h3>
+        <!-- RIGHT: INFO PANEL -->
+        <aside class="rfq-sidebar">
+          
+          <div class="rfq-info-card">
+            <h4>What Happens Next?</h4>
+            <ol class="rfq-steps-list">
+              <li>
+                <span class="step-number">1</span>
+                <div>
+                  <strong>Initial Review</strong>
+                  <p>We analyze your requirements and prepare preliminary recommendations.</p>
+                </div>
+              </li>
+              <li>
+                <span class="step-number">2</span>
+                <div>
+                  <strong>Detailed Proposal</strong>
+                  <p>You'll receive material options, pricing breakdown, and production timeline.</p>
+                </div>
+              </li>
+              <li>
+                <span class="step-number">3</span>
+                <div>
+                  <strong>Sample Creation</strong>
+                  <p>Physical dummy for approval before mass production begins.</p>
+                </div>
+              </li>
+              <li>
+                <span class="step-number">4</span>
+                <div>
+                  <strong>Production & Delivery</strong>
+                  <p>Manufacturing with quality control and on-time shipment.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
 
-          <ol class="rfq-steps">
-            <li>Review kebutuhan project Anda</li>
-            <li>Rekomendasi material & struktur</li>
-            <li>Estimasi biaya & lead time</li>
-            <li>Perencanaan sample & produksi</li>
-          </ol>
+          <div class="rfq-info-card">
+            <h4>Why Brands Choose Us</h4>
+            <ul class="rfq-benefits-list">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="2"/>
+                  <path d="M6 10l3 3 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Low MOQ & scalable production capacity</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="2"/>
+                  <path d="M6 10l3 3 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Premium finishing options (foil, emboss, soft-touch)</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="2"/>
+                  <path d="M6 10l3 3 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>In-line quality control at every production stage</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="2"/>
+                  <path d="M6 10l3 3 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Clear communication & realistic timelines</span>
+              </li>
+            </ul>
+          </div>
 
-          <hr>
+          <div class="rfq-contact-quick">
+            <p>Prefer to talk directly?</p>
+            <a href="https://wa.me/628195181427?text=Halo%20deartbox%2C%20saya%20ingin%20konsultasi%20packaging." 
+               target="_blank" 
+               rel="noopener"
+               class="btn-wa-compact">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2a10 10 0 00-8.9 14.5L2 22l5.7-1.1A10 10 0 1012 2zm5.3 14.2c-.2.6-1.3 1.1-1.8 1.2-.5.1-1 .1-1.7-.1a13 13 0 01-5.7-3.9 6.6 6.6 0 01-1.4-3.5c0-1.8.9-2.6 1.2-2.9.3-.3.7-.4.9-.4h.7c.2 0 .5 0 .7.5l.9 2.1c.1.3.1.5 0 .7-.1.2-.2.4-.4.6l-.4.5c-.1.2-.3.4-.1.7a8.4 8.4 0 003.5 3c.3.1.5.1.7-.1l.8-.9c.2-.2.4-.2.7-.1l2 .8c.3.1.5.1.6.3z"/>
+              </svg>
+              WhatsApp Chat
+            </a>
+          </div>
 
-          <h4>Why Brands Choose deartbox</h4>
-          <ul class="rfq-benefits">
-            <li>Low MOQ & scalable production</li>
-            <li>Premium finishing capability</li>
-            <li>Strict quality control</li>
-            <li>Clear communication & timeline</li>
-          </ul>
         </aside>
 
       </div>
     </section>
 
+    <!-- ============================================
+         CONTACT - REDESIGN
+    ============================================= -->
+    <section id="contact" class="container contact-section" data-reveal>
+      <div class="contact-header">
+        <div class="contact-badge">Get in Touch</div>
+        <h2>Let's Build Something Great Together</h2>
+        <p>Whether you're launching a new product or scaling your brand, we're here to help you create packaging that stands out.</p>
+      </div>
 
-    <section id="contact" class="container">
-      <h2 class="section-title">Hubungi Kami</h2>
-      <div class="contact-grid">
-        <div class="contact-direct">
-          <div class="contact-copy">
-            <h3>Bicara Langsung dengan Spesialis Packaging</h3>
-            <p>Kami membantu brand dari tahap ide hingga produksi — dengan pendekatan transparan dan praktis.</p>
-
-            <ul class="contact-points">
-              <li>✔️ Konsultasi gratis & tanpa syarat</li>
-              <li>✔️ Respon cepat ≤ 24 jam </li>
-              <li>✔️ Pengalaman menangani brand premium</li>
-              <li>✔️ MOQ fleksibel untuk brand berkembang</li>
-            </ul>
-
-            <div class="contact-actions">
-              <a href="https://wa.me/628195181427?text=Halo%20deartbox%2C%20saya%20ingin%20konsultasi%20project%20packaging." 
-                 target="_blank" 
-                 rel="noopener" 
-                 class="btn-primary2">Chat via WhatsApp</a>
-
-              <a href="mailto:hello@deartbox.com?subject=Packaging%20Consultation" 
-                 class="btn btn-download">Email Us</a>
+      <div class="contact-grid-modern">
+        
+        <!-- Contact Cards -->
+        <div class="contact-cards">
+          
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
             </div>
+            <div class="contact-card-content">
+              <h4>Visit Our Workshop</h4>
+              <p>Jl. Gandaria 1 No.3, Gandaria Utara<br>Jakarta Selatan 12130, Indonesia</p>
+              <a href="https://maps.google.com/?q=Gandaria+1+No.3+Jakarta" target="_blank" rel="noopener" class="contact-link">Get Directions →</a>
+            </div>
+          </div>
 
-            <p class="hero-trust">Tidak spam • Konsultasi gratis • Respon cepat</p>
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+            </div>
+            <div class="contact-card-content">
+              <h4>Call or Message</h4>
+              <p>Available Mon-Fri, 9AM-6PM WIB<br>Response within 24 hours</p>
+              <a href="https://wa.me/628195181427" target="_blank" rel="noopener" class="contact-link">+62 819-5181-427 →</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="contact-card-content">
+              <h4>Email Us</h4>
+              <p>For detailed inquiries, partnership discussions, or technical questions</p>
+              <a href="mailto:hello@deartbox.com" class="contact-link">hello@deartbox.com →</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Quick Facts -->
+        <div class="contact-sidebar-modern">
+          
+          <div class="quick-facts-card">
+            <h4>Production Specs</h4>
+            <div class="fact-grid">
+              <div class="fact-item">
+                <span class="fact-label">Lead Time</span>
+                <span class="fact-value">4-6 weeks</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Minimum Order</span>
+                <span class="fact-value">200 pcs</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Monthly Capacity</span>
+                <span class="fact-value">50,000+ pcs</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Quality Rate</span>
+                <span class="fact-value">99.5%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-card-modern">
+            <h4>Start Your Project Today</h4>
+            <p>Free consultation with no commitment required.</p>
+            <div class="cta-buttons-stack">
+              <a href="https://wa.me/628195181427?text=Halo%20deartbox%2C%20saya%20ingin%20konsultasi%20packaging." 
+                 target="_blank" 
+                 rel="noopener"
+                 class="btn-primary-modern">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2a10 10 0 00-8.9 14.5L2 22l5.7-1.1A10 10 0 1012 2zm5.3 14.2c-.2.6-1.3 1.1-1.8 1.2-.5.1-1 .1-1.7-.1a13 13 0 01-5.7-3.9 6.6 6.6 0 01-1.4-3.5c0-1.8.9-2.6 1.2-2.9.3-.3.7-.4.9-.4h.7c.2 0 .5 0 .7.5l.9 2.1c.1.3.1.5 0 .7-.1.2-.2.4-.4.6l-.4.5c-.1.2-.3.4-.1.7a8.4 8.4 0 003.5 3c.3.1.5.1.7-.1l.8-.9c.2-.2.4-.2.7-.1l2 .8c.3.1.5.1.6.3z"/>
+                </svg>
+                WhatsApp Us
+              </a>
+              <a href="#rfq" class="btn-secondary-modern">Request Quote</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================
+       FOOTER - REDESIGN TOTAL
+  ============================================= -->
+  <footer class="footer-modern">
+    <div class="container">
+      
+      <div class="footer-main">
+        
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/logo/deartbox-logo.svg" alt="deartbox" width="40" height="40">
+            <div>
+              <strong>deartbox</strong>
+              <span>Premium Packaging Partner</span>
+            </div>
+          </div>
+          <p class="footer-tagline">
+            Crafting premium hardbox packaging for brands that value quality, aesthetics, and brand storytelling.
+          </p>
+          <div class="footer-social-modern">
+            <a href="https://www.instagram.com/de_artbox" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10zm6.5-.5a1 1 0 10-1 1 1 1 0 001-1z"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/deartbox-packaging-b08696376/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M4.98 3.5a2.5 2.5 0 110 5 2.5 2.5 0 010-5zM3 9h4v12H3zm7 0h4v1.7c.6-1 2-2 4-2 4 0 5 2.6 5 6v6h-4v-5.3c0-1.3 0-3-2-3s-2.3 1.5-2.3 2.9V21h-4z"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/628195181427" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2a10 10 0 00-8.9 14.5L2 22l5.7-1.1A10 10 0 1012 2zm5.3 14.2c-.2.6-1.3 1.1-1.8 1.2-.5.1-1 .1-1.7-.1a13 13 0 01-5.7-3.9 6.6 6.6 0 01-1.4-3.5c0-1.8.9-2.6 1.2-2.9.3-.3.7-.4.9-.4h.7c.2 0 .5 0 .7.5l.9 2.1c.1.3.1.5 0 .7-.1.2-.2.4-.4.6l-.4.5c-.1.2-.3.4-.1.7a8.4 8.4 0 003.5 3c.3.1.5.1.7-.1l.8-.9c.2-.2.4-.2.7-.1l2 .8c.3.1.5.1.6.3z"/>
+              </svg>
+            </a>
           </div>
         </div>
 
-        <aside class="card" aria-labelledby="officeTitle">
-          <h3 id="officeTitle">Our Workshop — Development</h3>
-          <p style="color:var(--muted)">Jl. Gandaria 1 No.3, Gandaria Utara, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12130</p>
+        <!-- Quick Links -->
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
 
-          <div style="margin-top:18px">
-            <h4>Quick Facts</h4>
-            <ul style="color:var(--muted); line-height:1.8; padding-left:18px">
-              <li>Lead time: 4 – 6 minggu</li>
-              <li>MOQ: 200 pcs</li>
-              <li>Kapasitas: up to 50,000 pcs / bulan</li>
-            </ul>
-          </div>
-        </aside>
+        <!-- Resources -->
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#rfq">Request Quote</a></li>
+            <li><a href="#" data-popup="faq">FAQ</a></li>
+            <li><a href="#" data-popup="terms">Terms of Service</a></li>
+            <li><a href="#" data-popup="privacy">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-column">
+          <h4>Get in Touch</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>Jakarta Selatan, Indonesia</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+              <span>+62 819-5181-427</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <span>hello@deartbox.com</span>
+            </li>
+          </ul>
+        </div>
+
       </div>
-    </section>
-  </main>
 
-  <footer>
-    <div class="container footer-row">
-      <div class="footer-social">
-        <a href="https://www.instagram.com/de_artbox" target="_blank" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10zm6.5-.5a1 1 0 10-1 1 1 1 0 001-1z"/></svg>
-        </a>
-
-        <a href="https://www.linkedin.com/in/deartbox-packaging-b08696376/" target="_blank" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 110 5 2.5 2.5 0 010-5zM3 9h4v12H3zm7 0h4v1.7c.6-1 2-2 4-2 4 0 5 2.6 5 6v6h-4v-5.3c0-1.3 0-3-2-3s-2.3 1.5-2.3 2.9V21h-4z"/></svg>
-        </a>
-
-        <a href="https://wa.me/628195181427" target="_blank" aria-label="WhatsApp">
-          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.9 14.5L2 22l5.7-1.1A10 10 0 1012 2zm5.3 14.2c-.2.6-1.3 1.1-1.8 1.2-.5.1-1 .1-1.7-.1a13 13 0 01-5.7-3.9 6.6 6.6 0 01-1.4-3.5c0-1.8.9-2.6 1.2-2.9.3-.3.7-.4.9-.4h.7c.2 0 .5 0 .7.5l.9 2.1c.1.3.1.5 0 .7-.1.2-.2.4-.4.6l-.4.5c-.1.2-.3.4-.1.7a8.4 8.4 0 003.5 3c .3 .1 .5 .1 .7 -.1l .8 -.9c .2 -.2 .4 -.2 .7 -.1l 2 .8c .3 .6 .5 .6 .8 -.6l -3 -8c -3 -8 -6 -8 -9 -8z"/></svg>
-        </a>
+      <div class="footer-bottom">
+        <p>&copy; 2026 deartbox Packaging — Part of PT. Xerography Indonesia. All rights reserved.</p>
+        <div class="footer-badges">
+          <span class="footer-badge-item">🇮🇩 Made in Indonesia</span>
+          <span class="footer-badge-item">🔒 Secure</span>
+        </div>
       </div>
-      <a href="#top">© 2026 deartbox Packaging — Part of PT. Xerography Indonesia. All rights reserved.
-      </a>
-      <div style="display:flex;gap:16px;align-items:center">
-        <a href="#" style="color:var(--muted);text-decoration:none;font-size:13px" data-popup="privacy">Privacy</a>
-        <a href="#" style="color:var(--muted);text-decoration:none;font-size:13px" data-popup="terms">Terms</a>
-        <a href="#" style="color:var(--muted);text-decoration:none;font-size:13px" data-popup="faq">FAQ</a>
-      </div>
+
     </div>
   </footer>
 
@@ -2381,9 +3694,7 @@ section .grid-3 .card p {
       behavior: 'smooth'
     });
   });
-
-
-
+  
 </script>
 </body>
 </html>
