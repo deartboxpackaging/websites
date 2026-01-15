@@ -42,7 +42,7 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
   <meta name="msapplication-TileColor" content="#000000">
-  <meta name="theme-color" content="#000000">
+ 
   
   <!-- 5. CRITICAL INLINE CSS (UI/UX ASLI LU) -->
   <style>
@@ -148,7 +148,7 @@
       border-radius: 8px;
       display: grid;
       place-items: center;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      
       font-weight: 700;
       font-size: 18px;
       box-shadow: 0 6px 20px rgba(166,22,26,0.24);
@@ -1052,7 +1052,7 @@
     #backToTop {
     position: fixed;
     right: 24px;
-    bottom: 96px; /* aman dari sticky WA */
+    bottom: 160px; /* aman dari sticky WA */
     width: 52px;
     height: 52px;
     border-radius: 999px;
@@ -1114,10 +1114,53 @@
     transform: scale(0.92);
   }
 
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rfq-grid {
+  display:grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: start;
+  gap: 24px;
+}
+
+.rfq-info {
+  position: sticky;
+  top: 120px;
+}
+
+.rfq-steps,
+.rfq-benefits {
+  color: var(--muted);
+  line-height: 1.8;
+  padding-left: 18px;
+}
+
+.rfq-info hr {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,.06);
+  margin: 20px 0;
+}
+
+/* Mobile */
+@media (max-width: 980px) {
+  .rfq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rfq-info {
+    position: static;
+  }
+}
+
   </style>
   
   <!-- 4. SECURITY HEADERS -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; 
+  connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://wa.me;">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
@@ -1138,7 +1181,7 @@
       <nav class="nav" aria-label="Main navigation">
         <!--LOGO BARU DENGAN SVG-->
         <a class="logo" href="#top">
-          <div class="!logo-mark" aria-hidden="true">
+          <div class="logo-mark" aria-hidden="true">
            <!-- PAKE FILE LOGO LU -->
             <img src="assets/logo/deartbox-logo.svg" 
                 alt="deartbox Logo" 
@@ -1148,7 +1191,7 @@
          </div>
             <div class="logo-text">
             <h1>deartbox Packaging</h1>
-            <p>Box Kamu, Misi Kami..!</p>
+            <p class="logo-title">deartbox Packaging</p>
           </div>
         </a>
 
@@ -1196,7 +1239,7 @@
         </div>
       </div>
 
-      <aside class="hero-right" aria-hidden="true">
+      <aside class="hero-right">
         <div class="mockup" role="img" aria-label="Mockup hardbox example">
           <!-- 3. IMAGE OPTIMIZATION: WebP format -->
           <picture>
@@ -1487,74 +1530,102 @@
         </div>
       </div>
     </section>
-
+    
     <section id="rfq" class="container" data-reveal>
       <h2 class="section-title">Request a Custom Packaging Quote</h2>
 
-      <div class="contact-grid">
-        <form class="card" id="rfqForm" onsubmit="handleRFQ(event)">
-          <label for="rfq-name">Full Name</label>
-          <input id="rfq-name" name="name" type="text" required placeholder="Your name">
+      <div class="contact-grid rfq-grid">
 
-          <label for="rfq-email">Business Email</label>
-          <input id="rfq-email" name="email" type="email" required placeholder="email@company.com">
+        <!-- LEFT: FORM -->
+        <form id="rfqForm" class="card">
 
-          <label for="rfq-brand">Brand / Company</label>
-          <input id="rfq-brand" name="brand" type="text" placeholder="Brand or company name">
+          <div class="field">
+            <label for="rfq-name">Your Name</label>
+            <input id="rfq-name" name="name" type="text" required placeholder="Your name" autocomplete="name">
+          </div>
 
-          <label for="rfq-industry">Industry</label>
-          <select id="rfq-industry" name="industry" required>
-            <option value="" disabled selected hidden>Select industry</option>
-            <option>Beauty / Skincare</option>
-            <option>Fashion / Lifestyle</option>
-            <option>Gourmet / Food</option>
-            <option>Corporate / Gift</option>
-            <option>Other</option>
-          </select>
+          <div class="field">
+            <label for="rfq-email">Business Email</label>
+            <input id="rfq-email" name="email" type="email" required placeholder="email@company.com" autocomplete="email">
+          </div>
 
-          <label for="rfq-box">Packaging Type</label>
-          <select id="rfq-box" name="boxType" required>
-            <option value="" disabled selected hidden>Select packaging type</option>
-            <option>Rigid / Hardbox</option>
-            <option>Hardbox with Insert</option>
-            <option>Custom Shape Hardbox</option>
-          </select>
+          <div class="field">
+            <label for="rfq-brand">Brand / Company</label>
+            <input id="rfq-brand" name="brand" type="text" placeholder="Brand or company name">
+          </div>
 
-          <label for="rfq-qty">Estimated Quantity (MOQ starts from 200 pcs)</label>
-          <input id="rfq-qty" name="quantity" type="number" min="200" placeholder="e.g. 500">
+          <div class="field">
+            <label for="rfq-industry">Industry</label>
+            <select id="rfq-industry" name="industry" required>
+              <option value="" disabled selected hidden>Select industry</option>
+              <option>Beauty / Skincare</option>
+              <option>Fashion / Lifestyle</option>
+              <option>Gourmet / Food</option>
+              <option>Corporate / Gift</option>
+              <option>Other</option>
+            </select>
+          </div>
 
-          <label for="rfq-message">Project Brief / Requirements</label>
-          <textarea id="rfq-message" name="message" rows="5" placeholder="Size, material, finishing, target launch date, or any notes" required></textarea>
+          <div class="field">
+            <label for="rfq-box">Packaging Type</label>
+            <select id="rfq-box" name="boxType" required>
+              <option value="" disabled selected hidden>Select packaging type</option>
+              <option>Rigid / Hardbox</option>
+              <option>Hardbox with Insert</option>
+              <option>Custom Shape Hardbox</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="rfq-qty">Estimated Quantity (MOQ starts from 200 pcs)</label>
+            <input id="rfq-qty" name="quantity" type="number" min="200" placeholder="e.g. 500">
+          </div>
+
+          <div class="field">
+            <label for="rfq-message">Project Brief / Requirements</label>
+            <textarea
+              id="rfq-message"
+              name="message"
+              rows="5"
+              placeholder="Size, material, finishing, target launch date, or any notes"
+              required></textarea>
+          </div>
 
           <div class="form-actions">
             <button type="submit" class="btn btn-submit">Request Quote</button>
-           
           </div>
 
-          <p class="hero-trust">Typical response within 24 hours • Consultation is free</p>
+          <p class="hero-trust">
+            Typical response within 24 hours • Consultation is free
+          </p>
+
         </form>
 
-        <aside class="card">
+        <!-- RIGHT: WHAT HAPPENS NEXT -->
+        <aside class="card rfq-info">
           <h3>What Happens Next?</h3>
-          <ol style="color:var(--muted); line-height:1.9; padding-left:18px">
+
+          <ol class="rfq-steps">
             <li>Our team reviews your requirements</li>
             <li>Material & structure recommendation</li>
             <li>Cost estimation & lead time</li>
             <li>Sampling & production planning</li>
           </ol>
 
-          <div style="margin-top:18px">
-            <h4>Why Brands Choose deartbox</h4>
-            <ul style="color:var(--muted); line-height:1.8; padding-left:18px">
-              <li>Low MOQ & scalable production</li>
-              <li>Premium finishing capability</li>
-              <li>Strict quality control</li>
-              <li>Clear communication & timeline</li>
-            </ul>
-          </div>
+          <hr>
+
+          <h4>Why Brands Choose deartbox</h4>
+          <ul class="rfq-benefits">
+            <li>Low MOQ & scalable production</li>
+            <li>Premium finishing capability</li>
+            <li>Strict quality control</li>
+            <li>Clear communication & timeline</li>
+          </ul>
         </aside>
+
       </div>
     </section>
+
 
     <section id="contact" class="container">
       <h2 class="section-title">Contact Us</h2>
@@ -1836,37 +1907,46 @@
       })();
 
       // Form Handler dengan analytics
-      window.handleRFQ = function(e) {
+            window.handleRfq = function (e) {
         e.preventDefault();
 
         const form = e.target;
-        const data = {
-          name: form.name.value.trim(),
-          email: form.email.value.trim(),
-          brand: form.brand.value.trim(),
-          industry: form.industry.value,
-          boxType: form.boxType.value,
-          quantity: form.quantity.value,
-          message: form.message.value.trim()
-        };
+        if (form.dataset.submitted) return;
+        form.dataset.submitted = 'true';
 
-        if (!data.name || !data.email || !data.industry || !data.boxType || !data.message) {
-          alert('Please complete all required fields.');
-          return;
-        }
+        const data = new FormData(form);
 
-        // Track form submission
+        const msg = `
+      Halo deartbox,
+      Saya ingin request quotation:
+
+      Nama: ${data.get('name')}
+      Email: ${data.get('email')}
+      Brand: ${data.get('brand')}
+      Industry: ${data.get('industry')}
+      Box: ${data.get('boxType')}
+      Qty: ${data.get('quantity')}
+      Brief: ${data.get('message')}
+        `;
+
+        const waUrl =
+          'https://wa.me/628195181427?text=' + encodeURIComponent(msg);
+
         if (typeof gtag !== 'undefined') {
           gtag('event', 'form_submit', {
             event_category: 'Lead',
-            event_label: 'RFQ Form'
+            event_label: 'RFQ WhatsApp'
           });
         }
 
-        console.log('RFQ submitted:', data);
-        alert('Thank you! Your RFQ has been submitted.\nOur team will contact you within 24 hours.');
-        form.reset();
+        window.open(waUrl, '_blank');
+
+        setTimeout(() => {
+          form.reset();
+          delete form.dataset.submitted;
+        }, 3000);
       };
+
 
       // Track outbound link clicks
       document.querySelectorAll('a[href^="http"]').forEach(function(link) {
@@ -1904,43 +1984,8 @@
           });
         }
       });
-
-      // Performance monitoring
-      window.addEventListener('load', function() {
-        if (typeof gtag !== 'undefined' && window.performance) {
-          const perfData = window.performance.timing;
-          const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-          
-          gtag('event', 'timing_complete', {
-            name: 'page_load',
-            value: pageLoadTime,
-            event_category: 'Performance'
-          });
-        }
-                function handleRFQ(e) {
-          e.preventDefault();
-          const form = e.target;
-          const data = new FormData(form);
-
-          const msg = `
-        Halo deartbox,
-        Saya ingin request quotation:
-
-        Nama: ${data.get('name')}
-        Brand: ${data.get('brand')}
-        Industry: ${data.get('industry')}
-        Box: ${data.get('boxType')}
-        Qty: ${data.get('quantity')}
-        Brief: ${data.get('message')}
-          `;
-
-          window.open(
-            'https://wa.me/628195181427?text=' + encodeURIComponent(msg),
-            '_blank'
-          );
-        }
-      });
-    })();
+    })
+  ();    
   </script>
   <button id="backToTop" aria-label="Back to top">
    <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -1964,6 +2009,9 @@
       behavior: 'smooth'
     });
   });
+
+
+
 </script>
 </body>
 </html>
