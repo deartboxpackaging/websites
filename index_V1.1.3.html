@@ -529,6 +529,12 @@
       font-size: 13px;
     }
 
+    .process-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
     .process-list {
       display: grid;
       grid-template-columns: repeat(3,1fr);
@@ -1511,10 +1517,9 @@
           src="assets/images/process/flow.webp" 
           alt="Packaging manufacturing process flow"
           loading="lazy"
-          width="400"
-          height="650"
-          decoding="async"
-          style="width:100%; max-width:1100px; margin-bottom:24px; border-radius:12px; box-shadow:0 12px 36px rgba(0,0,0,0.4);">
+          width="auto"
+          height="auto"
+          decoding="async">
       <div class="process-list" role="list">
         <div class="process-step card" role="listitem">
           <h4>1. Discovery & Brief</h4>
