@@ -44,24 +44,27 @@
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
   <meta name="msapplication-TileColor" content="#000000">
  
-  
+  <!-- Tambahkan di <head> -->
+  <link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin>
+  <meta http-equiv="Cache-Control" content="public, max-age=31536000">
+
   <!-- 5. CRITICAL INLINE CSS (UI/UX ASLI LU) -->
   <style>
-    /* ================ THEME / VARIABLES ================ */
+        /* ================ THEME / VARIABLES ================ */
     :root {
       --bg: #000000;
-      --card: #0f0f10;
+      --card: #0a0a0b;
       --muted: #9aa0a6;
       --accent: #e63946;
       --accent-2: #a4161a;
       --glass: rgba(255,255,255,0.04);
-      --radius-lg: 16px;
-      --radius-md: 8px;
-      --gap: clamp(12px, 2.6vw, 32px);
-      --max-width: 1200px;
-      --container-pad: clamp(24px, 6vw, 40px);
-      --page-edge: 24px;
-      --shadow-lg: 0 20px 50px rgba(0,0,0,0.6);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --gap: clamp(14px, 2.8vw, 36px);
+      --max-width: 1240px;
+      --container-pad: clamp(24px, 6vw, 48px);
+      --shadow-lg: 0 24px 60px rgba(0,0,0,0.7);
+      --shadow-md: 0 12px 32px rgba(0,0,0,0.5);
       --ease: cubic-bezier(.16,.84,.44,1);
       --ease-premium: cubic-bezier(.22,.61,.36,1);
     }
@@ -70,19 +73,16 @@
     * { box-sizing: border-box; }
     
     html, body { height: 100%; }
-    
     html { scroll-behavior: smooth; }
     
     body {
       margin: 0;
-      font-family: 'Gramatika', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      font-family: 'Gramatika', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       background: var(--bg);
       color: #fff;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       line-height: 1.65;
-      -webkit-text-size-adjust: 100%;
-      -ms-overflow-style: scrollbar;
       font-size: 15px;
     }
     
@@ -91,19 +91,11 @@
       touch-action: none;
     }
     
-    a { color: inherit; }
-    
+    a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
-    
-    h1, h2, h3, h4 { letter-spacing: -0.02em; margin: 0; }
-    
-    h2 { line-height: 1.1; }
-    
-    h3 { line-height: 1.25; }
-    
+    h1, h2, h3, h4 { letter-spacing: -0.02em; margin: 0; line-height: 1.2; }
     p { line-height: 1.75; margin: 0; }
-    
-    ul { margin: 0; }
+    ul { margin: 0; padding: 0; }
     
     .container {
       max-width: var(--max-width);
@@ -111,20 +103,20 @@
       padding: 0 var(--container-pad);
     }
 
-    /* ================ HEADER ================ */
+    /* ================ HEADER - MODERN ================ */
     header {
       position: sticky;
       top: 0;
       z-index: 60;
-      backdrop-filter: blur(6px);
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
-      border-bottom: 1px solid rgba(255,255,255,0.03);
+      backdrop-filter: blur(12px) saturate(180%);
+      background: rgba(0,0,0,0.85);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
-        /* Buat container khusus untuk header */
+
     .header-container {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 0 15px; /* Lebih kecil dari container biasa */
+      padding: 0 clamp(20px, 5vw, 48px);
     }
     
     .nav {
@@ -132,1390 +124,915 @@
       align-items: center;
       justify-content: space-between;
       gap: var(--gap);
-      padding: 18px 0;
+      padding: 16px 0;
     }
 
     .logo {
       display: flex;
       gap: 12px;
       align-items: center;
-      text-decoration: none;
-      color: #fff;
+      transition: transform .2s ease;
+    }
+
+    .logo:hover {
+      transform: translateY(-1px);
     }
     
     .logo-mark {
-      width: 44px;
-      height: 44px;
-      border-radius: 8px;
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
       display: grid;
       place-items: center;
-      
-      font-weight: 700;
-      font-size: 18px;
-      box-shadow: 0 6px 20px rgba(166,22,26,0.24);
       flex-shrink: 0;
     }
-        /* Untuk SVG logo */
-    .logo-mark svg {
+
+    .logo-mark img {
       width: 100%;
       height: 100%;
       display: block;
     }
     
     .logo-text h1 {
-      font-size: 16px;
-      letter-spacing: 0.2px;
-      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: -0.01em;
+      font-weight: 800;
     }
     
     .logo-text p {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-    }
-    
-    .nav-links a {
-      color: #ddd;
-      text-decoration: none;
-      font-size: 14px;
-      padding: 8px;
-      border-radius: 8px;
-      transition: color .18s var(--ease), transform .18s var(--ease);
-      position: relative;
-    }
-    
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 8px;
-      right: 8px;
-      bottom: 4px;
-      height: 2px;
-      background: currentColor;
-      opacity: 0;
-      transform: scaleX(0.6);
-      transition: opacity .18s var(--ease), transform .18s var(--ease);
-    }
-    
-    .nav-links a:focus,
-    .nav-links a:hover {
-      color: #fff;
-      transform: translateY(-2px);
-    }
-    
-    .nav-links a:hover::after {
-      opacity: .35;
-      transform: scaleX(1);
-    }
-
-    .cta {
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      color: #fff;
-      padding: 10px 18px;
-      border-radius: 12px;
-      font-weight: 700;
-      text-decoration: none;
-      font-size: 13px;
-      box-shadow: 0 10px 30px rgba(230,57,70,0.14);
-      transition: transform .18s var(--ease), box-shadow .18s var(--ease);
-    }
-    
-    .cta:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 40px rgba(230,57,70,0.18);
-    }
-    
-    .cta:active {
-      transform: translateY(1px) scale(0.98);
-    }
-
-    .mobile-toggle {
-      display: none;
-      background: transparent;
-      border: 0;
-      color: #fff;
-      font-size: 22px;
-      padding: 8px;
-      border-radius: 8px;
-      position: relative;
-      z-index: 130;
-      cursor: pointer;
-    }
-
-    /* ================ HERO ================ */
-    .hero {
-      padding: clamp(36px, 8vw, 100px) 0;
-      display: grid;
-      grid-template-columns: 1fr 520px;
-      gap: clamp(20px, 6vw, 64px);
-      align-items: center;
-      overflow: visible;
-    }
-
-    .hero-left h1 {
-      font-size: clamp(28px, 4.6vw, 48px);
-      line-height: 1.05;
-      margin: 0 0 18px 0;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-    
-    .hero-left h2 {
-      margin-bottom: 22px;
-    }
-    
-    .hero-left p {
-      color: var(--muted);
-      margin: 0 0 30px 0;
-      font-size: 15px;
-      max-width: 64ch;
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 14px;
-    }
-    
-    .hero-ctas a:hover {
-      transform: translateY(-4px);
-    }
-
-    .btn-primary {
-      background: #e63946;
-      color: #fff;
-      padding: 12px 20px;
-      border-radius: 999px;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: transform .25s var(--ease-premium), box-shadow .25s var(--ease-premium);
-    }
-    
-    .btn-primary:hover {
-      transform: translateY(-2px);
-    }
-    
-    .btn-primary:active {
-      transform: translateY(1px) scale(0.98);
-    }
-    
-    .btn-ghost {
-      border: 1px solid rgb(255, 255, 255);
-      background: transparent;
-      padding: 12px 20px;
-      border-radius: 999px;
-      color: #fff;
-      font-weight: 700;
-      text-decoration: none;
-      transition: background .18s var(--ease);
-    }
-    
-    .btn-ghost:hover {
-      background: rgba(255,255,255,0.05);
-    }
-    
-    .btn-primary2 {
-      background: rgb(37, 211, 102);
-      color: rgb(255, 255, 255);
-      padding: 12px 20px;
-      border-radius: 999px;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: transform .25s var(--ease-premium), box-shadow .25s var(--ease-premium);
-    }
-    
-    .btn-primary2:hover {
-      transform: translateY(-2px);
-    }
-    
-    .btn-primary2:active {
-      transform: translateY(1px) scale(0.98);
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 18px;
-      margin-top: 18px;
-    }
-    
-    .stat {
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .stat strong {
-      font-size: 16px;
-    }
-    
-    .stat span {
-      font-size: 12px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .hero-trust {
-      margin-top: 20px;
-      font-size: 12.5px;
+      font-size: 11.5px;
       color: var(--muted);
       letter-spacing: 0.02em;
     }
 
-    .hero-right {
+    .nav-links {
       display: flex;
-      gap: 18px;
-      flex-direction: column;
-      align-items: stretch;
-    }
-    
-    .mockup {
-      border-radius: var(--radius-lg);
-      padding: 36px;
-      background: linear-gradient(135deg, rgba(230,57,70,0.08), rgba(166,22,26,0.06));
-      box-shadow: var(--shadow-lg);
-      min-height: 240px;
-      display: grid;
-      place-items: center;
-      text-align: center;
-    }
-    
-    .mockup img {
-      background: #0a0a0a;
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 12px;
-      object-fit: cover;
-      transition: transform .35s var(--ease-premium);
-    }
-    
-    .mockup:hover img {
-      transform: scale(1.04);
-    }
-    
-    .feature-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 6px;
-    }
-    
-    .feature {
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border: 1px solid rgba(255,255,255,0.03);
-      padding: 14px;
-      border-radius: 12px;
-      transition: transform .35s var(--ease-premium), box-shadow .35s var(--ease-premium);
-    }
-    
-    .feature:hover {
-      transform: translateY(-4px);
-    }
-    
-    .feature h4 {
-      margin: 0 0 6px 0;
-      font-size: 14px;
-    }
-    
-    .feature p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* ================ SECTIONS ================ */
-    section {
-      padding-top: clamp(56px, 10vw, 96px);
-      padding-bottom: clamp(56px, 10vw, 96px);
-      border-top: 1px solid rgba(255,255,255,0.02);
-    }
-    
-    h2.section-title,
-    .section-title {
-      font-size: 22px;
-      margin: 0 0 32px 0;
-      font-weight: 700;
-      letter-spacing: -.02em;
-      margin-top: 20px;
-    }
-    
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-
-    .card {
-      background: var(--card);
-      border-radius: 12px;
-      padding: 24px;
-      border: 1px solid rgba(255,255,255,0.03);
-      transition: transform .35s var(--ease-premium), box-shadow .35s var(--ease-premium);
-    }
-    
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 24px 50px rgba(0,0,0,0.55);
-    }
-    
-    .card h3 {
-      margin-bottom: 12px;
-    }
-    
-    .card p,
-    .card li {
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .service-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 10px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      font-size: 22px;
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    
-    .portfolio-item {
-      border-radius: 14px;
-      overflow: hidden;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      transition: transform .35s var(--ease-premium), box-shadow .35s var(--ease-premium);
-      border: 1px solid rgba(255,255,255,0.02);
-      will-change: transform;
-    }
-    
-    .portfolio-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-    }
-    
-    .portfolio-media {
-      aspect-ratio: 16/10;
-      background: linear-gradient(135deg, #8b0000, #000);
-    }
-    
-    .portfolio-body {
-      padding: 16px;
-    }
-    
-    .portfolio-body h3 {
-      margin: 0 0 8px 0;
-      font-size: 15px;
-    }
-    
-    .portfolio-body p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .process-image img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .process-list {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 20px;
-    }
-    
-    .process-step {
-      background: transparent;
-      padding: 8px;
-      border-radius: 10px;
-    }
-
-    /* ================ CONTACT & FORMS ================ */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 360px;
-      gap: 28px;
-      align-items: start;
-    }
-    
-    .contact-direct {
-      max-width: 720px;
-    }
-    
-    .contact-copy h3 {
-      margin-top: 0;
-      font-size: 20px;
-    }
-    
-    .contact-copy p {
-      color: var(--muted);
-      max-width: 60ch;
-      margin-bottom: 18px;
-    }
-    
-    .contact-points {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 24px 0;
-    }
-    
-    .contact-points li {
-      margin-bottom: 10px;
-      font-size: 14px;
-      color: #ddd;
-    }
-    
-    .contact-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
-    }
-    
-    form label {
-      display: block;
-      font-size: 13px;
-      margin-top: 14px;
-      margin-bottom: 6px;
-      color: var(--muted);
-    }
-    
-    form input,
-    form textarea,
-    form select {
-      width: 100%;
-      padding: 12px 14px;
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.04);
-      background: transparent;
-      color: #fff;
-      font-family: inherit;
-      font-size: 14px;
-      transition: box-shadow .12s var(--ease), border-color .12s var(--ease), transform .18s var(--ease);
-      margin-bottom: 6px;
-      line-height: 1.4;
-    }
-    
-    form input:focus,
-    form textarea:focus,
-    form select:focus {
-      outline: none;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.6);
-      border-color: rgba(230,57,70,0.6);
-      transform: translateY(-1px);
-    }
-    
-    select {
-      appearance: none;
-      -webkit-appearance: none;
-      border-radius: 10px;
-      background-image: linear-gradient(45deg, transparent 50%, #666 50%),
-                        linear-gradient(135deg, #666 50%, transparent 50%);
-      background-position: calc(100% - 18px) calc(50% - 3px),
-                           calc(100% - 12px) calc(50% - 3px);
-      background-size: 6px 6px;
-      background-repeat: no-repeat;
-      padding-right: 40px;
-    }
-    
-    select::-ms-expand {
-      display: none;
-    }
-    
-    select option {
-      background: #000;
-      color: #fff;
-    }
-    
-    .form-actions {
-      display: flex;
-      gap: 12px;
-      margin-top: 16px;
-      flex-wrap: wrap;
-    }
-    
-    .btn {
-      display: inline-flex;
+      gap: 8px;
       align-items: center;
-      gap: 10px;
-      padding: 10px 16px;
-      border-radius: 10px;
-      border: 0;
-      cursor: pointer;
-      font-weight: 700;
-      transition: transform .25s var(--ease-premium), box-shadow .25s var(--ease-premium);
     }
     
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-    
-    .btn-submit {
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      color: #fff;
-    }
-    
-    .btn-submit:active {
-      transform: translateY(1px) scale(0.98);
-    }
-    
-    .btn-download {
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.04);
-      color: #fff;
-    }
-
-    /* ================ FOOTER ================ */
-    footer {
-      padding: 30px 0;
-      border-top: 1px solid rgba(255,255,255,0.02);
-    }
-    
-    .footer-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-    
-    .footer-row p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-    }
-    
-    .footer-row a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 13px;
-      transition: color .2s;
-    }
-    
-    .footer-row a:hover {
-      color: #fff;
-    }
-
-    /* ================ MOBILE MENU ================ */
-    .offcanvas {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      height: 100vh;
-      width: 84%;
-      max-width: 340px;
-      background: linear-gradient(180deg, #070707, #000);
-      box-shadow: -30px 0 60px rgba(0,0,0,0.6);
-      z-index: 120;
-      transition: right .35s var(--ease-premium);
-      padding: 72px 20px 24px;
-      will-change: transform;
-    }
-    
-    .offcanvas.open {
-      right: 0 !important;
-      visibility: visible;
-    }
-    
-    .offcanvas .close {
-      position: absolute;
-      right: 14px;
-      top: 12px;
-      background: transparent;
-      border: 0;
-      color: #fff;
-      font-size: 28px;
-      cursor: pointer;
-    }
-    
-    .offcanvas nav {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-    
-    .offcanvas nav a {
-      opacity: 0;
-      transform: translateX(12px);
-      transition: opacity .35s var(--ease-premium), 
-                  transform .35s var(--ease-premium),
-                  background .18s var(--ease);
-      padding: 10px 12px;
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 14px;
       border-radius: 8px;
-    }
-    
-    .offcanvas.open nav a {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    
-    .offcanvas.open nav a:nth-child(1) { transition-delay: .06s; }
-    .offcanvas.open nav a:nth-child(2) { transition-delay: .12s; }
-    .offcanvas.open nav a:nth-child(3) { transition-delay: .18s; }
-    .offcanvas.open nav a:nth-child(4) { transition-delay: .24s; }
-    .offcanvas.open nav a:nth-child(5) { transition-delay: .30s; }
-    
-    .offcanvas nav a:hover {
-      background: rgba(255,255,255,0.04);
-      transform: translateX(4px);
-    }
-    
-    .offcanvas nav a:active {
-      transform: scale(0.97);
-    }
-    
-    .overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .2s;
-      z-index: 110;
-    }
-    
-    .overlay.show {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    /* ================ STICKY CTA ================ */
-    .sticky-cta {
-      position: fixed;
-      left: 50%;
-      bottom: -80px;
-      transform: translateX(-50%);
-      z-index: 140;
-      padding: 14px 22px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 14px;
-      text-decoration: none;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      color: #fff;
-      box-shadow: 0 16px 40px rgba(230,57,70,0.28);
-      transition: bottom .35s var(--ease-premium);
-      will-change: transform;
-    }
-    
-    .sticky-cta.show {
-      bottom: calc(18px + env(safe-area-inset-bottom));
-    }
-
-    /* ================ LEGAL POPUP ================ */
-    .legal-popup {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.65);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 999;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .25s ease;
-    }
-    
-    .legal-popup.show {
-      opacity: 1;
-      pointer-events: auto;
-      display: grid;
-      place-items: center;
-    }
-    
-    .legal-popup-inner {
-      background: var(--card);
-      border-radius: 16px;
-      padding: 28px;
-      max-width: 720px;
-      width: calc(100% - 32px);
-      max-height: 80vh;
-      overflow-y: auto;
-      box-shadow: 0 30px 80px rgba(0,0,0,.7);
+      transition: all .2s ease;
       position: relative;
     }
     
-    .legal-popup-inner h3 {
-      margin-top: 0;
-      margin-bottom: 14px;
-    }
-    
-    .legal-popup-inner p,
-    .legal-popup-inner li {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-    
-    .legal-close {
-      position: absolute;
-      top: 12px;
-      right: 14px;
-      background: none;
-      border: none;
+    .nav-links a:hover {
+      background: rgb(255, 255, 255, 0.05);
       color: #fff;
-      font-size: 26px;
-      cursor: pointer;
     }
 
-    /* ================ CTA SECTION FIX ================ */
-    section[aria-label="Call to Action"] .card,
-    section[aria-label="Call to Action"] .card:hover {
-      transform: none !important;
-      box-shadow: none !important;
-      transition: none !important;
-      border: none !important;
-      background: transparent;
-    }
-    
-    section[aria-label="Call to Action"] a,
-    section[aria-label="Call to Action"] a:hover {
-      transform: none !important;
-      box-shadow: none !important;
-    }
-
-    /* ================ ANIMATIONS ================ */
-    @media (prefers-reduced-motion: no-preference) {
-      [data-reveal] {
-        opacity: 0;
-        transform: translateY(14px);
-        transition: opacity .6s var(--ease-premium), transform .6s var(--ease-premium);
-      }
-      
-      [data-reveal].is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* ================ RESPONSIVE ================ */
-    @media (max-width: 980px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding-top: clamp(30px, 10vw, 64px);
-      }
-      
-      .mobile-toggle {
-        display: inline-block;
-      }
-      
-      .nav-links {
-        display: none;
-      }
-      
-      .hero-right {
-        order: 2;
-      }
-      
-      .hero-left {
-        order: 1;
-      }
-      
-      .grid-3 {
-        grid-template-columns: 1fr;
-      }
-      
-      .portfolio-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-      
-      .process-list {
-        grid-template-columns: 1fr;
-      }
-      
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .contact-actions {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-    
-    @media (min-width: 981px) {
-      .sticky-cta {
-        display: none;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .container {
-        padding-left: 28px;
-        padding-right: 28px;
-      }
-      
-      .hero-left h2,
-      .hero-left h1 {
-        font-size: 30px;
-        line-height: 1.15;
-      }
-      
-      .hero-left p {
-        font-size: 14.5px;
-        line-height: 1.75;
-      }
-      
-      .section-title {
-        font-size: 20px;
-        margin-bottom: 24px;
-      }
-      
-      .card {
-        padding: 20px;
-      }
-      
-      .hero-trust {
-        font-size: 12px;
-      }
-    }
-    
-    @media (max-width: 520px) {
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .logo-text h1 {
-        font-size: 15px;
-      }
-      
-      .logo-mark {
-        width: 40px;
-        height: 40px;
-      }
-      
-      .hero-left p {
-        font-size: 14px;
-      }
-      
-      .container {
-        padding-left: 24px;
-        padding-right: 24px;
-      }
-      
-      .feature-cards {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* ================ REDUCE MOTION ================ */
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        transition: none !important;
-        animation: none !important;
-      }
-    }
-    .footer-social {
-      display: flex;
-      gap: 18px;
-      margin-top: 3px;
-    }
-
-    .footer-social a {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: rgba(255,255,255,0.06);
-      transition: all .25s ease;
-    }
-
-    .footer-social svg {
-      width: 18px;
-      height: 18px;
-      fill: #ffffff;
-      opacity: .85;
-    }
-
-    .footer-social a:hover {
-      background: rgba(201,162,77,0.2); /* gold accent */
-      transform: translateY(-2px);
-    }
-
-    .footer-social a:hover svg {
-      opacity: 1;
-    }
-    #backToTop {
-    position: fixed;
-    right: 24px;
-    bottom: 160px; /* aman dari sticky WA */
-    width: 52px;
-    height: 52px;
-    border-radius: 999px;
-    border: none;
-    cursor: pointer;
-    z-index: 120;
-
-    background: linear-gradient(
-      135deg,
-      rgba(255,255,255,0.12),
-      rgba(255,255,255,0.04)
-    );
-    backdrop-filter: blur(6px);
-
-    display: grid;
-    place-items: center;
-
-    opacity: 0;
-    transform: translateY(12px) scale(0.96);
-    pointer-events: none;
-
-    transition:
-      opacity .35s var(--ease-premium),
-      transform .35s var(--ease-premium),
-      background .25s ease;
-  }
-
-  #backToTop svg {
-    width: 20px;
-    height: 20px;
-    fill: #fff;
-    opacity: .85;
-    transition: transform .25s ease, opacity .25s ease;
-  }
-
-  /* muncul */
-  #backToTop.show {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    pointer-events: auto;
-  }
-
-  /* hover – ga kaku */
-  #backToTop:hover {
-    background: linear-gradient(
-      135deg,
-      rgba(230,57,70,0.35),
-      rgba(166,22,26,0.25)
-    );
-  }
-
-  #backToTop:hover svg {
-    transform: translateY(-3px);
-    opacity: 1;
-  }
-
-  /* klik feel */
-  #backToTop:active {
-    transform: scale(0.92);
-  }
-
-.field {
-  display: flex;
-  flex-direction: column;
+    .cta-nav {
+  background: linear-gradient(135deg, #e63946, #a4161a) !important;
+  color: #fff !important;
+  padding: 9px 16px !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  display: inline-flex !important;
+  align-items: center;
   gap: 6px;
+  box-shadow: 0 4px 14px rgba(230,57,70,0.3);
+  transition: all .25s ease !important;
 }
 
-.rfq-grid {
-  display:grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  align-items: start;
-  gap: 24px;
+.cta-nav:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(230,57,70,0.4) !important;
+  background: rgba(255,255,255,0.05) !important;
 }
 
-.rfq-info {
-  position: sticky;
-  top: 120px;
+.mobile-toggle {
+  display: none;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #fff;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all .2s ease;
 }
 
-.rfq-steps,
-.rfq-benefits {
+.mobile-toggle:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+/* ================ HERO MODERN ================ */
+.hero-modern {
+  padding: clamp(48px, 10vw, 120px) 0 clamp(64px, 12vw, 140px);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(32px, 8vw, 80px);
+  align-items: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, rgba(230,57,70,0.12), rgba(166,22,26,0.08));
+  border: 1px solid rgba(230,57,70,0.25);
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 24px;
+}
+
+.hero-badge svg {
+  color: #e63946;
+  flex-shrink: 0;
+}
+
+.hero-title {
+  font-size: clamp(32px, 5.5vw, 56px);
+  font-weight: 900;
+  line-height: 1.08;
+  margin: 0 0 20px;
+  letter-spacing: -0.03em;
+}
+
+.hero-highlight {
+  background: linear-gradient(135deg, #e63946, #a4161a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-description {
+  font-size: clamp(15px, 1.8vw, 17px);
+  line-height: 1.75;
   color: var(--muted);
-  line-height: 1.8;
-  padding-left: 18px;
+  margin: 0 0 32px;
+  max-width: 62ch;
 }
 
-.rfq-info hr {
-  border: none;
-  border-top: 1px solid rgba(255,255,255,.06);
-  margin: 20px 0;
-}
-
-/* Mobile */
-@media (max-width: 980px) {
-  .rfq-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .rfq-info {
-    position: static;
-  }
-}
-/* =========================================
-   SERVICES — FIGMA GRADE UPGRADE
-   (SAFE: no color / no layout break)
-========================================= */
-
-/* grid consistency */
-#services .grid-3 {
-  gap: 32px;
-}
-
-/* service card base */
-#services .card {
+.hero-ctas {
   display: flex;
-  flex-direction: column;
   gap: 14px;
-  padding: 24px;
-  border-radius: 16px;
-  transition:
-    transform .35s var(--ease-premium),
-    box-shadow .35s var(--ease-premium);
+  flex-wrap: wrap;
+  margin-bottom: 32px;
 }
 
-/* hover feel (premium, subtle) */
-#services .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 28px 60px rgba(0,0,0,.55);
-}
-
-/* image treatment */
-#services .card img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #e63946, #a4161a);
+  color: #fff;
   border-radius: 12px;
-  margin-bottom: 6px;
-  background: #0a0a0a;
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: 0 12px 28px rgba(230,57,70,0.3);
+  transition: all .3s var(--ease-premium);
 }
 
-/* title hierarchy */
-#services .card h3 {
-  font-size: 17px;
-  line-height: 1.25;
-  margin: 6px 0 4px;
-  letter-spacing: -0.01em;
+.btn-hero-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(230,57,70,0.4);
 }
 
-/* body copy */
-#services .card p {
-  font-size: 14.5px;
-  line-height: 1.7;
-  color: var(--muted);
-  margin: 0;
+.btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all .3s ease;
 }
 
-/* mobile polish */
-@media (max-width: 768px) {
-  #services .grid-3 {
-    gap: 24px;
-  }
-
-  #services .card {
-    padding: 20px;
-  }
-}
-/* =========================================
-   MANUFACTURING CAPABILITIES — BIG GRID
-========================================= */
-
-section .grid-3 {
-  gap: 32px;
+.btn-hero-secondary:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-2px);
 }
 
-/* bigger manufacturing card */
-section .grid-3 .card {
-  padding: 26px;
-  border-radius: 18px;
+.hero-trust-bar {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 28px;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.8);
+}
+
+.trust-item svg {
+  color: #e63946;
+  flex-shrink: 0;
+}
+
+.hero-stats-modern {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.stat-modern {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  transition: transform .3s ease, box-shadow .3s ease;
+  gap: 4px;
 }
 
-/* subtle industrial hover */
-section .grid-3 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 26px 54px rgba(0,0,0,.55);
+.stat-modern strong {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
 }
 
-/* manufacturing image dominance */
-section .grid-3 .card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 14px;
-  background: #0a0a0a;
+.stat-modern span {
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
-/* manufacturing title */
-section .grid-3 .card h3 {
-  font-size: 16.5px;
-  letter-spacing: -0.01em;
-  margin-top: 4px;
+.stat-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.1);
 }
 
-/* manufacturing body text */
-section .grid-3 .card p {
-  font-size: 14.5px;
-  line-height: 1.7;
+/* Hero Visual */
+.hero-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* tablet */
-@media (max-width: 1024px) {
-  section .grid-3 .card img {
-    height: 200px;
-  }
-}
-
-/* mobile */
-@media (max-width: 768px) {
-  section .grid-3 {
-    gap: 24px;
-  }
-
-  section .grid-3 .card {
-    padding: 22px;
-  }
-
-  section .grid-3 .card img {
-    height: 180px;
-  }
-}
-/* =========================================
-   PRO MOVE — MANUFACTURING IMAGE DOMINANCE
-========================================= */
-
-.manufacturing .card img {
-  height: 260px;
-}
-/* =========================================
-   PORTFOLIO PRO — HARD READABILITY FIX
-========================================= */
-
-.portfolio-pro .portfolio-item {
+.hero-image-main {
   position: relative;
-}
-
-/* Image container */
-.portfolio-pro .portfolio-media {
-  position: relative;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  border-radius: 18px;
-}
-/* Bikin kartu lebih tinggi (tidak ceper) */
-.portfolio-pro .portfolio-media {
-  aspect-ratio: 4 / 5;   /* sebelumnya kemungkinan 16/10 atau auto */
+  box-shadow: var(--shadow-lg);
 }
 
-/* Image */
-.portfolio-pro .portfolio-media img {
+.hero-image-main img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
+  transition: transform .6s var(--ease-premium);
 }
 
-/* Strong gradient lock */
-.portfolio-pro .portfolio-media::after {
-  content: "";
+.hero-image-main:hover img {
+  transform: scale(1.05);
+}
+
+.image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,.92) 0%,
-    rgba(0,0,0,.75) 35%,
-    rgba(0,0,0,.35) 60%,
-    rgba(0,0,0,0) 85%
-  );
+  background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.3));
   pointer-events: none;
 }
 
-/* TEXT PANEL */
-.portfolio-pro .portfolio-body {
+.hero-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.feature-mini {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  gap: 14px;
+  transition: all .3s ease;
+}
+
+.feature-mini:hover {
+  transform: translateY(-3px);
+  border-color: rgba(230,57,70,0.2);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(230,57,70,0.12), rgba(166,22,26,0.08));
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: #e63946;
+}
+
+.feature-mini h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.feature-mini p {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ================ SECTION HEADER MODERN ================ */
+.section-header-modern {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px;
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, rgba(230,57,70,0.12), rgba(166,22,26,0.08));
+  border: 1px solid rgba(230,57,70,0.2);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #e63946;
+  margin-bottom: 16px;
+  margin-top: 22px;
+}
+
+.section-header-modern h2 {
+  font-size: clamp(26px, 4.2vw, 40px);
+  font-weight: 800;
+  margin: 0 0 14px;
+  letter-spacing: -0.02em;
+}
+
+.section-header-modern p {
+  font-size: 15.5px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* ================ SECTIONS BASE ================ */
+section {
+  padding-top: clamp(64px, 12vw, 120px);
+  padding-bottom: clamp(64px, 12vw, 120px);
+}
+
+/* ================ SERVICES MODERN ================ */
+.services-modern {
+  background: linear-gradient(180deg, transparent, rgba(230,57,70,0.02), transparent);
+}
+
+.services-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.service-card-modern {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all .35s var(--ease-premium);
+}
+
+.service-card-modern:hover {
+  transform: translateY(-6px);
+  border-color: rgba(230,57,70,0.2);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-image {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s var(--ease-premium);
+}
+
+.service-card-modern:hover .service-image img {
+  transform: scale(1.08);
+}
+
+.service-badge-overlay {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 6px 12px;
+  background: linear-gradient(135deg, #e63946, #a4161a);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.service-content {
+  padding: 24px;
+}
+
+.service-content h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.service-content p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.service-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.service-features li {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  padding-left: 20px;
+  position: relative;
+}
+
+.service-features li::before {
+  content: "→";
   position: absolute;
   left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 20px 22px;
-  z-index: 2;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,.85),
-    rgba(0,0,0,0)
-  );
+  color: #e63946;
+  font-weight: 700;
 }
 
-/* TITLE — SUPER CLEAR */
-.portfolio-pro .portfolio-body h3 {
-  margin: 0 0 6px;
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #ffffff;
-  line-height: 1.3;
+/* ================ MANUFACTURING MODERN ================ */
+.manufacturing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
 }
 
-/* SUBTITLE */
-.portfolio-pro .portfolio-body span {
-  display: block;
-  font-size: .9rem;
-  color: rgba(255,255,255,.9);
-  margin-bottom: 6px;
-}
-
-/* DESCRIPTION */
-.portfolio-pro .portfolio-body p {
-  margin: 0;
-  font-size: .85rem;
-  line-height: 1.5;
-  color: rgba(255,255,255,.7);
-  max-width: 46ch;
-}
-
-/* Desktop hover polish */
-@media (hover:hover) {
-  .portfolio-pro .portfolio-item:hover img {
-    transform: scale(1.03);
-  }
-}
-
-/* Mobile safety */
-@media (max-width: 768px) {
-  .portfolio-pro .portfolio-body {
-    padding: 16px 16px;
-  }
-
-  .portfolio-pro .portfolio-body h3 {
-    font-size: 1.05rem;
-  }
-}
-/* Mobile: jangan terlalu tinggi */
-@media (max-width: 768px) {
-  .portfolio-pro .portfolio-media {
-    aspect-ratio: 3 / 4;
-    min-height: 340px;
-  }
-}
-/* =========================================
-   INDUSTRY SOLUTION — PRO VISUAL UPGRADE
-========================================= */
-
-.industry-card {
-  position: relative;
-  height: 370px;
+.manufacturing-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 20px 50px rgba(99, 3, 3, 0.418);
+  transition: all .35s var(--ease-premium);
 }
 
-/* Image */
-.industry-card img {
-  position:absolute;
+.manufacturing-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(230,57,70,0.2);
+  box-shadow: var(--shadow-lg);
+}
+
+.manufacturing-image {
+  position: relative;
+  aspect-ratio: 16/11;
+  overflow: hidden;
+}
+
+.manufacturing-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s var(--ease-premium);
+}
+
+.manufacturing-card:hover .manufacturing-image img {
+  transform: scale(1.08);
+}
+
+.manufacturing-content {
+  padding: 24px;
+  position: relative;
+}
+
+.manufacturing-number {
+  position: absolute;
+  top: -20px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e63946, #a4161a);
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 8px 20px rgba(230,57,70,0.3);
+}
+
+.manufacturing-content h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.manufacturing-content p {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ================ PORTFOLIO MODERN ================ */
+.portfolio-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.portfolio-item-modern {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all .35s var(--ease-premium);
+}
+
+.portfolio-item-modern:hover {
+  transform: translateY(-8px);
+  border-color: rgba(230,57,70,0.2);
+  box-shadow: var(--shadow-lg);
+}
+
+.portfolio-media-modern {
+  position: relative;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+}
+
+.portfolio-media-modern img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s var(--ease-premium);
+}
+
+.portfolio-item-modern:hover .portfolio-media-modern img {
+  transform: scale(1.06);
+}
+
+.portfolio-body-modern {
+  padding: 22px;
+}
+
+.portfolio-body-modern h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.portfolio-category {
+  display: inline-block;
+  font-size: 11.5px;
+  color: #e63946;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.portfolio-body-modern p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ================ INDUSTRY MODERN ================ */
+.industry-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.industry-card-modern {
+  position: relative;
+  height: 380px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: all .35s ease;
+}
+
+.industry-card-modern:hover {
+  transform: translateY(-6px);
+  border-color: rgba(230,57,70,0.2);
+  box-shadow: var(--shadow-lg);
+}
+
+.industry-card-modern img {
+  position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .3s ease;
+  transition: transform .5s var(--ease-premium);
 }
 
-/* Overlay */
-.industry-card::after {
+.industry-card-modern:hover img {
+  transform: scale(1.08);
+}
+
+.industry-card-modern::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0,0,0,.15),
-    rgba(0,0,0,.9)
-  );
-  opacity: .7;
+  background: linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.85));
   z-index: 1;
   transition: opacity .3s ease;
 }
 
-/* Content */
-.industry-content {
+.industry-card-modern:hover::after {
+  opacity: 0.95;
+}
+
+.industry-content-modern {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 22px;
+  padding: 26px;
   z-index: 2;
 }
 
-/* Title */
-.industry-content h3 {
-  font-size: 18px;
+.industry-content-modern h3 {
+  font-size: 19px;
   font-weight: 700;
-  margin-bottom: 10px;
-  color: #fff;
+  margin: 0 0 12px;
 }
 
-/* List styling */
-.industry-content ul {
+.industry-content-modern ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   opacity: 0;
   transform: translateY(10px);
   transition: all .35s ease;
 }
 
-.industry-content li {
-  font-size: 13.5px;
-  color: rgba(255,255,255,.85);
-  margin-bottom: 6px;
-  padding-left: 18px;
-  position: relative;
-}
-
-.industry-content li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: rgba(255,255,255,.6);
-}
-
-/* Hover effect */
-.industry-card:hover img {
-  transform: scale(1.05);
-}
-
-.industry-card:hover::after {
-  opacity: .9;
-}
-
-.industry-card:hover ul {
+.industry-card-modern:hover ul {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Mobile safety */
+.industry-content-modern li {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.85);
+  padding-left: 20px;
+  position: relative;
+}
+
+.industry-content-modern li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #e63946;
+  font-weight: 700;
+}
+
+/* ================ CTA SECTION MODERN ================ */
+.cta-section-modern {
+  background: linear-gradient(135deg, rgba(230,57,70,0.08), rgba(166,22,26,0.04));
+  border-radius: 24px;
+  padding: 72px var(--container-pad);
+}
+
+.cta-card-large {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(230,57,70,0.15);
+  border-radius: 20px;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.cta-large-content h2 {
+  font-size: clamp(24px, 3.8vw, 34px);
+  font-weight: 800;
+  margin: 0 0 14px;
+  letter-spacing: -0.02em;
+}
+
+.cta-large-content p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0 0 28px;
+  max-width: 54ch;
+}
+
+.cta-large-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-cta-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: #25d366;
+  color: #fff;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: 0 12px 28px rgba(37,211,102,0.3);
+  transition: all .3s ease;
+}
+
+.btn-cta-wa:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(37,211,102,0.4);
+}
+
+.btn-cta-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #fff;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all .3s ease;
+}
+
+.btn-cta-outline:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-2px);
+}
+
+.cta-large-visual {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.cta-stat-card {
+  background: linear-gradient(135deg, rgba(230,57,70,0.15), rgba(166,22,26,0.1));
+  border: 1px solid rgba(230,57,70,0.2);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+}
+
+.cta-stat-number {
+  font-size: 24px;
+  font-weight: 800;
+  color: #e63946;
+  line-height: 1;
+}
+
+.cta-stat-label {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ================ MOBILE RESPONSIVE ================ */
+@media (max-width: 1024px) {
+  .services-grid-modern,
+  .manufacturing-grid,
+  .portfolio-grid-modern,
+  .industry-grid-modern {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cta-card-large {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .cta-large-visual {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 980px) {
-  .industry-card {
-    height: 280px;
+  .hero-modern {
+    grid-template-columns: 1fr;
+    padding-top: clamp(40px, 8vw, 80px);
   }
-  
-  .industry-content ul {
-    opacity: 1;
-    transform: none;
+
+  .hero-visual {
+    order: 2;
+  }
+
+  .hero-content {
+    order: 1;
+  }
+
+  .mobile-toggle {
+    display: inline-block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .feature-mini {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .feature-icon {
+    margin: 0 auto;
   }
 }
-/* =========================================
-   PROSES PRODUKSI - FIGMA REDESIGN
-========================================= */
 
+@media (max-width: 768px) {
+  .services-grid-modern,
+  .manufacturing-grid,
+  .portfolio-grid-modern,
+  .industry-grid-modern {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-trust-bar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-stats-modern {
+    flex-wrap: wrap;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .cta-large-visual {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-card-large {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-ctas a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cta-large-buttons {
+    flex-direction: column;
+  }
+
+  .cta-large-buttons a {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* =========================================
+   PROSES PRODUKSI - CSS
+========================================= */
 .process-hero {
   text-align: center;
   max-width: 720px;
@@ -1556,7 +1073,7 @@ section .grid-3 .card p {
   border-radius: 20px;
   overflow: hidden;
   background: linear-gradient(135deg, rgba(230,57,70,0.04), rgba(166,22,26,0.02));
-  padding: 28px;
+  padding: 12px;
 }
 
 .process-visual img {
@@ -1565,7 +1082,6 @@ section .grid-3 .card p {
   border-radius: 12px;
 }
 
-/* Timeline */
 .process-timeline {
   max-width: 820px;
   margin: 64px auto 48px;
@@ -1633,873 +1149,937 @@ section .grid-3 .card p {
   margin: 0 0 12px;
 }
 
-/* =========================================
-   PROSES PRODUKSI - FIGMA REDESIGN
-========================================= */
-
-.process-hero {
-  text-align: center;
-  max-width: 720px;
-  margin: 0 auto 56px;
-}
-
-.process-badge {
-  display: inline-block;
-  padding: 6px 14px;
-  background: linear-gradient(135deg, rgba(230,57,70,0.12), rgba(166,22,26,0.08));
-  border: 1px solid rgba(230,57,70,0.2);
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: #e63946;
-  margin-bottom: 16px;
-}
-
-.process-title {
-  font-size: clamp(26px, 4vw, 38px);
-  font-weight: 800;
-  line-height: 1.15;
-  margin: 0 0 14px;
-  letter-spacing: -0.02em;
-}
-
-.process-subtitle {
-  font-size: 16px;
-  color: var(--muted);
-  line-height: 1.6;
-  margin: 0;
-}
-
-.process-visual {
-  margin: 48px 0;
-  border-radius: 20px;
-  overflow: hidden;
-  background: linear-gradient(135deg, rgba(230,57,70,0.04), rgba(166,22,26,0.02));
-  padding: 28px;
-}
-
-.process-visual img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-}
-
-/* Timeline */
-.process-timeline {
-  max-width: 820px;
-  margin: 64px auto 48px;
-}
-
-.timeline-item {
-  display: grid;
-  grid-template-columns: 40px 1fr;
-  gap: 24px;
-  margin-bottom: 48px;
-  position: relative;
-}
-
-.timeline-marker {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.timeline-dot {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #e63946, #a4161a);
-  box-shadow: 0 0 0 4px rgba(230,57,70,0.15);
-  flex-shrink: 0;
-}
-
-.timeline-line {
-  width: 2px;
-  flex: 1;
-  background: linear-gradient(180deg, rgba(230,57,70,0.3), transparent);
-  margin-top: 8px;
-}
-
-.timeline-item:last-child .timeline-line {
-  display: none;
-}
-
-.timeline-content {
-  padding-bottom: 12px;
-}
-
-.timeline-label {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #e63946;
-  margin-bottom: 8px;
-}
-
-.timeline-content h3 {
-  font-size: 19px;
-  font-weight: 700;
-  margin: 0 0 10px;
-  letter-spacing: -0.01em;
-}
-
-.timeline-content p {
-  font-size: 14.5px;
-  line-height: 1.7;
-  color: var(--muted);
-  margin: 0 0 12px;
-}
-
-/* =========================================
-   PROSES PRODUKSI - FIGMA REDESIGN
-========================================= */
-
-.process-hero {
-  text-align: center;
-  max-width: 720px;
-  margin: 0 auto 56px;
-}
-
-.process-badge {
-  display: inline-block;
-  padding: 6px 14px;
-  background: linear-gradient(135deg, rgba(230,57,70,0.12), rgba(166,22,26,0.08));
-  border: 1px solid rgba(230,57,70,0.2);
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: #e63946;
-  margin-bottom: 16px;
-}
-
-.process-title {
-  font-size: clamp(26px, 4vw, 38px);
-  font-weight: 800;
-  line-height: 1.15;
-  margin: 0 0 14px;
-  letter-spacing: -0.02em;
-}
-
-.process-subtitle {
-  font-size: 16px;
-  color: var(--muted);
-  line-height: 1.6;
-  margin: 0;
-}
-
-.process-visual {
-  margin: 48px 0;
-  border-radius: 20px;
-  overflow: hidden;
-  background: linear-gradient(135deg, rgba(230,57,70,0.04), rgba(166,22,26,0.02));
-  padding: 28px;
-}
-
-.process-visual img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-}
-
-/* Timeline */
-.process-timeline {
-  max-width: 820px;
-  margin: 64px auto 48px;
-}
-
-.timeline-item {
-  display: grid;
-  grid-template-columns: 40px 1fr;
-  gap: 24px;
-  margin-bottom: 48px;
-  position: relative;
-}
-
-.timeline-marker {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.timeline-dot {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #e63946, #a4161a);
-  box-shadow: 0 0 0 4px rgba(230,57,70,0.15);
-  flex-shrink: 0;
-}
-
-.timeline-line {
-  width: 2px;
-  flex: 1;
-  background: linear-gradient(180deg, rgba(230,57,70,0.3), transparent);
-  margin-top: 8px;
-}
-
-.timeline-item:last-child .timeline-line {
-  display: none;
-}
-
-.timeline-content {
-  padding-bottom: 12px;
-}
-
-.timeline-label {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #e63946;
-  margin-bottom: 8px;
-}
-
-.timeline-content h3 {
-  font-size: 19px;
-  font-weight: 700;
-  margin: 0 0 10px;
-  letter-spacing: -0.01em;
-}
-
-.timeline-content p {
-  font-size: 14.5px;
-  line-height: 1.7;
-  color: var(--muted);
-  margin: 0 0 12px;
-}
 .timeline-meta {
-display: flex;
-gap: 16px;
-flex-wrap: wrap;
-font-size: 13px;
-color: rgba(255,255,255,0.6);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
 }
+
 .timeline-meta span {
-display: flex;
-align-items: center;
-gap: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
-/* Process CTA Card */
+
 .process-cta-card {
-background: linear-gradient(135deg, rgba(230,57,70,0.08), rgba(166,22,26,0.05));
-border: 1px solid rgba(230,57,70,0.15);
-border-radius: 18px;
-padding: 32px;
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 24px;
-margin-top: 56px;
+  background: linear-gradient(135deg, rgba(230,57,70,0.08), rgba(166,22,26,0.05));
+  border: 1px solid rgba(230,57,70,0.15);
+  border-radius: 18px;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 56px;
 }
+
 .process-cta-content h3 {
-font-size: 21px;
-margin: 0 0 6px;
+  font-size: 21px;
+  margin: 0 0 6px;
 }
+
 .process-cta-content p {
-font-size: 14px;
-color: var(--muted);
-margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
 }
+
 .btn-arrow {
-padding: 12px 24px;
-background: linear-gradient(90deg, #e63946, #a4161a);
-color: #fff;
-text-decoration: none;
-border-radius: 999px;
-font-weight: 700;
-font-size: 14px;
-white-space: nowrap;
-transition: transform .25s ease, box-shadow .25s ease;
+  padding: 12px 24px;
+  background: linear-gradient(90deg, #e63946, #a4161a);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: transform .25s ease, box-shadow .25s ease;
 }
+
 .btn-arrow:hover {
-transform: translateY(-2px);
-box-shadow: 0 12px 30px rgba(230,57,70,0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(230,57,70,0.3);
 }
+
 /* =========================================
-RFQ SECTION - REDESIGN
+   RFQ SECTION - CSS
 ========================================= */
 .rfq-section {
-background: linear-gradient(180deg, transparent, rgba(230,57,70,0.02));
-border-radius: 24px;
-padding: 72px var(--container-pad);
+  background: linear-gradient(180deg, transparent, rgba(230,57,70,0.02));
+  border-radius: 24px;
+  padding: 72px var(--container-pad);
 }
+
 .rfq-header {
-text-align: center;
-max-width: 680px;
-margin: 0 auto 48px;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px;
 }
+
 .rfq-badge {
-display: inline-block;
-padding: 6px 14px;
-background: linear-gradient(135deg, rgba(230,57,70,0.12), rgba(166,22,26,0.08));
-border: 1px solid rgba(230,57,70,0.2);
-border-radius: 999px;
-font-size: 12px;
-font-weight: 600;
-letter-spacing: 0.05em;
-text-transform: uppercase;
-color: #e63946;
-margin-bottom: 16px;
+  display: inline-block;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, rgba(230,57,70,0.12), rgba(166,22,26,0.08));
+  border: 1px solid rgba(230,57,70,0.2);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #e63946;
+  margin-bottom: 16px;
 }
+
 .rfq-header h2 {
-font-size: clamp(26px, 4vw, 36px);
-font-weight: 800;
-margin: 0 0 12px;
-letter-spacing: -0.02em;
+  font-size: clamp(26px, 4vw, 36px);
+  font-weight: 800;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
 }
+
 .rfq-header p {
-font-size: 15px;
-color: var(--muted);
-margin: 0;
-line-height: 1.6;
+  font-size: 15px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.6;
 }
+
 .rfq-layout {
-display: grid;
-grid-template-columns: 1.4fr 1fr;
-gap: 36px;
-align-items: start;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 36px;
+  align-items: start;
 }
-/* Form Styling */
+
 .rfq-form {
-background: rgba(255,255,255,0.02);
-border: 1px solid rgba(255,255,255,0.04);
-border-radius: 20px;
-padding: 32px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 20px;
+  padding: 32px;
 }
+
 .form-row {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 16px;
-margin-bottom: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
 }
+
 .form-field {
-display: flex;
-flex-direction: column;
-gap: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
+
 .form-field label {
-font-size: 13px;
-font-weight: 600;
-color: rgba(255,255,255,0.85);
-margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  margin: 0;
 }
+
 .form-field input,
 .form-field select,
 .form-field textarea {
-padding: 12px 16px;
-background: rgba(255,255,255,0.03);
-border: 1px solid rgba(255,255,255,0.08);
-border-radius: 10px;
-color: #fff;
-font-size: 14px;
-font-family: inherit;
-transition: all .2s ease;
-margin: 0;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all .2s ease;
+  margin: 0;
 }
+
 .form-field input:focus,
 .form-field select:focus,
 .form-field textarea:focus {
-outline: none;
-border-color: rgba(230,57,70,0.5);
-background: rgba(255,255,255,0.04);
-box-shadow: 0 0 0 3px rgba(230,57,70,0.1);
+  outline: none;
+  border-color: rgba(230,57,70,0.5);
+  background: rgba(255,255,255,0.04);
+  box-shadow: 0 0 0 3px rgba(230,57,70,0.1);
 }
+
 .form-field input::placeholder,
 .form-field textarea::placeholder {
-color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.35);
 }
+
 .form-field textarea {
-resize: vertical;
-min-height: 120px;
-line-height: 1.6;
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
 }
+
+.form-field select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #666 50%),
+                    linear-gradient(135deg, #666 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(50% - 3px),
+                       calc(100% - 12px) calc(50% - 3px);
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 40px;
+}
+
 .btn-submit-modern {
-width: 100%;
-padding: 14px 24px;
-background: linear-gradient(90deg, #e63946, #a4161a);
-color: #fff;
-border: none;
-border-radius: 12px;
-font-weight: 700;
-font-size: 15px;
-cursor: pointer;
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 10px;
-margin-top: 20px;
-transition: all .25s ease;
+  width: 100%;
+  padding: 14px 24px;
+  background: linear-gradient(90deg, #e63946, #a4161a);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  transition: all .25s ease;
 }
+
 .btn-submit-modern:hover {
-transform: translateY(-2px);
-box-shadow: 0 16px 36px rgba(230,57,70,0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(230,57,70,0.3);
 }
+
 .btn-submit-modern:active {
-transform: translateY(0);
+  transform: translateY(0);
 }
+
 .form-note {
-text-align: center;
-font-size: 12px;
-color: var(--muted);
-margin: 16px 0 0;
-line-height: 1.6;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  margin: 16px 0 0;
+  line-height: 1.6;
 }
-/* Sidebar */
+
 .rfq-sidebar {
-display: flex;
-flex-direction: column;
-gap: 20px;
-position: sticky;
-top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: sticky;
+  top: 120px;
 }
+
 .rfq-info-card {
-background: rgba(255,255,255,0.02);
-border: 1px solid rgba(255,255,255,0.04);
-border-radius: 16px;
-padding: 24px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 16px;
+  padding: 24px;
 }
+
 .rfq-info-card h4 {
-font-size: 16px;
-font-weight: 700;
-margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 16px;
 }
+
 .rfq-steps-list {
-list-style: none;
-padding: 0;
-margin: 0;
-display: flex;
-flex-direction: column;
-gap: 18px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
+
 .rfq-steps-list li {
-display: flex;
-gap: 14px;
-align-items: flex-start;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
 }
+
 .step-number {
-width: 28px;
-height: 28px;
-border-radius: 50%;
-background: linear-gradient(135deg, rgba(230,57,70,0.15), rgba(166,22,26,0.1));
-display: grid;
-place-items: center;
-font-size: 13px;
-font-weight: 700;
-color: #e63946;
-flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(230,57,70,0.15), rgba(166,22,26,0.1));
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #e63946;
+  flex-shrink: 0;
 }
+
 .rfq-steps-list strong {
-display: block;
-font-size: 14px;
-margin-bottom: 3px;
+  display: block;
+  font-size: 14px;
+  margin-bottom: 3px;
 }
+
 .rfq-steps-list p {
-font-size: 13px;
-color: var(--muted);
-margin: 0;
-line-height: 1.5;
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
 }
+
 .rfq-benefits-list {
-list-style: none;
-padding: 0;
-margin: 0;
-display: flex;
-flex-direction: column;
-gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
+
 .rfq-benefits-list li {
-display: flex;
-gap: 12px;
-align-items: flex-start;
-font-size: 13.5px;
-line-height: 1.6;
-color: rgba(255,255,255,0.8);
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.8);
 }
+
 .rfq-benefits-list svg {
-flex-shrink: 0;
-color: #e63946;
-margin-top: 2px;
+  flex-shrink: 0;
+  color: #e63946;
+  margin-top: 2px;
 }
+
 .rfq-contact-quick {
-background: linear-gradient(135deg, rgba(230,57,70,0.08), rgba(166,22,26,0.05));
-border: 1px solid rgba(230,57,70,0.15);
-border-radius: 14px;
-padding: 20px;
-text-align: center;
+  background: linear-gradient(135deg, rgba(230,57,70,0.08), rgba(166,22,26,0.05));
+  border: 1px solid rgba(230,57,70,0.15);
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
 }
+
 .rfq-contact-quick p {
-font-size: 13px;
-color: var(--muted);
-margin: 0 0 12px;
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 12px;
 }
+
 .btn-wa-compact {
-display: inline-flex;
-align-items: center;
-gap: 8px;
-padding: 10px 18px;
-background: #25d366;
-color: #fff;
-text-decoration: none;
-border-radius: 999px;
-font-size: 13px;
-font-weight: 700;
-transition: transform .2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: #25d366;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: transform .2s ease;
 }
+
 .btn-wa-compact:hover {
-transform: translateY(-2px);
+  transform: translateY(-2px);
 }
+
 /* =========================================
-CONTACT SECTION - REDESIGN
+   CONTACT SECTION - CSS
 ========================================= */
 .contact-section {
-background: linear-gradient(180deg, rgba(230,57,70,0.02), transparent);
-border-radius: 24px;
-padding: 72px var(--container-pad);
+  background: linear-gradient(180deg, rgba(230,57,70,0.02), transparent);
+  border-radius: 24px;
+  padding: 72px var(--container-pad);
 }
+
 .contact-header {
-text-align: center;
-max-width: 680px;
-margin: 0 auto 56px;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 56px;
 }
+
 .contact-badge {
-display: inline-block;
-padding: 6px 14px;
-background: linear-gradient(135deg, rgba(230,57,70,0.12), rgba(166,22,26,0.08));
-border: 1px solid rgba(230,57,70,0.2);
-border-radius: 999px;
-font-size: 12px;
-font-weight: 600;
-letter-spacing: 0.05em;
-text-transform: uppercase;
-color: #e63946;
-margin-bottom: 16px;
+  display: inline-block;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, rgba(230,57,70,0.12), rgba(166,22,26,0.08));
+  border: 1px solid rgba(230,57,70,0.2);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #e63946;
+  margin-bottom: 16px;
 }
+
 .contact-header h2 {
-font-size: clamp(26px, 4vw, 36px);
-font-weight: 800;
-margin: 0 0 12px;
-letter-spacing: -0.02em;
+  font-size: clamp(26px, 4vw, 36px);
+  font-weight: 800;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
 }
+
 .contact-header p {
-font-size: 15px;
-color: var(--muted);
-margin: 0;
-line-height: 1.6;
+  font-size: 15px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.6;
 }
+
 .contact-grid-modern {
-display: grid;
-grid-template-columns: 1.5fr 1fr;
-gap: 32px;
-align-items: start;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 32px;
+  align-items: start;
 }
+
 .contact-cards {
-display: flex;
-flex-direction: column;
-gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
+
 .contact-card {
-background: rgba(255,255,255,0.02);
-border: 1px solid rgba(255,255,255,0.04);
-border-radius: 16px;
-padding: 24px;
-display: flex;
-gap: 18px;
-transition: all .3s ease;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  gap: 18px;
+  transition: all .3s ease;
 }
+
 .contact-card:hover {
-transform: translateY(-4px);
-border-color: rgba(230,57,70,0.2);
-box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  transform: translateY(-4px);
+  border-color: rgba(230,57,70,0.2);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
+
 .contact-card-icon {
-width: 48px;
-height: 48px;
-border-radius: 12px;
-background: linear-gradient(135deg, rgba(230,57,70,0.12), rgba(166,22,26,0.08));
-display: grid;
-place-items: center;
-flex-shrink: 0;
-color: #e63946;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(230,57,70,0.12), rgba(166,22,26,0.08));
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: #e63946;
 }
+
 .contact-card-content h4 {
-font-size: 16px;
-font-weight: 700;
-margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 8px;
 }
+
 .contact-card-content p {
-font-size: 13.5px;
-color: var(--muted);
-line-height: 1.6;
-margin: 0 0 10px;
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0 0 10px;
 }
+
 .contact-link {
-font-size: 14px;
-color: #e63946;
-text-decoration: none;
-font-weight: 600;
-display: inline-flex;
-align-items: center;
-gap: 6px;
-transition: transform .2s ease;
+  font-size: 14px;
+  color: #e63946;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform .2s ease;
 }
+
 .contact-link:hover {
-transform: translateX(4px);
+  transform: translateX(4px);
 }
-/* Sidebar */
+
 .contact-sidebar-modern {
-display: flex;
-flex-direction: column;
-gap: 20px;
-position: sticky;
-top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: sticky;
+  top: 120px;
 }
+
 .quick-facts-card {
-background: rgba(255,255,255,0.02);
-border: 1px solid rgba(255,255,255,0.04);
-border-radius: 16px;
-padding: 24px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 16px;
+  padding: 24px;
 }
+
 .quick-facts-card h4 {
-font-size: 16px;
-font-weight: 700;
-margin: 0 0 18px;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 18px;
 }
+
 .fact-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
+
 .fact-item {
-display: flex;
-flex-direction: column;
-gap: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
+
 .fact-label {
-font-size: 12px;
-color: var(--muted);
-text-transform: uppercase;
-letter-spacing: 0.05em;
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
+
 .fact-value {
-font-size: 18px;
-font-weight: 700;
-color: #e63946;
+  font-size: 18px;
+  font-weight: 700;
+  color: #e63946;
 }
+
 .cta-card-modern {
-background: linear-gradient(135deg, rgba(230,57,70,0.08), rgba(166,22,26,0.05));
-border: 1px solid rgba(230,57,70,0.15);
-border-radius: 16px;
-padding: 24px;
-text-align: center;
+  background: linear-gradient(135deg, rgba(230,57,70,0.08), rgba(166,22,26,0.05));
+  border: 1px solid rgba(230,57,70,0.15);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
 }
+
 .cta-card-modern h4 {
-font-size: 17px;
-font-weight: 700;
-margin: 0 0 8px;
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 8px;
 }
+
 .cta-card-modern p {
-font-size: 13.5px;
-color: var(--muted);
-margin: 0 0 18px;
+  font-size: 13.5px;
+  color: var(--muted);
+  margin: 0 0 18px;
 }
+
 .cta-buttons-stack {
-display: flex;
-flex-direction: column;
-gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
+
 .btn-primary-modern {
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 10px;
-padding: 12px 20px;
-background: #25d366;
-color: #fff;
-text-decoration: none;
-border-radius: 10px;
-font-weight: 700;
-font-size: 14px;
-transition: transform .2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: #25d366;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: transform .2s ease;
 }
+
 .btn-primary-modern:hover {
-transform: translateY(-2px);
+  transform: translateY(-2px);
 }
+
 .btn-secondary-modern {
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 12px 20px;
-background: rgba(255,255,255,0.04);
-border: 1px solid rgba(255,255,255,0.08);
-color: #fff;
-text-decoration: none;
-border-radius: 10px;
-font-weight: 700;
-font-size: 14px;
-transition: all .2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: all .2s ease;
 }
+
 .btn-secondary-modern:hover {
-background: rgba(255,255,255,0.06);
-transform: translateY(-2px);
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-2px);
 }
+
 /* =========================================
-FOOTER - MODERN REDESIGN
+   FOOTER - CSS
 ========================================= */
 .footer-modern {
-background: linear-gradient(180deg, transparent, rgba(0,0,0,0.6));
-border-top: 1px solid rgba(255,255,255,0.04);
-padding: 64px 0 28px;
-margin-top: 80px;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.6));
+  border-top: 1px solid rgba(255,255,255,0.04);
+  padding: 64px 0 28px;
+  margin-top: 80px;
 }
+
 .footer-main {
-display: grid;
-grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-gap: 48px;
-margin-bottom: 48px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 48px;
+  margin-bottom: 48px;
 }
+
 .footer-brand {
-max-width: 320px;
+  max-width: 320px;
 }
+
 .footer-logo {
-display: flex;
-align-items: center;
-gap: 12px;
-margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
 }
+
 .footer-logo img {
-width: 40px;
-height: 40px;
-border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
 }
+
 .footer-logo strong {
-display: block;
-font-size: 17px;
-font-weight: 700;
+  display: block;
+  font-size: 17px;
+  font-weight: 700;
 }
+
 .footer-logo span {
-display: block;
-font-size: 12px;
-color: var(--muted);
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
 }
+
 .footer-tagline {
-font-size: 13.5px;
-line-height: 1.7;
-color: var(--muted);
-margin: 0 0 20px;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0 0 20px;
 }
+
 .footer-social-modern {
-display: flex;
-gap: 10px;
+  display: flex;
+  gap: 10px;
 }
+
 .footer-social-modern a {
-width: 38px;
-height: 38px;
-border-radius: 10px;
-background: rgba(255,255,255,0.04);
-display: grid;
-place-items: center;
-transition: all .2s ease;
-color: rgba(255,255,255,0.6);
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+  display: grid;
+  place-items: center;
+  transition: all .2s ease;
+  color: rgba(255,255,255,0.6);
 }
+
 .footer-social-modern a:hover {
-background: rgba(230,57,70,0.15);
-color: #e63946;
-transform: translateY(-2px);
+  background: rgba(230,57,70,0.15);
+  color: #e63946;
+  transform: translateY(-2px);
 }
+
 .footer-social-modern svg {
-width: 18px;
-height: 18px;
+  width: 18px;
+  height: 18px;
 }
+
 .footer-column h4 {
-font-size: 14px;
-font-weight: 700;
-margin: 0 0 16px;
-text-transform: uppercase;
-letter-spacing: 0.05em;
-color: rgba(255,255,255,0.9);
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.9);
 }
+
 .footer-column ul {
-list-style: none;
-padding: 0;
-margin: 0;
-display: flex;
-flex-direction: column;
-gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
+
 .footer-column ul li a {
-font-size: 13.5px;
-color: var(--muted);
-text-decoration: none;
-transition: color .2s ease;
-display: inline-block;
+  font-size: 13.5px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: all .2s ease;
+  display: inline-block;
 }
+
 .footer-column ul li a:hover {
-color: #fff;
-transform: translateX(4px);
+  color: #fff;
+  transform: translateX(4px);
 }
+
 .footer-contact-list {
-display: flex;
-flex-direction: column;
-gap: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
+
 .footer-contact-list li {
-display: flex;
-gap: 10px;
-align-items: flex-start;
-font-size: 13px;
-color: var(--muted);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 13px;
+  color: var(--muted);
 }
+
 .footer-contact-list svg {
-flex-shrink: 0;
-margin-top: 2px;
-color: rgba(230,57,70,0.6);
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: rgba(230,57,70,0.6);
 }
+
 .footer-bottom {
-border-top: 1px solid rgba(255,255,255,0.04);
-padding-top: 24px;
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 20px;
-flex-wrap: wrap;
+  border-top: 1px solid rgba(255,255,255,0.04);
+  padding-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
 }
+
 .footer-bottom p {
-font-size: 13px;
-color: var(--muted);
-margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
 }
+
 .footer-badges {
-display: flex;
-gap: 12px;
-align-items: center;
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
+
 .footer-badge-item {
-font-size: 12px;
-color: rgba(255,255,255,0.5);
-padding: 6px 12px;
-background: rgba(255,255,255,0.02);
-border-radius: 6px;
-border: 1px solid rgba(255,255,255,0.04);
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  padding: 6px 12px;
+  background: rgba(255,255,255,0.02);
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* =========================================
+   MOBILE MENU, STICKY CTA, BACK TO TOP
+========================================= */
+.offcanvas {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100vh;
+  width: 84%;
+  max-width: 340px;
+  background: linear-gradient(180deg, #070707, #000);
+  box-shadow: -30px 0 60px rgba(0,0,0,0.6);
+  z-index: 120;
+  transition: right .35s var(--ease-premium);
+  padding: 72px 20px 24px;
+  will-change: transform;
+}
+
+.offcanvas.open {
+  right: 0 !important;
+}
+
+.offcanvas .close {
+  position: absolute;
+  right: 14px;
+  top: 12px;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.offcanvas nav {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.offcanvas nav a {
+  opacity: 0;
+  transform: translateX(12px);
+  transition: opacity .35s var(--ease-premium), 
+              transform .35s var(--ease-premium),
+              background .18s ease;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.offcanvas.open nav a {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.offcanvas.open nav a:nth-child(1) { transition-delay: .06s; }
+.offcanvas.open nav a:nth-child(2) { transition-delay: .12s; }
+.offcanvas.open nav a:nth-child(3) { transition-delay: .18s; }
+.offcanvas.open nav a:nth-child(4) { transition-delay: .24s; }
+.offcanvas.open nav a:nth-child(5) { transition-delay: .30s; }
+
+.offcanvas nav a:hover {
+  background: rgba(255,255,255,0.04);
+  transform: translateX(4px);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+  z-index: 110;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sticky-cta {
+  position: fixed;
+  left: 50%;
+  bottom: -80px;
+  transform: translateX(-50%);
+  z-index: 140;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #fff;
+  box-shadow: 0 16px 40px rgba(230,57,70,0.28);
+  transition: bottom .35s var(--ease-premium);
+  will-change: transform;
+}
+
+.sticky-cta.show {
+  bottom: calc(18px + env(safe-area-inset-bottom));
+}
+
+#backToTop {
+  position: fixed;
+  right: 24px;
+  bottom: 160px;
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  z-index: 120;
+  background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+  backdrop-filter: blur(6px);
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transform: translateY(12px) scale(0.96);
+  pointer-events: none;
+  transition: opacity .35s var(--ease-premium), transform .35s var(--ease-premium), background .25s ease;
+}
+
+#backToTop svg {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+  opacity: .85;
+  transition: transform .25s ease, opacity .25s ease;
+}
+
+#backToTop.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+#backToTop:hover {
+  background: linear-gradient(135deg, rgba(230,57,70,0.35), rgba(166,22,26,0.25));
+}
+
+#backToTop:hover svg {
+  transform: translateY(-3px);
+  opacity: 1;
+}
+
+#backToTop:active {
+  transform: scale(0.92);
+}
+
+.legal-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+
+.legal-popup.show {
+  opacity: 1;
+  pointer-events: auto;
+  display: grid;
+  place-items: center;
+}
+
+.legal-popup-inner {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 28px;
+  max-width: 720px;
+  width: calc(100% - 32px);
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 80px rgba(0,0,0,7);
+  position: relative;
+}
+.legal-popup-inner h3 {
+margin-top: 0;
+margin-bottom: 14px;
+}
+.legal-popup-inner p,
+.legal-popup-inner li {
+font-size: 14px;
+color: var(--muted);
+line-height: 1.7;
+}
+.legal-close {
+position: absolute;
+top: 12px;
+right: 14px;
+background: none;
+border: none;
+color: #fff;
+font-size: 26px;
+cursor: pointer;
 }
 /* =========================================
-RESPONSIVE - MOBILE OPTIMIZATION
+ANIMATIONS
+========================================= */
+@media (prefers-reduced-motion: no-preference) {
+[data-reveal] {
+opacity: 0;
+transform: translateY(14px);
+transition: opacity .6s var(--ease-premium), transform .6s var(--ease-premium);
+}
+[data-reveal].is-visible {
+opacity: 1;
+transform: translateY(0);
+}
+}
+/* =========================================
+RESPONSIVE - ADDITIONAL
 ========================================= */
 @media (max-width: 980px) {
-.process-cta-card {
-flex-direction: column;
-text-align: center;
-}
-.timeline-item {
-grid-template-columns: 32px 1fr;
-gap: 16px;
-}
 .rfq-layout,
 .contact-grid-modern {
 grid-template-columns: 1fr;
@@ -2519,13 +2099,16 @@ gap: 32px;
 grid-column: 1 / -1;
 max-width: 100%;
 }
+.process-cta-card {
+flex-direction: column;
+text-align: center;
 }
-@media (max-width: 640px) {
-.process-section,
-.rfq-section,
-.contact-section {
-padding: 56px var(--container-pad);
+.timeline-item {
+grid-template-columns: 32px 1fr;
+gap: 16px;
 }
+}
+@media (max-width: 768px) {
 .fact-grid {
 grid-template-columns: 1fr;
 }
@@ -2537,6 +2120,20 @@ flex-direction: column;
 text-align: center;
 }
 }
+@media (max-width: 520px) {
+.sticky-cta {
+display: none;
+}
+}
+@media (prefers-reduced-motion: reduce) {
+*,
+*::before,
+*::after {
+transition: none !important;
+animation: none !important;
+}
+}
+
   </style>
   
   <!-- 4. SECURITY HEADERS -->
@@ -2557,34 +2154,47 @@ text-align: center;
 </head>
 
 <body>
+  <!-- ============================================
+       HEADER - FIGMA GRADE REDESIGN
+  ============================================= -->
   <header>
     <div class="header-container">  
       <nav class="nav" aria-label="Main navigation">
-        <!--LOGO BARU DENGAN SVG-->
+        
         <a class="logo" href="#top">
           <div class="logo-mark" aria-hidden="true">
-           <!-- PAKE FILE LOGO LU -->
             <img src="assets/logo/deartbox-logo.svg" 
                 alt="deartbox Logo" 
                 width="44" 
                 height="44"
                 loading="lazy">
-         </div>
-            <div class="logo-text">
+          </div>
+          <div class="logo-text">
             <h1>deartbox Packaging</h1>
-            <p class="logo-title">Box Kamu, Misi Kami..!</p>
+            <p>Box Kamu, Misi Kami..!</p>
           </div>
         </a>
 
         <div class="nav-links">
           <a href="#services">Layanan</a>
           <a href="#portfolio">Portofolio</a>
-          <a href="#process">Proses Produksi</a>
+          <a href="#process">Proses</a>
           <a href="#contact">Kontak</a>
-          <a class="cta" href="#rfq">Request Quote</a>
+          <a class="cta-nav" href="#rfq">
+            <span>Mulai Project</span>
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path d="M1 8h14M9 2l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
         </div>
 
-        <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Open menu">☰</button>
+        <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Open menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
       </nav>
     </div>
   </header>
@@ -2595,306 +2205,515 @@ text-align: center;
     <nav>
       <a href="#services">Layanan</a>
       <a href="#portfolio">Portofolio</a>
-      <a href="#process">Proses Produksi</a>
+      <a href="#process">Proses</a>
       <a href="#contact">Kontak</a>
-      <a class="cta" href="#contact">Request Quote</a>
+      <a class="cta" href="#rfq">Mulai Project</a>
     </nav>
   </aside>
 
   <main>
-    <section class="hero container" id="top" data-reveal>
-      <div class="hero-left">
-        <h1>Produsen Hardbox Premium Custom untuk Brand yang Ingin Naik Kelas</h1>
-        <p>deartbox adalah mitra manufaktur hardbox premium untuk brand beauty, fashion, elektronik premium, dan giftset.
-        Kami memproduksi hardbox fully custom dengan material pilihan, finishing premium, dan quality control ketat
-        untuk meningkatkan nilai dan citra brand Anda.
+    <!-- ============================================
+         HERO SECTION - FIGMA REDESIGN
+    ============================================= -->
+    <section class="hero-modern container" id="top" data-reveal>
+      
+      <div class="hero-content">
+        
+        <div class="hero-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+          </svg>
+          <span>Trusted by 100+ Premium Brands</span>
+        </div>
+
+        <h1 class="hero-title">
+          Packaging Premium yang <span class="hero-highlight">Meningkatkan Nilai</span> Brand Anda
+        </h1>
+
+        <p class="hero-description">
+          Kami memproduksi hardbox custom premium untuk brand beauty, fashion, elektronik, dan giftset. 
+          Dengan material pilihan, finishing eksklusif, dan quality control ketat—kami membantu brand Anda 
+          tampil lebih profesional dan premium di mata customer.
         </p>
 
         <div class="hero-ctas">
-          <a class="btn-primary" href="#rfq">Hubungi Kami</a>
-          <a class="btn-ghost" href="#portfolio">Lihat Portfolio</a>
+          <a class="btn-hero-primary" href="#rfq">
+            <span>Mulai Konsultasi Gratis</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a class="btn-hero-secondary" href="#portfolio">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polygon points="10 8 16 12 10 16 10 8"/>
+            </svg>
+            <span>Lihat Portofolio</span>
+          </a>
         </div>
-        
-        <p class="hero-trust">Konsultasi gratis • MOQ Rendah • Respon cepat</p>
 
-        <div class="hero-stats" aria-hidden="true">
-          <div class="stat">
-            <strong>4 – 6 minggu</strong>
-            <span>Lead time</span>
+        <div class="hero-trust-bar">
+          <div class="trust-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <span>Konsultasi Gratis</span>
           </div>
-          <div class="stat">
-            <strong>200 pcs</strong>
-            <span>MOQ</span>
+          <div class="trust-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <span>MOQ Mulai 200 pcs</span>
+          </div>
+          <div class="trust-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <span>Respon dalam 24 Jam</span>
           </div>
         </div>
+
+        <div class="hero-stats-modern">
+          <div class="stat-modern">
+            <strong>4 — 6 Minggu</strong>
+            <span>Lead Time Produksi</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-modern">
+            <strong>200 pcs</strong>
+            <span>Minimum Order</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-modern">
+            <strong>50K+</strong>
+            <span>Kapasitas/Bulan</span>
+          </div>
+        </div>
+
       </div>
 
-      <aside class="hero-right">
-        <div class="mockup" role="img" aria-label="Mockup hardbox example">
-          <!-- 3. IMAGE OPTIMIZATION: WebP format -->
-                   <img 
-              src="assets/images/halamanutama/hardbox-hmns2.webp" 
-              alt="Hardbox premium custom produksi deartbox" 
-              loading="lazy"
-              width="520"
-              height="325"
-              decoding="async">
-                  </div>
+      <aside class="hero-visual">
+        <div class="hero-image-main">
+          <img 
+            src="assets/images/halamanutama/hardbox-hmns2.webp" 
+            alt="Hardbox premium custom produksi deartbox untuk brand Indonesia" 
+            loading="eager"
+            width="600"
+            height="400"
+            decoding="async">
+          <div class="image-overlay"></div>
+        </div>
 
-        <div class="feature-cards">
-          <div class="feature">
-            <h4>Special-Made Board</h4>
-            <p>Material paperboard diproduksi khusus untuk struktur kokoh dengan harga yang kompetitif.</p>
+        <div class="hero-features-grid">
+          <div class="feature-mini">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <line x1="9" y1="9" x2="15" y2="15"/>
+                <line x1="15" y1="9" x2="9" y2="15"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Special-Made Board</h4>
+              <p>Material paperboard khusus untuk struktur kokoh dan harga kompetitif</p>
+            </div>
           </div>
-          <div class="feature">
-            <h4>Finishing Premium</h4>
-            <p>Foil, emboss, deboss, soft-touch, dan spot UV untuk meningkatkan perceived value.</p>
+
+          <div class="feature-mini">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Finishing Premium</h4>
+              <p>Foil, emboss, deboss, soft-touch untuk meningkatkan perceived value</p>
+            </div>
           </div>
         </div>
       </aside>
+
     </section>
 
-    <section id="services" class="container" data-reveal>
-      <h2 class="section-title">Layanan Packaging Custom Premium</h2>
-      <div class="grid-3">
-        <div class="card">
-             <img 
+    <!-- ============================================
+         SERVICES - FIGMA REDESIGN
+    ============================================= -->
+    <section id="services" class="container services-modern" data-reveal>
+      
+      <div class="section-header-modern">
+        <div class="section-badge">Apa yang Kami Tawarkan</div>
+        <h2>Layanan Packaging Custom Premium</h2>
+        <p>Solusi packaging end-to-end untuk brand yang ingin tampil profesional dan premium</p>
+      </div>
+
+      <div class="services-grid-modern">
+        
+        <div class="service-card-modern">
+          <div class="service-image">
+            <img 
               src="assets/images/services/services1.webp" 
-              alt="Hardbox premium custom produksi deartbox untuk brand beauty dan fashion"
+              alt="Hardbox fully custom untuk brand premium"
               loading="lazy"
               width="400"
-              height="200"
+              height="280"
               decoding="async">
-          <h3 style="margin-top:12px">Hardbox Fully Custom</h3>
-          <p style="color:var(--muted)">Ukuran, struktur, dan desain disesuaikan sepenuhnya dengan kebutuhan dan identitas brand Anda.</p>
+            <div class="service-badge-overlay">Paling Populer</div>
+          </div>
+          <div class="service-content">
+            <h3>Hardbox Fully Custom</h3>
+            <p>Desain, ukuran, dan struktur disesuaikan 100% dengan kebutuhan brand Anda. Dari konsep hingga produksi massal.</p>
+            <ul class="service-features">
+              <li>Custom size & structure</li>
+              <li>Material premium pilihan</li>
+              <li>Finishing eksklusif</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="card">
-           <img 
+        <div class="service-card-modern">
+          <div class="service-image">
+            <img 
               src="assets/images/services/services2.webp" 
-              alt="Hardbox premium custom produksi deartbox untuk brand beauty dan fashion"
+              alt="Special-made board untuk packaging berkualitas"
               loading="lazy"
               width="400"
-              height="200"
+              height="280"
               decoding="async">
-          <h3 style="margin-top:12px">Special-Made Board</h3>
-          <p style="color:var(--muted)">Paperboard khusus dengan ketebalan terukur untuk kekuatan struktur dan rasa premium.</p>
+          </div>
+          <div class="service-content">
+            <h3>Special-Made Board</h3>
+            <p>Paperboard dengan ketebalan terukur yang diproduksi khusus untuk kekuatan struktur dan rasa premium.</p>
+            <ul class="service-features">
+              <li>Ketebalan custom</li>
+              <li>Struktur kokoh & tahan lama</li>
+              <li>Harga kompetitif</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="card">
-           <img 
+        <div class="service-card-modern">
+          <div class="service-image">
+            <img 
               src="assets/images/manufacturing/premium3.webp" 
-              alt="Hardbox premium custom produksi deartbox untuk brand beauty dan fashion" 
+              alt="Premium finishing untuk packaging eksklusif"
               loading="lazy"
               width="400"
-              height="200"
+              height="280"
               decoding="async">
-          <h3 style="margin-top:12px">Finishing Premium</h3>
-          <p style="color:var(--muted)">Foil stamping, emboss, deboss, soft-touch, dan spot UV untuk meningkatkan nilai visual produk.</p>
+          </div>
+          <div class="service-content">
+            <h3>Finishing Premium</h3>
+            <p>Berbagai pilihan finishing eksklusif untuk meningkatkan nilai visual dan tactile experience produk Anda.</p>
+            <ul class="service-features">
+              <li>Foil stamping (gold/silver)</li>
+              <li>Emboss & deboss</li>
+              <li>Soft-touch & spot UV</li>
+            </ul>
+          </div>
         </div>
+
       </div>
     </section>
 
-    <section class="container manufacturing" data-reveal>
-      <h2 class="section-title">Kapabilitas Produksi</h2>
-      <div class="grid-3">
-        <div class="card">
-          <img 
+    <!-- ============================================
+         MANUFACTURING CAPABILITIES
+    ============================================= -->
+    <section class="container manufacturing-modern" data-reveal>
+      
+      <div class="section-header-modern">
+        <div class="section-badge">Kenapa Pilih Kami</div>
+        <h2>Kapabilitas Produksi</h2>
+        <p>Kombinasi teknologi semi-otomatis dan craftsmanship untuk hasil konsisten dan scalable</p>
+      </div>
+
+      <div class="manufacturing-grid">
+        
+        <div class="manufacturing-card">
+          <div class="manufacturing-image">
+            <img 
               src="assets/images/manufacturing/rigidbox1.webp" 
-              alt="Hardbox premium custom produksi deartbox untuk brand beauty dan fashion"
+              alt="Custom design hardbox untuk berbagai kebutuhan"
               loading="lazy"
               width="400"
-              height="200"
+              height="260"
               decoding="async">
-          <h3>Fully Custom Design</h3>
-          <p style="color:var(--muted)">Desain hardbox full custom dengan struktur presisi untuk kebutuhan retail, PR kit, dan premium packaging.</p>
+          </div>
+          <div class="manufacturing-content">
+            <div class="manufacturing-number">01</div>
+            <h3>Fully Custom Design</h3>
+            <p>Hardbox dengan struktur presisi untuk retail packaging, PR kit, dan premium gift box.</p>
+          </div>
         </div>
 
-        <div class="card">
-          <img 
+        <div class="manufacturing-card">
+          <div class="manufacturing-image">
+            <img 
               src="assets/images/manufacturing/custominsert1.webp" 
-              alt="Hardbox premium custom produksi deartbox untuk brand beauty dan fashion"
+              alt="Custom insert dan add-on untuk proteksi produk"
               loading="lazy"
               width="400"
-              height="200"
+              height="260"
               decoding="async">
-          <h3>Custom Insert / Add-On</h3>
-          <p style="color:var(--muted)">EVA foam, paper insert, dan struktur custom untuk proteksi dan presentasi produk.</p>
+          </div>
+          <div class="manufacturing-content">
+            <div class="manufacturing-number">02</div>
+            <h3>Custom Insert & Add-On</h3>
+            <p>EVA foam, paper insert, dan struktur custom untuk proteksi maksimal dan presentasi produk yang sempurna.</p>
+          </div>
         </div>
 
-        <div class="card">
-          <img 
+        <div class="manufacturing-card">
+          <div class="manufacturing-image">
+            <img 
               src="assets/images/manufacturing/semiauto2.webp" 
-              alt="Hardbox premium custom produksi deartbox untuk brand beauty dan fashion" 
+              alt="Lini produksi semi-otomatis untuk kapasitas besar"
               loading="lazy"
               width="400"
-              height="200"
+              height="260"
               decoding="async">
-          <h3>Lini Produksi Semi-Auto</h3>
-          <p style="color:var(--muted)">Kombinasi mesin semi-otomatis dan hand-finishing untuk hasil konsisten dan kapasitas yang scalable.</p>
+          </div>
+          <div class="manufacturing-content">
+            <div class="manufacturing-number">03</div>
+            <h3>Lini Produksi Semi-Auto</h3>
+            <p>Mesin semi-otomatis dikombinasikan hand-finishing untuk hasil konsisten dan kapasitas scalable.</p>
+          </div>
         </div>
 
-        <div class="card">
-          <img 
+        <div class="manufacturing-card">
+          <div class="manufacturing-image">
+            <img 
               src="assets/images/manufacturing/premium1.webp" 
-              alt="Hardbox premium custom produksi deartbox untuk brand beauty dan fashion" 
+              alt="Premium finishing options untuk packaging eksklusif"
               loading="lazy"
               width="400"
-              height="200"
+              height="260"
               decoding="async">
-          <h3>Finishing Premium</h3>
-          <p style="color:var(--muted)">Pilihan finishing lengkap untuk meningkatkan daya tarik dan persepsi brand.</p>
+          </div>
+          <div class="manufacturing-content">
+            <div class="manufacturing-number">04</div>
+            <h3>Finishing Premium</h3>
+            <p>Pilihan finishing lengkap untuk meningkatkan daya tarik visual dan perceived value brand.</p>
+          </div>
         </div>
 
-        <div class="card">
-          <img 
+        <div class="manufacturing-card">
+          <div class="manufacturing-image">
+            <img 
               src="assets/images/manufacturing/qc2.webp" 
-              alt="Hardbox premium custom produksi deartbox untuk brand beauty dan fashion"
+              alt="Quality control ketat di setiap tahap produksi"
               loading="lazy"
               width="400"
-              height="200"
+              height="260"
               decoding="async">
-          <h3>Quality Control Ketat</h3>
-          <p style="color:var(--muted)">Pemeriksaan di setiap tahap produksi untuk menjaga kualitas visual dan struktur.</p>
+          </div>
+          <div class="manufacturing-content">
+            <div class="manufacturing-number">05</div>
+            <h3>Quality Control Ketat</h3>
+            <p>Pemeriksaan di setiap tahap produksi untuk menjaga kualitas visual dan struktur yang konsisten.</p>
+          </div>
         </div>
 
-        <div class="card">
-          <img 
+        <div class="manufacturing-card">
+          <div class="manufacturing-image">
+            <img 
               src="assets/images/manufacturing/moq1.webp" 
-              alt="Hardbox premium custom produksi deartbox untuk brand beauty dan fashion" 
+              alt="MOQ rendah untuk brand baru dan testing"
               loading="lazy"
               width="400"
-              height="200"
+              height="260"
               decoding="async">
-          <h3>MOQ Rendah</h3>
-          <p style="color:var(--muted)">Ideal untuk brand baru, product launch, dan edisi terbatas.</p>
+          </div>
+          <div class="manufacturing-content">
+            <div class="manufacturing-number">06</div>
+            <h3>MOQ Rendah (200 pcs)</h3>
+            <p>Ideal untuk brand baru, product launch, limited edition, dan testing pasar.</p>
+          </div>
         </div>
+
       </div>
     </section>
 
-    <section id="portfolio" class="container portfolio-pro" data-reveal>
-      <h2 class="section-title">Portofolio Produksi</h2>
-      <div class="portfolio-grid" aria-live="polite">
-        <article class="portfolio-item">
-          <div class="portfolio-media" role="img" aria-label="Project 1 visual">
+    <!-- ============================================
+         PORTFOLIO
+    ============================================= -->
+    <section id="portfolio" class="container portfolio-modern" data-reveal>
+      
+      <div class="section-header-modern">
+        <div class="section-badge">Hasil Kerja Kami</div>
+        <h2>Portofolio Produksi</h2>
+        <p>Project packaging premium yang telah kami kerjakan untuk berbagai brand</p>
+      </div>
+
+      <div class="portfolio-grid-modern" aria-live="polite">
+        
+        <article class="portfolio-item-modern">
+          <div class="portfolio-media-modern" role="img" aria-label="Project hardbox beauty brand">
             <img 
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250'%3E%3Crect width='400' height='250' fill='%230a0a0a'/%3E%3C/svg%3E" 
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='480'%3E%3Crect width='400' height='480' fill='%230a0a0a'/%3E%3C/svg%3E" 
               data-src="assets/images/portfolio/Project_6.webp" 
-              alt="Hardbox premium custom produksi deartbox untuk brand beauty dan fashion"
+              alt="Hardbox premium untuk brand beauty Indonesia"
               loading="lazy"
               width="400"
-              height="250">
+              height="480">
           </div>
-          <div class="portfolio-body">
+          <div class="portfolio-body-modern">
             <h3>Hardbox Brand Beauty</h3>
-            <p>Hardbox custom untuk product launch & PR kit premium.</p>
+            <span class="portfolio-category">Beauty & Skincare</span>
+            <p>Hardbox custom untuk product launch & PR kit premium dengan finishing foil gold.</p>
           </div>
         </article>
 
-        <article class="portfolio-item">
-          <div class="portfolio-media" role="img" aria-label="Project 2 visual">
+        <article class="portfolio-item-modern">
+          <div class="portfolio-media-modern" role="img" aria-label="Project packaging fashion brand">
             <img 
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250'%3E%3Crect width='400' height='250' fill='%230a0a0a'/%3E%3C/svg%3E" 
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='480'%3E%3Crect width='400' height='480' fill='%230a0a0a'/%3E%3C/svg%3E" 
               data-src="assets/images/portfolio/Project_3.webp" 
-              alt="Hardbox premium custom produksi deartbox untuk brand beauty dan fashion"
+              alt="Packaging premium untuk fashion brand"
               loading="lazy"
               width="400"
-              height="250">
+              height="480">
           </div>
-          <div class="portfolio-body">
-            <h3>Brand Project 2xxx</h3>
-            <p>Hardbox custom untuk product launch & PR kit premium.</p>
+          <div class="portfolio-body-modern">
+            <h3>Fashion Brand Premium</h3>
+            <span class="portfolio-category">Fashion & Lifestyle</span>
+            <p>Rigid box dengan soft-touch lamination untuk limited edition apparel collection.</p>
           </div>
         </article>
 
-        <article class="portfolio-item">
-          <div class="portfolio-media" role="img" aria-label="Project 3 visual">
+        <article class="portfolio-item-modern">
+          <div class="portfolio-media-modern" role="img" aria-label="Project giftset premium">
             <img 
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250'%3E%3Crect width='400' height='250' fill='%230a0a0a'/%3E%3C/svg%3E" 
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='480'%3E%3Crect width='400' height='480' fill='%230a0a0a'/%3E%3C/svg%3E" 
               data-src="assets/images/portfolio/Project_7.webp" 
-              alt="Hardbox premium custom produksi deartbox untuk brand beauty dan fashion"
+              alt="Gift box premium untuk corporate"
               loading="lazy"
               width="400"
-              height="250">
+              height="480">
           </div>
-          <div class="portfolio-body">
-            <h3>Brand Project 3xxx</h3>
-            <p>Hardbox custom untuk product launch & PR kit premium.</p>
+          <div class="portfolio-body-modern">
+            <h3>Premium Giftset</h3>
+            <span class="portfolio-category">Corporate & Gift</span>
+            <p>Luxury gift box dengan custom insert untuk hampers eksklusif.</p>
           </div>
         </article>
+
       </div>
     </section>
 
-    <section class="container" data-reveal>
-  <h2 class="section-title">Solusi Packaging Berdasarkan Industri</h2>
-  <div class="grid-3">
-    
-    <div class="card industry-card">
-      <img 
-        src="assets/images/portfolio/Project_1.webp" 
-        alt="Hardbox premium custom produksi deartbox untuk brand beauty dan fashion"
-        loading="lazy"
-        width="400"
-        height="360"
-        decoding="async">
-      <div class="industry-content">
-        <h3>Beauty & Skincare Brands</h3>
-        <ul>
-          <li>PR kits & influencer box</li>
-          <li>Packaging kosmetik premium</li>
-          <li>MOQ fleksibel untuk peluncuran produk</li>
-        </ul>
+    <!-- ============================================
+         INDUSTRY SOLUTIONS
+    ============================================= -->
+    <section class="container industry-modern" data-reveal>
+      
+      <div class="section-header-modern">
+        <div class="section-badge">Solusi Berdasarkan Industri</div>
+        <h2>Packaging untuk Setiap Kebutuhan Brand</h2>
+        <p>Kami memahami kebutuhan spesifik setiap industri dan menyediakan solusi yang tepat</p>
       </div>
-    </div>
 
-    <div class="card industry-card">
-      <img 
-        src="assets/images/portfolio/Project_5.webp" 
-        alt="Hardbox premium custom produksi deartbox untuk brand fashion dan lifestyle"
-        loading="lazy"
-        width="400"
-        height="360"
-        decoding="async">
-      <div class="industry-content">
-        <h3>Fashion & Lifestyle</h3>
-        <ul>
-          <li>Packaging apparel premium</li>
-          <li>Limited edition box</li>
-          <li>Brand storytelling melalui packaging</li>
-        </ul>
+      <div class="industry-grid-modern">
+        
+        <div class="industry-card-modern">
+          <img 
+            src="assets/images/portfolio/Project_1.webp" 
+            alt="Packaging solution untuk beauty dan skincare brand"
+            loading="lazy"
+            width="400"
+            height="360"
+            decoding="async">
+          <div class="industry-content-modern">
+            <h3>Beauty & Skincare Brands</h3>
+            <ul>
+              <li>PR kits & influencer box</li>
+              <li>Packaging kosmetik premium</li>
+              <li>MOQ fleksibel untuk product launch</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="industry-card-modern">
+          <img 
+            src="assets/images/portfolio/Project_5.webp" 
+            alt="Packaging solution untuk fashion dan lifestyle"
+            loading="lazy"
+            width="400"
+            height="360"
+            decoding="async">
+          <div class="industry-content-modern">
+            <h3>Fashion & Lifestyle</h3>
+            <ul>
+              <li>Packaging apparel premium</li>
+              <li>Limited edition box</li>
+              <li>Brand storytelling melalui packaging</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="industry-card-modern">
+          <img 
+            src="assets/images/portfolio/Project_4.webp" 
+            alt="Packaging solution untuk gourmet dan specialty products"
+            loading="lazy"
+            width="400"
+            height="360"
+            decoding="async">
+          <div class="industry-content-modern">
+            <h3>Gourmet & Specialty Products</h3>
+            <ul>
+              <li>Gift box & seasonal packaging</li>
+              <li>Rigid food-grade box</li>
+              <li>Packaging dengan nilai jual tinggi</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
-    </div>
+    </section>
 
-    <div class="card industry-card">
-      <img 
-        src="assets/images/portfolio/Project_4.webp" 
-        alt="Hardbox premium custom produksi deartbox untuk gourmet products"
-        loading="lazy"
-        width="400"
-        height="360"
-        decoding="async">
-      <div class="industry-content">
-        <h3>Gourmet & Specialty Products</h3>
-        <ul>
-          <li>Gift box & seasonal packaging</li>
-          <li>Rigid food-grade box</li>
-          <li>Packaging dengan nilai jual tinggi</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <section class="container" aria-label="Call to Action">
-      <div class="card" style="text-align:center">
-        <h3>Siap Meningkatkan Nilai Brand Anda dengan Packaging Premium?</h3>
-        <p style="color:var(--muted);max-width:60ch;margin:12px auto 20px">
-          Diskusikan spesifikasi, MOQ, dan estimasi biaya langsung dengan tim produksi deartbox.
-        </p>
-        <a href="https://wa.me/628195181427?text=Halo%20deartbox%2C%20saya%20ingin%20konsultasi%20hardbox%20packaging." 
-           target="_blank" 
-           class="btn-primary2"
-           rel="noopener">Chat via WhatsApp</a>
+    <!-- ============================================
+         CTA SECTION - REDESIGN
+    ============================================= -->
+    <section class="container cta-section-modern" aria-label="Call to Action" data-reveal>
+      <div class="cta-card-large">
+        <div class="cta-large-content">
+          <h2>Siap Meningkatkan Nilai Brand dengan Packaging Premium?</h2>
+          <p>Diskusikan kebutuhan packaging Anda dengan tim produksi kami. Konsultasi gratis, tanpa komitmen, dan respon dalam 24 jam.</p>
+          <div class="cta-large-buttons">
+            <a href="https://wa.me/628195181427?text=Halo%20deartbox%2C%20saya%20ingin%20konsultasi%20packaging." 
+               target="_blank" 
+               rel="noopener"
+               class="btn-cta-wa">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2a10 10 0 00-8.9 14.5L2 22l5.7-1.1A10 10 0 1012 2zm5.3 14.2c-.2.6-1.3 1.1-1.8 1.2-.5.1-1 .1-1.7-.1a13 13 0 01-5.7-3.9 6.6 6.6 0 01-1.4-3.5c0-1.8.9-2.6 1.2-2.9.3-.3.7-.4.9-.4h.7c.2 0 .5 0 .7.5l.9 2.1c.1.3.1.5 0 .7-.1.2-.2.4-.4.6l-.4.5c-.1.2-.3.4-.1.7a8.4 8.4 0 003.5 3c.3.1.5.1.7-.1l.8-.9c.2-.2.4-.2.7-.1l2 .8c.3.1.5.1.6.3z"/>
+              </svg>
+              <span>Chat via WhatsApp</span>
+            </a>
+            <a href="#rfq" class="btn-cta-outline">
+              <span>Request Quote</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="cta-large-visual">
+          <div class="cta-stat-card">
+            <span class="cta-stat-number">100+</span>
+            <span class="cta-stat-label">Brand Dipercaya</span>
+          </div>
+          <div class="cta-stat-card">
+            <span class="cta-stat-number">99.5%</span>
+            <span class="cta-stat-label">Quality Rate</span>
+          </div>
+          <div class="cta-stat-card">
+            <span class="cta-stat-number">24 Jam</span>
+            <span class="cta-stat-label">Response Time</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -2903,7 +2722,7 @@ text-align: center;
     ============================================= -->
     <section id="process" class="container" data-reveal>
       <div class="process-hero">
-        <div class="process-badge">Behind the Scenes</div>
+        <div class="process-badge">Behind the Production</div>
         <h2 class="process-title">How We Craft Your Premium Packaging</h2>
         <p class="process-subtitle">From concept to delivery — transparent, professional, and built for scale.</p>
       </div>
@@ -3225,7 +3044,7 @@ text-align: center;
             <div class="contact-card-content">
               <h4>Email Us</h4>
               <p>For detailed inquiries, partnership discussions, or technical questions</p>
-              <a href="mailto:hello@deartbox.com" class="contact-link">hello@deartbox.com →</a>
+              <a href="mailto:deartboxpackaging@gmail.com" class="contact-link">deartboxpackaging@gmail.com →</a>
             </div>
           </div>
 
@@ -3669,7 +3488,11 @@ text-align: center;
         }
       });
     })
-  ();    
+  ();
+  // Tambahkan validasi real-time
+document.querySelectorAll('input, textarea').forEach(el => {
+  el.addEventListener('blur', validateField);
+});    
   </script>
   <button id="backToTop" aria-label="Back to top">
    <svg viewBox="0 0 24 24" aria-hidden="true">
