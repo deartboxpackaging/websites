@@ -67,6 +67,14 @@
       --shadow-md: 0 12px 32px rgba(0,0,0,0.5);
       --ease: cubic-bezier(.16,.84,.44,1);
       --ease-premium: cubic-bezier(.22,.61,.36,1);
+      --gradient-bg: linear-gradient(
+         180deg,
+    #000000 0%,
+    #0a0a0a 25%,
+    #12090a 50%,      /* Warna dengan sentuhan merah gelap */
+    #0a0a0a 75%,
+    #000000 100%
+      );
     }
 
     /* ================ BASE ================ */
@@ -78,13 +86,75 @@
     body {
       margin: 0;
       font-family: 'Gramatika', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: var(--bg);
+      background: var(--gradient-bg);
+      background-attachment: fixed; /* TAMBAHKAN INI */
+      background-size: cover; /* TAMBAHKAN INI */
       color: #fff;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       line-height: 1.65;
       font-size: 15px;
+      min-height: 100vh;
+      position: relative;
     }
+    /* Overlay merah transparan */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(230, 57, 70, 0.12) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(164, 22, 26, 0.08) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Untuk section dengan background stretch */
+.stretch-bg {
+  position: relative;
+}
+
+.stretch-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Contoh penggunaan untuk services */
+.services-modern.stretch-bg::before {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(230, 57, 70, 0.04) 30%,
+    transparent 100%
+  );
+}
+
+/* Untuk CTA section */
+.cta-section-modern.stretch-bg::before {
+  background: linear-gradient(
+    135deg,
+    rgba(230, 57, 70, 0.08),
+    rgba(164, 22, 26, 0.04)
+  );
+  border-radius: 24px;
+}
     
     body.menu-open {
       overflow: hidden;
@@ -493,7 +563,24 @@ section {
 
 /* ================ SERVICES MODERN ================ */
 .services-modern {
-  background: linear-gradient(180deg, transparent, rgba(230,57,70,0.02), transparent);
+  position: relative;
+}
+.services-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(230, 57, 70, 0.02) 20%,
+    rgba(230, 57, 70, 0.01) 80%,
+    transparent 100%
+  );
+  z-index: -1;
+  pointer-events: none;
 }
 
 .services-grid-modern {
@@ -817,9 +904,11 @@ section {
 
 /* ================ CTA SECTION MODERN ================ */
 .cta-section-modern {
-  background: linear-gradient(135deg, rgba(230,57,70,0.08), rgba(166,22,26,0.04));
+  background: rgba(230, 57, 70, 0.03); /* Sedikit transparan */
   border-radius: 24px;
   padding: 72px var(--container-pad);
+  position: relative;
+  z-index: 1;
 }
 
 .cta-card-large {
@@ -1207,7 +1296,7 @@ section {
    RFQ SECTION - CSS
 ========================================= */
 .rfq-section {
-  background: linear-gradient(180deg, transparent, rgba(230,57,70,0.02));
+  
   border-radius: 24px;
   padding: 72px var(--container-pad);
 }
@@ -1482,7 +1571,6 @@ section {
    CONTACT SECTION - CSS
 ========================================= */
 .contact-section {
-  background: linear-gradient(180deg, rgba(230,57,70,0.02), transparent);
   border-radius: 24px;
   padding: 72px var(--container-pad);
 }
@@ -2133,6 +2221,7 @@ transition: none !important;
 animation: none !important;
 }
 }
+
 
   </style>
   
