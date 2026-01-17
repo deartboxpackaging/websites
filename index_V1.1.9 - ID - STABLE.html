@@ -164,6 +164,10 @@
     .mobile-toggle { display: none; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: #fff; padding: 8px; border-radius: 8px; cursor: pointer; transition: all .2s ease; }
     .mobile-toggle:hover { background: rgba(255,255,255,0.08); }
 
+    .theme-toggle { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: #fff; border-radius: 8px; cursor: pointer; transition: all .2s ease; padding: 0; margin-left: 8px; }
+    .theme-toggle:hover { background: rgba(255,255,255,0.08); }
+    .theme-toggle svg { width: 20px; height: 20px; }
+
     /* ================ HERO MODERN ================ */
     .hero-modern {
       padding: clamp(48px, 10vw, 120px) 0 clamp(64px, 12vw, 140px);
@@ -708,6 +712,23 @@
             </svg>
           </a>
         </div>
+
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark/light mode">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
 
         <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Open menu">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1321,7 +1342,7 @@
     const qs = (sel, ctx=document) => ctx.querySelector(sel);
     const qsa = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
 
-    // Off-canvas menu
+    //
     const toggle = qs('#mobileToggle');
     const offcanvas = qs('#offcanvasMenu');
     const overlay = qs('#overlay');
