@@ -2553,6 +2553,173 @@ animation: none !important;
     );
   }
 }
+/* ================ HERO SLIDESHOW STYLES ================ */
+.hero-visual-slideshow {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero-slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Tinggi yang lebih besar */
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s var(--ease-premium);
+  z-index: 1;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 8s var(--ease-premium);
+}
+
+.hero-slide.active img {
+  transform: scale(1.05);
+}
+
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg, 
+    transparent 0%, 
+    rgba(0,0,0,0.1) 30%, 
+    rgba(0,0,0,0.3) 100%
+  );
+  pointer-events: none;
+}
+
+/* Navigation Dots */
+.slideshow-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.slide-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slide-dot.active {
+  background: #e63946;
+  transform: scale(1.2);
+  box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.3);
+}
+
+.slide-dot:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Navigation Arrows */
+.slide-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.slide-nav:hover {
+  background: rgba(230, 57, 70, 0.8);
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slide-nav.prev {
+  left: 16px;
+}
+
+.slide-nav.next {
+  right: 16px;
+}
+
+.slide-nav svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Features Grid tetap di bawah */
+.hero-visual-slideshow .hero-features-grid {
+  margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 980px) {
+  .hero-modern {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-slideshow-container {
+    height: 400px;
+    order: 2;
+  }
+  
+  .hero-content {
+    order: 1;
+  }
+  
+  .slide-nav {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .slide-nav svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-slideshow-container {
+    height: 300px;
+  }
+  
+  .slideshow-dots {
+    margin-top: 8px;
+  }
+  
+  .slide-dot {
+    width: 8px;
+    height: 8px;
+  }
+}
 
 
 
@@ -2637,130 +2804,194 @@ animation: none !important;
     <!-- ============================================
          HERO SECTION - FIGMA REDESIGN
     ============================================= -->
-    <section class="hero-modern container" id="top" data-reveal>
+    <!-- ================ HERO MODERN - UPDATED ================ -->
+<section class="hero-modern container" id="top" data-reveal>
+  
+  <div class="hero-content">
+    
+    <div class="hero-badge">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+      </svg>
+      <span>Dipercaya 50+ Brand Premium Indonesia</span>
+    </div>
+
+    <h1 class="hero-title">
+      Packaging Premium yang <span class="hero-highlight">Meningkatkan Nilai</span> Brand Anda
+    </h1>
+
+    <p class="hero-description">
+      Produsen hardbox premium custom untuk brand beauty, fashion, lifestyle, dan gourmet. Material pilihan, finishing eksklusif, dan quality control ketat untuk packaging yang meningkatkan perceived value produk Anda.
+    </p>
+
+    <div class="hero-ctas">
+      <a class="btn-hero-primary" href="#rfq">
+        <span>Konsultasi Gratis Sekarang</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+      <a class="btn-hero-secondary" href="#portfolio">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <polygon points="10 8 16 12 10 16 10 8"/>
+        </svg>
+        <span>Lihat Portofolio Kami</span>
+      </a>
+    </div>
+
+    <div class="hero-trust-bar">
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+        <span>Konsultasi Gratis</span>
+      </div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+        <span>MOQ Fleksibel Mulai 200 pcs</span>
+      </div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+        <span>Respon Cepat dalam 24 Jam</span>
+      </div>
+    </div>
+
+    <div class="hero-stats-modern">
+      <div class="stat-modern">
+        <strong>4 — 6 Minggu</strong>
+        <span>Waktu Produksi</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-modern">
+        <strong>200 pcs</strong>
+        <span>Minimum Order</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-modern">
+        <strong>50K+</strong>
+        <span>Kapasitas per Bulan</span>
+      </div>
+      <div class="stat-modern">
+        <span>*Tergantung spesifikasi & finishing</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- HERO VISUAL DENGAN SLIDESHOW -->
+  <aside class="hero-visual-slideshow">
+    
+    <!-- Slideshow Container -->
+    <div class="hero-slideshow-container">
+      <!-- Slide 1 (Aktif) -->
+      <div class="hero-slide active">
+        <img 
+          src="assets/images/halamanutama/hardbox-hmns2.webp" 
+          alt="Hardbox premium custom produksi deartbox untuk brand Indonesia" 
+          loading="eager"
+          width="800"
+          height="500"
+          decoding="async">
+        <div class="slide-overlay"></div>
+      </div>
       
-      <div class="hero-content">
-        
-        <div class="hero-badge">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+      <!-- Slide 2 -->
+      <div class="hero-slide">
+        <img 
+          src="assets/images/portfolio/Project_1.webp" 
+          alt="Hardbox premium dengan finishing foil gold" 
+          loading="lazy"
+          width="800"
+          height="500"
+          decoding="async">
+        <div class="slide-overlay"></div>
+      </div>
+      
+      <!-- Slide 3 -->
+      <div class="hero-slide">
+        <img 
+          src="assets/images/portfolio/Project_3.webp" 
+          alt="Softbox packaging untuk fashion brand" 
+          loading="lazy"
+          width="800"
+          height="500"
+          decoding="async">
+        <div class="slide-overlay"></div>
+      </div>
+      
+      <!-- Slide 4 -->
+      <div class="hero-slide">
+        <img 
+          src="assets/images/portfolio/Project_6.webp" 
+          alt="Custom hardbox untuk brand beauty premium" 
+          loading="lazy"
+          width="800"
+          height="500"
+          decoding="async">
+        <div class="slide-overlay"></div>
+      </div>
+    </div>
+    
+    <!-- Navigation Dots -->
+    <div class="slideshow-dots">
+      <button class="slide-dot active" aria-label="Go to slide 1"></button>
+      <button class="slide-dot" aria-label="Go to slide 2"></button>
+      <button class="slide-dot" aria-label="Go to slide 3"></button>
+      <button class="slide-dot" aria-label="Go to slide 4"></button>
+    </div>
+    
+    <!-- Navigation Arrows (Opsional) -->
+    <button class="slide-nav prev" aria-label="Previous slide">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </button>
+    <button class="slide-nav next" aria-label="Next slide">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 18l6-6-6-6"/>
+      </svg>
+    </button>
+
+    <!-- Features Grid di bawah slideshow -->
+    <div class="hero-features-grid">
+      <div class="feature-mini">
+        <div class="feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <line x1="9" y1="9" x2="15" y2="15"/>
+            <line x1="15" y1="9" x2="9" y2="15"/>
           </svg>
-          <span>Dipercaya 50+ Brand Premium Indonesia</span>
         </div>
-
-        <h1 class="hero-title">
-          Packaging Premium yang <span class="hero-highlight">Meningkatkan Nilai</span> Brand Anda
-        </h1>
-
-        <p class="hero-description">
-          Produsen hardbox premium custom untuk brand beauty, fashion, lifestyle, dan gourmet. Material pilihan, finishing eksklusif, dan quality control ketat untuk packaging yang meningkatkan perceived value produk Anda.
-        </p>
-
-        <div class="hero-ctas">
-          <a class="btn-hero-primary" href="#rfq">
-            <span>Konsultasi Gratis Sekarang</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-          <a class="btn-hero-secondary" href="#portfolio">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <polygon points="10 8 16 12 10 16 10 8"/>
-            </svg>
-            <span>Lihat Portofolio Kami</span>
-          </a>
+        <div>
+          <h4>Special-Made Board</h4>
+          <p>Material paperboard khusus untuk struktur kokoh dan harga kompetitif</p>
         </div>
-
-        <div class="hero-trust-bar">
-          <div class="trust-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
-            </svg>
-            <span>Konsultasi Gratis</span>
-          </div>
-          <div class="trust-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
-            </svg>
-            <span>MOQ Fleksibel Mulai 200 pcs</span>
-          </div>
-          <div class="trust-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
-            </svg>
-            <span>Respon Cepat dalam 24 Jam</span>
-          </div>
-        </div>
-
-        <div class="hero-stats-modern">
-          <div class="stat-modern">
-            <strong>4 — 6 Minggu</strong>
-            <span>Waktu Produksi</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-modern">
-            <strong>200 pcs</strong>
-            <span>Minimum Order</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-modern">
-            <strong>50K+</strong>
-            <span>Kapasitas per Bulan</span>
-          </div>
-          <div class="stat-modern">
-            <span>*Tergantung spesifikasi & finishing</span>
-          </div>
-        </div>
-
       </div>
 
-      <aside class="hero-visual">
-        <div class="hero-image-main">
-          <img 
-            src="assets/images/halamanutama/hardbox-hmns2.webp" 
-            alt="Hardbox premium custom produksi deartbox untuk brand Indonesia" 
-            loading="eager"
-            width="600"
-            height="400"
-            decoding="async">
-          <div class="image-overlay"></div>
+      <div class="feature-mini">
+        <div class="feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+          </svg>
         </div>
-
-        <div class="hero-features-grid">
-          <div class="feature-mini">
-            <div class="feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <line x1="9" y1="9" x2="15" y2="15"/>
-                <line x1="15" y1="9" x2="9" y2="15"/>
-              </svg>
-            </div>
-            <div>
-              <h4>Special-Made Board</h4>
-              <p>Material paperboard khusus untuk struktur kokoh dan harga kompetitif</p>
-            </div>
-          </div>
-
-          <div class="feature-mini">
-            <div class="feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
-              </svg>
-            </div>
-            <div>
-              <h4>Finishing Premium</h4>
-              <p>Foil stamping, emboss, deboss, soft-touch untuk meningkatkan perceived value</p>
-            </div>
-          </div>
+        <div>
+          <h4>Finishing Premium</h4>
+          <p>Foil stamping, emboss, deboss, soft-touch untuk meningkatkan perceived value</p>
         </div>
-      </aside>
+      </div>
+    </div>
 
-    </section>
+  </aside>
+
+</section>
 
     <!-- ============================================
          SERVICES - FIGMA REDESIGN
@@ -4091,7 +4322,112 @@ validationStyles.textContent = `
 `;
 document.head.appendChild(validationStyles);
 
+ // ============================================
+// HERO SLIDESHOW FUNCTIONALITY
+// ============================================
+(function() {
+  const slideshowContainer = document.querySelector('.hero-slideshow-container');
+  if (!slideshowContainer) return;
   
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.slide-dot');
+  const prevBtn = document.querySelector('.slide-nav.prev');
+  const nextBtn = document.querySelector('.slide-nav.next');
+  
+  let currentSlide = 0;
+  let slideInterval;
+  const slideDuration = 5000; // 5 detik
+  
+  function showSlide(index) {
+    // Reset semua slide
+    slides.forEach(slide => {
+      slide.classList.remove('active');
+    });
+    dots.forEach(dot => {
+      dot.classList.remove('active');
+    });
+    
+    // Update index jika out of bounds
+    if (index >= slides.length) currentSlide = 0;
+    if (index < 0) currentSlide = slides.length - 1;
+    
+    // Tampilkan slide aktif
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+  }
+  
+  function nextSlide() {
+    currentSlide++;
+    if (currentSlide >= slides.length) currentSlide = 0;
+    showSlide(currentSlide);
+  }
+  
+  function prevSlide() {
+    currentSlide--;
+    if (currentSlide < 0) currentSlide = slides.length - 1;
+    showSlide(currentSlide);
+  }
+  
+  function goToSlide(index) {
+    currentSlide = index;
+    showSlide(currentSlide);
+    resetInterval();
+  }
+  
+  function startInterval() {
+    slideInterval = setInterval(nextSlide, slideDuration);
+  }
+  
+  function resetInterval() {
+    clearInterval(slideInterval);
+    startInterval();
+  }
+  
+  // Event Listeners
+  if (prevBtn) prevBtn.addEventListener('click', () => {
+    prevSlide();
+    resetInterval();
+  });
+  
+  if (nextBtn) nextBtn.addEventListener('click', () => {
+    nextSlide();
+    resetInterval();
+  });
+  
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      goToSlide(index);
+    });
+  });
+  
+  // Pause on hover
+  slideshowContainer.addEventListener('mouseenter', () => {
+    clearInterval(slideInterval);
+  });
+  
+  slideshowContainer.addEventListener('mouseleave', () => {
+    startInterval();
+  });
+  
+  // Pause on touch devices
+  slideshowContainer.addEventListener('touchstart', () => {
+    clearInterval(slideInterval);
+  });
+  
+  // Start slideshow
+  showSlide(currentSlide);
+  startInterval();
+  
+  // Pause when tab is not visible
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      clearInterval(slideInterval);
+    } else {
+      startInterval();
+    }
+  });
+})();
+ 
 </script>
 
 </body>
