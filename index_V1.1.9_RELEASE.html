@@ -4,7 +4,9 @@
   <!-- 1. META TAGS SEO & SOCIAL MEDIA -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#000000">
+
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#e63946" media="(prefers-color-scheme: light)">
   
   <!-- SEO Essentials -->
   <title>Produsen Hardbox Premium Custom | deartbox Packaging Indonesia</title>
@@ -13,6 +15,14 @@
   <meta name="keywords" content="hardbox premium, hardbox custom, rigid box indonesia, packaging premium, produsen hardbox, custom packaging indonesia">
   <meta name="author" content="deartbox Packaging">
   <meta name="robots" content="index, follow">
+
+    <meta name="author" content="deartbox Packaging - PT. Xerography Indonesia">
+  <meta name="publisher" content="PT. Xerography Indonesia">
+  <meta name="application-name" content="deartbox Packaging">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="deartbox">
+  <meta name="format-detection" content="telephone=yes">
   
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -28,6 +38,10 @@
   <meta name="twitter:title" content="deartbox Packaging">
   <meta name="twitter:description" content="Premium hardbox manufacturing partner untuk growing brands.">
   <meta name="twitter:image" content="https://deartbox.com/assets/images/halamanutama/hardbox-hmns2.webp">
+
+  <!-- 2. Add theme color for mobile -->
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   
   <!-- Canonical -->
   <link rel="canonical" href="https://deartbox.com">
@@ -35,6 +49,10 @@
   <!-- 2. PERFORMANCE HINTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- ✅ TAMBAHKAN DI SINI - DNS PREFETCH & PRELOAD -->
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://wa.me">
   
   <!-- 7. FAVICON COMPLETE SET -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -43,6 +61,35 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
   <meta name="msapplication-TileColor" content="#000000">
+  <link rel="manifest" href="/manifest.json">
+  <!-- ✅ TAMBAHKAN DI SINI - STRUCTURED DATA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "deartbox Packaging",
+    "url": "https://deartbox.com",
+    "logo": "https://deartbox.com/assets/logo/deartbox-logo.svg",
+    "description": "Produsen Hardbox Premium Custom untuk brand beauty, fashion, lifestyle, dan gourmet di Indonesia",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jl. Gandaria 1 No. 3, Gandaria Utara",
+      "addressLocality": "Jakarta Selatan",
+      "postalCode": "12130",
+      "addressCountry": "ID"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+62-819-5181-427",
+      "contactType": "Customer Service",
+      "availableLanguage": ["id", "en"]
+    },
+    "sameAs": [
+      "https://www.instagram.com/de_artbox",
+      "https://www.linkedin.com/in/deartbox-packaging-b08696376/"
+    ]
+  }
+  </script>
  
   <!-- Tambahkan di <head> -->
   <link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin>
@@ -82,6 +129,25 @@
     
     html, body { height: 100%; }
     html { scroll-behavior: smooth; }
+
+     /* ✅ TAMBAHKAN DI SINI - FOCUS STYLES */
+    *:focus {
+      outline: none;
+    }
+    
+    *:focus-visible {
+      outline: 3px solid #e63946;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible {
+      box-shadow: 0 0 0 3px rgba(230,57,70,0.3);
+    }
     
     body {
       margin: 0;
@@ -2002,6 +2068,28 @@ section {
 /* =========================================
    MOBILE MENU, STICKY CTA, BACK TO TOP
 ========================================= */
+/* ✅ TAMBAHKAN DI SINI - SKIP LINK STYLES */
+    .skip-link {
+      position: absolute;
+      top: -50px;
+      left: 10px;
+      background: #e63946;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      z-index: 9999;
+      text-decoration: none;
+      transition: top 0.3s ease;
+    }
+    
+    .skip-link:focus {
+      top: 10px;
+      outline: 3px solid #fff;
+      outline-offset: 2px;
+    }
+
 .offcanvas {
   position: fixed;
   top: 0;
@@ -2743,6 +2831,8 @@ animation: none !important;
 </head>
 
 <body>
+    <!-- ✅ TAMBAHKAN DI SINI - SKIP LINK -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <!-- ============================================
        HEADER - FIGMA GRADE REDESIGN
   ============================================= -->
@@ -2800,7 +2890,7 @@ animation: none !important;
     </nav>
   </aside>
 
-  <main>
+    <main id="main-content">
     <!-- ============================================
          HERO SECTION - FIGMA REDESIGN
     ============================================= -->
@@ -3535,8 +3625,8 @@ animation: none !important;
             </div>
 
             <div class="form-field">
-              <label for="rfq-qty">Kuantitas (MOQ: 200 pcs)</label>
-              <input id="rfq-qty" name="quantity" type="number" min="200" placeholder="contoh: 500">
+              <label for="rfq-qty">Kuantitas</label>
+              <input id="rfq-qty" name="quantity" type="number" min="0" placeholder="contoh: 20">
             </div>
           </div>
 
@@ -4440,7 +4530,10 @@ Deskripsi: ${data.get('message')}`;
   });
 })();
 
+
 })(); // ✅ FIXED - Proper IIFE closure
+
+</script>
 
 </script>
 
