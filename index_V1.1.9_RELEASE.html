@@ -39,10 +39,6 @@
   <meta name="twitter:description" content="Premium hardbox manufacturing partner untuk growing brands.">
   <meta name="twitter:image" content="https://deartbox.com/assets/images/halamanutama/hardbox-hmns2.webp">
 
-  <!-- 2. Add theme color for mobile -->
-  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  
   <!-- Canonical -->
   <link rel="canonical" href="https://deartbox.com">
   
@@ -54,6 +50,12 @@
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://wa.me">
   
+<!-- Preload critical assets -->
+<link rel="preload" href="assets/logo/deartbox-logo.svg" as="image" type="image/svg+xml">
+<link rel="preload" href="assets/images/halamanutama/hardbox-hmns2.webp" as="image" type="image/webp">
+<!-- Tambahkan setelah preload images -->
+<link rel="preload" href="/favicon-32x32.png" as="image" type="image/png">
+
   <!-- 7. FAVICON COMPLETE SET -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -61,7 +63,11 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
   <meta name="msapplication-TileColor" content="#000000">
-  <link rel="manifest" href="/manifest.json">
+
+  <link href="https://fonts.googleapis.com/css2?family=Gramatika&display=swap" rel="stylesheet"> 
+ 
+  <link rel="preconnect" href="https://wa.me" crossorigin>
+  
   <!-- ✅ TAMBAHKAN DI SINI - STRUCTURED DATA -->
   <script type="application/ld+json">
   {
@@ -4533,7 +4539,6 @@ Deskripsi: ${data.get('message')}`;
 
 })(); // ✅ FIXED - Proper IIFE closure
 
-</script>
 
 </script>
 
