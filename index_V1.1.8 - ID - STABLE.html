@@ -4328,7 +4328,7 @@ validationStyles.textContent = `
 document.head.appendChild(validationStyles);
 
  // ============================================
-// HERO SLIDESHOW FUNCTIONALITY
+// HERO SLIDESHOW FUNCTIONALITY - FIXED TIMING
 // ============================================
 (function() {
   const slideshowContainer = document.querySelector('.hero-slideshow-container');
@@ -4341,7 +4341,21 @@ document.head.appendChild(validationStyles);
   
   let currentSlide = 0;
   let slideInterval;
-  const slideDuration = 5000; // 5 detik
+  const slideDuration = 5000; // 5 detik konsisten
+  
+  // Reset semua transform sebelum ganti slide
+  function resetTransforms() {
+    slides.forEach(slide => {
+      const img = slide.querySelector('img');
+      if (img) {
+        img.style.transition = 'none';
+        img.style.transform = 'scale(1)';
+        // Force reflow
+        void img.offsetWidth;
+        img.style.transition = '';
+      }
+    });
+  }
   
   function showSlide(index) {
     // Reset semua slide
@@ -4356,9 +4370,21 @@ document.head.appendChild(validationStyles);
     if (index >= slides.length) currentSlide = 0;
     if (index < 0) currentSlide = slides.length - 1;
     
+    // Reset transform sebelum ganti
+    resetTransforms();
+    
     // Tampilkan slide aktif
     slides[currentSlide].classList.add('active');
     dots[currentSlide].classList.add('active');
+    
+    // Analytics tracking
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'slide_change', {
+        event_category: 'Engagement',
+        event_label: `Slide ${currentSlide + 1}`,
+        non_interaction: true
+      });
+    }
   }
   
   function nextSlide() {
@@ -4380,6 +4406,7 @@ document.head.appendChild(validationStyles);
   }
   
   function startInterval() {
+    clearInterval(slideInterval);
     slideInterval = setInterval(nextSlide, slideDuration);
   }
   
@@ -4414,22 +4441,28 @@ document.head.appendChild(validationStyles);
     startInterval();
   });
   
-  // Pause on touch devices
-  slideshowContainer.addEventListener('touchstart', () => {
-    clearInterval(slideInterval);
-  });
-  
   // Start slideshow
   showSlide(currentSlide);
   startInterval();
   
-  // Pause when tab is not visible
+  // Handle tab visibility
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
       clearInterval(slideInterval);
     } else {
-      startInterval();
+      resetInterval();
     }
+  });
+  
+  // Handle page load - preload images
+  window.addEventListener('load', () => {
+    // Preload semua gambar slideshow
+    slides.forEach(slide => {
+      const img = slide.querySelector('img');
+      if (img && img.dataset.src) {
+        img.src = img.dataset.src;
+      }
+    });
   });
 })();
 
