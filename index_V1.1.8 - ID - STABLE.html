@@ -3957,8 +3957,11 @@ function initHeroGallery() {
   });
 }
 
-// Call init function after DOM loads
-document.addEventListener('DOMContentLoaded', initHeroGallery);
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initHeroGallery);
+} else {
+  initHeroGallery(); // Langsung jalan jika DOM sudah ready
+}
 
   // ============================================
   // SMOOTH SCROLL
