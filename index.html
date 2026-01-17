@@ -1302,6 +1302,74 @@ section {
   border-radius: 24px;
   padding: 72px var(--container-pad);
 }
+/* =========================================
+   FORM TEXT VISIBILITY FIX
+========================================= */
+.form-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85) !important;
+  margin: 0;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  color: #fff !important;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all .2s ease;
+  margin: 0;
+  width: 100%;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: rgba(255,255,255,0.35) !important;
+}
+
+.form-field select {
+  color: #fff !important;
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, rgba(255,255,255,0.5) 50%),
+                    linear-gradient(135deg, rgba(255,255,255,0.5) 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(50% - 3px),
+                       calc(100% - 12px) calc(50% - 3px);
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.form-field select option {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 10px;
+}
+
+.form-field select option:hover,
+.form-field select option:focus {
+  background: rgba(230,57,70,0.15);
+}
+
+/* Placeholder untuk select (hidden option) */
+.form-field select option[disabled] {
+  color: rgba(255,255,255,0.35);
+}
+
+.form-note {
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255,255,255,0.55) !important;
+  margin: 16px 0 0;
+  line-height: 1.6;
+}
 
 .rfq-header {
   text-align: center;
@@ -1362,27 +1430,6 @@ section {
   display: flex;
   flex-direction: column;
   gap: 8px;
-}
-
-.form-field label {
-  font-size: 13px;
-  font-weight: 600;
-  color: rgba(255,255,255,0.85);
-  margin: 0;
-}
-
-.form-field input,
-.form-field select,
-.form-field textarea {
-  padding: 12px 16px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 10px;
-  color: #fff;
-  font-size: 14px;
-  font-family: inherit;
-  transition: all .2s ease;
-  margin: 0;
 }
 
 .form-field input:focus,
@@ -2238,6 +2285,23 @@ animation: none !important;
   border-radius: 12px;
   display: block;
 }
+.field-invalid {
+  border-color: #e63946 !important;
+  background: rgba(230, 57, 70, 0.05) !important;
+}
+
+.field-error {
+  display: block;
+  font-size: 12px;
+  color: #e63946;
+  margin-top: 4px;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 
 
@@ -2330,7 +2394,7 @@ animation: none !important;
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
           </svg>
-          <span>Trusted by 50+ Premium Brands</span>
+          <span>Dipercaya 50+ Brand Premium Indonesia</span>
         </div>
 
         <h1 class="hero-title">
@@ -2338,12 +2402,12 @@ animation: none !important;
         </h1>
 
         <p class="hero-description">
-          Kami adalah partner produksi hardbox premium untuk brand yang ingin tampil lebih profesional, konsisten, dan bernilai tinggi—dengan sistem produksi rapi, material pilihan, dan quality control ketat.
+          Produsen hardbox premium custom untuk brand beauty, fashion, lifestyle, dan gourmet. Material pilihan, finishing eksklusif, dan quality control ketat untuk packaging yang meningkatkan perceived value produk Anda.
         </p>
 
         <div class="hero-ctas">
           <a class="btn-hero-primary" href="#rfq">
-            <span>Mulai Konsultasi Gratis</span>
+            <span>Konsultasi Gratis Sekarang</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
@@ -2353,7 +2417,7 @@ animation: none !important;
               <circle cx="12" cy="12" r="10"/>
               <polygon points="10 8 16 12 10 16 10 8"/>
             </svg>
-            <span>Lihat Portofolio</span>
+            <span>Lihat Portofolio Kami</span>
           </a>
         </div>
 
@@ -2377,14 +2441,14 @@ animation: none !important;
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
               <polyline points="22 4 12 14.01 9 11.01"/>
             </svg>
-            <span>Respon dalam 24 Jam</span>
+            <span>Respon Cepat dalam 24 Jam</span>
           </div>
         </div>
 
         <div class="hero-stats-modern">
           <div class="stat-modern">
             <strong>4 — 6 Minggu</strong>
-            <span>Lead Time Produksi</span>
+            <span>Waktu Produksi</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat-modern">
@@ -2394,11 +2458,10 @@ animation: none !important;
           <div class="stat-divider"></div>
           <div class="stat-modern">
             <strong>50K+</strong>
-            <span>Kapasitas/Bulan</span>
+            <span>Kapasitas per Bulan</span>
           </div>
           <div class="stat-modern">
-            <span>*Tergantung spesifikasi & finishing<span>
-           
+            <span>*Tergantung spesifikasi & finishing</span>
           </div>
         </div>
 
@@ -2440,7 +2503,7 @@ animation: none !important;
             </div>
             <div>
               <h4>Finishing Premium</h4>
-              <p>Foil, emboss, deboss, soft-touch untuk meningkatkan perceived value</p>
+              <p>Foil stamping, emboss, deboss, soft-touch untuk meningkatkan perceived value</p>
             </div>
           </div>
         </div>
@@ -2454,9 +2517,9 @@ animation: none !important;
     <section id="services" class="container services-modern" data-reveal>
       
       <div class="section-header-modern">
-        <div class="section-badge">Apa yang Kami Tawarkan</div>
-        <h2>Solusi Packaging untuk Berbagai Kebutuhan Brand</h2>
-        <p>Layanan Packaging Premium dari Konsep hingga Produksi</p>
+        <div class="section-badge">Layanan Kami</div>
+        <h2>Solusi Packaging Lengkap untuk Brand Anda</h2>
+        <p>Dari konsep hingga produksi massal, kami siap membantu packaging brand Anda tampil premium</p>
       </div>
 
       <div class="services-grid-modern">
@@ -2474,9 +2537,9 @@ animation: none !important;
           </div>
           <div class="service-content">
             <h3>Design Full Custom</h3>
-            <p>Desain, ukuran, dan struktur disesuaikan 100% dengan kebutuhan brand Anda. Dari konsep hingga produksi massal.</p>
+            <p>Desain 100% disesuaikan dengan kebutuhan brand Anda. Ukuran, struktur, dan finishing dibuat khusus untuk produk Anda.</p>
             <ul class="service-features">
-              <li>Custom size & structure</li>
+              <li>Ukuran & struktur custom</li>
               <li>Material premium pilihan</li>
               <li>Finishing eksklusif</li>
             </ul>
@@ -2495,7 +2558,7 @@ animation: none !important;
           </div>
           <div class="service-content">
             <h3>Hardbox Packaging</h3>
-            <p>Solusi hardbox fully custom dengan material pilihan, presisi ukuran, dan finishing eksklusif untuk meningkatkan nilai visual produk Anda.</p>
+            <p>Hardbox custom dengan material pilihan, presisi ukuran, dan finishing eksklusif untuk meningkatkan nilai visual produk Anda.</p>
             <ul class="service-features">
               <li>Ketebalan custom</li>
               <li>Struktur kokoh & tahan lama</li>
@@ -2516,7 +2579,7 @@ animation: none !important;
           </div>
           <div class="service-content">
             <h3>Softbox Packaging</h3>
-            <p>Berbagai pilihan finishing eksklusif untuk meningkatkan nilai visual dan tactile experience produk Anda.</p>
+            <p>Berbagai pilihan finishing eksklusif untuk meningkatkan nilai visual dan pengalaman sentuh produk Anda.</p>
             <ul class="service-features">
               <li>Foil stamping (gold/silver)</li>
               <li>Emboss & deboss</li>
@@ -2534,8 +2597,8 @@ animation: none !important;
     <section class="container manufacturing-modern" data-reveal>
       
       <div class="section-header-modern">
-        <div class="section-badge">Kenapa Pilih Kami</div>
-        <h2>Kapabilitas Produksi</h2>
+        <div class="section-badge">Keunggulan Kami</div>
+        <h2>Kapabilitas Produksi Terbaik</h2>
         <p>Kombinasi teknologi semi-otomatis dan craftsmanship untuk hasil konsisten dan scalable</p>
       </div>
 
@@ -2553,7 +2616,7 @@ animation: none !important;
           </div>
           <div class="manufacturing-content">
             <div class="manufacturing-number">01</div>
-            <h3>Semi-Automatic Production</h3>
+            <h3>Produksi Semi-Otomatis</h3>
             <p>Hardbox dengan struktur presisi untuk retail packaging, PR kit, dan premium gift box.</p>
           </div>
         </div>
@@ -2570,7 +2633,7 @@ animation: none !important;
           </div>
           <div class="manufacturing-content">
             <div class="manufacturing-number">02</div>
-            <h3>MOQ Rendah</h3>
+            <h3>MOQ Rendah & Fleksibel</h3>
             <p>EVA foam, paper insert, dan struktur custom untuk proteksi maksimal dan presentasi produk yang sempurna.</p>
           </div>
         </div>
@@ -2587,7 +2650,7 @@ animation: none !important;
           </div>
           <div class="manufacturing-content">
             <div class="manufacturing-number">03</div>
-            <h3>Value for Money Materials</h3>
+            <h3>Material Value for Money</h3>
             <p>Mesin semi-otomatis dikombinasikan hand-finishing untuk hasil konsisten dan kapasitas scalable.</p>
           </div>
         </div>
@@ -2604,7 +2667,7 @@ animation: none !important;
           </div>
           <div class="manufacturing-content">
             <div class="manufacturing-number">04</div>
-            <h3>Accurate Timeline</h3>
+            <h3>Timeline Akurat</h3>
             <p>Pilihan finishing lengkap untuk meningkatkan daya tarik visual dan perceived value brand.</p>
           </div>
         </div>
@@ -2621,7 +2684,7 @@ animation: none !important;
           </div>
           <div class="manufacturing-content">
             <div class="manufacturing-number">05</div>
-            <h3>Finishing Premium</h3>
+            <h3>Finishing Premium Eksklusif</h3>
             <p>Pemeriksaan di setiap tahap produksi untuk menjaga kualitas visual dan struktur yang konsisten.</p>
           </div>
         </div>
@@ -2652,8 +2715,8 @@ animation: none !important;
     <section id="portfolio" class="container portfolio-modern" data-reveal>
       
       <div class="section-header-modern">
-        <div class="section-badge">Hasil Kerja Kami</div>
-        <h2>Proyek yang Telah Kami Kerjakan</h2>
+        <div class="section-badge">Portofolio</div>
+        <h2>Project yang Telah Kami Kerjakan</h2>
         <p>Setiap project kami kerjakan dengan pendekatan custom—disesuaikan dengan karakter brand, kebutuhan produk, dan target market.</p>
       </div>
 
@@ -2670,7 +2733,7 @@ animation: none !important;
               height="480">
           </div>
           <div class="portfolio-body-modern">
-            <h3>Hardbox</h3>
+            <h3>Hardbox Beauty</h3>
             <span class="portfolio-category">Beauty & Skincare</span>
             <p>Hardbox custom untuk product launch & PR kit premium dengan finishing foil gold.</p>
           </div>
@@ -2687,7 +2750,7 @@ animation: none !important;
               height="480">
           </div>
           <div class="portfolio-body-modern">
-            <h3>Softbox</h3>
+            <h3>Softbox Fashion</h3>
             <span class="portfolio-category">Fashion & Lifestyle</span>
             <p>Rigid box dengan soft-touch lamination untuk limited edition apparel collection.</p>
           </div>
@@ -2704,7 +2767,7 @@ animation: none !important;
               height="480">
           </div>
           <div class="portfolio-body-modern">
-            <h3>Custom</h3>
+            <h3>Custom Gift Box</h3>
             <span class="portfolio-category">Corporate & Gift</span>
             <p>Luxury gift box dengan custom insert untuk hampers eksklusif.</p>
           </div>
@@ -2719,9 +2782,9 @@ animation: none !important;
     <section class="container industry-modern" data-reveal>
       
       <div class="section-header-modern">
-        <div class="section-badge">Solusi Berdasarkan Industri</div>
-        <h2>Packaging untuk Setiap Kebutuhan Brand</h2>
-        <p>Setiap industri memiliki karakter, standar, dan ekspektasi yang berbeda. Kami menyesuaikan desain, material, dan finishing sesuai kebutuhan spesifik brand Anda.</p>
+        <div class="section-badge">Solusi per Industri</div>
+        <h2>Packaging Custom untuk Setiap Industri</h2>
+        <p>Setiap industri memiliki karakter dan kebutuhan berbeda. Kami menyesuaikan desain, material, dan finishing sesuai kebutuhan spesifik brand Anda.</p>
       </div>
 
       <div class="industry-grid-modern">
@@ -2789,7 +2852,7 @@ animation: none !important;
     <section class="container cta-section-modern" aria-label="Call to Action" data-reveal>
       <div class="cta-card-large">
         <div class="cta-large-content">
-          <h2>Siap Meningkatkan Nilai Brand Anda?</h2>
+          <h2>Siap Tingkatkan Nilai Brand Anda?</h2>
           <p>Tim kami siap membantu dari tahap konsep hingga produksi. Konsultasi gratis, tanpa komitmen, dan respon dalam 24 jam.</p>
           <div class="cta-large-buttons">
             <a href="https://wa.me/628195181427?text=Halo%20deartbox%2C%20saya%20ingin%20konsultasi%20packaging." 
@@ -2802,7 +2865,7 @@ animation: none !important;
               <span>Chat via WhatsApp</span>
             </a>
             <a href="#rfq" class="btn-cta-outline">
-              <span>Request Quote</span>
+              <span>Request Quotation</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
@@ -2812,15 +2875,15 @@ animation: none !important;
         <div class="cta-large-visual">
           <div class="cta-stat-card">
             <span class="cta-stat-number">100+</span>
-            <span class="cta-stat-label">Brand Dipercaya</span>
+            <span class="cta-stat-label">Brand Percaya</span>
           </div>
           <div class="cta-stat-card">
             <span class="cta-stat-number">99.5%</span>
-            <span class="cta-stat-label">Quality Rate</span>
+            <span class="cta-stat-label">Tingkat Kualitas</span>
           </div>
           <div class="cta-stat-card">
             <span class="cta-stat-number">24 Jam</span>
-            <span class="cta-stat-label">Response Time</span>
+            <span class="cta-stat-label">Waktu Respon</span>
           </div>
         </div>
       </div>
@@ -2831,8 +2894,8 @@ animation: none !important;
     ============================================= -->
     <section id="process" class="container" data-reveal>
       <div class="process-hero">
-        <div class="process-badge">Behind the Production</div>
-        <h2 class="process-title">Proses Produksi yang Terstruktur & Transparan</h2>
+        <div class="process-badge">Proses Produksi</div>
+        <h2 class="process-title">Proses Produksi Terstruktur & Transparan</h2>
         <p class="process-subtitle">Setiap project kami jalankan melalui alur kerja yang jelas—untuk memastikan hasil akhir sesuai ekspektasi dan siap diproduksi secara konsisten.</p>
       </div>
 
@@ -2840,15 +2903,13 @@ animation: none !important;
         <div class="process-video-wrapper">
           <iframe
             src="https://www.youtube.com/embed/-vFG_MnTkLk?rel=0"
-            title="Behind the Production Process"
+            title="Proses Produksi deartbox Packaging"
             frameborder="0"
             loading="lazy"
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
           </iframe>
-
         </div>
-
       </div>
 
       <div class="process-timeline">
@@ -2859,12 +2920,12 @@ animation: none !important;
             <div class="timeline-line"></div>
           </div>
           <div class="timeline-content">
-            <span class="timeline-label">Step 01</span>
+            <span class="timeline-label">Tahap 01</span>
             <h3>Discovery & Brief</h3>
-            <p>We discuss your brand positioning, target audience, material preferences, and budget constraints. This shapes the entire production strategy.</p>
+            <p>Kami diskusikan positioning brand, target audience, preferensi material, dan budget. Ini membentuk strategi produksi keseluruhan.</p>
             <div class="timeline-meta">
-              <span>⏱ 1-2 days</span>
-              <span>💬 Free consultation</span>
+              <span>⏱ 1-2 hari</span>
+              <span>💬 Konsultasi gratis</span>
             </div>
           </div>
         </div>
@@ -2875,12 +2936,12 @@ animation: none !important;
             <div class="timeline-line"></div>
           </div>
           <div class="timeline-content">
-            <span class="timeline-label">Step 02</span>
-            <h3>Design & Material Selection</h3>
-            <p>Technical drawing, dieline setup, and material specification. We provide recommendations based on your product protection needs and brand aesthetics.</p>
+            <span class="timeline-label">Tahap 02</span>
+            <h3>Design & Pemilihan Material</h3>
+            <p>Technical drawing, setup dieline, dan spesifikasi material. Kami berikan rekomendasi berdasarkan kebutuhan proteksi produk dan estetika brand.</p>
             <div class="timeline-meta">
-              <span>⏱ 3-5 days</span>
-              <span>📐 Technical spec included</span>
+              <span>⏱ 3-5 hari</span>
+              <span>📐 Spesifikasi teknis included</span>
             </div>
           </div>
         </div>
@@ -2891,12 +2952,12 @@ animation: none !important;
             <div class="timeline-line"></div>
           </div>
           <div class="timeline-content">
-            <span class="timeline-label">Step 03</span>
-            <h3>Physical Sample & Approval</h3>
-            <p>Dummy sample creation for structure validation. This ensures correct dimensions, material feel, and assembly before full production begins.</p>
+            <span class="timeline-label">Tahap 03</span>
+            <h3>Sample Fisik & Approval</h3>
+            <p>Pembuatan dummy sample untuk validasi struktur. Memastikan dimensi tepat, feel material, dan assembly sebelum produksi massal.</p>
             <div class="timeline-meta">
-              <span>⏱ 7-10 days</span>
-              <span>📦 Physical dummy provided</span>
+              <span>⏱ 7-10 hari</span>
+              <span>📦 Dummy fisik disediakan</span>
             </div>
           </div>
         </div>
@@ -2906,12 +2967,12 @@ animation: none !important;
             <div class="timeline-dot"></div>
           </div>
           <div class="timeline-content">
-            <span class="timeline-label">Step 04</span>
-            <h3>Production & Quality Control</h3>
-            <p>Full-scale manufacturing with in-line quality checks. Every box goes through inspection for print accuracy, structural integrity, and finishing quality.</p>
+            <span class="timeline-label">Tahap 04</span>
+            <h3>Produksi & Quality Control</h3>
+            <p>Manufacturing skala penuh dengan quality check in-line. Setiap box melalui inspeksi akurasi print, integritas struktur, dan kualitas finishing.</p>
             <div class="timeline-meta">
-              <span>⏱ 4-6 weeks</span>
-              <span>✓ Quality guaranteed</span>
+              <span>⏱ 4-6 minggu</span>
+              <span>✓ Kualitas terjamin</span>
             </div>
           </div>
         </div>
@@ -2920,10 +2981,10 @@ animation: none !important;
 
       <div class="process-cta-card">
         <div class="process-cta-content">
-          <h3>Ready to Start Your Project?</h3>
-          <p>Let's discuss your packaging needs — no commitment required.</p>
+          <h3>Siap Mulai Project Anda?</h3>
+          <p>Mari diskusikan kebutuhan packaging Anda — tanpa komitmen.</p>
         </div>
-        <a href="#rfq" class="btn-arrow">Get Started →</a>
+        <a href="#rfq" class="btn-arrow">Mulai Sekarang →</a>
       </div>
     </section>
 
@@ -2932,8 +2993,8 @@ animation: none !important;
     ============================================= -->
     <section id="rfq" class="container rfq-section" data-reveal>
       <div class="rfq-header">
-        <div class="rfq-badge">Start Here</div>
-        <h2>Request Custom Quote</h2>
+        <div class="rfq-badge">Mulai dari Sini</div>
+        <h2>Request Quotation Custom</h2>
         <p>Isi form berikut untuk mendapatkan estimasi harga dan solusi packaging yang sesuai dengan kebutuhan brand Anda.</p>
         <p>Data Anda aman dan hanya digunakan untuk keperluan estimasi project.</p>
       </div>
@@ -2945,43 +3006,43 @@ animation: none !important;
           
           <div class="form-row">
             <div class="form-field">
-              <label for="rfq-name">Your Name</label>
-              <input id="rfq-name" name="name" type="text" required placeholder="John Doe" autocomplete="name">
+              <label for="rfq-name">Nama Anda</label>
+              <input id="rfq-name" name="name" type="text" required placeholder="Nama lengkap" autocomplete="name">
             </div>
 
             <div class="form-field">
-              <label for="rfq-email">Business Email</label>
-              <input id="rfq-email" name="email" type="email" required placeholder="hello@yourbrand.com" autocomplete="email">
+              <label for="rfq-email">Email Bisnis</label>
+              <input id="rfq-email" name="email" type="email" required placeholder="hello@brandanda.com" autocomplete="email">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-field">
-              <label for="rfq-brand">Brand / Company</label>
-              <input id="rfq-brand" name="brand" type="text" placeholder="Your brand name">
+              <label for="rfq-brand">Brand / Perusahaan</label>
+              <input id="rfq-brand" name="brand" type="text" placeholder="Nama brand Anda">
             </div>
 
             <div class="form-field">
-              <label for="rfq-industry">Industry</label>
+              <label for="rfq-industry">Industri</label>
               <select id="rfq-industry" name="industry" required>
-                <option value="" disabled selected hidden>Select industry</option>
+                <option value="" disabled selected hidden>Pilih industri</option>
                 <option>Beauty / Skincare</option>
                 <option>Fashion / Lifestyle</option>
-                <option>Gourmet / Food</option>
+                <option>Gourmet / Food & Beverage</option>
                 <option>Electronics / Tech</option>
                 <option>Corporate / Gift</option>
-                <option>Other</option>
+                <option>Lainnya</option>
               </select>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-field">
-              <label for="rfq-box">Packaging Type</label>
+              <label for="rfq-box">Tipe Packaging</label>
               <select id="rfq-box" name="boxType" required>
-                <option value="" disabled selected hidden>Select type</option>
+                <option value="" disabled selected hidden>Pilih tipe</option>
                 <option>Rigid / Hardbox</option>
-                <option>Hardbox with Custom Insert</option>
+                <option>Hardbox dengan Insert Custom</option>
                 <option>Magnetic Closure Box</option>
                 <option>Drawer Box</option>
                 <option>Book-Style Box</option>
@@ -2990,30 +3051,30 @@ animation: none !important;
             </div>
 
             <div class="form-field">
-              <label for="rfq-qty">Quantity (MOQ: 200 pcs)</label>
-              <input id="rfq-qty" name="quantity" type="number" min="200" placeholder="e.g. 500">
+              <label for="rfq-qty">Kuantitas (MOQ: 200 pcs)</label>
+              <input id="rfq-qty" name="quantity" type="number" min="200" placeholder="contoh: 500">
             </div>
           </div>
 
           <div class="form-field">
-            <label for="rfq-message">Project Brief</label>
+            <label for="rfq-message">Deskripsi Project</label>
             <textarea
               id="rfq-message"
               name="message"
               rows="5"
-              placeholder="Tell us about your product, desired box dimensions, finishing preferences, and target launch date..."
+              placeholder="Ceritakan tentang produk Anda, ukuran box yang diinginkan, preferensi finishing, dan target launch date..."
               required></textarea>
           </div>
 
           <button type="submit" class="btn-submit-modern">
-            <span>Send Request</span>
+            <span>Kirim Request</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M1 8h14M9 2l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
 
           <p class="form-note">
-            ⚡ Response within 24 hours • 🔒 Your data is protected • ✓ No spam, ever
+            ⚡ Respon dalam 24 jam • 🔒 Data Anda terlindungi • ✓ Tidak ada spam
           </p>
 
         </form>
@@ -3022,75 +3083,75 @@ animation: none !important;
         <aside class="rfq-sidebar">
           
           <div class="rfq-info-card">
-            <h4>What Happens Next?</h4>
+            <h4>Apa yang Terjadi Selanjutnya?</h4>
             <ol class="rfq-steps-list">
               <li>
                 <span class="step-number">1</span>
                 <div>
-                  <strong>Initial Review</strong>
-                  <p>We analyze your requirements and prepare preliminary recommendations.</p>
+                  <strong>Review Awal</strong>
+                  <p>Kami analisis kebutuhan Anda dan persiapkan rekomendasi awal.</p>
                 </div>
               </li>
               <li>
                 <span class="step-number">2</span>
                 <div>
-                  <strong>Detailed Proposal</strong>
-                  <p>You'll receive material options, pricing breakdown, and production timeline.</p>
+                  <strong>Proposal Detail</strong>
+                  <p>Anda terima opsi material, breakdown harga, dan timeline produksi.</p>
                 </div>
               </li>
               <li>
                 <span class="step-number">3</span>
                 <div>
-                  <strong>Sample Creation</strong>
-                  <p>Physical dummy for approval before mass production begins.</p>
+                  <strong>Pembuatan Sample</strong>
+                  <p>Dummy fisik untuk approval sebelum produksi massal dimulai.</p>
                 </div>
               </li>
               <li>
                 <span class="step-number">4</span>
                 <div>
-                  <strong>Production & Delivery</strong>
-                  <p>Manufacturing with quality control and on-time shipment.</p>
+                  <strong>Produksi & Pengiriman</strong>
+                  <p>Manufacturing dengan quality control dan pengiriman tepat waktu.</p>
                 </div>
               </li>
             </ol>
           </div>
 
           <div class="rfq-info-card">
-            <h4>Why Brands Choose Us</h4>
+            <h4>Mengapa Brand Memilih Kami</h4>
             <ul class="rfq-benefits-list">
               <li>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="2"/>
                   <path d="M6 10l3 3 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <span>Low MOQ & scalable production capacity</span>
+                <span>MOQ rendah & kapasitas produksi scalable</span>
               </li>
               <li>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="2"/>
                   <path d="M6 10l3 3 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <span>Premium finishing options (foil, emboss, soft-touch)</span>
+                <span>Opsi finishing premium (foil, emboss, soft-touch)</span>
               </li>
               <li>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="2"/>
                   <path d="M6 10l3 3 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <span>In-line quality control at every production stage</span>
+                <span>Quality control in-line di setiap tahap produksi</span>
               </li>
               <li>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="2"/>
                   <path d="M6 10l3 3 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <span>Clear communication & realistic timelines</span>
+                <span>Komunikasi jelas & timeline realistis</span>
               </li>
             </ul>
           </div>
 
           <div class="rfq-contact-quick">
-            <p>Prefer to talk directly?</p>
+            <p>Lebih suka berbicara langsung?</p>
             <a href="https://wa.me/628195181427?text=Halo%20deartbox%2C%20saya%20ingin%20konsultasi%20packaging." 
                target="_blank" 
                rel="noopener"
@@ -3098,7 +3159,7 @@ animation: none !important;
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2a10 10 0 00-8.9 14.5L2 22l5.7-1.1A10 10 0 1012 2zm5.3 14.2c-.2.6-1.3 1.1-1.8 1.2-.5.1-1 .1-1.7-.1a13 13 0 01-5.7-3.9 6.6 6.6 0 01-1.4-3.5c0-1.8.9-2.6 1.2-2.9.3-.3.7-.4.9-.4h.7c.2 0 .5 0 .7.5l.9 2.1c.1.3.1.5 0 .7-.1.2-.2.4-.4.6l-.4.5c-.1.2-.3.4-.1.7a8.4 8.4 0 003.5 3c.3.1.5.1.7-.1l.8-.9c.2-.2.4-.2.7-.1l2 .8c.3.1.5.1.6.3z"/>
               </svg>
-              WhatsApp Chat
+              Chat WhatsApp
             </a>
           </div>
 
@@ -3112,9 +3173,9 @@ animation: none !important;
     ============================================= -->
     <section id="contact" class="container contact-section" data-reveal>
       <div class="contact-header">
-        <div class="contact-badge">Get in Touch</div>
-        <h2>Let's Build Something Great Together</h2>
-        <p>Whether you're launching a new product or scaling your brand, we're here to help you create packaging that stands out.</p>
+        <div class="contact-badge">Hubungi Kami</div>
+        <h2>Mari Bangun Sesuatu yang Hebat Bersama</h2>
+        <p>Baik Anda meluncurkan produk baru atau mengembangkan brand, kami siap membantu menciptakan packaging yang berdiri.</p>
       </div>
 
       <div class="contact-grid-modern">
@@ -3130,9 +3191,9 @@ animation: none !important;
               </svg>
             </div>
             <div class="contact-card-content">
-              <h4>Visit Our Workshop</h4>
-              <p>Jl. Gandaria 1 No.3, Gandaria Utara<br>Jakarta Selatan 12130, Indonesia</p>
-              <a href="https://maps.app.goo.gl/3rrdeTY66e4eDsoU6" target="_blank" rel="noopener" class="contact-link">Get Directions →</a>
+              <h4>Kunjungi Workshop Kami</h4>
+              <p>Jl. Gandaria 1 No. 3, Gandaria Utara<br>Jakarta Selatan 12130, Indonesia</p>
+              <a href="https://maps.app.goo.gl/3rrdeTY66e4eDsoU6" target="_blank" rel="noopener" class="contact-link">Lihat Peta →</a>
             </div>
           </div>
 
@@ -3143,8 +3204,8 @@ animation: none !important;
               </svg>
             </div>
             <div class="contact-card-content">
-              <h4>Call or Message</h4>
-              <p>Available Mon-Fri, 9AM-6PM WIB<br>Response within 24 hours</p>
+              <h4>Telepon atau WhatsApp</h4>
+              <p>Tersedia Senin-Jumat, 9AM-6PM WIB<br>Respon dalam 24 jam</p>
               <a href="https://wa.me/628195181427" target="_blank" rel="noopener" class="contact-link">+62 819-5181-427 →</a>
             </div>
           </div>
@@ -3157,8 +3218,8 @@ animation: none !important;
               </svg>
             </div>
             <div class="contact-card-content">
-              <h4>Email Us</h4>
-              <p>For detailed inquiries, partnership discussions, or technical questions</p>
+              <h4>Email Kami</h4>
+              <p>Untuk pertanyaan detail, diskusi partnership, atau pertanyaan teknis</p>
               <a href="mailto:deartboxpackaging@gmail.com" class="contact-link">deartboxpackaging@gmail.com →</a>
             </div>
           </div>
@@ -3169,30 +3230,30 @@ animation: none !important;
         <div class="contact-sidebar-modern">
           
           <div class="quick-facts-card">
-            <h4>Production Specs</h4>
+            <h4>Spesifikasi Produksi</h4>
             <div class="fact-grid">
               <div class="fact-item">
                 <span class="fact-label">Lead Time</span>
-                <span class="fact-value">4-6 weeks</span>
+                <span class="fact-value">4-6 minggu</span>
               </div>
               <div class="fact-item">
                 <span class="fact-label">Minimum Order</span>
                 <span class="fact-value">200 pcs</span>
               </div>
               <div class="fact-item">
-                <span class="fact-label">Monthly Capacity</span>
+                <span class="fact-label">Kapasitas Bulanan</span>
                 <span class="fact-value">50,000+ pcs</span>
               </div>
               <div class="fact-item">
-                <span class="fact-label">Quality Rate</span>
+                <span class="fact-label">Tingkat Kualitas</span>
                 <span class="fact-value">99.5%</span>
               </div>
             </div>
           </div>
 
           <div class="cta-card-modern">
-            <h4>Start Your Project Today</h4>
-            <p>Free consultation with no commitment required.</p>
+            <h4>Mulai Project Anda Hari Ini</h4>
+            <p>Konsultasi gratis tanpa komitmen.</p>
             <div class="cta-buttons-stack">
               <a href="https://wa.me/628195181427?text=Halo%20deartbox%2C%20saya%20ingin%20konsultasi%20packaging." 
                  target="_blank" 
@@ -3201,9 +3262,9 @@ animation: none !important;
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2a10 10 0 00-8.9 14.5L2 22l5.7-1.1A10 10 0 1012 2zm5.3 14.2c-.2.6-1.3 1.1-1.8 1.2-.5.1-1 .1-1.7-.1a13 13 0 01-5.7-3.9 6.6 6.6 0 01-1.4-3.5c0-1.8.9-2.6 1.2-2.9.3-.3.7-.4.9-.4h.7c.2 0 .5 0 .7.5l.9 2.1c.1.3.1.5 0 .7-.1.2-.2.4-.4.6l-.4.5c-.1.2-.3.4-.1.7a8.4 8.4 0 003.5 3c.3.1.5.1.7-.1l.8-.9c.2-.2.4-.2.7-.1l2 .8c.3.1.5.1.6.3z"/>
                 </svg>
-                WhatsApp Us
+                WhatsApp Kami
               </a>
-              <a href="#rfq" class="btn-secondary-modern">Request Quote</a>
+              <a href="#rfq" class="btn-secondary-modern">Request Quotation</a>
             </div>
           </div>
 
@@ -3232,7 +3293,7 @@ animation: none !important;
             </div>
           </div>
           <p class="footer-tagline">
-            Packaging Premium. Built for Growing Brands. Partner Produksi Hardbox Premium Anda
+            Produsen Hardbox Premium untuk Brand Indonesia. Partner Produksi Packaging Custom yang Terpercaya.
           </p>
           <div class="footer-social-modern">
             <a href="https://www.instagram.com/de_artbox" target="_blank" rel="noopener" aria-label="Instagram">
@@ -3255,12 +3316,12 @@ animation: none !important;
 
         <!-- Quick Links -->
         <div class="footer-column">
-          <h4>Company</h4>
+          <h4>Perusahaan</h4>
           <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#services">Layanan</a></li>
+            <li><a href="#portfolio">Portofolio</a></li>
+            <li><a href="#process">Proses</a></li>
+            <li><a href="#contact">Kontak</a></li>
           </ul>
         </div>
 
@@ -3268,16 +3329,16 @@ animation: none !important;
         <div class="footer-column">
           <h4>Resources</h4>
           <ul>
-            <li><a href="#rfq">Request Quote</a></li>
+            <li><a href="#rfq">Request Quotation</a></li>
             <li><a href="#" data-popup="faq">FAQ</a></li>
-            <li><a href="#" data-popup="terms">Terms of Service</a></li>
-            <li><a href="#" data-popup="privacy">Privacy Policy</a></li>
+            <li><a href="#" data-popup="terms">Syarat Layanan</a></li>
+            <li><a href="#" data-popup="privacy">Kebijakan Privasi</a></li>
           </ul>
         </div>
 
         <!-- Contact Info -->
         <div class="footer-column">
-          <h4>Get in Touch</h4>
+          <h4>Hubungi Kami</h4>
           <ul class="footer-contact-list">
             <li>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -3297,7 +3358,7 @@ animation: none !important;
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                 <polyline points="22,6 12,13 2,6"/>
               </svg>
-              <span>hello@deartbox.com</span>
+              <span>deartboxpackaging@gmail.com</span>
             </li>
           </ul>
         </div>
@@ -3305,10 +3366,10 @@ animation: none !important;
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 deartbox Packaging — Part of PT. Xerography Indonesia. All rights reserved.</p>
+        <p>&copy; 2026 deartbox Packaging — Bagian dari PT. Xerography Indonesia. Hak cipta dilindungi.</p>
         <div class="footer-badges">
           <span class="footer-badge-item">🇮🇩 Made in Indonesia</span>
-          <span class="footer-badge-item">🔒 Secure</span>
+          <span class="footer-badge-item">🔒 Aman & Terpercaya</span>
         </div>
       </div>
 
@@ -3321,6 +3382,12 @@ animation: none !important;
      target="_blank" 
      rel="noopener">Chat via WhatsApp</a>
 
+     <button id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 4l-7 7h4v9h6v-9h4z"/>
+   </svg>
+</button>
+
   <div id="legalPopup" class="legal-popup" aria-hidden="true">
     <div class="legal-popup-inner">
       <button class="legal-close" aria-label="Close">×</button>
@@ -3330,308 +3397,450 @@ animation: none !important;
   </div>
 
   <script>
-    // Optimized version dengan semua improvements
-    (function() {
-      'use strict';
+    // FIXED VERSION - ALL ERRORS RESOLVED
+(function() {
+  'use strict';
 
-      // Mobile Menu - tetap sama
-      const mobileToggle = document.getElementById('mobileToggle');
-      const offcanvas = document.getElementById('offcanvasMenu');
-      const overlay = document.getElementById('overlay');
-      const offClose = document.getElementById('offClose');
+  // ============================================
+  // MOBILE MENU
+  // ============================================
+  const mobileToggle = document.getElementById('mobileToggle');
+  const offcanvas = document.getElementById('offcanvasMenu');
+  const overlay = document.getElementById('overlay');
+  const offClose = document.getElementById('offClose');
 
-      function openMenu() {
-        offcanvas.classList.add('open');
-        overlay.classList.add('show');
-        document.body.classList.add('menu-open');
-        mobileToggle.setAttribute('aria-expanded', 'true');
-        offcanvas.setAttribute('aria-hidden', 'false');
-        overlay.setAttribute('aria-hidden', 'false');
-        offClose.focus();
-      }
+  function openMenu() {
+    offcanvas.classList.add('open');
+    overlay.classList.add('show');
+    document.body.classList.add('menu-open');
+    mobileToggle.setAttribute('aria-expanded', 'true');
+    offcanvas.setAttribute('aria-hidden', 'false');
+    overlay.setAttribute('aria-hidden', 'false');
+    offClose.focus();
+  }
 
-      function closeMenu() {
-        offcanvas.classList.remove('open');
-        overlay.classList.remove('show');
-        document.body.classList.remove('menu-open');
-        mobileToggle.setAttribute('aria-expanded', 'false');
-        offcanvas.setAttribute('aria-hidden', 'true');
-        overlay.setAttribute('aria-hidden', 'true');
-        mobileToggle.focus();
-      }
+  function closeMenu() {
+    offcanvas.classList.remove('open');
+    overlay.classList.remove('show');
+    document.body.classList.remove('menu-open');
+    mobileToggle.setAttribute('aria-expanded', 'false');
+    offcanvas.setAttribute('aria-hidden', 'true');
+    overlay.setAttribute('aria-hidden', 'true');
+    mobileToggle.focus();
+  }
 
-      mobileToggle.addEventListener('click', function() {
-        const isOpen = offcanvas.classList.contains('open');
-        isOpen ? closeMenu() : openMenu();
-      });
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', function() {
+      const isOpen = offcanvas.classList.contains('open');
+      isOpen ? closeMenu() : openMenu();
+    });
+  }
 
-      offClose.addEventListener('click', closeMenu);
-      overlay.addEventListener('click', closeMenu);
+  if (offClose) offClose.addEventListener('click', closeMenu);
+  if (overlay) overlay.addEventListener('click', closeMenu);
 
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && offcanvas.classList.contains('open')) {
-          closeMenu();
-        }
-      });
-
-      // Smooth Scroll - tetap sama
-      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-        anchor.addEventListener('click', function(e) {
-          const href = this.getAttribute('href');
-          if (!href || href === '#') return;
-          
-          const target = document.querySelector(href);
-          if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            
-            if (offcanvas.classList.contains('open')) {
-              closeMenu();
-            }
-          }
-        });
-      });
-
-      // Sticky CTA - tetap sama
-      (function() {
-        const stickyCTA = document.querySelector('.sticky-cta');
-        if (!stickyCTA) return;
-
-        let baseViewportHeight = window.innerHeight;
-
-        function isKeyboardOpen() {
-          return window.innerHeight < baseViewportHeight * 0.75;
-        }
-
-        function isNearBottom() {
-          return window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 160;
-        }
-
-        function shouldShow() {
-          if (isKeyboardOpen()) return false;
-          if (isNearBottom()) return false;
-          if (window.scrollY < window.innerHeight * 0.65) return false;
-          return true;
-        }
-
-        function updateCTA() {
-          stickyCTA.classList.toggle('show', shouldShow());
-        }
-
-        window.addEventListener('scroll', updateCTA, { passive: true });
-        window.addEventListener('resize', function() {
-          baseViewportHeight = Math.max(baseViewportHeight, window.innerHeight);
-          updateCTA();
-        });
-
-        updateCTA();
-      })();
-
-      // Scroll Reveal dengan IntersectionObserver
-      if ('IntersectionObserver' in window) {
-        const revealItems = document.querySelectorAll('[data-reveal]');
-        const observer = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
-
-        revealItems.forEach(function(el) {
-          observer.observe(el);
-        });
-      }
-
-      // Lazy Load Images untuk portfolio
-      if ('IntersectionObserver' in window) {
-        const lazyImages = document.querySelectorAll('img[data-src]');
-        const imageObserver = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              const img = entry.target;
-              img.src = img.dataset.src;
-              img.removeAttribute('data-src');
-              imageObserver.unobserve(img);
-            }
-          });
-        }, { rootMargin: '200px 0px' });
-
-        lazyImages.forEach(function(img) {
-          imageObserver.observe(img);
-        });
-      }
-
-      // Legal Popup - tetap sama
-      (function() {
-        const popup = document.getElementById('legalPopup');
-        if (!popup) return;
-
-        const title = document.getElementById('legalTitle');
-        const content = document.getElementById('legalContent');
-        const closeBtn = popup.querySelector('.legal-close');
-
-        const popupData = {
-          privacy: {
-            title: 'Privacy Policy',
-            content: '<p>Kami menghormati privasi Anda. Informasi yang dikirimkan melalui website ini hanya digunakanuntuk keperluan komunikasi bisnis, konsultasi, dan penawaran layanan deartbox Packaging.</p><p>Kami tidak menjual, menyewakan, atau membagikan data pribadi Anda kepada pihak ketiga tanpa persetujuan, kecuali diwajibkan oleh hukum.</p>'
-          },
-          terms: {
-            title: 'Terms & Conditions',
-            content: '<p>Seluruh informasi yang ditampilkan di website ini bersifat informatif dan dapat berubah sewaktu-waktu tanpa pemberitahuan sebelumnya.</p><p>Spesifikasi, harga, dan lead time produksi akan dikonfirmasi secara tertulis sebelum proses produksi dimulai.</p>'
-          },
-          faq: {
-            title: 'Frequently Asked Questions',
-            content: '<ul><li><strong>Berapa MOQ hardbox?</strong> MOQ mulai dari 200 pcs.</li><li><strong>Berapa lama waktu produksi?</strong> Rata-rata 4–6 minggu tergantung spesifikasi.</li><li><strong>Apakah bisa fully custom?</strong> Ya, ukuran, material, dan finishing dapat disesuaikan.</li><li><strong>Apakah konsultasi berbayar?</strong> Tidak. Konsultasi awal gratis.</li></ul>'
-          }
-        };
-
-        document.querySelectorAll('[data-popup]').forEach(function(link) {
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const key = this.dataset.popup;
-            if (!popupData[key]) return;
-
-            title.textContent = popupData[key].title;
-            content.innerHTML = popupData[key].content;
-            popup.classList.add('show');
-            popup.setAttribute('aria-hidden', 'false');
-            
-            // Track legal page views
-            if (typeof gtag !== 'undefined') {
-              gtag('event', 'legal_view', {
-                event_category: 'Engagement',
-                event_label: key
-              });
-            }
-          });
-        });
-
-        function closePopup() {
-          popup.classList.remove('show');
-          popup.setAttribute('aria-hidden', 'true');
-        }
-
-        closeBtn.addEventListener('click', closePopup);
-        popup.addEventListener('click', function(e) {
-          if (e.target === popup) closePopup();
-        });
-        document.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape' && popup.classList.contains('show')) {
-            closePopup();
-          }
-        });
-      })();
-
-      // Form Handler dengan analytics
-            window.handleRfq = function (e) {
-        e.preventDefault();
-
-        const form = e.target;
-        if (form.dataset.submitted) return;
-        form.dataset.submitted = 'true';
-
-        const data = new FormData(form);
-
-        const msg = `
-      Halo deartbox,
-      Saya ingin request quotation:
-
-      Nama: ${data.get('name')}
-      Email: ${data.get('email')}
-      Brand: ${data.get('brand')}
-      Industry: ${data.get('industry')}
-      Box: ${data.get('boxType')}
-      Qty: ${data.get('quantity')}
-      Brief: ${data.get('message')}
-        `;
-
-        const waUrl =
-          'https://wa.me/628195181427?text=' + encodeURIComponent(msg);
-
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'form_submit', {
-            event_category: 'Lead',
-            event_label: 'RFQ WhatsApp'
-          });
-        }
-
-        window.open(waUrl, '_blank');
-
-        setTimeout(() => {
-          form.reset();
-          delete form.dataset.submitted;
-        }, 3000);
-      };
-
-
-      // Track outbound link clicks
-      document.querySelectorAll('a[href^="http"]').forEach(function(link) {
-        if (link.hostname !== window.location.hostname) {
-          link.addEventListener('click', function() {
-            if (typeof gtag !== 'undefined') {
-              gtag('event', 'outbound_click', {
-                event_category: 'Outbound',
-                event_label: link.href
-              });
-            }
-          });
-        }
-      });
-
-      // Track CTA clicks
-      document.querySelectorAll('.cta, .btn-primary, .btn-primary2, .btn-ghost').forEach(function(button) {
-        button.addEventListener('click', function() {
-          if (typeof gtag !== 'undefined') {
-            gtag('event', 'cta_click', {
-              event_category: 'Engagement',
-              event_label: this.textContent.trim().substring(0, 50)
-            });
-          }
-        });
-      });
-
-      // Error tracking
-      window.addEventListener('error', function(e) {
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'error', {
-            event_category: 'JavaScript',
-            event_label: e.message,
-            non_interaction: true
-          });
-        }
-      });
-    })
-  ();
-  // Tambahkan validasi real-time
-document.querySelectorAll('input, textarea').forEach(el => {
-  el.addEventListener('blur', validateField);
-});    
-  </script>
-  <button id="backToTop" aria-label="Back to top">
-   <svg viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M12 4l-7 7h4v9h6v-9h4z"/>
-  </svg>
-</button>
-<script>
-  const backToTop = document.getElementById('backToTop');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 500) {
-      backToTop.classList.add('show');
-    } else {
-      backToTop.classList.remove('show');
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && offcanvas && offcanvas.classList.contains('open')) {
+      closeMenu();
     }
   });
 
-  backToTop.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  // ============================================
+  // SMOOTH SCROLL
+  // ============================================
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (!href || href === '#') return;
+      
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        
+        if (offcanvas && offcanvas.classList.contains('open')) {
+          closeMenu();
+        }
+      }
     });
   });
+
+  // ============================================
+  // STICKY CTA
+  // ============================================
+  (function() {
+    const stickyCTA = document.querySelector('.sticky-cta');
+    if (!stickyCTA) return;
+
+    let baseViewportHeight = window.innerHeight;
+
+    function isKeyboardOpen() {
+      return window.innerHeight < baseViewportHeight * 0.75;
+    }
+
+    function isNearBottom() {
+      return window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 160;
+    }
+
+    function shouldShow() {
+      if (isKeyboardOpen()) return false;
+      if (isNearBottom()) return false;
+      if (window.scrollY < window.innerHeight * 0.65) return false;
+      return true;
+    }
+
+    function updateCTA() {
+      stickyCTA.classList.toggle('show', shouldShow());
+    }
+
+    window.addEventListener('scroll', updateCTA, { passive: true });
+    window.addEventListener('resize', function() {
+      baseViewportHeight = Math.max(baseViewportHeight, window.innerHeight);
+      updateCTA();
+    });
+
+    updateCTA();
+  })();
+
+  // ============================================
+  // SCROLL REVEAL - INTERSECTION OBSERVER
+  // ============================================
+  if ('IntersectionObserver' in window) {
+    const revealItems = document.querySelectorAll('[data-reveal]');
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+    revealItems.forEach(function(el) {
+      observer.observe(el);
+    });
+  }
+
+  // ============================================
+  // LAZY LOAD IMAGES
+  // ============================================
+  if ('IntersectionObserver' in window) {
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+          imageObserver.unobserve(img);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+
+    lazyImages.forEach(function(img) {
+      imageObserver.observe(img);
+    });
+  }
+
+  // ============================================
+  // LEGAL POPUP
+  // ============================================
+  (function() {
+    const popup = document.getElementById('legalPopup');
+    if (!popup) return;
+
+    const title = document.getElementById('legalTitle');
+    const content = document.getElementById('legalContent');
+    const closeBtn = popup.querySelector('.legal-close');
+
+    const popupData = {
+      privacy: {
+        title: 'Kebijakan Privasi',
+        content: '<p>Kami menghormati privasi Anda. Informasi yang dikirimkan melalui website ini hanya digunakan untuk keperluan komunikasi bisnis, konsultasi, dan penawaran layanan deartbox Packaging.</p><p>Kami tidak menjual, menyewakan, atau membagikan data pribadi Anda kepada pihak ketiga tanpa persetujuan, kecuali diwajibkan oleh hukum.</p>'
+      },
+      terms: {
+        title: 'Syarat & Ketentuan',
+        content: '<p>Seluruh informasi yang ditampilkan di website ini bersifat informatif dan dapat berubah sewaktu-waktu tanpa pemberitahuan sebelumnya.</p><p>Spesifikasi, harga, dan lead time produksi akan dikonfirmasi secara tertulis sebelum proses produksi dimulai.</p>'
+      },
+      faq: {
+        title: 'Pertanyaan yang Sering Diajukan',
+        content: '<ul><li><strong>Berapa MOQ hardbox?</strong> MOQ mulai dari 200 pcs.</li><li><strong>Berapa lama waktu produksi?</strong> Rata-rata 4–6 minggu tergantung spesifikasi.</li><li><strong>Apakah bisa fully custom?</strong> Ya, ukuran, material, dan finishing dapat disesuaikan.</li><li><strong>Apakah konsultasi berbayar?</strong> Tidak. Konsultasi awal gratis.</li></ul>'
+      }
+    };
+
+    document.querySelectorAll('[data-popup]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const key = this.dataset.popup;
+        if (!popupData[key]) return;
+
+        title.textContent = popupData[key].title;
+        content.innerHTML = popupData[key].content;
+        popup.classList.add('show');
+        popup.setAttribute('aria-hidden', 'false');
+        
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'legal_view', {
+            event_category: 'Engagement',
+            event_label: key
+          });
+        }
+      });
+    });
+
+    function closePopup() {
+      popup.classList.remove('show');
+      popup.setAttribute('aria-hidden', 'true');
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closePopup);
+    
+    popup.addEventListener('click', function(e) {
+      if (e.target === popup) closePopup();
+    });
+    
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && popup.classList.contains('show')) {
+        closePopup();
+      }
+    });
+  })();
+
+  // ============================================
+  // FORM VALIDATION - NEW FUNCTION
+  // ============================================
+  function validateField(e) {
+    const field = e.target;
+    const value = field.value.trim();
+    
+    // Remove existing error
+    const existingError = field.parentElement.querySelector('.field-error');
+    if (existingError) existingError.remove();
+    field.classList.remove('field-invalid');
+
+    // Validate based on type
+    let isValid = true;
+    let errorMsg = '';
+
+    if (field.hasAttribute('required') && !value) {
+      isValid = false;
+      errorMsg = 'Field ini wajib diisi';
+    } else if (field.type === 'email' && value) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(value)) {
+        isValid = false;
+        errorMsg = 'Format email tidak valid';
+      }
+    } else if (field.type === 'number' && value) {
+      const minValue = parseInt(field.getAttribute('min'));
+      if (minValue && parseInt(value) < minValue) {
+        isValid = false;
+        errorMsg = `Minimal ${minValue}`;
+      }
+    }
+
+    if (!isValid) {
+      field.classList.add('field-invalid');
+      const errorEl = document.createElement('span');
+      errorEl.className = 'field-error';
+      errorEl.textContent = errorMsg;
+      errorEl.style.cssText = 'display:block;font-size:12px;color:#e63946;margin-top:4px;';
+      field.parentElement.appendChild(errorEl);
+    }
+
+    return isValid;
+  }
+
+  // Add validation listeners
+  document.querySelectorAll('input, textarea, select').forEach(function(el) {
+    el.addEventListener('blur', validateField);
+  });
+
+  // ============================================
+  // FORM HANDLER WITH ANALYTICS
+  // ============================================
+  window.handleRfq = function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    
+    // Prevent double submission
+    if (form.dataset.submitted) return;
+
+    // Validate all fields
+    const fields = form.querySelectorAll('input, textarea, select');
+    let allValid = true;
+    
+    fields.forEach(function(field) {
+      const mockEvent = { target: field };
+      if (!validateField(mockEvent)) {
+        allValid = false;
+      }
+    });
+
+    if (!allValid) {
+      alert('Mohon lengkapi semua field yang wajib diisi dengan benar');
+      return;
+    }
+
+    form.dataset.submitted = 'true';
+
+    const data = new FormData(form);
+
+    const msg = `Halo deartbox,
+Saya ingin request quotation:
+
+Nama: ${data.get('name')}
+Email: ${data.get('email')}
+Brand: ${data.get('brand') || '-'}
+Industri: ${data.get('industry')}
+Tipe Box: ${data.get('boxType')}
+Kuantitas: ${data.get('quantity') || '-'}
+Deskripsi: ${data.get('message')}`;
+
+    const waUrl = 'https://wa.me/628195181427?text=' + encodeURIComponent(msg);
+
+    // Analytics tracking
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'form_submit', {
+        event_category: 'Lead',
+        event_label: 'RFQ WhatsApp',
+        value: parseInt(data.get('quantity')) || 0
+      });
+    }
+
+    window.open(waUrl, '_blank');
+
+    // Reset form after delay
+    setTimeout(function() {
+      form.reset();
+      delete form.dataset.submitted;
+      // Remove all error messages
+      form.querySelectorAll('.field-error').forEach(function(el) {
+        el.remove();
+      });
+      form.querySelectorAll('.field-invalid').forEach(function(el) {
+        el.classList.remove('field-invalid');
+      });
+    }, 2000);
+  };
+
+  // ============================================
+  // BACK TO TOP BUTTON
+  // ============================================
+  const backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 500) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    }, { passive: true });
+
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
+  // ============================================
+  // ANALYTICS TRACKING
+  // ============================================
+  
+  // Track outbound links
+  document.querySelectorAll('a[href^="http"]').forEach(function(link) {
+    if (link.hostname !== window.location.hostname) {
+      link.addEventListener('click', function() {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'outbound_click', {
+            event_category: 'Outbound',
+            event_label: link.href
+          });
+        }
+      });
+    }
+  });
+
+  // Track CTA clicks
+  document.querySelectorAll('.cta-nav, .btn-hero-primary, .btn-cta-wa, .sticky-cta').forEach(function(button) {
+    button.addEventListener('click', function() {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'cta_click', {
+          event_category: 'Engagement',
+          event_label: this.textContent.trim().substring(0, 50)
+        });
+      }
+    });
+  });
+
+  // Error tracking
+  window.addEventListener('error', function(e) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'js_error', {
+        event_category: 'Error',
+        event_label: e.message,
+        non_interaction: true
+      });
+    }
+  }, true);
+
+  // ============================================
+  // PERFORMANCE MONITORING
+  // ============================================
+  if ('PerformanceObserver' in window) {
+    try {
+      const perfObserver = new PerformanceObserver(function(list) {
+        for (const entry of list.getEntries()) {
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'web_vitals', {
+              event_category: 'Performance',
+              event_label: entry.name,
+              value: Math.round(entry.value),
+              non_interaction: true
+            });
+          }
+        }
+      });
+      
+      perfObserver.observe({ entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift'] });
+    } catch (e) {
+      // PerformanceObserver not fully supported
+      console.log('Performance monitoring not available');
+    }
+  }
+
+})(); // ✅ FIXED - Proper IIFE closure
+
+// ============================================
+// CSS untuk form validation
+// ============================================
+const validationStyles = document.createElement('style');
+validationStyles.textContent = `
+  .field-invalid {
+    border-color: #e63946 !important;
+    background: rgba(230, 57, 70, 0.05) !important;
+  }
+  
+  .field-error {
+    display: block;
+    font-size: 12px;
+    color: #e63946;
+    margin-top: 4px;
+    animation: fadeIn 0.2s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+`;
+document.head.appendChild(validationStyles);
+
   
 </script>
+
 </body>
 </html>
