@@ -2095,10 +2095,39 @@ section {
   box-shadow: 0 16px 40px rgba(230,57,70,0.28);
   transition: bottom .35s var(--ease-premium);
   will-change: transform;
+  
+  /* Untuk desktop: posisi kanan */
+  @media (min-width: 1025px) {
+    left: auto;
+    right: 24px;
+    bottom: -80px;
+    transform: none;
+  }
 }
 
 .sticky-cta.show {
   bottom: calc(18px + env(safe-area-inset-bottom));
+  
+  /* Untuk desktop */
+  @media (min-width: 1025px) {
+    bottom: 24px;
+  }
+}
+
+/* Responsive untuk mobile */
+@media (max-width: 520px) {
+  .sticky-cta {
+    display: none;
+  }
+  
+  /* Untuk tablet dan desktop kecil */
+  @media (max-width: 1024px) {
+    .sticky-cta {
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%);
+    }
+  }
 }
 
 #backToTop {
@@ -2119,6 +2148,28 @@ section {
   transform: translateY(12px) scale(0.96);
   pointer-events: none;
   transition: opacity .35s var(--ease-premium), transform .35s var(--ease-premium), background .25s ease;
+  
+  /* Untuk desktop: naikkan posisi agar tidak tabrakan dengan sticky CTA */
+  @media (min-width: 1025px) {
+    bottom: 100px;
+    right: 100px;
+  }
+}
+
+/* Untuk tablet */
+@media (max-width: 1024px) {
+  #backToTop {
+    bottom: 160px;
+    right: 24px;
+  }
+}
+
+/* Untuk mobile */
+@media (max-width: 768px) {
+  #backToTop {
+    bottom: 100px;
+    right: 16px;
+  }
 }
 
 #backToTop svg {
@@ -2941,7 +2992,7 @@ animation: none !important;
             <p>Technical drawing, setup dieline, dan spesifikasi material. Kami berikan rekomendasi berdasarkan kebutuhan proteksi produk dan estetika brand.</p>
             <div class="timeline-meta">
               <span>⏱ 3-5 hari</span>
-              <span>📐 Spesifikasi teknis included</span>
+              <span>📐 Teknikal dan Spesifikasi</span>
             </div>
           </div>
         </div>
