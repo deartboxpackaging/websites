@@ -272,7 +272,7 @@ body::before {
 .cta-nav:hover {
   transform: translateY(-2px) !important;
   box-shadow: 0 8px 20px rgba(230,57,70,0.4) !important;
-  background: rgba(255,255,255,0.05) !important;
+  background: linear-gradient(135deg, #f04a55, #b51b20) !important; /* Perbaikan */
 }
 
 .mobile-toggle {
@@ -2336,10 +2336,6 @@ animation: none !important;
   border-radius: 12px;
   display: block;
 }
-.field-invalid {
-  border-color: #e63946 !important;
-  background: rgba(230, 57, 70, 0.05) !important;
-}
 
 .field-error {
   display: block;
@@ -4299,35 +4295,7 @@ Deskripsi: ${data.get('message')}`;
       console.log('Performance monitoring not available');
     }
   }
-
-})(); // ✅ FIXED - Proper IIFE closure
-
-// ============================================
-// CSS untuk form validation
-// ============================================
-const validationStyles = document.createElement('style');
-validationStyles.textContent = `
-  .field-invalid {
-    border-color: #e63946 !important;
-    background: rgba(230, 57, 70, 0.05) !important;
-  }
-  
-  .field-error {
-    display: block;
-    font-size: 12px;
-    color: #e63946;
-    margin-top: 4px;
-    animation: fadeIn 0.2s ease;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-4px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-`;
-document.head.appendChild(validationStyles);
-
- // ============================================
+  // ============================================
 // HERO SLIDESHOW FUNCTIONALITY - FIXED TIMING
 // ============================================
 (function() {
@@ -4465,6 +4433,8 @@ document.head.appendChild(validationStyles);
     });
   });
 })();
+
+})(); // ✅ FIXED - Proper IIFE closure
 
 </script>
 
