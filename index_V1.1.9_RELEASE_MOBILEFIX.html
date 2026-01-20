@@ -4991,7 +4991,7 @@ document.querySelectorAll('input, textarea, select').forEach(function(el) {
   // FORM HANDLER WITH ANALYTICS
   // ============================================
   window.handleRfq = function(e) {
-
+e.preventDefault();
     const form = e.target;
     
     // Prevent double submission
