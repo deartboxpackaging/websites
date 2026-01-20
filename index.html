@@ -13,10 +13,10 @@
   <meta name="description" content="deartbox Packaging adalah produsen hardbox premium custom untuk brand beauty, fashion, lifestyle, dan gourmet. 
   MOQ mulai 200 pcs, finishing premium, dan quality control ketat. Konsultasi gratis.">
   <meta name="keywords" content="hardbox premium, hardbox custom, rigid box indonesia, packaging premium, produsen hardbox, custom packaging indonesia">
-  <meta name="author" content="deartbox Packaging">
+  
   <meta name="robots" content="index, follow">
 
-    <meta name="author" content="deartbox Packaging - PT. Xerography Indonesia">
+  <meta name="author" content="deartbox Packaging - PT. Xerography Indonesia">
   <meta name="publisher" content="PT. Xerography Indonesia">
   <meta name="application-name" content="deartbox Packaging">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -1085,97 +1085,648 @@ section {
   letter-spacing: 0.05em;
 }
 
-/* ================ MOBILE RESPONSIVE ================ */
+/* ================ MOBILE RESPONSIVE - PERBAIKAN HERO ================ */
+
+/* Tablet - 1024px */
 @media (max-width: 1024px) {
+  :root {
+    --container-pad: clamp(20px, 5vw, 32px);
+    --gap: clamp(12px, 2.5vw, 24px);
+  }
+
   .services-grid-modern,
   .manufacturing-grid,
   .portfolio-grid-modern,
   .industry-grid-modern {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
   .cta-card-large {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
+    padding: 36px 28px;
   }
 
   .cta-large-visual {
     grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  /* PERBAIKAN HERO UNTUK TABLET */
+  .hero-modern {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+  
+  .hero-content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .hero-title {
+    text-align: center;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hero-description {
+    text-align: center;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hero-ctas {
+    justify-content: center;
+  }
+  
+  .hero-trust-bar {
+    justify-content: center;
+  }
+  
+  .hero-stats-modern {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  /* PERBAIKAN POSISI PANAH DI DALAM SLIDESHOW */
+  .hero-slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+  }
+  
+  /* Pastikan panah berada DI DALAM container slideshow */
+  .slide-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    z-index: 20; /* Pastikan di atas gambar */
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .slide-nav.prev {
+    left: 16px !important;
+    right: auto !important;
+  }
+  
+  .slide-nav.next {
+    right: 16px !important;
+    left: auto !important;
+  }
+  
+  /* HIDE STICKY CTA UNTUK MOBILE */
+  .sticky-cta {
+    display: none !important;
   }
 }
 
+/* Tablet Small - 980px */
 @media (max-width: 980px) {
-  .hero-modern {
-    grid-template-columns: 1fr;
-    padding-top: clamp(40px, 8vw, 80px);
+  body {
+    font-size: 14px;
   }
 
-  .hero-visual {
-    order: 2;
+  header {
+    backdrop-filter: blur(10px);
   }
 
-  .hero-content {
-    order: 1;
-    margin-left: 15px;
-    margin-right: 15px;
+  .nav {
+    padding: 12px 0;
+  }
+
+  .logo-mark {
+    width: 38px;
+    height: 38px;
+  }
+
+  .logo-text h1 {
+    font-size: 15px;
+  }
+
+  .logo-text p {
+    font-size: 10.5px;
   }
 
   .mobile-toggle {
     display: inline-block;
+    min-width: 44px;
+    min-height: 44px;
   }
 
   .nav-links {
-    display: none;
+    display: none !important;
   }
 
-  .feature-mini {
-    flex-direction: column;
+  /* Hero Mobile - PERBAIKAN UTAMA */
+  .hero-modern {
+    grid-template-columns: 1fr !important;
+    gap: 32px;
+    padding-top: 32px;
+    padding-bottom: 48px;
     text-align: center;
   }
 
-  .feature-icon {
+  /* Pastikan konten di atas, slideshow di bawah */
+  .hero-content {
+    order: 1 !important;
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .hero-visual-slideshow {
+    order: 2 !important;
+    width: 100%;
     margin: 0 auto;
   }
-}
 
-@media (max-width: 768px) {
-  .services-grid-modern,
-  .manufacturing-grid,
-  .portfolio-grid-modern,
-  .industry-grid-modern {
-    grid-template-columns: 1fr;
+  .hero-badge {
+    font-size: 11px;
+    padding: 6px 12px;
+    margin-bottom: 16px;
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .hero-features-grid {
-    grid-template-columns: 1fr;
+  .hero-title {
+    font-size: clamp(28px, 7vw, 36px);
+    line-height: 1.15;
+    margin-bottom: 16px;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .hero-description {
+    font-size: 14.5px;
+    margin-bottom: 24px;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .hero-ctas {
+    gap: 10px;
+    margin-bottom: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    padding: 12px 20px;
+    font-size: 14px;
+    min-height: 48px;
+    justify-content: center;
   }
 
   .hero-trust-bar {
-    flex-direction: column;
-    gap: 12px;
+    padding: 16px 0;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    font-size: 12px;
+    justify-content: center;
   }
 
   .hero-stats-modern {
+    gap: 16px;
+    justify-content: center;
+    text-align: center;
     flex-wrap: wrap;
+  }
+
+  .stat-modern strong {
+    font-size: 18px;
+  }
+
+  .stat-modern span {
+    font-size: 11px;
   }
 
   .stat-divider {
     display: none;
   }
 
-  .cta-large-visual {
-    grid-template-columns: 1fr;
+   /* Slideshow Mobile - POSISI PANAH DI DALAM FOTO */
+  .hero-slideshow-container {
+    height: 380px;
+    position: relative;
+    width: 100% !important;
+    margin: 0 auto;
+    max-width: 600px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  
+  /* Reset posisi panah yang salah */
+  .slide-nav {
+    position: absolute !important;
+    width: 42px !important;
+    height: 42px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 20;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(4px);
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Override CSS yang mungkin salah */
+  .slide-nav.prev {
+    left: 16px !important;
+    right: auto !important;
+    margin-left: 0 !important;
+  }
+  
+  .slide-nav.next {
+    right: 16px !important;
+    left: auto !important;
+    margin-right: 0 !important;
+  }
+  
+  .slide-nav svg {
+    width: 22px !important;
+    height: 22px !important;
+    margin: 0 !important;
   }
 
-  .cta-card-large {
-    padding: 32px 24px;
+
+  .slide-nav.prev {
+    left: 12px !important;
+    right: auto !important;
+  }
+
+  .slide-nav.next {
+    right: 12px !important;
+    left: auto !important;
+  }
+
+  /* Feature Mini */
+  .hero-features-grid {
+    gap: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .feature-mini {
+    padding: 14px;
+    gap: 10px;
+    text-align: left;
+  }
+
+  .feature-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .feature-mini h4 {
+    font-size: 13px;
+    text-align: left;
+  }
+
+  .feature-mini p {
+    font-size: 11.5px;
+    text-align: left;
+  }
+
+  /* Sections */
+  section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .section-badge {
+    font-size: 10.5px;
+    padding: 5px 12px;
+    margin-top: 0;
+  }
+
+  .section-header-modern h2 {
+    font-size: clamp(24px, 5vw, 32px);
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .section-header-modern p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  /* RFQ & Contact */
+  .rfq-layout,
+  .contact-grid-modern {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .rfq-sidebar,
+  .contact-sidebar-modern {
+    position: static;
+  }
+
+  .rfq-form,
+  .contact-cards {
+    order: 1;
+  }
+
+  .rfq-sidebar,
+  .contact-sidebar-modern {
+    order: 2;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* Process Timeline */
+  .timeline-item {
+    grid-template-columns: 32px 1fr;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+
+  .process-cta-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
   }
 }
 
+/* Mobile - 768px */
+@media (max-width: 768px) {
+  :root {
+    --container-pad: 20px;
+  }
+
+  body {
+    font-size: 13.5px;
+  }
+
+  /* All Grids to Single Column */
+  .services-grid-modern,
+  .manufacturing-grid,
+  .portfolio-grid-modern,
+  .industry-grid-modern {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .hero-features-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  /* Hero - PERBAIKAN LEBIH KECIL */
+  .hero-modern {
+    padding-top: 24px;
+    padding-bottom: 40px;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 26px;
+    margin-bottom: 14px;
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  .hero-description {
+    font-size: 13.5px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  .hero-badge {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+
+  .hero-trust-bar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px 0;
+    align-items: center;
+  }
+
+  .hero-stats-modern {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  /* Slideshow - PANAH DI DALAM FOTO */
+  .hero-slideshow-container {
+    height: 300px !important;
+    max-width: 100%;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Reset semua posisi panah */
+  .slide-nav {
+    position: absolute !important;
+    width: 40px !important;
+    height: 40px !important;
+    top: 50% !important;
+    left: auto !important;
+    right: auto !important;
+    transform: translateY(-50%) !important;
+    z-index: 20;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(4px);
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  .slide-nav.prev {
+    left: 12px !important;
+    right: auto !important;
+  }
+  
+  .slide-nav.next {
+    right: 12px !important;
+    left: auto !important;
+  }
+  
+  .slide-nav svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+
+  .slide-nav.prev {
+    left: 10px !important;
+  }
+
+  .slide-nav.next {
+    right: 10px !important;
+  }
+
+  /* Cards */
+  .service-card-modern,
+  .manufacturing-card,
+  .portfolio-item-modern {
+    border-radius: 14px;
+  }
+
+  .service-content,
+  .manufacturing-content,
+  .portfolio-body-modern {
+    padding: 18px;
+  }
+
+  /* CTA Section */
+  .cta-card-large {
+    padding: 28px 20px;
+  }
+
+  .cta-large-visual {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .cta-stat-card {
+    padding: 16px;
+  }
+
+  .cta-stat-number {
+    font-size: 20px;
+  }
+
+  /* Footer */
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .footer-badges {
+    justify-content: center;
+  }
+
+  /* Contact Cards */
+  .contact-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .contact-card-icon {
+    margin: 0 auto;
+  }
+
+  .fact-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Back to Top */
+  #backToTop {
+    bottom: 100px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Mobile Small - 520px */
 @media (max-width: 520px) {
+  :root {
+    --container-pad: 16px;
+  }
+
+  body {
+    font-size: 13px;
+  }
+
+  /* Header */
+  .header-container {
+    padding: 0 16px;
+  }
+
+  .logo-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .logo-text h1 {
+    font-size: 14px;
+  }
+
+  .logo-text p {
+    font-size: 9.5px;
+  }
+
+  /* Hero - PERBAIKAN EXTRA KECIL */
+  .hero-modern {
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 24px;
+    padding: 0 16px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+    padding: 0 16px;
+  }
+
   .hero-ctas {
     flex-direction: column;
     width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-ctas a {
@@ -1183,13 +1734,206 @@ section {
     justify-content: center;
   }
 
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    padding: 13px 18px;
+    font-size: 13.5px;
+  }
+
+   /* Slideshow */
+  .hero-slideshow-container {
+    height: 250px !important;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Perbaikan posisi panah untuk mobile sangat kecil */
+  .slide-nav {
+    width: 36px !important;
+    height: 36px !important;
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 20;
+  }
+  
+  .slide-nav.prev {
+    left: 10px !important;
+    right: auto !important;
+  }
+  
+  .slide-nav.next {
+    right: 10px !important;
+    left: auto !important;
+  }
+
+  /* Sections */
+  section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .section-header-modern {
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .section-header-modern h2 {
+    font-size: 22px;
+    padding: 0 16px;
+  }
+
+  .section-header-modern p {
+    padding: 0 16px;
+  }
+
+  /* Cards */
+  .service-content h3,
+  .manufacturing-content h3 {
+    font-size: 16px;
+  }
+
+  .service-content p,
+  .manufacturing-content p {
+    font-size: 12.5px;
+  }
+
+  .service-features li {
+    font-size: 12px;
+  }
+
+  /* CTA Buttons Full Width */
   .cta-large-buttons {
     flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .cta-large-buttons a {
     width: 100%;
     justify-content: center;
+  }
+
+  .btn-cta-wa,
+  .btn-cta-outline {
+    padding: 13px 20px;
+    font-size: 13.5px;
+  }
+
+  /* Forms */
+  .rfq-form,
+  .contact-cards {
+    padding: 20px;
+  }
+
+  .form-field label {
+    font-size: 12px;
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    padding: 11px 14px;
+    font-size: 13px;
+  }
+
+  .btn-submit-modern {
+    padding: 13px 20px;
+    font-size: 13.5px;
+  }
+
+  /* HIDE STICKY CTA - FIXED */
+  .sticky-cta {
+    display: none !important;
+  }
+
+  /* Back to Top */
+  #backToTop {
+    bottom: 20px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Process Timeline */
+  .timeline-item {
+    grid-template-columns: 28px 1fr;
+    gap: 12px;
+  }
+
+  .timeline-dot {
+    width: 14px;
+    height: 14px;
+  }
+
+  .timeline-content h3 {
+    font-size: 17px;
+  }
+
+  .timeline-content p {
+    font-size: 13px;
+  }
+
+  /* Footer */
+  .footer-modern {
+    padding: 48px 0 20px;
+  }
+
+  .footer-logo strong {
+    font-size: 15px;
+  }
+
+  .footer-column h4 {
+    font-size: 13px;
+  }
+
+  .footer-column ul li a {
+    font-size: 12.5px;
+  }
+
+  /* Offcanvas */
+  .offcanvas {
+    width: 90%;
+    max-width: 300px;
+    padding: 60px 16px 20px;
+  }
+
+  .offcanvas nav a {
+    font-size: 15px;
+    padding: 11px 12px;
+  }
+}
+
+/* Mobile Extra Small - 375px */
+@media (max-width: 375px) {
+  body {
+    font-size: 12.5px;
+  }
+
+  .hero-title {
+    font-size: 22px;
+    padding: 0 12px;
+  }
+
+  .hero-slideshow-container {
+    height: 220px !important;
+  }
+  
+  /* Perbaikan panah untuk layar sangat kecil */
+  .slide-nav {
+    width: 34px !important;
+    height: 34px !important;
+  }
+  
+  .slide-nav.prev {
+    left: 8px !important;
+  }
+  
+  .slide-nav.next {
+    right: 8px !important;
   }
 }
 
@@ -2995,7 +3739,8 @@ animation: none !important;
           loading="eager"
           width="800"
           height="500"
-          decoding="async">
+          decoding="async"
+          fetchpriority="high">
         <div class="slide-overlay"></div>
       </div>
       
@@ -4237,17 +4982,16 @@ animation: none !important;
     return isValid;
   }
 
-  // Add validation listeners
-  document.querySelectorAll('input, textarea, select').forEach(function(el) {
-    el.addEventListener('blur', validateField);
-  });
+// Add validation listeners
+document.querySelectorAll('input, textarea, select').forEach(function(el) {
+  el.addEventListener('blur', validateField);
+});
 
   // ============================================
   // FORM HANDLER WITH ANALYTICS
   // ============================================
   window.handleRfq = function(e) {
-    e.preventDefault();
-
+e.preventDefault();
     const form = e.target;
     
     // Prevent double submission
@@ -4440,9 +5184,7 @@ Deskripsi: ${data.get('message')}`;
     if (index >= slides.length) currentSlide = 0;
     if (index < 0) currentSlide = slides.length - 1;
     
-    // Reset transform sebelum ganti
-    resetTransforms();
-    
+      
     // Tampilkan slide aktif
     slides[currentSlide].classList.add('active');
     dots[currentSlide].classList.add('active');
@@ -4536,9 +5278,8 @@ Deskripsi: ${data.get('message')}`;
   });
 })();
 
-
-})(); // ✅ FIXED - Proper IIFE closure
-
+  // ✅ FIXED - Proper IIFE closure
+})();
 
 </script>
 
