@@ -13,10 +13,10 @@
   <meta name="description" content="deartbox Packaging adalah produsen hardbox premium custom untuk brand beauty, fashion, lifestyle, dan gourmet. 
   MOQ mulai 200 pcs, finishing premium, dan quality control ketat. Konsultasi gratis.">
   <meta name="keywords" content="hardbox premium, hardbox custom, rigid box indonesia, packaging premium, produsen hardbox, custom packaging indonesia">
-  <meta name="author" content="deartbox Packaging">
+  
   <meta name="robots" content="index, follow">
 
-    <meta name="author" content="deartbox Packaging - PT. Xerography Indonesia">
+  <meta name="author" content="deartbox Packaging - PT. Xerography Indonesia">
   <meta name="publisher" content="PT. Xerography Indonesia">
   <meta name="application-name" content="deartbox Packaging">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -3874,7 +3874,7 @@ animation: none !important;
             <img 
               src="assets/images/halamanutama/hardbox-Love in Motion.webp"
               alt="Special-made board untuk packaging berkualitas"
-              loading="lazy"
+              loading="eager"
               width="400"
               height="280"
               decoding="async">
@@ -3983,7 +3983,7 @@ animation: none !important;
             <img 
               src="assets/images/halamanutama/hardbox-W3B.webp" 
               alt="Premium finishing options untuk packaging eksklusif"
-              loading="lazy"
+              loading="eager"
               width="400"
               height="260"
               decoding="async">
@@ -4085,7 +4085,7 @@ animation: none !important;
               src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='480'%3E%3Crect width='400' height='480' fill='%230a0a0a'/%3E%3C/svg%3E" 
               data-src="assets/images/halamanutama/hardbox-Custom deartbox.webp" 
               alt="Gift box premium untuk corporate"
-              loading="lazy"
+              loading="eager"
               width="400"
               height="480">
           </div>
@@ -4986,6 +4986,45 @@ animation: none !important;
     el.addEventListener('blur', validateField);
   });
 
+  function validateField(e) {
+  const field = e.target;
+  const value = field.value.trim();
+  
+  // Remove existing error
+  const existingError = field.parentElement.querySelector('.field-error');
+  if (existingError) existingError.remove();
+  
+  let isValid = true;
+  let errorMsg = '';
+  
+  // Validate based on type
+  if (field.hasAttribute('required') && !value) {
+    isValid = false;
+    errorMsg = 'Field ini wajib diisi';
+  } else if (field.type === 'email' && value) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(value)) {
+      isValid = false;
+      errorMsg = 'Format email tidak valid';
+    }
+  }
+  
+  if (!isValid) {
+    const errorEl = document.createElement('span');
+    errorEl.className = 'field-error';
+    errorEl.textContent = errorMsg;
+    errorEl.style.cssText = 'display:block;font-size:12px;color:#e63946;margin-top:4px;';
+    field.parentElement.appendChild(errorEl);
+  }
+  
+  return isValid;
+}
+
+// Add listeners
+document.querySelectorAll('input, textarea, select').forEach(el => {
+  el.addEventListener('blur', validateField);
+});
+
   // ============================================
   // FORM HANDLER WITH ANALYTICS
   // ============================================
@@ -5170,6 +5209,18 @@ Deskripsi: ${data.get('message')}`;
       }
     });
   }
+
+  function resetTransforms() {
+  slides.forEach(slide => {
+    const img = slide.querySelector('img');
+    if (img) {
+      img.style.transition = 'none';
+      img.style.transform = 'scale(1)';
+      void img.offsetWidth; // Force reflow
+      img.style.transition = '';
+    }
+  });
+}
   
   function showSlide(index) {
     // Reset semua slide
