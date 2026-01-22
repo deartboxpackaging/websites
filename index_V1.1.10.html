@@ -3413,8 +3413,8 @@ animation: none !important;
   opacity: 0;
   transform: scale(1);
   transition:
-    opacity 1.6s cubic-bezier(.22,.61,.36,1),
-    transform 6s cubic-bezier(.22,.61,.36,1);
+    opacity 1.8s cubic-bezier(.22,.61,.36,1),
+    transform 7s cubic-bezier(.22,.61,.36,1);
 }
 .hero-slideshow-container:hover .hero-slide.active img {
   transform: scale(1.05);
@@ -3424,7 +3424,7 @@ animation: none !important;
 /* slide aktif */
 .hero-slide.active {
   opacity: 1;
-  transform: scale(1.05);
+  transform: scale(1.06);
   z-index: 2;
 }
 
@@ -5291,7 +5291,7 @@ Deskripsi: ${data.get('message')}`;
 })();
   const slides = document.querySelectorAll('.hero-slide');
 let current = 0;
-const interval = 6000;
+const interval = 6500;
 
 setInterval(() => {
   slides[current].classList.remove('active');
