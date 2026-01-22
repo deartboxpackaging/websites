@@ -3408,8 +3408,6 @@ animation: none !important;
 }
 
 .hero-slide {
-  position: absolute;
-  inset: 0;
   opacity: 0;
   transform: scale(1);
   transition:
@@ -3425,7 +3423,9 @@ animation: none !important;
 .hero-slide.active {
   opacity: 1;
   transform: scale(1.06);
-  z-index: 2;
+   transition:
+    opacity 1.8s cubic-bezier(.22,.61,.36,1),
+    transform 7s cubic-bezier(.22,.61,.36,1);
 }
 
 /* image */
@@ -3565,6 +3565,13 @@ animation: none !important;
 
   .hero-slide.active {
     transform: scale(1.03);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide,
+  .hero-slide.active {
+    transition: opacity 0.8s ease;
+    transform: none;
   }
 }
 
@@ -5293,11 +5300,13 @@ Deskripsi: ${data.get('message')}`;
 let current = 0;
 const interval = 6500;
 
+setTimeout (  () => {
 setInterval(() => {
   slides[current].classList.remove('active');
   current = (current + 1) % slides.length;
   slides[current].classList.add('active');
 }, interval);
+}, 1500);
 
   // ✅ FIXED - Proper IIFE closure
 })();
