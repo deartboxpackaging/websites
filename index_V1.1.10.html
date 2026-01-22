@@ -1741,12 +1741,10 @@ section {
   }
 
    /* Slideshow */
-  .hero-slideshow-container {
-    height: 250px !important;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    position: relative;
-  }
+ .hero-slideshow-container {
+  position: relative;
+  overflow: hidden;
+}
   
   /* Perbaikan posisi panah untuk mobile sangat kecil */
   .slide-nav {
@@ -3417,8 +3415,6 @@ animation: none !important;
   transition:
     opacity 1.6s cubic-bezier(.22,.61,.36,1),
     transform 6s cubic-bezier(.22,.61,.36,1);
-  will-change: opacity, transform;
-  animation: fadeInHero 1.8s ease forwards;
 }
 .hero-slideshow-container:hover .hero-slide.active img {
   transform: scale(1.05);
@@ -5294,19 +5290,14 @@ Deskripsi: ${data.get('message')}`;
   });
 })();
   const slides = document.querySelectorAll('.hero-slide');
-  let current = 0;
-  const interval = 6000; // 6 detik (ideal untuk premium)
+let current = 0;
+const interval = 6000;
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle('active', i === index);
-    });
-  }
-
-  setInterval(() => {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-  }, interval);
+setInterval(() => {
+  slides[current].classList.remove('active');
+  current = (current + 1) % slides.length;
+  slides[current].classList.add('active');
+}, interval);
 
   // ✅ FIXED - Proper IIFE closure
 })();
