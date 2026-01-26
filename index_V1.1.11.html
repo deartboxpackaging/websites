@@ -549,6 +549,41 @@ body::before {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+  /* ✅ TAMBAHKAN 3 BARIS INI */
+  order: 1;
+  margin-bottom: 20px;
+}
+
+/* ✅ TAMBAHKAN INI JUGA */
+.hero-visual-slideshow {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-slideshow-container {
+  order: 2;
+}
+
+.slideshow-dots {
+  order: 3;
+  margin-top: 10px;
+}
+/* ✅ MOBILE - Features kembali ke bawah */
+@media (max-width: 980px) {
+  .hero-features-grid {
+    order: 3; /* Features pindah ke bawah */
+    margin-bottom: 0;
+    margin-top: 20px; /* Kasih jarak dari foto */
+  }
+
+  .hero-slideshow-container {
+    order: 1; /* Foto di atas */
+  }
+
+  .slideshow-dots {
+    order: 2; /* Dots tetap di bawah foto */
+    margin-top: 10px;
+  }
 }
 
 .feature-mini {
@@ -589,6 +624,42 @@ body::before {
   color: var(--muted);
   line-height: 1.5;
   margin: 0;
+}
+/* ✅ PERBAIKAN URUTAN - Features di atas, Foto di bawah */
+.hero-visual-slideshow {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-features-grid {
+  order: 1;
+  margin-bottom: 20px;
+}
+
+.hero-slideshow-container {
+  order: 2;
+}
+
+.slideshow-dots {
+  order: 3;
+  margin-top: 10px;
+}
+/* ✅ MOBILE - Features kembali ke bawah */
+@media (max-width: 980px) {
+  .hero-features-grid {
+    order: 3; /* Features pindah ke bawah */
+    margin-bottom: 0;
+    margin-top: 20px; /* Kasih jarak dari foto */
+  }
+
+  .hero-slideshow-container {
+    order: 1; /* Foto di atas */
+  }
+
+  .slideshow-dots {
+    order: 2; /* Dots tetap di bawah foto */
+    margin-top: 10px;
+  }
 }
 
 /* ================ SECTION HEADER MODERN ================ */
@@ -3883,7 +3954,11 @@ animation: none !important;
         <path d="M9 18l6-6-6-6"/>
       </svg>
     </button>
-<!-- Navigation Dots -->
+
+    
+    </div>
+    
+    <!-- Navigation Dots -->
     <div class="slideshow-dots">
       <button class="slide-dot active" aria-label="Go to slide 1"></button>
       <button class="slide-dot" aria-label="Go to slide 2"></button>
@@ -3892,10 +3967,6 @@ animation: none !important;
       <button class="slide-dot" aria-label="Go to slide 5"></button>
       <button class="slide-dot" aria-label="Go to slide 6"></button>
     </div>
-
-    </div>
-    
-    
 
     <!-- Features Grid di bawah slideshow -->
     <div class="hero-features-grid">
