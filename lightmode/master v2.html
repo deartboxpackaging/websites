@@ -108,6 +108,45 @@ footer{border-top:1px solid #eee;padding:40px 0;font-size:14px;color:#666}
 }
 .hero h1{font-size:40px}
 }
+
+.client {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 56px 0;
+  overflow: hidden;
+}
+
+.client small {
+  display: block;
+  text-align: center;
+  color: #777;
+  margin-bottom: 32px;
+}
+
+.logo-marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.logo-track {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.logo-track img {
+  height: 36px;
+  opacity: 0.6;
+  filter: grayscale(100%);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 </style>
 </head>
 
@@ -146,18 +185,30 @@ footer{border-top:1px solid #eee;padding:40px 0;font-size:14px;color:#666}
   </div>
 </section>
 
-<!-- CLIENT -->
+<!-- RUNNING LOGO -->
 <section class="client">
   <div class="container">
-    <small>Brand yang mempercayakan produksi kemasannya kepada kami</small>
-    <div class="marquee">
-      <div class="logo-item">BRAND NASIONAL</div>
-      <div class="logo-item">BRAND KOSMETIK</div>
-      <div class="logo-item">F&B COMPANY</div>
-      <div class="logo-item">CORPORATE CLIENT</div>
+    <small>Dipercaya oleh brand yang memproduksi packaging secara serius</small>
+
+    <div class="logo-marquee">
+      <div class="logo-track">
+        <img src="logo-1.png" alt="Client 1">
+        <img src="logo-2.png" alt="Client 2">
+        <img src="logo-3.png" alt="Client 3">
+        <img src="logo-4.png" alt="Client 4">
+        <img src="logo-5.png" alt="Client 5">
+
+        <!-- duplikat biar looping mulus -->
+        <img src="logo-1.png" alt="">
+        <img src="logo-2.png" alt="">
+        <img src="logo-3.png" alt="">
+        <img src="logo-4.png" alt="">
+        <img src="logo-5.png" alt="">
+      </div>
     </div>
   </div>
 </section>
+
 
 <!-- VIDEO -->
 <section class="video">
