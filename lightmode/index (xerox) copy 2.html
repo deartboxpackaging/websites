@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>deartbox | Production Partner Kemasan Premium</title>
+<title>deartbox | Packaging Anti Ribet untuk Brand</title>
 
 <style>
 * {
@@ -28,9 +28,9 @@ a { text-decoration: none; color: inherit; }
   padding: 0 24px;
 }
 
-section { padding: 100px 0; }
+section { padding: 120px 0; }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header {
   position: sticky;
   top: 0;
@@ -62,47 +62,57 @@ header {
   font-weight: 600;
 }
 
-/* HERO */
+/* ================= HERO (AIDA) ================= */
 .hero {
-  padding: 120px 0 140px;
+  padding: 140px 0 140px;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 64px;
   align-items: center;
 }
 
 .hero h1 {
-  font-size: 54px;
-  line-height: 1.1;
+  font-size: 56px;
+  line-height: 1.05;
   letter-spacing: -0.03em;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .hero p {
   font-size: 18px;
   color: #555;
   max-width: 520px;
-  margin-bottom: 36px;
+  margin-bottom: 28px;
 }
+
+.hero ul {
+  list-style: none;
+  margin-bottom: 36px;
+  color: #555;
+  font-size: 16px;
+}
+
+.hero li { margin-bottom: 10px; }
 
 .hero-btn {
   background: #e10600;
   color: #fff;
-  padding: 14px 28px;
+  padding: 16px 32px;
   border-radius: 6px;
   font-weight: 600;
+  font-size: 16px;
 }
 
 .hero-img {
   height: 420px;
   background: #f2f2f2;
-  border-radius: 16px;
+  border-radius: 18px;
 }
 
-/* CLIENT LOGO */
+/* ================= CLIENT LOGO ================= */
 .client {
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
@@ -136,7 +146,7 @@ header {
   to { transform: translateX(-50%); }
 }
 
-/* VALUE */
+/* ================= VALUE ================= */
 .value-grid {
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -154,7 +164,7 @@ header {
 .value-box h3 { font-size: 18px; margin-bottom: 6px; }
 .value-box p { font-size: 14px; color: #555; }
 
-/* PRODUCT */
+/* ================= PRODUCT ================= */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -172,7 +182,7 @@ header {
 .product-card h3 { font-size: 20px; margin-bottom: 6px; }
 .product-card p { font-size: 14px; color: #555; }
 
-/* PORTFOLIO */
+/* ================= PORTFOLIO ================= */
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -186,9 +196,25 @@ header {
   border-radius: 16px;
 }
 
-/* CONTACT */
-.contact {
+/* ================= CTA ================= */
+.cta {
   background: #f8f8f8;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.cta p {
+  color: #555;
+  margin-bottom: 36px;
+}
+
+/* ================= CONTACT ================= */
+.contact {
+  background: #ffffff;
 }
 
 .contact-grid {
@@ -219,7 +245,7 @@ form button {
   cursor: pointer;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer {
   border-top: 1px solid #eee;
   padding: 48px 0;
@@ -233,7 +259,7 @@ footer {
   flex-wrap: wrap;
 }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
 @media(max-width:900px){
   .hero-grid,
   .value-grid,
@@ -243,7 +269,7 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .hero h1 { font-size: 38px; }
+  .hero h1 { font-size: 40px; }
 }
 </style>
 </head>
@@ -256,25 +282,35 @@ footer {
     <div>
       <a href="#produk">Produk</a>
       <a href="#portofolio">Portofolio</a>
-      <a href="#hubungi" class="cta">Hubungi Kami</a>
+      <a href="#hubungi" class="cta">Diskusi</a>
     </div>
   </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <h1>Partner Produksi<br>Kemasan Premium</h1>
+      <h1>
+        Packaging Anti Ribet<br>
+        untuk Brand yang Ingin Fokus Jualan
+      </h1>
       <p>
-        Hardbox Packaging · Softbox Packaging · Custom Box  
-        untuk brand yang serius bertumbuh.
+        Kami bantu produksi kemasan tanpa drama:
+        alur jelas, revisi terarah, dan hasil sesuai ekspektasi.
       </p>
-      <a href="#hubungi" class="hero-btn">Diskusikan Produksi</a>
+      <ul>
+        <li>✓ Brief sekali, kami arahkan sisanya</li>
+        <li>✓ Timeline jelas sejak awal</li>
+        <li>✓ Produksi rapi & konsisten</li>
+      </ul>
+      <a href="#hubungi" class="hero-btn">Diskusikan Packaging Tanpa Ribet</a>
     </div>
     <div class="hero-img"></div>
   </div>
 </section>
 
+<!-- CLIENT -->
 <section class="client">
   <div class="container">
     <small>Dipercaya oleh brand nasional & internasional</small>
@@ -293,26 +329,28 @@ footer {
   </div>
 </section>
 
+<!-- VALUE -->
 <section>
   <div class="container value-grid">
     <div class="value-box">
       <img src="https://via.placeholder.com/400x300">
-      <h3>Produksi Terkontrol</h3>
-      <p>Proses jelas & konsisten.</p>
+      <h3>Alur Produksi Jelas</h3>
+      <p>Tidak bingung, tidak bolak-balik.</p>
     </div>
     <div class="value-box">
       <img src="https://via.placeholder.com/400x300">
-      <h3>Timeline Realistis</h3>
-      <p>Sesuai kapasitas produksi.</p>
+      <h3>Kontrol di Tangan Kami</h3>
+      <p>Brand Anda fokus jualan.</p>
     </div>
     <div class="value-box">
       <img src="https://via.placeholder.com/400x300">
-      <h3>Partner Jangka Panjang</h3>
-      <p>Bukan sekadar vendor.</p>
+      <h3>Partner, Bukan Vendor</h3>
+      <p>Kami pikirkan jangka panjang.</p>
     </div>
   </div>
 </section>
 
+<!-- PRODUCT -->
 <section id="produk">
   <div class="container product-grid">
     <div class="product-card">
@@ -328,11 +366,12 @@ footer {
     <div class="product-card">
       <img src="https://via.placeholder.com/400x400">
       <h3>Custom Box</h3>
-      <p>Kemasan sesuai kebutuhan.</p>
+      <p>Sesuai kebutuhan brand.</p>
     </div>
   </div>
 </section>
 
+<!-- PORTFOLIO -->
 <section id="portofolio">
   <div class="container portfolio-grid">
     <img src="https://via.placeholder.com/400x400">
@@ -344,24 +383,27 @@ footer {
   </div>
 </section>
 
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>Siap Produksi Packaging Tanpa Ribet?</h2>
+    <p>Ceritakan kebutuhan Anda. Kami bantu arahkan dari awal.</p>
+    <a href="#hubungi" class="hero-btn">Mulai Diskusi</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
 <section id="hubungi" class="contact">
   <div class="container contact-grid">
     <div>
       <h2>Hubungi Kami</h2>
-      <p>Ceritakan kebutuhan kemasan Anda.</p>
+      <p>Diskusi ringan, tanpa komitmen.</p>
     </div>
     <form>
       <input type="text" placeholder="Nama Anda">
       <input type="text" placeholder="Nama Brand / Perusahaan">
       <textarea rows="4" placeholder="Kebutuhan kemasan Anda"></textarea>
       <button type="submit">Kirim</button>
-
-      <div style="margin-top:16px;font-size:14px;color:#666;">
-        Atau hubungi via:
-        <a href="https://wa.me/628XXXXXXXXX" target="_blank">WhatsApp</a> ·
-        <a href="https://instagram.com/deartbox" target="_blank">Instagram</a> ·
-        <a href="mailto:hello@deartbox.com">Email</a>
-      </div>
     </form>
   </div>
 </section>
@@ -373,10 +415,9 @@ footer {
       Hardbox · Softbox · Custom Box
     </div>
     <div>
-      <a href="https://instagram.com/deartbox" target="_blank">Instagram</a> ·
-      <a href="https://wa.me/628XXXXXXXXX" target="_blank">WhatsApp</a> ·
-      <a href="mailto:hello@deartbox.com">Email</a> ·
-      <a href="https://tokopedia.com/deartbox" target="_blank">Marketplace</a>
+      <a href="#">Instagram</a> ·
+      <a href="#">WhatsApp</a> ·
+      <a href="#">Email</a>
     </div>
   </div>
 </footer>
