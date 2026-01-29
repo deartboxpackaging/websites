@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>deartbox — Production Partner Brand Besar</title>
+
+  <style>
+    /* ===== BASE ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: #ffffff;
+      color: #111111;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid #eeeeee;
+      z-index: 100;
+    }
+
+    .nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links a {
+      margin-left: 28px;
+      font-size: 14px;
+      color: #555555;
+    }
+
+    .nav-links a.cta {
+      margin-left: 36px;
+      padding: 10px 20px;
+      background: #e10600;
+      color: #ffffff;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 120px 0 96px;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      max-width: 900px;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #555555;
+      max-width: 720px;
+      margin-bottom: 36px;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+      background: #e10600;
+      padding: 14px 28px;
+      border-radius: 6px;
+    }
+
+    /* ===== CLIENT LOGO ===== */
+    .client-section {
+      border-top: 1px solid #eeeeee;
+      border-bottom: 1px solid #eeeeee;
+      padding: 48px 0;
+      overflow: hidden;
+    }
+
+    .client-title {
+      font-size: 14px;
+      color: #777777;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .logo-marquee {
+      display: flex;
+      gap: 64px;
+      animation: marquee 28s linear infinite;
+      width: max-content;
+    }
+
+    .logo-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 64px;
+    }
+
+    .client-logo {
+      font-size: 18px;
+      font-weight: 600;
+      color: #999999;
+      white-space: nowrap;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ===== VALUE ===== */
+    .value {
+      padding: 96px 0;
+    }
+
+    .value h2 {
+      font-size: 36px;
+      margin-bottom: 48px;
+      letter-spacing: -0.02em;
+    }
+
+    .value-item {
+      max-width: 720px;
+      margin-bottom: 40px;
+    }
+
+    .value-item h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .value-item p {
+      font-size: 16px;
+      color: #555555;
+    }
+
+    /* ===== PRODUCT ===== */
+    .product {
+      padding: 96px 0;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .product h2 {
+      font-size: 36px;
+      margin-bottom: 48px;
+      letter-spacing: -0.02em;
+    }
+
+    .product-item {
+      max-width: 720px;
+      margin-bottom: 40px;
+    }
+
+    .product-item h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .product-item p {
+      font-size: 16px;
+      color: #555555;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .hero h1 {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container nav">
+    <div class="logo">deartbox</div>
+    <div class="nav-links">
+      <a href="#produk">Produk</a>
+      <a href="#nilai">Nilai Kami</a>
+      <a href="#kontak" class="cta">Konsultasi Produksi</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>
+      Partner Produksi Kemasan<br>
+      untuk Brand yang Serius Bertumbuh
+    </h1>
+    <p>
+      deartbox membantu brand owner memproduksi kemasan premium dengan proses
+      terkontrol, timeline jelas, dan kualitas konsisten — dari diskusi awal
+      hingga produksi massal.
+    </p>
+    <a href="#kontak" class="hero-cta">
+      Diskusikan Kebutuhan Produksi
+    </a>
+  </div>
+</section>
+
+<!-- CLIENT LOGO -->
+<section class="client-section">
+  <div class="container">
+    <div class="client-title">
+      Dipercaya oleh brand nasional & internasional
+    </div>
+
+    <div class="logo-wrapper">
+      <div class="logo-marquee">
+        <div class="client-logo">BRAND A</div>
+        <div class="client-logo">BRAND B</div>
+        <div class="client-logo">BRAND C</div>
+        <div class="client-logo">BRAND D</div>
+        <div class="client-logo">BRAND E</div>
+
+        <div class="client-logo">BRAND A</div>
+        <div class="client-logo">BRAND B</div>
+        <div class="client-logo">BRAND C</div>
+        <div class="client-logo">BRAND D</div>
+        <div class="client-logo">BRAND E</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE -->
+<section class="value" id="nilai">
+  <div class="container">
+    <h2>Nilai yang Kami Pegang</h2>
+
+    <div class="value-item">
+      <h3>Produksi yang Terkontrol</h3>
+      <p>
+        Seluruh proses produksi dikelola secara internal dengan standar kerja
+        yang terdefinisi untuk menjaga konsistensi hasil.
+      </p>
+    </div>
+
+    <div class="value-item">
+      <h3>Timeline yang Realistis</h3>
+      <p>
+        Perencanaan waktu produksi disesuaikan dengan kapasitas aktual dan
+        kebutuhan brand, bukan janji kosong.
+      </p>
+    </div>
+
+    <div class="value-item">
+      <h3>Partner Jangka Panjang</h3>
+      <p>
+        Kami terlibat sejak awal untuk membantu brand membuat keputusan produksi
+        yang tepat dan berkelanjutan.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT -->
+<section class="product" id="produk">
+  <div class="container">
+    <h2>Produk yang Kami Tangani</h2>
+
+    <div class="product-item">
+      <h3>Hardbox Premium</h3>
+      <p>
+        Kemasan rigid untuk kosmetik, skincare, dan produk premium dengan
+        struktur presisi dan finishing berkualitas tinggi.
+      </p>
+    </div>
+
+    <div class="product-item">
+      <h3>Softbox & Karton Lipat</h3>
+      <p>
+        Solusi kemasan efisien untuk kebutuhan retail dan distribusi massal
+        dengan spesifikasi material yang jelas.
+      </p>
+    </div>
+
+    <div class="product-item">
+      <h3>Insert Custom & EVA Foam</h3>
+      <p>
+        Desain bagian dalam kemasan untuk melindungi produk dan meningkatkan
+        pengalaman unboxing.
+      </p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
