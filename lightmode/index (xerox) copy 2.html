@@ -35,6 +35,7 @@ section {
 section.cta {
   padding: 56px 0 72px;
   padding-bottom: 40px;
+  border-bottom: 1px solid #eee;;
 }
 section#hubungi {
   padding-top: 40px;
@@ -246,7 +247,26 @@ header {
 .cta {
   background: #f8f8f8;
   text-align: center;
+  padding: 64px 0;
 }
+
+.cta-inner {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-inner h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.cta-inner p {
+  color: #555;
+  margin-bottom: 24px;
+}
+
+
 
 /* ================= CONTACT ================= */
 .contact-grid {
@@ -463,9 +483,13 @@ form button:hover {
 <!-- CTA -->
 <section class="cta">
   <div class="container">
-    <h2>Siap Produksi Packaging Tanpa Ribet?</h2>
-    <p>Ceritakan kebutuhan Anda. Kami bantu arahkan dari awal.</p>
-    <a href="#hubungi" class="hero-btn">Mulai Diskusi</a>
+    
+    <div class="cta-inner">
+      <h2>Siap Produksi Packaging Tanpa Ribet?</h2>
+      <p>Ceritakan kebutuhan Anda. Kami bantu arahkan dari awal.</p>
+      <a href="#hubungi" class="hero-btn">Mulai Diskusi</a>
+    </div>
+
   </div>
 </section>
 
@@ -474,13 +498,18 @@ form button:hover {
   <div class="container contact-grid">
     <div>
       <h2>Hubungi Kami</h2>
-      <p>Diskusi ringan, tanpa komitmen.</p>
+      <p>
+  Ceritakan sedikit tentang kebutuhan packaging Anda.<br>
+  Kami bantu arahkan langkah selanjutnya.
+</p>
     </div>
     <form>
+      <div style="dsisplay:flex; gap:12px;">
       <input type="text" placeholder="Nama Anda">
       <input type="text" placeholder="Nama Brand / Perusahaan">
       <textarea rows="4" placeholder="Kebutuhan kemasan Anda"></textarea>
       <button type="submit">Kirim</button>
+    </div>
     </form>
   </div>
 </section>
