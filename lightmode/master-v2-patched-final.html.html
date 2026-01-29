@@ -1820,6 +1820,57 @@
   text-align: center;
   line-height: 1.5;
 }
+/* ================= MICRO SCROLL ANIMATION ================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* stagger dikit biar ga muncul barengan */
+.reveal.delay-1 { transition-delay: .1s; }
+.reveal.delay-2 { transition-delay: .2s; }
+.reveal.delay-3 { transition-delay: .3s; }
+
+section {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+@media (max-width: 767px) {
+  section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+.feature-card,
+.process-step,
+.testimonial-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.feature-card:hover,
+.process-step:hover,
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+.section-title,
+.section-subtitle {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
   </style>
@@ -1967,7 +2018,7 @@ Dipercaya 50+ brand di Indonesia.
     <div class="video-container container">
       <div class="section-header">
         <span class="section-badge">Behind The Scenes</span>
-        <h2 class="section-title">Produksi yang Terstruktur & Terkontrol</h2>
+        <h2 class="section-title reveal">Produksi yang Terstruktur & Terkontrol</h2>
         <p class="section-subtitle">Setiap tahap produksi kami kontrol sebelum lanjut ke proses berikutnya</p>
       </div>
       
@@ -1985,12 +2036,12 @@ Dipercaya 50+ brand di Indonesia.
     <div class="features-container">
       <div class="section-header">
         <span class="section-badge">Keunggulan Kami</span>
-        <h2 class="section-title">Mengapa Pilih deartbox?</h2>
+        <h2 class="section-title reveal">Mengapa Pilih deartbox?</h2>
         <p class="section-subtitle">3 alasan kenapa banyak brand mempercayakan packaging premium ke kami</p>
       </div>
 
       <div class="features-grid">
-        <div class="feature-card">
+        <div class="feature-card reveal delay-1">
           <div class="feature-visual">
             <img src="assets/images/features/moq-flexible.webp" alt="MOQ Fleksibel" loading="lazy" width="400" height="200">
           </div>
@@ -1998,7 +2049,7 @@ Dipercaya 50+ brand di Indonesia.
           <p class="feature-description">Bisa mulai produksi tanpa harus stok terlalu banyak.</p>
         </div>
 
-        <div class="feature-card">
+        <div class="feature-card reveal delay-2">
           <div class="feature-visual">
             <img src="assets/images/features/quality-control.webp" alt="Quality Control Ketat" loading="lazy" width="400" height="200">
           </div>
@@ -2006,7 +2057,7 @@ Dipercaya 50+ brand di Indonesia.
           <p class="feature-description">Setiap box diperiksa satu per satu sebelum dikirim, supaya kualitas tetap konsisten.</p>
         </div>
 
-        <div class="feature-card">
+        <div class="feature-card reveal delay-3">
           <div class="feature-visual">
             <img src="assets/images/features/custom-design.webp" alt="Full Custom Design" loading="lazy" width="400" height="200">
           </div>
@@ -2022,7 +2073,7 @@ Dipercaya 50+ brand di Indonesia.
     <div class="showcase-container">
       <div class="section-header">
         <span class="section-badge">Portfolio</span>
-        <h2 class="section-title">Hasil Kerja Kami</h2>
+        <h2 class="section-title reveal">Hasil Kerja Kami</h2>
         <p class="section-subtitle">Lihat bagaimana kami membantu brand meningkatkan packaging perception mereka</p>
       </div>
 
@@ -2078,7 +2129,7 @@ Dipercaya 50+ brand di Indonesia.
     <div class="process-container">
       <div class="section-header">
         <span class="section-badge">Proses Kerja</span>
-        <h2 class="section-title">4 Langkah Mudah</h2>
+        <h2 class="section-title reveal">4 Langkah Mudah</h2>
         <p class="section-subtitle">Dari konsultasi hingga produk sampai di tangan Anda</p>
       </div>
 
@@ -2127,7 +2178,7 @@ Dipercaya 50+ brand di Indonesia.
     <div class="testimonials-container">
       <div class="section-header">
         <span class="section-badge">Testimoni</span>
-        <h2 class="section-title">Apa Kata Klien Kami?</h2>
+        <h2 class="section-title reveal">Apa Kata Klien Kami?</h2>
         <p class="section-subtitle">Pengalaman nyata dari brand yang sudah bekerja sama dengan kami</p>
       </div>
 
@@ -2188,7 +2239,7 @@ Dipercaya 50+ brand di Indonesia.
     <div class="rfq-container container">
       <div class="rfq-header">
         <span class="section-badge">Mulai dari Sini</span>
-        <h2 class="section-title">Request Quotation Custom</h2>
+        <h2 class="section-title reveal">Request Quotation Custom</h2>
         <p class="section-subtitle">Isi form berikut untuk mendapatkan estimasi harga dan solusi packaging yang sesuai dengan kebutuhan brand Anda. Data Anda aman dan hanya digunakan untuk keperluan estimasi project.</p>
       </div>
 
@@ -2334,7 +2385,7 @@ Dipercaya 50+ brand di Indonesia.
   <section class="marketplace-section">
     <div class="marketplace-container container">
       <div class="section-header">
-        <h2 class="section-title">Belanja Produk Ready di Marketplace Kami</h2>
+        <h2 class="section-title reveal">Belanja Produk Ready di Marketplace Kami</h2>
         <p class="section-subtitle">Untuk kebutuhan cepat, lihat pilihan produk ready stock kami di marketplace</p>
       </div>
 
@@ -2732,8 +2783,23 @@ Deskripsi: ${message}`;
           }
         });
       }, { passive: true });
+        const reveals = document.querySelectorAll('.reveal');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  reveals.forEach(el => observer.observe(el));
 
     })();
+    
   </script>
 
   <!-- Google Analytics (Optional) -->
