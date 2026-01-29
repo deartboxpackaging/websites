@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>deartbox | Produsen Kemasan Custom untuk Brand Berkembang</title>
+
+<style>
+/* =====================================================
+   DEARTBOX ENTERPRISE SYSTEM
+   Xerox-style: clean, calm, structured
+===================================================== */
+:root {
+  --bg: #ffffff;
+  --soft: #f6f7f9;
+  --border: #e5e7eb;
+
+  --text: #111827;
+  --muted: #6b7280;
+
+  --accent: #e10600;
+  --accent-dark: #9b0d0d;
+
+  --radius-lg: 16px;
+  --radius-md: 10px;
+
+  --shadow-sm: 0 6px 18px rgba(0,0,0,.05);
+  --shadow-md: 0 14px 40px rgba(0,0,0,.08);
+}
+
+/* ========== BASE ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 96px 0;
+}
+
+.bg-soft {
+  background: var(--soft);
+}
+
+/* ========== BUTTON ========== */
+.btn-primary {
+  display: inline-block;
+  padding: 14px 28px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 14px 28px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  font-weight: 600;
+}
+
+/* ========== HEADER ========== */
+header {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.nav-links a {
+  margin: 0 14px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ========== HERO ========== */
+.hero {
+  padding-top: 120px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.hero p {
+  max-width: 640px;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+.hero-note {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 20px;
+}
+
+.hero-image {
+  height: 420px;
+  background: #e5e7eb;
+  border-radius: var(--radius-lg);
+}
+
+/* ========== TRUST BAR ========== */
+.trust-bar {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 24px;
+  margin-top: 64px;
+}
+
+.trust-item {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ========== SECTION HEADER ========== */
+.section-header {
+  max-width: 720px;
+  margin-bottom: 64px;
+}
+
+.section-header h2 {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.section-header p {
+  color: var(--muted);
+}
+
+/* ========== SOLUTIONS ========== */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 28px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.card-body {
+  padding: 28px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ========== PROCESS ========== */
+.process {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 28px;
+}
+
+.step {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ========== INDUSTRY ========== */
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 24px;
+}
+
+.industry {
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+}
+
+/* ========== PORTFOLIO ========== */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 28px;
+}
+
+.portfolio-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.portfolio-img {
+  height: 220px;
+  background: #e5e7eb;
+}
+
+.portfolio-info {
+  padding: 20px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ========== CTA ========== */
+.cta {
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 72px 24px;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 32px;
+  margin-bottom: 14px;
+}
+
+.cta p {
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width: 900px){
+  .hero-grid,
+  .grid-3,
+  .grid-4,
+  .portfolio-grid,
+  .process,
+  .trust-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  section {
+    padding: 64px 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">deartbox</div>
+    <div class="nav-links">
+      <a href="#">Solusi</a>
+      <a href="#">Proses</a>
+      <a href="#">Industri</a>
+      <a href="#">Portofolio</a>
+    </div>
+    <a href="#" class="btn-primary">Ajukan Penawaran</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <h1>Produsen Kemasan Custom<br>untuk Brand yang Bertumbuh</h1>
+      <p>
+        deartbox adalah mitra manufaktur kemasan yang menyediakan produksi
+        hardbox dan kemasan custom dengan spesifikasi terdefinisi,
+        kontrol kualitas internal, dan konsistensi output.
+      </p>
+      <a href="#" class="btn-primary">Ajukan Penawaran</a>
+      <div class="hero-note">
+        Minimum pemesanan disesuaikan dengan kebutuhan produksi
+      </div>
+    </div>
+    <div class="hero-image"></div>
+  </div>
+
+  <div class="container trust-bar">
+    <div class="trust-item">Produksi In-House</div>
+    <div class="trust-item">Standar Kualitas Internal</div>
+    <div class="trust-item">Timeline Produksi Terukur</div>
+    <div class="trust-item">Pendampingan Proyek</div>
+  </div>
+</section>
+
+<section class="bg-soft">
+  <div class="container">
+    <div class="section-header">
+      <h2>Solusi Kemasan</h2>
+      <p>Dirancang untuk kebutuhan branding, perlindungan produk, dan produksi berkelanjutan.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card"><div class="card-body"><h3>Hardbox Premium</h3><p>Struktur rigid dengan spesifikasi material dan finishing terkontrol.</p></div></div>
+      <div class="card"><div class="card-body"><h3>Softbox & Karton Lipat</h3><p>Solusi efisien untuk distribusi retail dan volume besar.</p></div></div>
+      <div class="card"><div class="card-body"><h3>Insert & EVA Foam</h3><p>Perlindungan produk dengan desain bagian dalam presisi.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-header">
+      <h2>Alur Kerja Produksi</h2>
+      <p>Proses kerja terstruktur untuk menjaga kualitas dan ketepatan waktu.</p>
+    </div>
+
+    <div class="process">
+      <div class="step">Konsultasi & Spesifikasi</div>
+      <div class="step">Sampling & Persetujuan</div>
+      <div class="step">Produksi & Quality Control</div>
+      <div class="step">Pengiriman</div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-soft">
+  <div class="container">
+    <div class="section-header">
+      <h2>Industri yang Kami Layani</h2>
+    </div>
+
+    <div class="grid-4">
+      <div class="industry">Kosmetik & Skincare</div>
+      <div class="industry">Makanan & Minuman</div>
+      <div class="industry">Elektronik & Gadget</div>
+      <div class="industry">Korporat & Hadiah</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-header">
+      <h2>Portofolio Pilihan</h2>
+    </div>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-item"><div class="portfolio-img"></div><div class="portfolio-info">Hardbox | Kosmetik | Foil | 5.000 pcs</div></div>
+      <div class="portfolio-item"><div class="portfolio-img"></div><div class="portfolio-info">Softbox | Makanan | Laminasi Doff</div></div>
+      <div class="portfolio-item"><div class="portfolio-img"></div><div class="portfolio-info">Gift Box | Insert EVA</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta">
+      <h2>Konsultasikan Kebutuhan Kemasan Anda</h2>
+      <p>Tim kami siap membantu perencanaan produksi kemasan sesuai spesifikasi brand Anda.</p>
+      <a href="#" class="btn-primary">Mulai Konsultasi</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 deartbox Packaging · Kebijakan Privasi · Syarat & Ketentuan
+  </div>
+</footer>
+
+</body>
+</html>
