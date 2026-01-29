@@ -1550,6 +1550,150 @@
         display: none;
       }
     }
+
+    /* ================= MOBILE UX PATCH ================= */
+@media (max-width: 767px) {
+
+  /* --- HERO SECTION --- */
+  .hero-modern {
+    padding: 64px 0 48px;
+  }
+
+  .hero-container {
+    gap: 32px;
+  }
+
+  .hero-title {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  /* --- HERO BUTTONS --- */
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    padding: 14px 22px;
+    font-size: 15px;
+    border-radius: 6px;
+  }
+
+  .hero-cta-group {
+    gap: 12px;
+  }
+
+  /* --- HERO SLIDER --- */
+  .hero-slideshow-container {
+    border-radius: 12px;
+  }
+
+  .slide-nav {
+    width: 36px;
+    height: 36px;
+  }
+
+  .slide-controls {
+    bottom: 12px;
+  }
+
+  .slide-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  /* --- TRUST LOGOS --- */
+  .trust-logos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .trust-logo {
+    max-width: 100px;
+  }
+
+  /* --- SECTION SPACING --- */
+  section {
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+
+  /* --- FEATURE / PROCESS / TESTI CARD --- */
+  .feature-card,
+  .process-step,
+  .testimonial-card {
+    padding: 20px;
+  }
+
+  .feature-visual,
+  .step-visual {
+    height: 140px;
+  }
+
+  /* --- RFQ FORM --- */
+  .rfq-form {
+    padding: 24px;
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .btn-submit-rfq {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  /* --- STICKY CTA --- */
+  .sticky-cta {
+    padding: 14px;
+    font-size: 14px;
+    border-radius: 12px;
+  }
+
+  /* --- BACK TO TOP --- */
+  .back-to-top {
+    bottom: 80px;
+  }
+}
+
+  /* ================= MOBILE CONVERSION OPTIMIZATION ================= */
+  @media (max-width: 767px) {
+
+    /* CTA full width */
+    .btn-hero-primary {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* Secondary CTA jadi link */
+    .btn-hero-secondary {
+      background: transparent;
+      border: none;
+      padding: 8px 0;
+      font-size: 14px;
+      color: #767676;
+    }
+
+    /* Sticky WA */
+    .sticky-cta {
+      left: 16px;
+      right: 16px;
+      border-radius: 12px;
+      font-size: 15px;
+    }
+
+    /* Feature reorder */
+    .features-grid .feature-card:nth-child(1) { order: 2; }
+    .features-grid .feature-card:nth-child(2) { order: 1; }
+    .features-grid .feature-card:nth-child(3) { order: 3; }
+  }
+
   </style>
 </head>
 <body>
