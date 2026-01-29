@@ -62,9 +62,9 @@ header {
   font-weight: 600;
 }
 
-/* ================= HERO (AIDA) ================= */
+/* ================= HERO ================= */
 .hero {
-  padding: 140px 0 140px;
+  padding: 140px 0;
 }
 
 .hero-grid {
@@ -146,6 +146,12 @@ header {
   to { transform: translateX(-50%); }
 }
 
+/* ================= VIDEO ================= */
+.video-box video {
+  width: 100%;
+  border-radius: 20px;
+}
+
 /* ================= VALUE ================= */
 .value-grid {
   display: grid;
@@ -161,8 +167,18 @@ header {
   margin-bottom: 16px;
 }
 
-.value-box h3 { font-size: 18px; margin-bottom: 6px; }
-.value-box p { font-size: 14px; color: #555; }
+/* ================= PROCESS ================= */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 32px;
+}
+
+.process-step {
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 32px;
+}
 
 /* ================= PRODUCT ================= */
 .product-grid {
@@ -179,9 +195,6 @@ header {
   margin-bottom: 14px;
 }
 
-.product-card h3 { font-size: 20px; margin-bottom: 6px; }
-.product-card p { font-size: 14px; color: #555; }
-
 /* ================= PORTFOLIO ================= */
 .portfolio-grid {
   display: grid;
@@ -196,53 +209,31 @@ header {
   border-radius: 16px;
 }
 
+/* ================= TESTIMONI ================= */
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 32px;
+}
+
+.testi {
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 32px;
+  color: #555;
+}
+
 /* ================= CTA ================= */
 .cta {
   background: #f8f8f8;
   text-align: center;
 }
 
-.cta h2 {
-  font-size: 40px;
-  margin-bottom: 16px;
-}
-
-.cta p {
-  color: #555;
-  margin-bottom: 36px;
-}
-
 /* ================= CONTACT ================= */
-.contact {
-  background: #ffffff;
-}
-
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
-}
-
-.contact h2 { font-size: 36px; margin-bottom: 16px; }
-.contact p { color: #555; max-width: 420px; }
-
-form input, form textarea {
-  width: 100%;
-  padding: 14px;
-  margin-bottom: 16px;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  font-size: 14px;
-}
-
-form button {
-  background: #e10600;
-  color: #fff;
-  padding: 14px 28px;
-  border-radius: 6px;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
 }
 
 /* ================= FOOTER ================= */
@@ -253,18 +244,19 @@ footer {
   color: #666;
 }
 
-.footer-grid {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+.payment img {
+  height: 28px;
+  margin-right: 12px;
 }
 
 /* ================= RESPONSIVE ================= */
 @media(max-width:900px){
   .hero-grid,
   .value-grid,
+  .process-grid,
   .product-grid,
   .portfolio-grid,
+  .testi-grid,
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -291,10 +283,7 @@ footer {
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <h1>
-        Packaging Anti Ribet<br>
-        untuk Brand yang Ingin Fokus Jualan
-      </h1>
+      <h1>Packaging Anti Ribet<br>untuk Brand yang Ingin Fokus Jualan</h1>
       <p>
         Kami bantu produksi kemasan tanpa drama:
         alur jelas, revisi terarah, dan hasil sesuai ekspektasi.
@@ -329,6 +318,15 @@ footer {
   </div>
 </section>
 
+<!-- VIDEO PRODUKSI (TAMBAHAN) -->
+<section>
+  <div class="container video-box">
+    <video controls>
+      <source src="VIDEO_PRODUKSI.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
 <!-- VALUE -->
 <section>
   <div class="container value-grid">
@@ -347,6 +345,16 @@ footer {
       <h3>Partner, Bukan Vendor</h3>
       <p>Kami pikirkan jangka panjang.</p>
     </div>
+  </div>
+</section>
+
+<!-- PROCESS (TAMBAHAN) -->
+<section id="proses">
+  <div class="container process-grid">
+    <div class="process-step"><h3>1. Konsultasi</h3><p>Ceritakan kebutuhan Anda.</p></div>
+    <div class="process-step"><h3>2. Pilih Bahan</h3><p>Kami bantu arahkan.</p></div>
+    <div class="process-step"><h3>3. Sample & Produksi</h3><p>Approve lalu produksi.</p></div>
+    <div class="process-step"><h3>4. Pengiriman</h3><p>Dikirim rapi ke lokasi.</p></div>
   </div>
 </section>
 
@@ -383,6 +391,15 @@ footer {
   </div>
 </section>
 
+<!-- TESTIMONI (TAMBAHAN) -->
+<section>
+  <div class="container testi-grid">
+    <div class="testi">“Komunikasinya enak, nggak ribet.”<br><strong>Brand Kosmetik</strong></div>
+    <div class="testi">“Timeline jelas dari awal.”<br><strong>Brand F&B</strong></div>
+    <div class="testi">“Cocok buat partner jangka panjang.”<br><strong>Corporate Client</strong></div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta">
   <div class="container">
@@ -393,7 +410,7 @@ footer {
 </section>
 
 <!-- CONTACT -->
-<section id="hubungi" class="contact">
+<section id="hubungi">
   <div class="container contact-grid">
     <div>
       <h2>Hubungi Kami</h2>
@@ -409,15 +426,13 @@ footer {
 </section>
 
 <footer>
-  <div class="container footer-grid">
-    <div>
-      © 2026 deartbox Packaging<br>
-      Hardbox · Softbox · Custom Box
-    </div>
-    <div>
-      <a href="#">Instagram</a> ·
-      <a href="#">WhatsApp</a> ·
-      <a href="#">Email</a>
+  <div class="container">
+    © 2026 deartbox Packaging
+    <div class="payment">
+      <img src="visa.png">
+      <img src="mastercard.png">
+      <img src="bca.png">
+      <img src="ovo.png">
     </div>
   </div>
 </footer>
