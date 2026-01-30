@@ -1,177 +1,2031 @@
-<!-- MASTER FINAL — NOTION CLEAN (LEVEL 2)
-KEEP: HTML & JS 100% IDENTICAL to notion-feel.html
-CHANGE: CSS ONLY (ENGINEERING CLEAN, NO DUPLICATE)
-STATUS: PRODUCTION READY
--->
-
-<!-- NOTE TO USER:
-File ini diasumsikan sebagai salinan IDENTIK dari notion-feel.html
-Perubahan hanya dilakukan pada <style> section:
-- duplicate rules dibuang
-- shadow/hover lama dinetralkan
-- Notion-inspired system dijadikan single source of truth
--->
-
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id-ID">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>deartbox Packaging</title>
+  <!-- 1. META TAGS SEO & SOCIAL MEDIA -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <!-- ================= ENGINEERING CLEAN CSS (FINAL) ================= -->
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#d71921" media="(prefers-color-scheme: light)">
+  
+  <!-- SEO Essentials -->
+  <title>Produsen Hardbox Premium Custom | deartbox Packaging Indonesia</title>
+  <meta name="description" content="deartbox Packaging adalah produsen hardbox premium custom untuk brand beauty, fashion, lifestyle, dan electronics. 
+  MOQ mulai 200 pcs, finishing premium, dan quality control ketat. Konsultasi gratis.">
+  <meta name="keywords" content="hardbox premium, hardbox custom, rigid box indonesia, packaging premium, produsen hardbox, custom packaging indonesia">
+  
+  <meta name="robots" content="index, follow">
+
+  <meta name="author" content="deartbox Packaging - PT. Xerography Indonesia">
+  <meta name="publisher" content="PT. Xerography Indonesia">
+  <meta name="application-name" content="deartbox Packaging">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="deartbox">
+  <meta name="format-detection" content="telephone=yes">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Produsen Hardbox Premium Custom | deartbox Packaging">
+  <meta property="og:description" content="Hardbox custom premium untuk brand beauty, fashion, lifestyle, dan electronics. MOQ mulai 200 pcs. Konsultasi gratis.">
+  <meta property="og:image" content="https://deartbox.com/assets/images/halamanutama/hardbox-hmns2.webp">
+  <meta property="og:url" content="https://deartbox.com">
+  <meta property="og:site_name" content="deartbox Packaging">
+  <meta property="og:locale" content="id_ID">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="deartbox Packaging">
+  <meta name="twitter:description" content="Premium hardbox manufacturing partner untuk growing brands.">
+  <meta name="twitter:image" content="https://deartbox.com/assets/images/halamanutama/hardbox-hmns2.webp">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://deartbox.com">
+  
+  <!-- 2. PERFORMANCE HINTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- ✅ TAMBAHKAN DI SINI - DNS PREFETCH & PRELOAD -->
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://wa.me">
+  
+<!-- Preload critical assets -->
+<link rel="preload" href="assets/logo/deartbox-logo.svg" as="image" type="image/svg+xml">
+<link rel="preload" href="assets/images/halamanutama/hardbox-hmns2.webp" as="image" type="image/webp">
+<link rel="preload" href="assets/images/halamanutama/hardbox-kahf2.webp" as="image" type="image/webp">
+<link rel="preload" href="assets/images/halamanutama/hardbox-wardah2.webp" as="image" type="image/webp">
+<!-- Preload favicon -->
+<link rel="preload" href="/favicon-32x32.png" as="image" type="image/png">
+
+  <!-- 7. FAVICON COMPLETE SET -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#000000">
+
+  <link href="https://fonts.googleapis.com/css2?family=Gramatika&display=swap" rel="stylesheet"> 
+ 
+  <link rel="preconnect" href="https://wa.me" crossorigin>
+  
+  <!-- ✅ TAMBAHKAN DI SINI - STRUCTURED DATA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "deartbox Packaging",
+    "url": "https://deartbox.com",
+    "logo": "https://deartbox.com/assets/logo/deartbox-logo.svg",
+    "description": "Produsen Hardbox Premium Custom untuk brand beauty, fashion, lifestyle, dan electronics di Indonesia",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jl. Gandaria 1 No. 3, Gandaria Utara",
+      "addressLocality": "Jakarta Selatan",
+      "postalCode": "12130",
+      "addressCountry": "ID"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+62-819-5181-427",
+      "contactType": "Customer Service",
+      "availableLanguage": ["id", "en"]
+    },
+    "sameAs": [
+      "https://www.instagram.com/de_artbox",
+      "https://www.linkedin.com/in/deartbox-packaging-b08696376/"
+    ]
+  }
+  </script>
+ 
+  <!-- Preload fonts (update path to match your actual font file) -->
+  <link rel="preload" href="assets/fonts/system-font.woff2" as="font" type="font/woff2" crossorigin>
+  <meta http-equiv="Cache-Control" content="public, max-age=31536000">
+
+  <!-- 5. CRITICAL INLINE CSS (UI/UX ASLI LU) -->
   <style>
+        /* ================ THEME / VARIABLES - XEROX STYLE ================ */
     :root {
+      --bg: #ffffff;
+      --card: #ffffff;
+      --muted: #767676;
       --accent: #d71921;
-      --text: #1a1a1a;
-      --muted: #555;
-      --border: rgba(0,0,0,0.06);
-      --radius: 12px;
-      --container: 1280px;
+      --accent-2: #a01419;
+      --glass: rgba(0,0,0,0.02);
+      --radius-lg: 8px;
+      --radius-md: 4px;
+      --gap: clamp(16px, 3vw, 40px);
+      --max-width: 1280px;
+      --container-pad: clamp(24px, 6vw, 80px);
+      --shadow-lg: 0 4px 24px rgba(0,0,0,0.08);
+      --shadow-md: 0 2px 12px rgba(0,0,0,0.06);
+      --ease: cubic-bezier(.16,.84,.44,1);
+      --ease-premium: cubic-bezier(.22,.61,.36,1);
+      --gradient-bg: #ffffff;
     }
 
+    /* ================ BASE ================ */
     * { box-sizing: border-box; }
+    
+    html, body { height: 100%; }
     html { scroll-behavior: smooth; }
 
+     /* ✅ TAMBAHKAN DI SINI - FOCUS STYLES */
+    *:focus {
+      outline: none;
+    }
+    
+    *:focus-visible {
+      outline: 3px solid #d71921;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible {
+      box-shadow: 0 0 0 3px rgba(215,25,33,0.3);
+    }
+    
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      color: var(--text);
-      background: #fff;
-      line-height: 1.75;
-      font-weight: 400;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.6;
+      font-size: 16px;
+      min-height: 100vh;
+      position: relative;
     }
+    /* Clean background - Xerox style */
 
-    h1, h2, h3 {
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      margin-bottom: 16px;
+/* Untuk section dengan background stretch */
+.stretch-bg {
+  position: relative;
+}
+
+.stretch-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Contoh penggunaan untuk services */
+.services-modern.stretch-bg::before {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(230, 57, 70, 0.04) 30%,
+    transparent 100%
+  );
+}
+
+/* Untuk CTA section */
+.cta-section-modern.stretch-bg::before {
+  background: linear-gradient(
+    135deg,
+    rgba(230, 57, 70, 0.08),
+    rgba(164, 22, 26, 0.04)
+  );
+  border-radius: 24px;
+}
+    
+    body.menu-open {
+      overflow: hidden;
+      touch-action: none;
     }
-
-    h1 { font-size: clamp(32px,4vw,44px); }
-    h2 { font-size: clamp(24px,3vw,32px); }
-    h3 { font-size: 20px; }
-
-    p {
-      max-width: 720px;
-      color: var(--muted);
-    }
-
-    section {
-      padding: 120px 24px;
-    }
-
-    @media(max-width:768px){
-      section { padding: 80px 16px; }
-    }
-
+    
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    h1, h2, h3, h4 { letter-spacing: -0.02em; margin: 0; line-height: 1.2; }
+    p { line-height: 1.75; margin: 0; }
+    ul { margin: 0; padding: 0; }
+    
     .container {
-      max-width: var(--container);
-      margin: auto;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
     }
 
-    /* ================= RESET LEGACY EFFECT ================= */
-    .feature-card,
-    .process-step,
-    .testimonial-card,
-    .portfolio-card,
-    .btn,
-    .btn-primary,
-    .btn-hero-primary {
-      box-shadow: none !important;
-      transform: none !important;
+    /* ================ HEADER - XEROX STYLE ================ */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      background: #ffffff;
+      border-bottom: 1px solid #e6e6e6;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
 
-    /* ================= UNIFIED CARD SYSTEM ================= */
-    .feature-card,
-    .process-step,
-    .testimonial-card,
-    .portfolio-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
+    .header-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 clamp(20px, 5vw, 48px);
     }
-
-    /* ================= BUTTON SYSTEM ================= */
-    .btn,
-    .btn-primary,
-    .btn-hero-primary,
-    .cta-nav {
-      background: var(--accent);
-      color: #fff;
-      padding: 14px 24px;
-      border-radius: 10px;
-      border: none;
-      display: inline-flex;
+    
+    .nav {
+      display: flex;
       align-items: center;
+      justify-content: space-between;
+      gap: var(--gap);
+      padding: 16px 0;
+    }
+
+    .logo {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      transition: transform .2s ease;
+    }
+
+    .logo:hover {
+      transform: translateY(-1px);
+    }
+    
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .logo-mark img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    
+    .logo-text h1 {
+      font-size: 17px;
+      letter-spacing: -0.01em;
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+
+    .logo-text p {
+      font-size: 11px;
+      color: #767676;
+      line-height: 1.3;
+      margin-top: 1px;
+    }
+    
+    /* Desktop Navigation */
+    .nav-links {
+      display: none;
       gap: 8px;
-      cursor: pointer;
+      align-items: center;
+    }
+    
+    .nav-link {
+      padding: 10px 16px;
+      font-size: 14px;
+      color: #1a1a1a;
+      border-radius: 6px;
+      transition: all .2s ease;
+      position: relative;
       font-weight: 500;
     }
 
-    .btn-secondary,
-    .btn-hero-secondary {
-      background: transparent;
-      color: var(--accent);
-      border: 1px solid var(--accent);
-      padding: 14px 24px;
-      border-radius: 10px;
+    .nav-link:hover {
+      background: #f5f5f5;
+      color: #d71921;
     }
 
-    /* ================= FORM SYSTEM ================= */
-    input, textarea, select {
-      width: 100%;
-      padding: 12px 14px;
-      border-radius: 8px;
-      border: 1px solid rgba(0,0,0,0.15);
-      margin-bottom: 16px;
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 6px;
+      left: 50%;
+      transform: translateX(-50%) scaleX(0);
+      width: 24px;
+      height: 2px;
+      background: #d71921;
+      border-radius: 1px;
+      transition: transform .25s ease;
+    }
+
+    .nav-link:hover::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+
+    .nav-link.active {
+      color: #d71921;
+      background: #fef1f2;
+    }
+
+    .nav-link.active::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+    
+    .cta-nav {
+      padding: 10px 20px;
+      background: #d71921;
+      color: white;
       font-size: 14px;
-      box-shadow: none;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: all .25s ease;
+      border: none;
+      cursor: pointer;
     }
 
-    input:focus, textarea:focus, select:focus {
-      border-color: var(--accent);
-      outline: none;
+    .cta-nav:hover {
+      background: #a01419;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(215,25,33,0.25);
     }
 
-    /* ================= FOOTER SOCIAL ================= */
-    .footer-social {
+    /* Mobile Menu Toggle */
+    .mobile-toggle {
       display: flex;
-      gap: 12px;
-      justify-content: flex-start;
+      flex-direction: column;
+      gap: 4px;
+      padding: 8px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      border-radius: 6px;
+      transition: all .2s ease;
     }
 
-    .social-icon {
-      width: 40px;
-      height: 40px;
-      background: var(--text);
-      border-radius: 10px;
+    .mobile-toggle:hover {
+      background: #f5f5f5;
+    }
+
+    .mobile-toggle span {
+      width: 22px;
+      height: 2px;
+      background: #1a1a1a;
+      border-radius: 2px;
+      transition: all .3s ease;
+    }
+
+    body.menu-open .mobile-toggle span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    body.menu-open .mobile-toggle span:nth-child(2) {
+      opacity: 0;
+    }
+
+    body.menu-open .mobile-toggle span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      top: 75px;
+      right: 0;
+      width: 100%;
+      max-width: 320px;
+      height: calc(100vh - 75px);
+      background: white;
+      transform: translateX(100%);
+      transition: transform .3s cubic-bezier(.16,.84,.44,1);
+      box-shadow: -4px 0 24px rgba(0,0,0,0.12);
+      overflow-y: auto;
+      z-index: 50;
+    }
+
+    body.menu-open .mobile-menu {
+      transform: translateX(0);
+    }
+
+    .mobile-menu-inner {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .mobile-nav-link {
+      padding: 14px 16px;
+      border-radius: 6px;
+      color: #1a1a1a;
+      font-size: 15px;
+      font-weight: 500;
+      transition: all .2s ease;
+      display: block;
+    }
+
+    .mobile-nav-link:hover,
+    .mobile-nav-link.active {
+      background: #f5f5f5;
+      color: #d71921;
+    }
+
+    .mobile-cta {
+      margin-top: 16px;
+      padding: 14px 20px;
+      background: #d71921;
+      color: white;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    /* Overlay */
+    .mobile-overlay {
+      display: none;
+      position: fixed;
+      top: 75px;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 75px);
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(2px);
+      z-index: 40;
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+
+    body.menu-open .mobile-overlay {
+      display: block;
+      opacity: 1;
+    }
+
+    @media (min-width: 768px) {
+      .nav-links { display: flex; }
+      .mobile-toggle { display: none; }
+      .mobile-menu { display: none; }
+    }
+
+    /* ================ HERO SECTION - AIDA: ATTENTION ================ */
+    .hero-modern {
+      position: relative;
+      padding: clamp(80px, 12vw, 140px) 0 clamp(60px, 10vw, 100px);
+      background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+      overflow: hidden;
+    }
+
+    .hero-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(32px, 6vw, 64px);
+      align-items: center;
+    }
+
+    .hero-content {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: #fef1f2;
+      border: 1px solid #fecdd3;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #d71921;
+      margin-bottom: 20px;
+    }
+
+    .hero-badge svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .hero-title {
+      font-size: clamp(32px, 6vw, 56px);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: #1a1a1a;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: #525252;
+      margin-bottom: 32px;
+      line-height: 1.6;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-hero-primary {
+      padding: 16px 32px;
+      background: #d71921;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all .25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-hero-primary:hover {
+      background: #a01419;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(215,25,33,0.3);
+    }
+
+    .btn-hero-secondary {
+      padding: 16px 32px;
+      background: white;
+      color: #1a1a1a;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      border: 2px solid #e5e5e5;
+      cursor: pointer;
+      transition: all .25s ease;
+    }
+
+    .btn-hero-secondary:hover {
+      border-color: #d71921;
+      color: #d71921;
+      transform: translateY(-2px);
+    }
+
+    /* Hero Slideshow Container */
+    .hero-slideshow-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    }
+
+    .hero-slide {
+      display: none;
+      position: relative;
+    }
+
+    .hero-slide.active {
+      display: block;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .hero-slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 16/10;
+    }
+
+    /* Slide Navigation */
+    .slide-controls {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+    }
+
+    .slide-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: all .3s ease;
+      border: 2px solid transparent;
+    }
+
+    .slide-dot.active {
+      background: white;
+      width: 32px;
+      border-radius: 5px;
+    }
+
+    .slide-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.9);
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all .3s ease;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
+      z-index: 10;
     }
 
-    /* ================= REVEAL ================= */
-    .reveal {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: .6s ease;
+    .slide-nav:hover {
+      background: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
-    .reveal.active {
+    .slide-nav.prev { left: 16px; }
+    .slide-nav.next { right: 16px; }
+
+    @media (min-width: 768px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero-cta-group {
+        justify-content: center;
+      }
+    }
+
+    /* ================ TRUST SECTION - AIDA: ATTENTION ================ */
+    .trust-section {
+      padding: clamp(40px, 8vw, 80px) 0;
+      background: white;
+    }
+
+    .trust-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+    }
+
+    .trust-title {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      color: #767676;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 32px;
+    }
+
+    .trust-logos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: clamp(24px, 4vw, 48px);
+      align-items: center;
+      justify-items: center;
+    }
+
+    .trust-logo {
+      opacity: 0.6;
+      transition: opacity .3s ease;
+      max-width: 120px;
+      filter: grayscale(100%);
+    }
+
+    .trust-logo:hover {
       opacity: 1;
+      filter: grayscale(0%);
+    }
+
+    .trust-logo img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* ================ VIDEO SECTION - AIDA: INTEREST ================ */
+    .video-section {
+      padding: clamp(60px, 10vw, 100px) 0;
+      background: white;
+    }
+
+    .video-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+    }
+
+    .video-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ================ FEATURES SECTION - AIDA: INTEREST ================ */
+    .features-modern {
+      padding: clamp(60px, 10vw, 100px) 0;
+      background: #fafafa;
+    }
+
+    .features-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: clamp(40px, 8vw, 64px);
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: #fef1f2;
+      color: #d71921;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #1a1a1a;
+    }
+
+    .section-subtitle {
+      font-size: clamp(16px, 2.5vw, 18px);
+      color: #525252;
+      line-height: 1.6;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: clamp(24px, 4vw, 32px);
+    }
+
+    .feature-card {
+      background: white;
+      padding: clamp(24px, 4vw, 32px);
+      border-radius: 12px;
+      transition: all .3s ease;
+      border: 1px solid #f0f0f0;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+
+    .feature-visual {
+      width: 100%;
+      height: 200px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .feature-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .feature-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #1a1a1a;
+    }
+
+    .feature-description {
+      font-size: 15px;
+      color: #525252;
+      line-height: 1.6;
+    }
+
+    /* ================ SHOWCASE SECTION - AIDA: INTEREST ================ */
+    .showcase-section {
+      padding: clamp(60px, 10vw, 100px) 0;
+      background: white;
+    }
+
+    .showcase-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: clamp(16px, 3vw, 24px);
+      margin-top: 40px;
+    }
+
+    .showcase-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      cursor: pointer;
+      transition: transform .3s ease;
+    }
+
+    .showcase-item:hover {
+      transform: scale(1.02);
+    }
+
+    .showcase-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .showcase-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      color: white;
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+
+    .showcase-item:hover .showcase-overlay {
+      opacity: 1;
+    }
+
+    /* ================ PROCESS SECTION - AIDA: DESIRE ================ */
+    .process-section {
+      padding: clamp(60px, 10vw, 100px) 0;
+      background: #fafafa;
+    }
+
+    .process-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: clamp(24px, 4vw, 40px);
+      margin-top: 48px;
+    }
+
+    .process-step {
+      background: white;
+      padding: clamp(24px, 4vw, 32px);
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid #f0f0f0;
+      position: relative;
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      background: #d71921;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0 auto 20px;
+    }
+
+    .step-visual {
+      width: 100%;
+      height: 160px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .step-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .step-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #1a1a1a;
+    }
+
+    .step-description {
+      font-size: 14px;
+      color: #525252;
+      line-height: 1.6;
+    }
+
+    /* ================ TESTIMONIALS SECTION - AIDA: DESIRE ================ */
+    .testimonials-section {
+      padding: clamp(60px, 10vw, 100px) 0;
+      background: white;
+    }
+
+    .testimonials-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: clamp(24px, 4vw, 32px);
+      margin-top: 48px;
+    }
+
+    .testimonial-card {
+      background: #fafafa;
+      padding: clamp(24px, 4vw, 32px);
+      border-radius: 12px;
+      border: 1px solid #f0f0f0;
+    }
+
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #e5e5e5;
+    }
+
+    .testimonial-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .testimonial-info h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .testimonial-info p {
+      font-size: 14px;
+      color: #767676;
+    }
+
+    .testimonial-text {
+      font-size: 15px;
+      color: #1a1a1a;
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .testimonial-rating {
+      margin-top: 16px;
+      color: #d71921;
+    }
+
+    /* ================ RFQ SECTION - AIDA: ACTION ================ */
+    .rfq-section {
+      padding: clamp(60px, 10vw, 100px) 0;
+      background: #fafafa;
+    }
+
+    .rfq-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+    }
+
+    .rfq-header {
+      text-align: center;
+      margin-bottom: clamp(40px, 8vw, 64px);
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .rfq-layout {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: clamp(32px, 6vw, 64px);
+      align-items: start;
+    }
+
+    .rfq-form {
+      background: white;
+      padding: clamp(32px, 5vw, 48px);
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 16px;
+    }
+
+    .form-field label {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #1a1a1a;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      padding: 14px 16px;
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: all .3s ease;
+      font-family: inherit;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      outline: none;
+      border-color: #d71921;
+      box-shadow: 0 0 0 3px rgba(215,25,33,0.08);
+    }
+
+    .form-field textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .btn-submit-rfq {
+      width: 100%;
+      padding: 16px 32px;
+      background: #d71921;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all .25s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .btn-submit-rfq:hover {
+      background: #a01419;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(215,25,33,0.3);
+    }
+
+    .btn-submit-rfq:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
       transform: none;
     }
+
+    .form-note {
+      font-size: 13px;
+      color: #767676;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .form-note a {
+      color: #d71921;
+      text-decoration: underline;
+    }
+
+    .rfq-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+
+    .rfq-info-card {
+      background: white;
+      padding: clamp(24px, 4vw, 32px);
+      border-radius: 12px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+
+    .rfq-info-card h4 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #1a1a1a;
+    }
+
+    .rfq-benefits {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .rfq-benefits li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: #525252;
+      line-height: 1.6;
+    }
+
+    .rfq-benefits li svg {
+      flex-shrink: 0;
+      color: #d71921;
+      margin-top: 2px;
+    }
+
+    .rfq-contact-quick {
+      background: white;
+      padding: clamp(24px, 4vw, 32px);
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+
+    .rfq-contact-quick p {
+      font-size: 15px;
+      color: #525252;
+      margin-bottom: 16px;
+    }
+
+    .btn-wa-compact {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      background: #25D366;
+      color: white;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all .3s ease;
+    }
+
+    .btn-wa-compact:hover {
+      background: #128C7E;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37,211,102,0.3);
+    }
+
+    @media (max-width: 900px) {
+      .rfq-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .rfq-sidebar {
+        position: static;
+      }
+    }
+
+    /* ================ MARKETPLACE SECTION - AIDA: ACTION ================ */
+    .marketplace-section {
+      padding: clamp(60px, 10vw, 100px) 0;
+      background: white;
+    }
+
+    .marketplace-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+    }
+
+    .marketplace-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: clamp(24px, 4vw, 32px);
+      margin-top: 48px;
+    }
+
+    .marketplace-card {
+      background: #fafafa;
+      padding: clamp(32px, 5vw, 48px);
+      border-radius: 12px;
+      border: 1px solid #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      transition: all .3s ease;
+      position: relative;
+    }
+
+    .marketplace-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+      border-color: #d71921;
+    }
+
+    .marketplace-card img {
+      max-width: 140px;
+      height: auto;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: all .3s ease;
+    }
+
+    .marketplace-card:hover img {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+
+    .marketplace-arrow {
+      font-size: 24px;
+      color: #d71921;
+      font-weight: 700;
+    }
+
+    /* ================ CTA SECTION - AIDA: ACTION ================ */
+    .cta-section-modern {
+      padding: clamp(60px, 10vw, 100px) 0;
+      background: linear-gradient(135deg, rgba(230, 57, 70, 0.08), rgba(164, 22, 26, 0.04));
+    }
+
+    .cta-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+      text-align: center;
+    }
+
+    .cta-title {
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #1a1a1a;
+    }
+
+    .cta-subtitle {
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: #525252;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .cta-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+
+    .cta-feature {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      color: #1a1a1a;
+    }
+
+    .cta-feature svg {
+      color: #d71921;
+    }
+
+    .btn-cta-wa {
+      padding: 18px 40px;
+      background: #d71921;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all .25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-cta-wa:hover {
+      background: #a01419;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(215,25,33,0.3);
+    }
+
+    /* ================ FOOTER ================ */
+    footer {
+      background: #1a1a1a;
+      color: white;
+      padding: clamp(40px, 8vw, 64px) 0 24px;
+    }
+
+    .footer-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: clamp(32px, 6vw, 48px);
+      margin-bottom: 40px;
+    }
+
+    .footer-brand h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      color: #a3a3a3;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: flex-start; /* RATA KIRI */
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-social a {
+      color: #b5b5b5; /* atau warna existing lo */
+      transition: color .2s ease;
+    }
+
+    .footer-social a:hover {
+      color: #ffffff;
+    }
+
+    .footer-social svg {
+      display: block;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .3s ease;
+    }
+
+    .social-link:hover {
+      background: #d71921;
+      transform: translateY(-2px);
+    }
+
+    .footer-column h4 {
+      font-size: 16px;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: #a3a3a3;
+      font-size: 14px;
+      transition: color .3s ease;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #a3a3a3;
+      font-size: 14px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-badges {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-badge-item {
+      font-size: 13px;
+      color: #a3a3a3;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .footer-logo img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .footer-logo h3 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    /* ================ STICKY CTA ================ */
+    .sticky-cta {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 100;
+      padding: 16px 24px;
+      background: #d71921;
+      color: white;
+      border-radius: 100px;
+      font-weight: 600;
+      box-shadow: 0 8px 24px rgba(215,25,33,0.4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all .3s ease;
+      border: none;
+    }
+
+    .sticky-cta:hover {
+      background: #a01419;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(215,25,33,0.5);
+    }
+
+    /* ================ STICKY CTA ================ */
+    .sticky-cta {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 100;
+      background: #d71921;
+      color: white;
+      padding: 16px 32px;
+      border-radius: 100px;
+      font-size: 15px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all .3s ease;
+      border: none;
+    }
+
+    .sticky-cta:hover {
+      background: #a01419;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(215,25,33,0.5);
+    }
+
+    /* ================ BACK TO TOP ================ */
+    .back-to-top {
+      position: fixed;
+      bottom: 88px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      background: white;
+      border: 1px solid #e5e5e5;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all .3s ease;
+      z-index: 90;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: #d71921;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* ================ ANIMATIONS ================ */
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* ================= MOBILE UX PATCH ================= */
+@media (max-width: 767px) {
+  .footer-social {
+      justify-content: flex-start;
+    }
+
+  .back-to-top {
+        display: none;
+      }
+
+  body {
+    padding-bottom: 96px; /* ruang buat sticky CTA */
+  }
+  .sticky-cta {
+    box-shadow: 0 -6px 20px rgba(0,0,0,0.08);
+  }
+    /* CTA full width */
+    .btn-hero-primary {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* Secondary CTA jadi link */
+    .btn-hero-secondary {
+      background: transparent;
+      border: none;
+      padding: 8px 0;
+      font-size: 14px;
+      color: #767676;
+    }
+
+    /* Sticky WA */
+    .sticky-cta {
+      left: 16px;
+      right: 16px;
+      border-radius: 12px;
+      font-size: 15px;
+    }
+
+    /* Feature reorder */
+    .features-grid .feature-card:nth-child(1) { order: 2; }
+    .features-grid .feature-card:nth-child(2) { order: 1; }
+    .features-grid .feature-card:nth-child(3) { order: 3; }
+
+  /* --- HERO SECTION --- */
+  .hero-modern {
+    padding: 64px 0 48px;
+  }
+
+  .hero-container {
+    gap: 32px;
+  }
+
+  .hero-title {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  /* --- HERO BUTTONS --- */
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    padding: 14px 22px;
+    font-size: 15px;
+    border-radius: 6px;
+  }
+
+  .hero-cta-group {
+    gap: 12px;
+  }
+
+  /* --- HERO SLIDER --- */
+  .hero-slideshow-container {
+    border-radius: 12px;
+  }
+
+  .slide-nav {
+    width: 36px;
+    height: 36px;
+  }
+
+  .slide-controls {
+    bottom: 12px;
+  }
+
+  .slide-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  /* --- TRUST LOGOS --- */
+  .trust-logos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .trust-logo {
+    max-width: 100px;
+  }
+
+  /* --- SECTION SPACING --- */
+  section {
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+
+  /* --- FEATURE / PROCESS / TESTI CARD --- */
+  .feature-card,
+  .process-step,
+  .testimonial-card {
+    padding: 20px;
+  }
+
+  .feature-visual,
+  .step-visual {
+    height: 140px;
+  }
+
+  /* --- RFQ FORM --- */
+  .rfq-form {
+    padding: 24px;
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .btn-submit-rfq {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  /* --- STICKY CTA --- */
+  .sticky-cta {
+    padding: 14px;
+    font-size: 14px;
+    border-radius: 12px;
+  }
+
+  /* --- BACK TO TOP --- */
+  .back-to-top {
+    bottom: 80px;
+  }
+}
+
+/* ================= RUNNING TRUST LOGO ================= */
+
+.trust-marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.trust-track {
+  display: flex;
+  gap: 48px;
+  width: max-content;
+  animation: trust-scroll 35s linear infinite;
+  will-change: transform; /* Performance optimization */
+}
+
+.trust-logo {
+  flex: 0 0 auto;
+  max-width: 120px;
+  opacity: 0.6;
+  filter: grayscale(100%);
+  transition: opacity .3s ease, filter .3s ease;
+}
+
+.trust-logo img {
+  width: 100%;
+  height: auto;
+}
+
+.trust-logo:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+/* Pause on hover / touch */
+.trust-marquee:hover .trust-track {
+  animation-play-state: paused;
+}
+
+@keyframes trust-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 767px) {
+  .trust-track {
+    gap: 32px;
+    animation-duration: 25s;
+  }
+
+  .trust-logo {
+    max-width: 96px;
+  }
+  .hero-microcopy {
+    font-size: 13px;
+  }
+}
+
+/* ================= FOOTER PAYMENT METHODS ================= */
+
+.footer-payments {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+}
+
+.footer-payments-title {
+  font-size: 13px;
+  color: #a3a3a3;
+  margin-bottom: 16px;
+}
+
+.footer-payments-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-payments-logos img {
+  height: 28px;
+  width: auto;
+  opacity: 0.7;
+  filter: grayscale(100%);
+  transition: opacity .3s ease, filter .3s ease;
+}
+
+.footer-payments-logos img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+  .footer-payments {
+    margin-top: 24px;
+  }
+
+  .footer-payments-logos img {
+    height: 24px;
+  }
+}
+/* Footer address clickable */
+.footer-address-link {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.footer-address-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.hero-microcopy {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #767676;
+  text-align: center;
+  line-height: 1.5;
+}
+/* ================= MICRO SCROLL ANIMATION ================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* stagger dikit biar ga muncul barengan */
+.reveal.delay-1 { transition-delay: .1s; }
+.reveal.delay-2 { transition-delay: .2s; }
+.reveal.delay-3 { transition-delay: .3s; }
+
+section {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+@media (max-width: 767px) {
+  section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+.feature-card,
+.process-step,
+.testimonial-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.feature-card:hover,
+.process-step:hover,
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+.section-title,
+.section-subtitle {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* ================= NOTION STYLE TYPOGRAPHY ================= */
+
+body {
+  line-height: 1.75;
+  font-weight: 400;
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(32px, 4vw, 44px);
+}
+
+h2 {
+  font-size: clamp(24px, 3vw, 32px);
+}
+
+h3 {
+  font-size: 20px;
+}
+
+p {
+  max-width: 720px;
+  color: #555;
+}
+/* ================= SECTION SPACING ================= */
+
+section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+@media (max-width: 767px) {
+  section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+/* ================= NOTION CARD STYLE ================= */
+
+.feature-card,
+.process-step,
+.testimonial-card,
+.showcase-item {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+.feature-card:hover,
+.process-step:hover,
+.testimonial-card:hover,
+.showcase-item:hover {
+  transform: none;
+}
+/* ================= BUTTON TONE DOWN ================= */
+
+.btn,
+.btn-primary,
+.btn-hero-primary {
+  box-shadow: none;
+  border-radius: 10px;
+}
+
+.btn-hero-primary:hover {
+  transform: none;
+}
+/* ================= FORM NOTION FEEL ================= */
+
+input,
+textarea,
+select {
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.15);
+  box-shadow: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: rgba(0,0,0,0.4);
+  outline: none;
+}
+hr,
+.section-divider {
+  border: none;
+  height: 1px;
+  background: rgba(0,0,0,0.06);
+}
+/* ================= TONE DOWN DECORATION ================= */
+
+[class*="shadow"],
+[class*="glow"],
+[class*="gradient"] {
+  box-shadow: none !important;
+}
+
+
+
   </style>
 </head>
-
-<!-- HTML & JS CONTENT BELOW IS IDENTICAL TO notion-feel.html -->
-<!-- (Intentionally preserved verbatim for stability & zero regression) -->
-
 <body>
- <!-- ================ HEADER ================ -->
+  <!-- Fallback for JavaScript disabled -->
+  <noscript>
+    <div style="position: fixed; top: 0; left: 0; right: 0; background: #fff3cd; color: #856404; padding: 12px; text-align: center; z-index: 9999; border-bottom: 1px solid #ffeaa7; font-size: 14px;">
+      Untuk pengalaman terbaik, mohon aktifkan JavaScript di browser Anda. <a href="https://wa.me/628195181427" style="color: #d71921; text-decoration: underline;">Hubungi kami via WhatsApp</a>
+    </div>
+  </noscript>
+  
+  <!-- ================ HEADER ================ -->
   <header>
     <div class="header-container">
       <nav class="nav">
@@ -253,13 +2107,13 @@ Perubahan hanya dilakukan pada <style> section:
       <!-- Hero Slideshow -->
       <div class="hero-slideshow-container">
         <div class="hero-slide active">
-          <img src="assets/images/halamanutama/hardbox-hmns2.webp" alt="Hardbox Premium HMNS" loading="eager" width="900" height="562">
+          <img src="assets/images/halamanutama/hardbox-hmns2.webp" alt="Hardbox Premium HMNS - Custom Packaging untuk Brand Beauty dengan Finishing Emboss dan Hotprint Gold" loading="eager" width="900" height="562">
         </div>
         <div class="hero-slide">
-          <img src="assets/images/halamanutama/hardbox-kahf2.webp" alt="Hardbox Premium Kahf" loading="lazy" width="900" height="562">
+          <img src="assets/images/halamanutama/hardbox-kahf2.webp" alt="Hardbox Premium Kahf - Rigid Box Custom untuk Produk Grooming dengan Material Premium dan UV Spot" loading="lazy" width="900" height="562">
         </div>
         <div class="hero-slide">
-          <img src="assets/images/halamanutama/hardbox-wardah2.webp" alt="Hardbox Premium Wardah" loading="lazy" width="900" height="562">
+          <img src="assets/images/halamanutama/hardbox-wardah2.webp" alt="Hardbox Premium Wardah - Luxury Packaging Box untuk Skincare dengan Magnetic Closure dan Soft Touch Lamination" loading="lazy" width="900" height="562">
         </div>
 
         <!-- Slide Navigation -->
@@ -545,10 +2399,10 @@ Perubahan hanya dilakukan pada <style> section:
           <div class="form-row">
             <div class="form-field">
               <label for="rfq-name">Nama Anda *</label>
-              <input id="rfq-name" name="name" type="text" required placeholder="Nama lengkap" autocomplete="name">
+              <input id="rfq-name" name="name" type="text" required placeholder="Nama lengkap" autocomplete="name" aria-required="true">
             </div>
             <div class="form-field">
-              <label for="whatsapp">Nomor WhatsApp</label>
+              <label for="whatsapp">Nomor WhatsApp *</label>
               <input
                 type="tel"
                 id="whatsapp"
@@ -556,15 +2410,17 @@ Perubahan hanya dilakukan pada <style> section:
                 pattern="08[0-9]{8,12}"
                 placeholder="Contoh: 0819xxxxxxx"
                 required
+                aria-required="true"
+                aria-describedby="whatsapp-help"
               >
-              <small class="form-note">
+              <small id="whatsapp-help" class="form-note">
                 Nomor ini hanya digunakan untuk keperluan konsultasi.
               </small>
             </div>
 
             <div class="form-field">
               <label for="rfq-email">Email Bisnis *</label>
-              <input id="rfq-email" name="email" type="email" required placeholder="hello@brandanda.com" autocomplete="email">
+              <input id="rfq-email" name="email" type="email" required placeholder="hello@brandanda.com" autocomplete="email" aria-required="true">
             </div>
           </div>
 
@@ -576,7 +2432,7 @@ Perubahan hanya dilakukan pada <style> section:
 
             <div class="form-field">
               <label for="rfq-industry">Industri *</label>
-              <select id="rfq-industry" name="industry" required>
+              <select id="rfq-industry" name="industry" required aria-required="true">
                 <option value="" disabled selected hidden>Pilih industri</option>
                 <option>Beauty / Skincare</option>
                 <option>Fashion / Lifestyle</option>
@@ -591,7 +2447,7 @@ Perubahan hanya dilakukan pada <style> section:
           <div class="form-row">
             <div class="form-field">
               <label for="rfq-box">Tipe Packaging *</label>
-              <select id="rfq-box" name="boxType" required>
+              <select id="rfq-box" name="boxType" required aria-required="true">
                 <option value="" disabled selected hidden>Pilih tipe</option>
                 <option>Rigid / Hardbox</option>
                 <option>Hardbox dengan Insert Custom</option>
@@ -604,7 +2460,8 @@ Perubahan hanya dilakukan pada <style> section:
 
             <div class="form-field">
               <label for="rfq-qty">Kuantitas (pcs)</label>
-              <input id="rfq-qty" name="quantity" type="number" min="200" placeholder="Min. 200">
+              <input id="rfq-qty" name="quantity" type="number" min="200" placeholder="Min. 200" aria-describedby="qty-help">
+              <small id="qty-help" class="form-note">Minimum order 200 pcs</small>
             </div>
           </div>
 
@@ -615,7 +2472,8 @@ Perubahan hanya dilakukan pada <style> section:
               name="message"
               rows="5"
               placeholder="Ceritakan tentang produk Anda, ukuran box yang diinginkan, preferensi finishing, dan target launch date..."
-              required></textarea>
+              required
+              aria-required="true"></textarea>
           </div>
 
           <button type="submit" class="btn-submit-rfq">
@@ -847,7 +2705,7 @@ Perubahan hanya dilakukan pada <style> section:
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                 <polyline points="22,6 12,13 2,6"/>
               </svg>
-              <a href="mailto:info@deartbox.com">info@deartbox.com</a>
+              <a href="/cdn-cgi/l/email-protection#5f363139301f3b3a3e2d2b3d3027713c3032"><span class="__cf_email__" data-cfemail="1e777078715e7a7b7f6c6a7c7166307d7173">[email&#160;protected]</span></a>
             </li>
           </ul>
         </div>
@@ -891,9 +2749,15 @@ Perubahan hanya dilakukan pada <style> section:
   </button>
 
   <!-- ================ JAVASCRIPT ================ -->
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     (function() {
       'use strict';
+
+      // Global error handler for graceful degradation
+      window.addEventListener('error', function(e) {
+        console.warn('Non-critical error caught:', e.message);
+        return true; // Prevent default error handling
+      });
 
       // Mobile Menu Toggle
       const mobileToggle = document.querySelector('.mobile-toggle');
@@ -918,7 +2782,7 @@ Perubahan hanya dilakukan pada <style> section:
         });
       });
 
-      // Smooth Scroll
+      // Smooth Scroll with fallback
       document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener('click', function(e) {
           const href = this.getAttribute('href');
@@ -928,10 +2792,17 @@ Perubahan hanya dilakukan pada <style> section:
           const target = document.querySelector(href);
           if (target) {
             const offsetTop = target.offsetTop - 80;
-            window.scrollTo({
-              top: offsetTop,
-              behavior: 'smooth'
-            });
+            
+            // Try modern smooth scroll, fallback to instant scroll
+            try {
+              window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+              });
+            } catch (error) {
+              // Fallback for older browsers
+              window.scrollTo(0, offsetTop);
+            }
           }
         });
       });
@@ -1042,11 +2913,18 @@ Perubahan hanya dilakukan pada <style> section:
         });
       }
 
-      // RFQ Form Handler
+      // RFQ Form Handler with validation and loading state
       const rfqForm = document.getElementById('rfqForm');
       if (rfqForm) {
+        const submitBtn = rfqForm.querySelector('.btn-submit-rfq');
+        const originalBtnText = submitBtn.innerHTML;
+        
         rfqForm.addEventListener('submit', function(e) {
           e.preventDefault();
+          
+          // Show loading state
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;"><circle cx="12" cy="12" r="10"/></svg> <span>Mengirim...</span>';
           
           const formData = new FormData(rfqForm);
           const name = formData.get('name');
@@ -1062,7 +2940,7 @@ Perubahan hanya dilakukan pada <style> section:
 Saya ingin request quotation:
 
 Nama: ${name}
-Wh atsapp: ${whatsapp}
+WhatsApp: ${whatsapp}
 Email: ${email}
 Brand: ${brand}
 Industri: ${industry}
@@ -1073,8 +2951,10 @@ Deskripsi: ${message}`;
           const waUrl = 'https://wa.me/628195181427?text=' + encodeURIComponent(waMessage);
           window.open(waUrl, '_blank');
 
-          // Reset form after delay
+          // Reset button after short delay
           setTimeout(function() {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
             rfqForm.reset();
           }, 2000);
         });
@@ -1101,26 +2981,27 @@ Deskripsi: ${message}`;
           }
         });
       }, { passive: true });
-        const reveals = document.querySelectorAll('.reveal');
+      
+      // Reveal Animation with IntersectionObserver
+      const reveals = document.querySelectorAll('.reveal');
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.15
-  });
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
 
-  reveals.forEach(el => observer.observe(el));
+      reveals.forEach(reveal => {
+        observer.observe(reveal);
+      });
 
     })();
-    
   </script>
-
-  <!-- Google Analytics (Optional) -->
-  <!-- Add your GA4 code here if needed -->
 </body>
 </html>
