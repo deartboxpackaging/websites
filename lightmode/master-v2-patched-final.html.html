@@ -2745,6 +2745,7 @@ Dipercaya 50+ brand di Indonesia.
           
           const formData = new FormData(rfqForm);
           const name = formData.get('name');
+          const whatsapp = formData.get('whatsapp');
           const email = formData.get('email');
           const brand = formData.get('brand') || '-';
           const industry = formData.get('industry');
@@ -2756,6 +2757,7 @@ Dipercaya 50+ brand di Indonesia.
 Saya ingin request quotation:
 
 Nama: ${name}
+Wh atsapp: ${whatsapp}
 Email: ${email}
 Brand: ${brand}
 Industri: ${industry}
