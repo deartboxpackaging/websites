@@ -2042,85 +2042,48 @@ hr,
 [class*="gradient"] {
   box-shadow: none !important;
 }
-/* ===============================
-   QUALIFIER – NOTION STYLE
-   =============================== */
-
-.qualifier-section.notion {
+.qualifier-section.compact {
   background: #ffffff;
 }
 
-.qualifier-eyebrow {
-  max-width: 720px;
-  margin: 0 auto 20px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #767676;
-  text-align: center;
-}
-
-.qualifier-notes {
+.qualifier-inline {
   max-width: 720px;
   margin: 0 auto;
-  border-top: 1px solid rgba(0,0,0,0.06);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
 }
 
-.qualifier-notes p {
-  margin: 0;
-  padding: 14px 0;
-  font-size: 15px;
+.qualifier-inline span {
+  font-size: 14px;
   color: #555;
-  line-height: 1.6;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-}
-.qualifier-notes {
-  border-top: none;
+  padding: 6px 10px;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 6px;
+  background: #fff;
+  white-space: nowrap;
 }
 
-.qualifier-notes p {
-  border-bottom: none;
-}
-.qualifier-notes {
-  background: #fafafa;
-  padding: 8px 20px;
-  border-radius: 8px;
-}
-/* ===============================
-   WHY DEARTBOX SECTION
-   =============================== */
 
-.why-section {
+.why-section.compact {
   background: #ffffff;
 }
 
-.why-title {
-  text-align: center;
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 40px;
-  color: #1a1a1a;
-}
-
-.why-list {
-  max-width: 900px;
+.why-inline {
+  max-width: 720px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 32px;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
-.why-item h4 {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 8px;
+.why-inline span {
+  font-size: 15px;
+  font-weight: 500;
   color: #1a1a1a;
 }
 
-.why-item p {
-  font-size: 14px;
-  color: #525252;
-  line-height: 1.6;
-}
+
 
 
 
@@ -2339,15 +2302,15 @@ hr,
   </div>
 </section>
 
-<section class="qualifier-section notion">
+<section class="qualifier-section compact">
   <div class="container">
     <p class="qualifier-eyebrow">Cocok untuk brand yang:</p>
 
-    <div class="qualifier-notes">
-      <p>Ingin <strong>packaging konsisten</strong> untuk produksi berulang</p>
-      <p>Punya standar visual & kualitas yang jelas</p>
-      <p>Butuh partner jangka panjang, bukan vendor sekali pakai</p>
-      <p>Mengutamakan ketepatan timeline & quality control</p>
+    <div class="qualifier-inline">
+      <span>Packaging konsisten untuk produksi berulang</span>
+      <span>Standar visual & kualitas jelas</span>
+      <span>Partner jangka panjang</span>
+      <span>Timeline & QC terkontrol</span>
     </div>
   </div>
 </section>
@@ -2577,28 +2540,18 @@ hr,
     </div>
   </section>
 
-  <section class="why-section">
+  <section class="why-section compact">
   <div class="container">
-    <h3 class="why-title">Kenapa brand memilih deartbox?</h3>
+    <p class="why-title">Kenapa brand memilih deartbox?</p>
 
-    <div class="why-list">
-      <div class="why-item">
-        <h4>Material & proses dikontrol langsung</h4>
-        <p>Bukan makelar, bukan dilempar ke vendor lain.</p>
-      </div>
-
-      <div class="why-item">
-        <h4>Timeline realistis & transparan</h4>
-        <p>Kami tidak menjual janji manis—kami menjual kepastian.</p>
-      </div>
-
-      <div class="why-item">
-        <h4>QC & revisi jelas dari awal</h4>
-        <p>Standar disepakati di depan, bukan debat di akhir.</p>
-      </div>
+    <div class="why-inline">
+      <span>Kontrol material & proses langsung</span>
+      <span>Timeline realistis & transparan</span>
+      <span>QC & revisi disepakati sejak awal</span>
     </div>
   </div>
 </section>
+
 
 
   <!-- ================ RFQ SECTION - AIDA: ACTION ================ -->
