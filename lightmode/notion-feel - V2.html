@@ -2105,6 +2105,62 @@ section {
     padding-bottom: 64px;
   }
 }
+/* =====================================================
+   SAFE NOTION POLISH PATCH (NON-DESTRUCTIVE)
+   ===================================================== */
+
+/* 1. MATIKAN FLOATING & SHADOW BERLEBIH */
+.feature-card,
+.process-step,
+.testimonial-card,
+.showcase-item,
+.rfq-form,
+.rfq-info-card {
+  box-shadow: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* 2. SAMAIN BORDER BIAR TENANG */
+.feature-card,
+.process-step,
+.testimonial-card,
+.showcase-item,
+.rfq-form,
+.rfq-info-card {
+  border: 1px solid rgba(0,0,0,0.06) !important;
+}
+
+/* 3. HILANGKAN HOVER “PROMO FEEL” */
+.feature-card:hover,
+.process-step:hover,
+.testimonial-card:hover {
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* 4. TENANGIN TYPOGRAPHY DESKRIPSI */
+.section-subtitle,
+.feature-description,
+.step-description,
+.hero-microcopy,
+.trust-qualifier,
+.rfq-reasoning {
+  color: #767676 !important;
+}
+
+/* 5. KUNCI SPACING GLOBAL (TANPA ROMBAK GRID) */
+section {
+  padding-top: 96px !important;
+  padding-bottom: 96px !important;
+}
+
+@media (max-width: 767px) {
+  section {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+}
 
 
   </style>
