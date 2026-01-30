@@ -1981,6 +1981,26 @@ hr,
   }
 }
 
+/* ================= SECTION TITLE SCROLL REVEAL ================= */
+
+.section-title,
+.section-subtitle {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.6s cubic-bezier(.22,.61,.36,1),
+    transform 0.6s cubic-bezier(.22,.61,.36,1);
+  will-change: opacity, transform;
+}
+
+/* state aktif */
+.section-title.is-visible,
+.section-subtitle.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
   </style>
 </head>
 <body>
@@ -3027,6 +3047,27 @@ Deskripsi: ${message}`;
         observer.observe(reveal);
       });
 
+      document.addEventListener("DOMContentLoaded", () => {
+        const targets = document.querySelectorAll(
+          ".section-title, .section-subtitle"
+        );
+
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                obs.unobserve(entry.target); // animasi sekali
+              }
+            });
+          },
+          {
+            threshold: 0.2
+          }
+        );
+
+        targets.forEach(el => observer.observe(el));
+      });
     })();
   </script>
 </body>
