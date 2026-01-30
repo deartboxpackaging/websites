@@ -2043,46 +2043,47 @@ hr,
   box-shadow: none !important;
 }
 /* ===============================
-   QUALIFIER SECTION
+   QUALIFIER – NOTION STYLE
    =============================== */
 
-.qualifier-section {
-  background: #fafafa;
+.qualifier-section.notion {
+  background: #ffffff;
 }
 
-.qualifier-title {
-  text-align: center;
-  font-size: 18px;
+.qualifier-eyebrow {
+  max-width: 720px;
+  margin: 0 auto 20px;
+  font-size: 14px;
   font-weight: 600;
-  margin-bottom: 24px;
-  color: #1a1a1a;
+  color: #767676;
+  text-align: center;
 }
 
-.qualifier-list {
+.qualifier-notes {
   max-width: 720px;
   margin: 0 auto;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 16px;
+  border-top: 1px solid rgba(0,0,0,0.06);
 }
 
-.qualifier-list li {
-  position: relative;
-  padding-left: 24px;
+.qualifier-notes p {
+  margin: 0;
+  padding: 14px 0;
   font-size: 15px;
-  color: #525252;
+  color: #555;
   line-height: 1.6;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.qualifier-notes {
+  border-top: none;
 }
 
-.qualifier-list li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #d71921;
-  font-size: 20px;
-  line-height: 1;
+.qualifier-notes p {
+  border-bottom: none;
+}
+.qualifier-notes {
+  background: #fafafa;
+  padding: 8px 20px;
+  border-radius: 8px;
 }
 /* ===============================
    WHY DEARTBOX SECTION
@@ -2338,17 +2339,19 @@ hr,
   </div>
 </section>
 
-<section class="qualifier-section">
+<section class="qualifier-section notion">
   <div class="container">
-    <h3 class="qualifier-title">Cocok untuk brand yang:</h3>
-    <ul class="qualifier-list">
-      <li>Ingin <strong>packaging konsisten</strong> untuk produksi berulang</li>
-      <li>Punya standar visual & kualitas yang jelas</li>
-      <li>Butuh partner jangka panjang, bukan vendor sekali pakai</li>
-      <li>Mengutamakan ketepatan timeline & quality control</li>
-    </ul>
+    <p class="qualifier-eyebrow">Cocok untuk brand yang:</p>
+
+    <div class="qualifier-notes">
+      <p>Ingin <strong>packaging konsisten</strong> untuk produksi berulang</p>
+      <p>Punya standar visual & kualitas yang jelas</p>
+      <p>Butuh partner jangka panjang, bukan vendor sekali pakai</p>
+      <p>Mengutamakan ketepatan timeline & quality control</p>
+    </div>
   </div>
 </section>
+
 
 
 
