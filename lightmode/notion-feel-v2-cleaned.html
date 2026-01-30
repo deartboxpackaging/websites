@@ -1989,6 +1989,7 @@ hr,
 
 /* ================= SECTION TITLE SCROLL REVEAL ================= */
 
+
 .section-title,
 .section-subtitle {
   opacity: 0;
@@ -1996,16 +1997,17 @@ hr,
   transition:
     opacity 0.6s cubic-bezier(.22,.61,.36,1),
     transform 0.6s cubic-bezier(.22,.61,.36,1);
+    transition-delay: 0.08s;
   will-change: opacity, transform;
 }
 
 /* state aktif */
+
 .section-title.is-visible,
 .section-subtitle.is-visible {
   opacity: 1;
   transform: translateY(0);
-}
-
+};
 
   </style>
 </head>
@@ -2628,7 +2630,7 @@ hr,
   <!-- ================ CTA SECTION - AIDA: ACTION ================ -->
   <section class="cta-section-modern">
     <div class="cta-container">
-      <h2 class="cta-title">Siap Upgrade Packaging Brand Anda?</h2>
+      <h2 class="cta-title reveal">Siap Upgrade Packaging Brand Anda?</h2>
       <p class="cta-subtitle">Konsultasi gratis untuk diskusi kebutuhan packaging Anda</p>
 
       <div class="cta-features">
