@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "anthropic.claude-code",
-        "codium.codium"
+        "codium.codium",
+        "github.copilot-chat"
     ]
 }
