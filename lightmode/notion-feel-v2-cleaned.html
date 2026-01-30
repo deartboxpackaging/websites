@@ -1075,6 +1075,11 @@ body.menu-open .mobile-overlay {
   border: 1px solid #f0f0f0;
 }
 
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
 .testimonial-header {
   display: flex;
   align-items: center;
@@ -1726,6 +1731,7 @@ footer {
 .testimonial-card:hover,
 .showcase-item:hover {
   transform: none;
+  transition: all .25s ease;
 }
 
 input,
@@ -2391,7 +2397,7 @@ hr,
       </div>
 
       <div class="testimonials-grid">
-        <div class="testimonial-card">
+        <div class="testimonial-card reveal delay-1">
           <div class="testimonial-header">
             <div class="testimonial-avatar">
               <img src="assets/images/testimonials/client-1.jpg" alt="Client 1" loading="lazy" width="56" height="56">
@@ -2407,7 +2413,7 @@ hr,
           <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
         </div>
 
-        <div class="testimonial-card">
+        <div class="testimonial-card reveal delay-2">
           <div class="testimonial-header">
             <div class="testimonial-avatar">
               <img src="assets/images/testimonials/client-2.jpg" alt="Client 2" loading="lazy" width="56" height="56">
@@ -2423,7 +2429,7 @@ hr,
           <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
         </div>
 
-        <div class="testimonial-card">
+        <div class="testimonial-card reveal delay-3">
           <div class="testimonial-header">
             <div class="testimonial-avatar">
               <img src="assets/images/testimonials/client-3.jpg" alt="Client 3" loading="lazy" width="56" height="56">
