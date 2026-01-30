@@ -793,13 +793,7 @@
       gap: clamp(24px, 4vw, 32px);
     }
 
-    .feature-card {
-      background: white;
-      padding: clamp(24px, 4vw, 32px);
-      border-radius: 12px;
-      transition: all .3s ease;
-      border: 1px solid #f0f0f0;
-    }
+ 
 
     .feature-card:hover {
       transform: translateY(-4px);
@@ -896,7 +890,7 @@
 
     .process-container {
       max-width: var(--max-width);
-      margin: 0 auto;
+      margin: 0 auto;s
       padding: 0 var(--container-pad);
     }
 
@@ -977,12 +971,6 @@
       margin-top: 48px;
     }
 
-    .testimonial-card {
-      background: #fafafa;
-      padding: clamp(24px, 4vw, 32px);
-      border-radius: 12px;
-      border: 1px solid #f0f0f0;
-    }
 
     .testimonial-header {
       display: flex;
@@ -1492,31 +1480,8 @@
       margin: 0;
     }
 
-    /* ================ STICKY CTA ================ */
-    .sticky-cta {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 100;
-      padding: 16px 24px;
-      background: #d71921;
-      color: white;
-      border-radius: 100px;
-      font-weight: 600;
-      box-shadow: 0 8px 24px rgba(215,25,33,0.4);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      transition: all .3s ease;
-      border: none;
-    }
 
-    .sticky-cta:hover {
-      background: #a01419;
-      transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(215,25,33,0.5);
-    }
+
 
     /* ================ STICKY CTA ================ */
     .sticky-cta {
@@ -1686,18 +1651,10 @@
     max-width: 100px;
   }
 
-  /* --- SECTION SPACING --- */
-  section {
-    padding-top: 56px !important;
-    padding-bottom: 56px !important;
-  }
 
   /* --- FEATURE / PROCESS / TESTI CARD --- */
-  .feature-card,
-  .process-step,
-  .testimonial-card {
-    padding: 20px;
-  }
+  
+
 
   .feature-visual,
   .step-visual {
@@ -1909,17 +1866,6 @@
 .reveal.delay-2 { transition-delay: .2s; }
 .reveal.delay-3 { transition-delay: .3s; }
 
-section {
-  padding-top: 96px;
-  padding-bottom: 96px;
-}
-
-@media (max-width: 767px) {
-  section {
-    padding-top: 64px;
-    padding-bottom: 64px;
-  }
-}
 
 .section-title,
 .section-subtitle {
@@ -1955,24 +1901,13 @@ p {
   max-width: 720px;
   color: #555;
 }
-/* ================= SECTION SPACING ================= */
-
-section {
-  padding-top: 120px;
-  padding-bottom: 120px;
-}
-
-@media (max-width: 767px) {
-  section {
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
-}
-/* ================= NOTION CARD STYLE ================= */
 
 .feature-card,
 .process-step,
 .testimonial-card,
+.showcase-item,
+.rfq-form,
+.rfq-info-card
 .showcase-item {
   background: #fff;
   border: 1px solid rgba(0,0,0,0.06);
@@ -2051,9 +1986,9 @@ hr,
 }
 
 /* === LOCK NOTION CALM === */
-.feature-card,
-.process-step,
-.testimonial-card,
+
+
+
 .showcase-item,
 .rfq-form,
 .rfq-info-card {
@@ -2064,10 +1999,7 @@ hr,
   transform: none;
 }
 
-section {
-  padding-top: 96px;
-  padding-bottom: 96px;
-}
+
 
 .trust-section,
 .video-section {
@@ -2091,20 +2023,6 @@ section {
   color: #666;
 }
 
-/* ===============================
-   SECTION SPACING – FINAL
-   =============================== */
-section {
-  padding-top: 96px;
-  padding-bottom: 96px;
-}
-
-@media (max-width: 767px) {
-  section {
-    padding-top: 64px;
-    padding-bottom: 64px;
-  }
-}
 /* =====================================================
    SAFE NOTION POLISH PATCH (NON-DESTRUCTIVE)
    ===================================================== */
@@ -2149,18 +2067,7 @@ section {
   color: #767676 !important;
 }
 
-/* 5. KUNCI SPACING GLOBAL (TANPA ROMBAK GRID) */
-section {
-  padding-top: 96px !important;
-  padding-bottom: 96px !important;
-}
 
-@media (max-width: 767px) {
-  section {
-    padding-top: 64px !important;
-    padding-bottom: 64px !important;
-  }
-}
 /* =====================================================
    FINAL SPACING SYSTEM – NOTION CALM
    ===================================================== */
