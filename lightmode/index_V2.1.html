@@ -420,7 +420,7 @@ a:not(.btn-hero-primary):not(.btn-cta-wa):not(.sticky-cta) {
   --radius-md: 4px;
   --gap: clamp(16px, 3vw, 40px);
   --max-width: 1280px;
-  --container-pad: clamp(24px, 6vw, 80px);
+  --container-pad: clamp(16px, 6vw, 80px);
   --shadow-lg: 0 4px 24px rgba(0,0,0,0.08);
   --shadow-md: 0 2px 12px rgba(0,0,0,0.06);
   --ease: cubic-bezier(.16,.84,.44,1);
@@ -1633,7 +1633,6 @@ body.menu-open .mobile-overlay {
     transform: translateX(-50%);
   }
 }
-}
 
 .trust-logos {
   display: grid;
@@ -2796,8 +2795,16 @@ hr,
   }
 
   .slide-nav {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .slide-nav.prev {
+    left: 8px;
+  }
+
+  .slide-nav.next {
+    right: 8px;
   }
 
   .slide-controls {
@@ -2829,14 +2836,6 @@ hr,
 
   .hero-microcopy {
     font-size: 13px;
-  }
-
-  .trust-marquee {
-    height: 26px;
-  }
-
-  .trust-marquee img {
-    height: 16px;
   }
 
   .feature-card,
@@ -2874,6 +2873,23 @@ hr,
 
   .back-to-top {
     bottom: 80px;
+  }
+
+  .footer-payments-logos {
+    gap: 12px;
+  }
+
+  .footer-payments-logos img {
+    height: 24px;
+    max-width: 60px;
+  }
+
+  .marquee-track {
+    gap: 20px;
+  }
+
+  .trust-marquee img {
+    height: 20px;
   }
 }
 
