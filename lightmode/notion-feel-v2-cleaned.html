@@ -562,7 +562,7 @@ a:not(.btn-hero-primary):not(.btn-cta-wa):not(.sticky-cta) {
 :root {
   --bg: #ffffff;
   --card: #ffffff;
-  --text: #1a1a1a;
+  --text: #ffffff;
   --text-muted: #525252;
   --text-light: #767676;
   --border: #e5e5e5;
@@ -749,6 +749,66 @@ p {
   border-color: var(--border);
 }
 
+
+
+/* ================ DARK MODE OVERRIDES FOR HEADER & HERO ================ */
+
+[data-theme="dark"] header {
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .hero-modern {
+  background: linear-gradient(180deg, #0a0a0a 0%, #0f0f0f 100%);
+}
+
+[data-theme="dark"] .nav-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .nav-link.active {
+  background: rgba(215, 25, 33, 0.15);
+}
+
+[data-theme="dark"] .mobile-toggle span {
+  background: var(--text);
+}
+
+[data-theme="dark"] .hero-badge {
+  background: rgba(215, 25, 33, 0.15);
+  border-color: rgba(215, 25, 33, 0.3);
+}
+
+[data-theme="dark"] .section-badge {
+  background: rgba(215, 25, 33, 0.15);
+}
+
+[data-theme="dark"] .slide-nav {
+  background: rgba(26, 26, 26, 0.95);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .slide-dot {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="dark"] .slide-dot.active {
+  background: white;
+}
+
+[data-theme="dark"] .btn-hero-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+[data-theme="dark"] .btn-hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent);
+}
 [data-theme="dark"] .file-preview {
   background: #0f0f0f;
 }
@@ -891,8 +951,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 60;
-  background: #ffffff;
-  border-bottom: 1px solid #e6e6e6;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
@@ -969,7 +1029,7 @@ header {
 }
 
 .nav-link:hover {
-  background: #f5f5f5;
+  background: var(--glass);
   color: #d71921;
 }
 
@@ -1028,7 +1088,7 @@ header {
 }
 
 .mobile-toggle:hover {
-  background: #f5f5f5;
+  background: var(--glass);
 }
 
 .mobile-toggle span {
@@ -1090,7 +1150,7 @@ body.menu-open .mobile-menu {
 
 .mobile-nav-link:hover,
 .mobile-nav-link.active {
-  background: #f5f5f5;
+  background: var(--glass);
   color: #d71921;
 }
 
@@ -1128,7 +1188,7 @@ body.menu-open .mobile-overlay {
 .hero-modern {
   position: relative;
   padding: clamp(80px, 12vw, 140px) 0 clamp(60px, 10vw, 100px);
-  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--card) 100%);
   overflow: hidden;
 }
 
@@ -1492,7 +1552,7 @@ body.menu-open .mobile-overlay {
 .feature-visual {
   width: 100%;
   height: 200px;
-  background: #f5f5f5;
+  background: var(--glass);
   border-radius: 8px;
   margin-bottom: 20px;
   overflow: hidden;
@@ -1649,7 +1709,7 @@ body.menu-open .mobile-overlay {
 .step-visual {
   width: 100%;
   height: 160px;
-  background: #f5f5f5;
+  background: var(--glass);
   border-radius: 8px;
   margin-bottom: 20px;
   overflow: hidden;
