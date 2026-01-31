@@ -318,7 +318,7 @@ a:not(.btn-hero-primary):not(.btn-cta-wa):not(.sticky-cta) {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 50%, transparent 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 1;
@@ -1580,8 +1580,8 @@ body.menu-open .mobile-overlay {
   mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding: 16px 0;
+  gap: 28px;
+  padding: 20px 0;
 }
 
 .marquee-track {
@@ -1597,7 +1597,7 @@ body.menu-open .mobile-overlay {
 }
 
 .trust-marquee img {
-  height: 18px;
+  height: 28px;
   width: auto;
   object-fit: contain;
   opacity: 0.85;
@@ -1817,7 +1817,7 @@ body.menu-open .mobile-overlay {
   left: 0;
   right: 0;
   padding: 28px;
-  background: linear-gradient(to top, rgba(0,0,0,0.98) 0%, rgba(0,0,0,0.92) 70%, transparent 100%);
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
   color: white;
   opacity: 0;
   transition: opacity .3s ease;
@@ -1826,15 +1826,17 @@ body.menu-open .mobile-overlay {
 
 .showcase-overlay h4 {
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 600;
   margin-bottom: 8px;
+  color: #ffffff !important;
   text-shadow: 0 3px 12px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,1);
   letter-spacing: 0.02em;
 }
 
 .showcase-overlay p {
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 400;
+  color: #ffffff !important;
   opacity: 1;
   text-shadow: 0 2px 8px rgba(0,0,0,0.9), 0 1px 2px rgba(0,0,0,1);
   letter-spacing: 0.01em;
@@ -2233,13 +2235,13 @@ body.menu-open .mobile-overlay {
 .marketplace-card img {
   max-width: 140px;
   height: auto;
-  filter: grayscale(100%);
+  filter: grayscale(100%) !important;
   opacity: 0.7;
   transition: all .3s ease;
 }
 
 .marketplace-card:hover img {
-  filter: grayscale(0%);
+  filter: grayscale(0%) !important;
   opacity: 1;
 }
 
@@ -2881,8 +2883,8 @@ hr,
   }
 
   .trust-marquee {
-    gap: 16px;
-    padding: 12px 0;
+    gap: 20px;
+    padding: 16px 0;
   }
 
   .marquee-track {
@@ -2890,7 +2892,7 @@ hr,
   }
 
   .trust-marquee img {
-    height: 16px;
+    height: 20px;
   }
 }
 
