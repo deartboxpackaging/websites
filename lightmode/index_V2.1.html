@@ -318,9 +318,10 @@ a:not(.btn-hero-primary):not(.btn-cta-wa):not(.sticky-cta) {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(215, 25, 33, 0.8), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 50%, transparent 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
+  z-index: 1;
 }
 
 .showcase-item:hover::after {
@@ -329,7 +330,7 @@ a:not(.btn-hero-primary):not(.btn-cta-wa):not(.sticky-cta) {
 
 .showcase-overlay {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* Process step number pulse */
@@ -1564,9 +1565,9 @@ body.menu-open .mobile-overlay {
 }
 
 .trust-title {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-light);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   text-align: center;
@@ -1574,31 +1575,41 @@ body.menu-open .mobile-overlay {
 
 .trust-marquee {
   width: 100%;
-  height: 28px;
+  height: auto;
   overflow: hidden;
   position: relative;
   mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 20px 0;
 }
 
 .marquee-track {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 48px;
   width: max-content;
-  animation: marquee 34s linear infinite;
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
 
+.marquee-track:nth-child(2) {
+  animation: marquee 45s linear infinite reverse;
+  will-change: transform;
 }
 
 .trust-marquee img {
-  height: 18px;
+  height: 40px;
   width: auto;
   object-fit: contain;
   opacity: 0.85;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .trust-marquee img:hover {
   opacity: 1;
+  transform: scale(1.1);
 }
 
 .trust-marquee:hover .marquee-track {
@@ -1615,12 +1626,13 @@ body.menu-open .mobile-overlay {
 }
 
 @keyframes marquee {
-  from {
+  0% {
     transform: translateX(0);
   }
-  to {
+  100% {
     transform: translateX(-50%);
   }
+}
 }
 
 .trust-logos {
@@ -1809,11 +1821,28 @@ body.menu-open .mobile-overlay {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 20px;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  padding: 28px;
+  background: linear-gradient(to top, rgba(0,0,0,0.98) 0%, rgba(0,0,0,0.92) 70%, transparent 100%);
   color: white;
   opacity: 0;
   transition: opacity .3s ease;
+  z-index: 2;
+}
+
+.showcase-overlay h4 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  text-shadow: 0 3px 12px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,1);
+  letter-spacing: 0.02em;
+}
+
+.showcase-overlay p {
+  font-size: 15px;
+  font-weight: 600;
+  opacity: 1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.9), 0 1px 2px rgba(0,0,0,1);
+  letter-spacing: 0.01em;
 }
 
 .showcase-item:hover .showcase-overlay {
@@ -2450,32 +2479,44 @@ footer .footer-logo h3 {
   margin-top: 32px;
   padding-top: 24px;
   border-top: 1px solid rgba(255,255,255,0.08);
-  text-align: center;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
 }
 
 .footer-payments-title {
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 600;
   color: var(--text-light);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
 }
 
 .footer-payments-logos {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 24px;
   justify-content: center;
   align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .footer-payments-logos img {
-  height: 28px;
+  height: 32px;
   width: auto;
-  opacity: 0.7;
-  transition: opacity .3s ease;
+  max-width: 80px;
+  object-fit: contain;
+  opacity: 0.75;
+  transition: opacity .3s ease, transform .3s ease;
 }
 
 .footer-payments-logos img:hover {
   opacity: 1;
+  transform: scale(1.05);
 }
 
 .footer-bottom {
@@ -2865,7 +2906,8 @@ hr,
   will-change: opacity, transform;
 }
 
-/* state aktif */
+/* state aktif - FIXED: Added .section-title */
+.section-title.is-visible,
 .section-subtitle.is-visible {
   opacity: 1;
   transform: translateY(0);
@@ -3636,10 +3678,9 @@ img[loading="lazy"]:not(.loaded) {
     <p class="trust-title">Dipercaya oleh 50+ Brand di Indonesia</p>
   </div>
   <div class="trust-marquee">
+    <!-- Row 1 -->
     <div class="marquee-track">
-      
-
-      <!-- ===== LOGO SET 1 ===== -->
+      <!-- ===== ROW 1 - LOGO SET 1 ===== -->
       <img src="assets/clients/logo-01.svg" alt="Client Logo 1">
       <img src="assets/clients/logo-02.svg" alt="Client Logo 2">
       <img src="assets/clients/logo-03.svg" alt="Client Logo 3">
@@ -3658,25 +3699,7 @@ img[loading="lazy"]:not(.loaded) {
       <img src="assets/clients/logo-16.svg" alt="Client Logo 16">
       <img src="assets/clients/logo-17.svg" alt="Client Logo 17">
       <img src="assets/clients/logo-18.svg" alt="Client Logo 18">
-      <img src="assets/clients/logo-19.svg" alt="Client Logo 19">
-      <img src="assets/clients/logo-20.svg" alt="Client Logo 20">
-      <img src="assets/clients/logo-21.svg" alt="Client Logo 21">
-      <img src="assets/clients/logo-22.svg" alt="Client Logo 22">
-      <img src="assets/clients/logo-23.svg" alt="Client Logo 23">
-      <img src="assets/clients/logo-24.svg" alt="Client Logo 24">
-      <img src="assets/clients/logo-25.svg" alt="Client Logo 25">
-      <img src="assets/clients/logo-26.svg" alt="Client Logo 26">
-      <img src="assets/clients/logo-27.svg" alt="Client Logo 27">
-      <img src="assets/clients/logo-28.svg" alt="Client Logo 28">
-      <img src="assets/clients/logo-29.svg" alt="Client Logo 29">
-      <img src="assets/clients/logo-30.svg" alt="Client Logo 30">
-      <img src="assets/clients/logo-31.svg" alt="Client Logo 31">
-      <img src="assets/clients/logo-32.svg" alt="Client Logo 32">
-      <img src="assets/clients/logo-33.svg" alt="Client Logo 33">
-      <img src="assets/clients/logo-34.svg" alt="Client Logo 34">
-      <img src="assets/clients/logo-35.svg" alt="Client Logo 35">
-      <img src="assets/clients/logo-36.svg" alt="Client Logo 36">
-      <!-- ===== LOGO SET 2 (DUPLICATE) ===== -->
+      <!-- ===== ROW 1 - LOGO SET 2 (DUPLICATE) ===== -->
       <img src="assets/clients/logo-01.svg" alt="Client Logo 1">
       <img src="assets/clients/logo-02.svg" alt="Client Logo 2">
       <img src="assets/clients/logo-03.svg" alt="Client Logo 3">
@@ -3695,6 +3718,11 @@ img[loading="lazy"]:not(.loaded) {
       <img src="assets/clients/logo-16.svg" alt="Client Logo 16">
       <img src="assets/clients/logo-17.svg" alt="Client Logo 17">
       <img src="assets/clients/logo-18.svg" alt="Client Logo 18">
+    </div>
+    
+    <!-- Row 2 -->
+    <div class="marquee-track">
+      <!-- ===== ROW 2 - LOGO SET 1 ===== -->
       <img src="assets/clients/logo-19.svg" alt="Client Logo 19">
       <img src="assets/clients/logo-20.svg" alt="Client Logo 20">
       <img src="assets/clients/logo-21.svg" alt="Client Logo 21">
@@ -3713,7 +3741,25 @@ img[loading="lazy"]:not(.loaded) {
       <img src="assets/clients/logo-34.svg" alt="Client Logo 34">
       <img src="assets/clients/logo-35.svg" alt="Client Logo 35">
       <img src="assets/clients/logo-36.svg" alt="Client Logo 36">
-
+      <!-- ===== ROW 2 - LOGO SET 2 (DUPLICATE) ===== -->
+      <img src="assets/clients/logo-19.svg" alt="Client Logo 19">
+      <img src="assets/clients/logo-20.svg" alt="Client Logo 20">
+      <img src="assets/clients/logo-21.svg" alt="Client Logo 21">
+      <img src="assets/clients/logo-22.svg" alt="Client Logo 22">
+      <img src="assets/clients/logo-23.svg" alt="Client Logo 23">
+      <img src="assets/clients/logo-24.svg" alt="Client Logo 24">
+      <img src="assets/clients/logo-25.svg" alt="Client Logo 25">
+      <img src="assets/clients/logo-26.svg" alt="Client Logo 26">
+      <img src="assets/clients/logo-27.svg" alt="Client Logo 27">
+      <img src="assets/clients/logo-28.svg" alt="Client Logo 28">
+      <img src="assets/clients/logo-29.svg" alt="Client Logo 29">
+      <img src="assets/clients/logo-30.svg" alt="Client Logo 30">
+      <img src="assets/clients/logo-31.svg" alt="Client Logo 31">
+      <img src="assets/clients/logo-32.svg" alt="Client Logo 32">
+      <img src="assets/clients/logo-33.svg" alt="Client Logo 33">
+      <img src="assets/clients/logo-34.svg" alt="Client Logo 34">
+      <img src="assets/clients/logo-35.svg" alt="Client Logo 35">
+      <img src="assets/clients/logo-36.svg" alt="Client Logo 36">
     </div>
   </div>
   <p class="trust-qualifier">
