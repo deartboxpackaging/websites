@@ -1125,6 +1125,23 @@ header {
   display: block;
 }
 
+/* Logo switching untuk dark/light mode */
+    .logo-light {
+       display: block;
+     }
+    
+     .logo-dark {
+       display: none;
+     }
+    
+    [data-theme="dark"] .logo-light {
+      display: none;
+    }
+   
+    [data-theme="dark"] .logo-dark {
+      display: block;
+    }
+
 .logo-text h1 {
   font-size: 17px;
   letter-spacing: -0.01em;
@@ -3463,7 +3480,18 @@ img[loading="lazy"]:not(.loaded) {
         <!-- Logo -->
         <a href="#" class="logo">
           <div class="logo-mark">
-            <img src="assets/logo/deartbox-logo.svg" alt="deartbox Logo" width="42" height="42">
+            <!--Logo Lightmode-->
+            <img src="assets/logo/deartbox-logo.svg" 
+            alt="deartbox Logo" 
+            width="42" 
+            height="42"
+            class="logo-light">
+            <!--Logo Darkmode-->
+            <img src="assets/logo/deartbox-logo-dark.svg" 
+            alt="deartbox Logo" 
+            width="42" 
+            height="42"
+            class="logo-dark">
           </div>
           <div class="logo-text">
             <h1>deartbox Packaging</h1>
