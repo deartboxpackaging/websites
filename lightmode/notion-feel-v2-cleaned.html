@@ -562,7 +562,7 @@ a:not(.btn-hero-primary):not(.btn-cta-wa):not(.sticky-cta) {
 :root {
   --bg: #ffffff;
   --card: #ffffff;
-  --text: #ffffff;
+  --text: #1a1a1a;
   --text-muted: #525252;
   --text-light: #767676;
   --border: #e5e5e5;
@@ -576,8 +576,8 @@ a:not(.btn-hero-primary):not(.btn-cta-wa):not(.sticky-cta) {
   --bg: #0a0a0a;
   --card: #1a1a1a;
   --text: #ffffff;
-  --text-muted: #a3a3a3;
-  --text-light: #767676;
+  --text-muted: #b5b5b5;
+  --text-light: #8a8a8a;
   --border: #2a2a2a;
   --accent: #ff2d3a;
   --accent-2: #d71921;
@@ -832,7 +832,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background: var(--bg);
-  color: #1a1a1a;
+  color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
@@ -907,7 +907,7 @@ p {
   line-height: 1.75;
   margin: 0;
   max-width: 720px;
-  color: #555;
+  color: var(--text-muted);
 }
 
 /* ================ 5. LAYOUT & CONTAINER ================ */
@@ -1000,13 +1000,13 @@ header {
 .logo-text h1 {
   font-size: 17px;
   letter-spacing: -0.01em;
-  color: #1a1a1a;
+  color: var(--text);
   font-weight: 600;
 }
 
 .logo-text p {
   font-size: 11px;
-  color: #767676;
+  color: var(--text-light);
   line-height: 1.3;
   margin-top: 1px;
 }
@@ -1021,7 +1021,7 @@ header {
 .nav-link {
   padding: 10px 16px;
   font-size: 14px;
-  color: #1a1a1a;
+  color: var(--text);
   border-radius: 6px;
   transition: all .2s ease;
   position: relative;
@@ -1141,7 +1141,7 @@ body.menu-open .mobile-menu {
 .mobile-nav-link {
   padding: 14px 16px;
   border-radius: 6px;
-  color: #1a1a1a;
+  color: var(--text);
   font-size: 15px;
   font-weight: 500;
   transition: all .2s ease;
@@ -1232,12 +1232,12 @@ body.menu-open .mobile-overlay {
   font-weight: 700;
   line-height: 1.15;
   margin-bottom: 20px;
-  color: #1a1a1a;
+  color: var(--text);
 }
 
 .hero-subtitle {
   font-size: clamp(16px, 2.5vw, 20px);
-  color: #525252;
+  color: var(--text-muted);
   margin-bottom: 32px;
   line-height: 1.6;
   max-width: 600px;
@@ -1247,7 +1247,7 @@ body.menu-open .mobile-overlay {
 
 .hero-microcopy {
   font-size: 13px;
-  color: #767676;
+  color: var(--text-light);
   margin-top: 16px;
 }
 
@@ -1282,7 +1282,7 @@ body.menu-open .mobile-overlay {
 .btn-hero-secondary {
   padding: 16px 32px;
   background: var(--bg);
-  color: #1a1a1a;
+  color: var(--text);
   font-size: 16px;
   font-weight: 600;
   border-radius: 8px;
@@ -1410,7 +1410,7 @@ body.menu-open .mobile-overlay {
 .trust-title {
   font-size: 14px;
   font-weight: 600;
-  color: #767676;
+  color: var(--text-light);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   text-align: center;
@@ -1454,7 +1454,7 @@ body.menu-open .mobile-overlay {
   margin: 24px auto 0;
   font-size: 14px;
   line-height: 1.6;
-  color: #767676;
+  color: var(--text-light);
   text-align: center;
 }
 
@@ -1568,12 +1568,12 @@ body.menu-open .mobile-overlay {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 12px;
-  color: #1a1a1a;
+  color: var(--text);
 }
 
 .feature-description {
   font-size: 15px;
-  color: #525252;
+  color: var(--text-muted);
   line-height: 1.6;
 }
 
@@ -1601,12 +1601,12 @@ body.menu-open .mobile-overlay {
   font-size: clamp(28px, 5vw, 40px);
   font-weight: 700;
   margin-bottom: 16px;
-  color: #1a1a1a;
+  color: var(--text);
 }
 
 .section-subtitle {
   font-size: clamp(16px, 2.5vw, 18px);
-  color: #525252;
+  color: var(--text-muted);
   line-height: 1.6;
 }
 
@@ -1725,12 +1725,12 @@ body.menu-open .mobile-overlay {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 12px;
-  color: #1a1a1a;
+  color: var(--text);
 }
 
 .step-description {
   font-size: 14px;
-  color: #525252;
+  color: var(--text-muted);
   line-height: 1.6;
 }
 
@@ -1794,12 +1794,12 @@ body.menu-open .mobile-overlay {
 
 .testimonial-info p {
   font-size: 14px;
-  color: #767676;
+  color: var(--text-light);
 }
 
 .testimonial-text {
   font-size: 15px;
-  color: #1a1a1a;
+  color: var(--text);
   line-height: 1.7;
   font-style: italic;
 }
@@ -1848,7 +1848,7 @@ body.menu-open .mobile-overlay {
   margin: 0 auto 32px;
   font-size: 14px;
   line-height: 1.6;
-  color: #767676;
+  color: var(--text-light);
   text-align: center;
 }
 
@@ -1869,7 +1869,7 @@ body.menu-open .mobile-overlay {
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 8px;
-  color: #1a1a1a;
+  color: var(--text);
 }
 
 .form-field input,
@@ -1928,7 +1928,7 @@ body.menu-open .mobile-overlay {
 
 .form-note {
   font-size: 13px;
-  color: #767676;
+  color: var(--text-light);
   text-align: center;
   line-height: 1.6;
 }
@@ -1954,7 +1954,7 @@ body.menu-open .mobile-overlay {
 .rfq-info-card h4 {
   font-size: 18px;
   margin-bottom: 20px;
-  color: #1a1a1a;
+  color: var(--text);
 }
 
 .rfq-benefits {
@@ -1969,7 +1969,7 @@ body.menu-open .mobile-overlay {
   align-items: flex-start;
   gap: 12px;
   font-size: 15px;
-  color: #525252;
+  color: var(--text-muted);
   line-height: 1.6;
 }
 
@@ -1989,7 +1989,7 @@ body.menu-open .mobile-overlay {
 
 .rfq-contact-quick p {
   font-size: 15px;
-  color: #525252;
+  color: var(--text-muted);
   margin-bottom: 16px;
 }
 
@@ -2086,12 +2086,12 @@ body.menu-open .mobile-overlay {
   font-size: clamp(28px, 5vw, 40px);
   font-weight: 700;
   margin-bottom: 16px;
-  color: #1a1a1a;
+  color: var(--text);
 }
 
 .cta-subtitle {
   font-size: clamp(16px, 2.5vw, 20px);
-  color: #525252;
+  color: var(--text-muted);
   margin-bottom: 32px;
   line-height: 1.6;
 }
@@ -2109,7 +2109,7 @@ body.menu-open .mobile-overlay {
   align-items: center;
   gap: 8px;
   font-size: 15px;
-  color: #1a1a1a;
+  color: var(--text);
 }
 
 .cta-feature svg {
@@ -2163,7 +2163,7 @@ footer {
 }
 
 .footer-brand p {
-  color: #a3a3a3;
+  color: var(--text-light);
   font-size: 14px;
   line-height: 1.6;
   margin-bottom: 20px;
@@ -2252,7 +2252,7 @@ footer {
 }
 
 .footer-links a {
-  color: #a3a3a3;
+  color: var(--text-light);
   font-size: 14px;
   transition: color .3s ease;
 }
@@ -2263,7 +2263,7 @@ footer {
 }
 
 .footer-address-link {
-  color: #a3a3a3;
+  color: var(--text-light);
   transition: color .2s ease;
 }
 
@@ -2276,7 +2276,7 @@ footer {
 
 .footer-payments-title {
   font-size: 13px;
-  color: #a3a3a3;
+  color: var(--text-light);
   margin-bottom: 16px;
 }
 
@@ -2305,7 +2305,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #a3a3a3;
+  color: var(--text-light);
   font-size: 14px;
   flex-wrap: wrap;
   gap: 16px;
@@ -2319,7 +2319,7 @@ footer {
 
 .footer-badge-item {
   font-size: 13px;
-  color: #a3a3a3;
+  color: var(--text-light);
 }
 
 /* ================ 19. UTILITIES & BUTTONS ================ */
@@ -2527,7 +2527,7 @@ hr,
     border: none;
     padding: 8px 0;
     font-size: 14px;
-    color: #767676;
+    color: var(--text-light);
   }
 
   .features-grid .feature-card:nth-child(1) {
@@ -2872,13 +2872,13 @@ img[loading="lazy"]:not(.loaded) {
 .file-name {
   font-size: 14px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--text);
   margin-bottom: 4px;
 }
 
 .file-size {
   font-size: 12px;
-  color: #767676;
+  color: var(--text-light);
 }
 
 .file-remove {
@@ -2973,11 +2973,11 @@ img[loading="lazy"]:not(.loaded) {
 .success-modal h3 {
   font-size: 24px;
   margin-bottom: 12px;
-  color: #1a1a1a;
+  color: var(--text);
 }
 
 .success-modal p {
-  color: #525252;
+  color: var(--text-muted);
   margin-bottom: 24px;
   line-height: 1.6;
 }
@@ -3008,7 +3008,7 @@ img[loading="lazy"]:not(.loaded) {
 
 .btn-modal-secondary {
   background: #f5f5f5;
-  color: #1a1a1a;
+  color: var(--text);
 }
 
 .btn-modal-secondary:hover {
@@ -4133,7 +4133,7 @@ img[loading="lazy"]:not(.loaded) {
             <img src="assets/logo/deartbox-logo-01.svg" alt="deartbox" width="40" height="40">
             <div>
               <h3>deartbox Packaging</h3>
-              <p style="font-size: 12px; color: #a3a3a3; margin-top: 4px;">Box Kamu, Misi Kami..!</p>
+              <p style="font-size: 12px; color: var(--text-light); margin-top: 4px;">Box Kamu, Misi Kami..!</p>
             </div>
           </div>
           <p>Produsen Hardbox Premium untuk Brand Indonesia. Partner Produksi Packaging Custom yang Terpercaya.</p>
