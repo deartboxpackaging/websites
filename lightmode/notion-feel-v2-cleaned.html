@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id-ID">
 <head>
   <!-- 1. META TAGS SEO & SOCIAL MEDIA -->
@@ -66,7 +66,7 @@
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
   <meta name="msapplication-TileColor" content="#000000">
 
-  <link href="https://fonts.googleapis.com/css2?family=Gramatika&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Gramatika&display=swap" rel="stylesheet" media="print" onload="this.media='all'"> 
  
   <link rel="preconnect" href="https://wa.me" crossorigin>
   
@@ -110,6 +110,302 @@
    Clean architecture, zero visual changes
    ======================================== */
 
+
+
+/* ================ DESIGN IMPROVEMENTS ================ */
+
+/* Micro-interactions - Ripple Effect */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-ripple:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Apply ripple to buttons */
+.btn-hero-primary,
+.btn-cta-wa,
+.btn-submit-rfq,
+.sticky-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glassmorphism Effects */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Mobile menu glassmorphism */
+.mobile-menu {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.mobile-overlay {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Sticky header glassmorphism on scroll */
+header.scrolled {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+}
+
+/* Card hover glow effect */
+.feature-card,
+.testimonial-card,
+.process-step {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 0.84, 0.44, 1);
+}
+
+.feature-card::before,
+.testimonial-card::before,
+.process-step::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 14px;
+  background: linear-gradient(45deg, #d71921, #a01419, #d71921);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  filter: blur(8px);
+}
+
+.feature-card:hover::before,
+.testimonial-card:hover::before,
+.process-step:hover::before {
+  opacity: 0.3;
+}
+
+.feature-card:hover,
+.testimonial-card:hover,
+.process-step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(215, 25, 33, 0.15);
+}
+
+/* Button magnetic effect (subtle) */
+@media (hover: hover) and (pointer: fine) {
+  .btn-hero-primary,
+  .btn-cta-wa {
+    transition: transform 0.2s cubic-bezier(0.16, 0.84, 0.44, 1);
+  }
+  
+  .btn-hero-primary:hover,
+  .btn-cta-wa:hover {
+    transform: translateY(-2px) scale(1.02);
+  }
+}
+
+/* Loading skeleton for images */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+/* Smooth color transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+/* Exclude elements that shouldn't have transitions */
+*:where(img, video, iframe, canvas, svg) {
+  transition: none;
+}
+
+/* Focus visible improvements */
+*:focus-visible {
+  outline: 3px solid #d71921;
+  outline-offset: 3px;
+  border-radius: 4px;
+  transition: outline-offset 0.2s ease;
+}
+
+/* Smooth scroll progress indicator */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #d71921, #a01419);
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+}
+
+/* Improved link underline animation */
+a:not(.btn-hero-primary):not(.btn-cta-wa):not(.sticky-cta) {
+  position: relative;
+}
+
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+/* Improved form input focus */
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(215, 25, 33, 0.1);
+}
+
+/* Testimonial card quote mark */
+.testimonial-text::before {
+  content: '"';
+  font-size: 48px;
+  line-height: 0;
+  color: #d71921;
+  opacity: 0.2;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.testimonial-card {
+  position: relative;
+}
+
+/* Showcase item overlay improvement */
+.showcase-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.showcase-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(215, 25, 33, 0.8), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.showcase-item:hover::after {
+  opacity: 1;
+}
+
+.showcase-overlay {
+  position: relative;
+  z-index: 1;
+}
+
+/* Process step number pulse */
+.step-number {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+/* Hero badge shine effect */
+.hero-badge {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+
+/* Improved shadow on scroll */
+.shadow-scroll {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.shadow-scroll.scrolled {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+
+/* ================ ACCESSIBILITY - SKIP TO CONTENT ================ */
+
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: #d71921;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 10000;
+  border-radius: 0 0 8px 0;
+  transition: top 0.3s ease;
+}
+
+.skip-to-content:focus {
+  top: 0;
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+
 /* ================ 1. CSS VARIABLES ================ */
 :root {
   --bg: #ffffff;
@@ -129,6 +425,322 @@
   --ease-premium: cubic-bezier(.22,.61,.36,1);
   --gradient-bg: #ffffff;
 }
+
+
+
+/* ================ FAQ SECTION ================ */
+
+.faq-section {
+  padding: clamp(60px, 10vw, 100px) 0;
+  background: var(--bg);
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.faq-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  color: var(--accent);
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.16, 0.84, 0.44, 1);
+}
+
+[data-theme="dark"] .faq-icon {
+  background: #2a2a2a;
+}
+
+.faq-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--text);
+  transition: transform 0.3s cubic-bezier(0.16, 0.84, 0.44, 1);
+}
+
+.faq-item.active .faq-icon {
+  background: var(--accent);
+  transform: rotate(180deg);
+}
+
+.faq-item.active .faq-icon svg {
+  stroke: white;
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 0.84, 0.44, 1),
+              padding 0.4s cubic-bezier(0.16, 0.84, 0.44, 1);
+  padding: 0 24px;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  padding: 0 24px 20px;
+}
+
+.faq-answer p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.faq-answer ul {
+  margin: 12px 0;
+  padding-left: 20px;
+  color: var(--text-muted);
+}
+
+.faq-answer li {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+
+/* ================ DARK MODE ================ */
+
+:root {
+  --bg: #ffffff;
+  --card: #ffffff;
+  --text: #1a1a1a;
+  --text-muted: #525252;
+  --text-light: #767676;
+  --border: #e5e5e5;
+  --accent: #d71921;
+  --accent-2: #a01419;
+  --glass: rgba(0,0,0,0.02);
+  --shadow: rgba(0,0,0,0.08);
+}
+
+[data-theme="dark"] {
+  --bg: #0a0a0a;
+  --card: #1a1a1a;
+  --text: #ffffff;
+  --text-muted: #a3a3a3;
+  --text-light: #767676;
+  --border: #2a2a2a;
+  --accent: #ff2d3a;
+  --accent-2: #d71921;
+  --glass: rgba(255,255,255,0.05);
+  --shadow: rgba(0,0,0,0.3);
+}
+
+/* Apply dark mode colors */
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+  background: var(--bg);
+  border-bottom-color: var(--border);
+}
+
+.card,
+.feature-card,
+.process-step,
+.testimonial-card,
+.rfq-form,
+.rfq-info-card,
+.rfq-contact-quick,
+.marketplace-card {
+  background: var(--card);
+  border-color: var(--border);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text);
+}
+
+p {
+  color: var(--text-muted);
+}
+
+.nav-link,
+.mobile-nav-link,
+.logo-text h1 {
+  color: var(--text);
+}
+
+.logo-text p,
+.hero-microcopy,
+.trust-qualifier,
+.form-note {
+  color: var(--text-light);
+}
+
+.hero-modern,
+.features-modern,
+.showcase-section,
+.process-section,
+.testimonials-section,
+.rfq-section,
+.marketplace-section {
+  background: var(--bg);
+}
+
+[data-theme="dark"] .features-modern,
+[data-theme="dark"] .process-section {
+  background: #0f0f0f;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  background: var(--card);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--text-light);
+}
+
+/* Dark mode toggle button */
+.theme-toggle {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  background: var(--border);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: none;
+  padding: 0;
+}
+
+.theme-toggle::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s cubic-bezier(0.16, 0.84, 0.44, 1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+[data-theme="dark"] .theme-toggle {
+  background: var(--accent);
+}
+
+[data-theme="dark"] .theme-toggle::before {
+  transform: translateX(30px);
+}
+
+.theme-toggle-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  transition: opacity 0.3s ease;
+}
+
+.theme-toggle-icon.sun {
+  left: 7px;
+  opacity: 1;
+}
+
+.theme-toggle-icon.moon {
+  right: 7px;
+  opacity: 0;
+}
+
+[data-theme="dark"] .theme-toggle-icon.sun {
+  opacity: 0;
+}
+
+[data-theme="dark"] .theme-toggle-icon.moon {
+  opacity: 1;
+}
+
+/* Dark mode specific adjustments */
+[data-theme="dark"] .mobile-menu {
+  background: rgba(26, 26, 26, 0.95);
+}
+
+[data-theme="dark"] .mobile-overlay {
+  background: rgba(0,0,0,0.6);
+}
+
+[data-theme="dark"] .trust-marquee img,
+[data-theme="dark"] .trust-logo img {
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+}
+
+[data-theme="dark"] .trust-marquee img:hover,
+[data-theme="dark"] .trust-logo img:hover {
+  opacity: 1;
+}
+
+[data-theme="dark"] footer {
+  background: #0f0f0f;
+  border-top: 1px solid var(--border);
+}
+
+[data-theme="dark"] .file-upload-label {
+  background: var(--card);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .file-preview {
+  background: #0f0f0f;
+}
+
 
 /* ================ 2. CSS RESET & BASE ================ */
 * {
@@ -2010,9 +2622,545 @@ hr,
   transform: translateY(0);
 };
 
+  
+
+
+/* ================ LAZY LOADING WITH BLUR PLACEHOLDER ================ */
+
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"].loaded {
+  opacity: 1;
+}
+
+img[loading="lazy"]:not(.loaded) {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Blur-up effect for images */
+.blur-load {
+  background-size: cover;
+  background-position: center;
+}
+
+.blur-load img {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.blur-load img.loaded {
+  opacity: 1;
+}
+
+.blur-load::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  transform: scale(1.1);
+  transition: opacity 0.5s ease-in-out;
+}
+
+.blur-load.loaded::before {
+  opacity: 0;
+}
+
+
+/* ================ FORM VALIDATION STYLES ================ */
+
+.form-field {
+  position: relative;
+}
+
+.form-field.valid input,
+.form-field.valid select,
+.form-field.valid textarea {
+  border-color: #22c55e;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='3'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 40px;
+}
+
+.form-field.error input,
+.form-field.error select,
+.form-field.error textarea {
+  border-color: #ef4444;
+}
+
+.form-error {
+  display: none;
+  color: #ef4444;
+  font-size: 13px;
+  margin-top: 6px;
+  animation: slideDown 0.3s ease;
+}
+
+.form-field.error .form-error {
+  display: block;
+}
+
+.form-success {
+  display: none;
+  color: #22c55e;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.form-field.valid .form-success {
+  display: block;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* File Upload Styles */
+.file-upload-wrapper {
+  position: relative;
+  margin-top: 8px;
+}
+
+.file-upload-input {
+  display: none;
+}
+
+.file-upload-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 32px 16px;
+  border: 2px dashed #e5e5e5;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.file-upload-label:hover {
+  border-color: #d71921;
+  background: #fef1f2;
+}
+
+.file-upload-label.dragover {
+  border-color: #d71921;
+  background: #fef1f2;
+  transform: scale(1.02);
+}
+
+.file-preview {
+  display: none;
+  margin-top: 12px;
+  padding: 12px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  align-items: center;
+  gap: 12px;
+}
+
+.file-preview.show {
+  display: flex;
+}
+
+.file-preview img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.file-info {
+  flex: 1;
+}
+
+.file-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.file-size {
+  font-size: 12px;
+  color: #767676;
+}
+
+.file-remove {
+  padding: 8px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.file-remove:hover {
+  background: #dc2626;
+}
+
+/* Success Modal */
+.success-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.success-modal.show {
+  display: flex;
+}
+
+.success-modal-content {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  animation: slideUp 0.4s ease;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  background: #22c55e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: scaleIn 0.5s ease 0.2s both;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.success-icon svg {
+  width: 40px;
+  height: 40px;
+  stroke: white;
+  stroke-width: 3;
+}
+
+.success-modal h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+}
+
+.success-modal p {
+  color: #525252;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.success-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn-modal {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-modal-primary {
+  background: #d71921;
+  color: white;
+}
+
+.btn-modal-primary:hover {
+  background: #a01419;
+}
+
+.btn-modal-secondary {
+  background: #f5f5f5;
+  color: #1a1a1a;
+}
+
+.btn-modal-secondary:hover {
+  background: #e5e5e5;
+}
+
+
+/* ================ RESPONSIVE ENHANCEMENTS ================ */
+
+/* ===== TABLET OPTIMIZATION (768px - 1024px) ===== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* 2-column layouts for better tablet experience */
+  .features-grid,
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Hybrid navigation for tablet */
+  .nav-links {
+    gap: 4px;
+  }
+
+  .nav-link {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .cta-nav {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+
+/* ===== MOBILE ENHANCEMENTS ===== */
+@media (max-width: 767px) {
+  /* Larger touch targets for mobile */
+  .slide-nav {
+    width: 48px;
+    height: 48px;
+  }
+
+  .slide-nav.prev {
+    left: 12px;
+  }
+
+  .slide-nav.next {
+    right: 12px;
+  }
+
+  .slide-dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* Better form touch targets */
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    min-height: 48px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .btn-submit-rfq {
+    min-height: 52px;
+    font-size: 16px;
+  }
+
+  /* Improved mobile menu */
+  .mobile-menu {
+    top: 73px;
+    height: calc(100vh - 73px);
+  }
+
+  .mobile-nav-link {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Better spacing for mobile */
+  section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .hero-modern {
+    padding: 48px 0 40px;
+  }
+
+  /* Sticky CTA improvements */
+  .sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    padding: 16px 24px;
+    justify-content: center;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    z-index: 100;
+  }
+
+  .sticky-cta.hide {
+    transform: translateY(100%);
+  }
+
+  /* Add padding to body to prevent content being hidden by sticky CTA */
+  body {
+    padding-bottom: 72px;
+  }
+
+  /* Hide back to top on mobile */
+  .back-to-top {
+    display: none !important;
+  }
+}
+
+/* ===== TOUCH DEVICE OPTIMIZATIONS ===== */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices */
+  .feature-card:hover,
+  .process-step:hover,
+  .testimonial-card:hover,
+  .showcase-item:hover {
+    transform: none;
+  }
+
+  /* Larger tap targets */
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+  }
+
+  /* Better touch feedback */
+  button:active,
+  .btn-hero-primary:active,
+  .btn-cta-wa:active,
+  .sticky-cta:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+}
+
+/* ===== LANDSCAPE MOBILE ===== */
+@media (max-width: 896px) and (orientation: landscape) {
+  .hero-modern {
+    padding: 32px 0 24px;
+  }
+
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+  }
+
+  section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+/* ===== SMALL MOBILE (< 375px) ===== */
+@media (max-width: 374px) {
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .logo-text h1 {
+    font-size: 15px;
+  }
+
+  .logo-text p {
+    font-size: 10px;
+  }
+}
+
+/* ===== ACCESSIBILITY - REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .marquee-track {
+    animation: none !important;
+  }
+}
+
   </style>
 </head>
 <body>
+
+  <!-- Skip to Content (Accessibility) -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
   <!-- Fallback for JavaScript disabled -->
   <noscript>
     <div style="position: fixed; top: 0; left: 0; right: 0; background: #fff3cd; color: #856404; padding: 12px; text-align: center; z-index: 9999; border-bottom: 1px solid #ffeaa7; font-size: 14px;">
@@ -2023,7 +3171,7 @@ hr,
   <!-- ================ HEADER ================ -->
   <header>
     <div class="header-container">
-      <nav class="nav">
+      <nav class="nav" aria-label="Main navigation">
         <!-- Logo -->
         <a href="#" class="logo">
           <div class="logo-mark">
@@ -2043,6 +3191,24 @@ hr,
           <a href="https://wa.me/628195181427" class="cta-nav">Konsultasi Gratis</a>
         </div>
 
+        
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <svg class="theme-toggle-icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-toggle-icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
         <!-- Mobile Toggle -->
         <button class="mobile-toggle" aria-label="Toggle Menu">
           <span></span>
@@ -2067,8 +3233,9 @@ hr,
     <div class="mobile-overlay"></div>
   </header>
 
+  <main id="main-content">
   <!-- ================ HERO SECTION - AIDA: ATTENTION ================ -->
-  <section class="hero-modern" id="home">
+  <section class="hero-modern" id="home" aria-label="Hero section">
     <div class="hero-container">
       <div class="hero-content">
         <div class="hero-badge">
@@ -2146,79 +3313,79 @@ hr,
       
 
       <!-- ===== LOGO SET 1 ===== -->
-      <img src="/lightmode/assets/clients/logo-1.svg" alt="Client Logo 1">
-      <img src="/lightmode/assets/clients/logo-02.svg" alt="Client Logo 2">
-      <img src="/lightmode/assets/clients/logo-03.svg" alt="Client Logo 3">
-      <img src="/lightmode/assets/clients/logo-04.svg" alt="Client Logo 4">
-      <img src="/lightmode/assets/clients/logo-05.svg" alt="Client Logo 5">
-      <img src="/lightmode/assets/clients/logo-06.svg" alt="Client Logo 6">
-      <img src="/lightmode/assets/clients/logo-07.svg" alt="Client Logo 7">
-      <img src="/lightmode/assets/clients/logo-08.svg" alt="Client Logo 8">
-      <img src="/lightmode/assets/clients/logo-09.svg" alt="Client Logo 9">
-      <img src="/lightmode/assets/clients/logo-10.svg" alt="Client Logo 10">
-      <img src="/lightmode/assets/clients/logo-11.svg" alt="Client Logo 11">
-      <img src="/lightmode/assets/clients/logo-12.svg" alt="Client Logo 12">
-      <img src="/lightmode/assets/clients/logo-13.svg" alt="Client Logo 13">
-      <img src="/lightmode/assets/clients/logo-14.svg" alt="Client Logo 14">
-      <img src="/lightmode/assets/clients/logo-15.svg" alt="Client Logo 15">
-      <img src="/lightmode/assets/clients/logo-16.svg" alt="Client Logo 16">
-      <img src="/lightmode/assets/clients/logo-17.svg" alt="Client Logo 17">
-      <img src="/lightmode/assets/clients/logo-18.svg" alt="Client Logo 18">
-      <img src="/lightmode/assets/clients/logo-19.svg" alt="Client Logo 19">
-      <img src="/lightmode/assets/clients/logo-20.svg" alt="Client Logo 20">
-      <img src="/lightmode/assets/clients/logo-21.svg" alt="Client Logo 21">
-      <img src="/lightmode/assets/clients/logo-22.svg" alt="Client Logo 22">
-      <img src="/lightmode/assets/clients/logo-23.svg" alt="Client Logo 23">
-      <img src="/lightmode/assets/clients/logo-24.svg" alt="Client Logo 24">
-      <img src="/lightmode/assets/clients/logo-25.svg" alt="Client Logo 25">
-      <img src="/lightmode/assets/clients/logo-26.svg" alt="Client Logo 26">
-      <img src="/lightmode/assets/clients/logo-27.svg" alt="Client Logo 27">
-      <img src="/lightmode/assets/clients/logo-28.svg" alt="Client Logo 28">
-      <img src="/lightmode/assets/clients/logo-29.svg" alt="Client Logo 29">
-      <img src="/lightmode/assets/clients/logo-30.svg" alt="Client Logo 30">
-      <img src="/lightmode/assets/clients/logo-31.svg" alt="Client Logo 31">
-      <img src="/lightmode/assets/clients/logo-32.svg" alt="Client Logo 32">
-      <img src="/lightmode/assets/clients/logo-33.svg" alt="Client Logo 33">
-      <img src="/lightmode/assets/clients/logo-34.svg" alt="Client Logo 34">
-      <img src="/lightmode/assets/clients/logo-35.svg" alt="Client Logo 35">
-      <img src="/lightmode/assets/clients/logo-36.svg" alt="Client Logo 36">
+      <img src="assets/clients/logo-1.svg" alt="Client Logo 1">
+      <img src="assets/clients/logo-02.svg" alt="Client Logo 2">
+      <img src="assets/clients/logo-03.svg" alt="Client Logo 3">
+      <img src="assets/clients/logo-04.svg" alt="Client Logo 4">
+      <img src="assets/clients/logo-05.svg" alt="Client Logo 5">
+      <img src="assets/clients/logo-06.svg" alt="Client Logo 6">
+      <img src="assets/clients/logo-07.svg" alt="Client Logo 7">
+      <img src="assets/clients/logo-08.svg" alt="Client Logo 8">
+      <img src="assets/clients/logo-09.svg" alt="Client Logo 9">
+      <img src="assets/clients/logo-10.svg" alt="Client Logo 10">
+      <img src="assets/clients/logo-11.svg" alt="Client Logo 11">
+      <img src="assets/clients/logo-12.svg" alt="Client Logo 12">
+      <img src="assets/clients/logo-13.svg" alt="Client Logo 13">
+      <img src="assets/clients/logo-14.svg" alt="Client Logo 14">
+      <img src="assets/clients/logo-15.svg" alt="Client Logo 15">
+      <img src="assets/clients/logo-16.svg" alt="Client Logo 16">
+      <img src="assets/clients/logo-17.svg" alt="Client Logo 17">
+      <img src="assets/clients/logo-18.svg" alt="Client Logo 18">
+      <img src="assets/clients/logo-19.svg" alt="Client Logo 19">
+      <img src="assets/clients/logo-20.svg" alt="Client Logo 20">
+      <img src="assets/clients/logo-21.svg" alt="Client Logo 21">
+      <img src="assets/clients/logo-22.svg" alt="Client Logo 22">
+      <img src="assets/clients/logo-23.svg" alt="Client Logo 23">
+      <img src="assets/clients/logo-24.svg" alt="Client Logo 24">
+      <img src="assets/clients/logo-25.svg" alt="Client Logo 25">
+      <img src="assets/clients/logo-26.svg" alt="Client Logo 26">
+      <img src="assets/clients/logo-27.svg" alt="Client Logo 27">
+      <img src="assets/clients/logo-28.svg" alt="Client Logo 28">
+      <img src="assets/clients/logo-29.svg" alt="Client Logo 29">
+      <img src="assets/clients/logo-30.svg" alt="Client Logo 30">
+      <img src="assets/clients/logo-31.svg" alt="Client Logo 31">
+      <img src="assets/clients/logo-32.svg" alt="Client Logo 32">
+      <img src="assets/clients/logo-33.svg" alt="Client Logo 33">
+      <img src="assets/clients/logo-34.svg" alt="Client Logo 34">
+      <img src="assets/clients/logo-35.svg" alt="Client Logo 35">
+      <img src="assets/clients/logo-36.svg" alt="Client Logo 36">
       <!-- ===== LOGO SET 2 (DUPLICATE) ===== -->
-      <img src="/lightmode/assets/clients/logo-01.svg" alt="Client Logo 1">
-      <img src="/lightmode/assets/clients/logo-02.svg" alt="Client Logo 2">
-      <img src="/lightmode/assets/clients/logo-03.svg" alt="Client Logo 3">
-      <img src="/lightmode/assets/clients/logo-04.svg" alt="Client Logo 4">
-      <img src="/lightmode/assets/clients/logo-05.svg" alt="Client Logo 5">
-      <img src="/lightmode/assets/clients/logo-06.svg" alt="Client Logo 6">
-      <img src="/lightmode/assets/clients/logo-07.svg" alt="Client Logo 7">
-      <img src="/lightmode/assets/clients/logo-08.svg" alt="Client Logo 8">
-      <img src="/lightmode/assets/clients/logo-09.svg" alt="Client Logo 9">
-      <img src="/lightmode/assets/clients/logo-10.svg" alt="Client Logo 10">
-      <img src="/lightmode/assets/clients/logo-11.svg" alt="Client Logo 11">
-      <img src="/lightmode/assets/clients/logo-12.svg" alt="Client Logo 12">
-      <img src="/lightmode/assets/clients/logo-13.svg" alt="Client Logo 13">
-      <img src="/lightmode/assets/clients/logo-14.svg" alt="Client Logo 14">
-      <img src="/lightmode/assets/clients/logo-15.svg" alt="Client Logo 15">
-      <img src="/lightmode/assets/clients/logo-16.svg" alt="Client Logo 16">
-      <img src="/lightmode/assets/clients/logo-17.svg" alt="Client Logo 17">
-      <img src="/lightmode/assets/clients/logo-18.svg" alt="Client Logo 18">
-      <img src="/lightmode/assets/clients/logo-19.svg" alt="Client Logo 19">
-      <img src="/lightmode/assets/clients/logo-20.svg" alt="Client Logo 20">
-      <img src="/lightmode/assets/clients/logo-21.svg" alt="Client Logo 21">
-      <img src="/lightmode/assets/clients/logo-22.svg" alt="Client Logo 22">
-      <img src="/lightmode/assets/clients/logo-23.svg" alt="Client Logo 23">
-      <img src="/lightmode/assets/clients/logo-24.svg" alt="Client Logo 24">
-      <img src="/lightmode/assets/clients/logo-25.svg" alt="Client Logo 25">
-      <img src="/lightmode/assets/clients/logo-26.svg" alt="Client Logo 26">
-      <img src="/lightmode/assets/clients/logo-27.svg" alt="Client Logo 27">
-      <img src="/lightmode/assets/clients/logo-28.svg" alt="Client Logo 28">
-      <img src="/lightmode/assets/clients/logo-29.svg" alt="Client Logo 29">
-      <img src="/lightmode/assets/clients/logo-30.svg" alt="Client Logo 30">
-      <img src="/lightmode/assets/clients/logo-31.svg" alt="Client Logo 31">
-      <img src="/lightmode/assets/clients/logo-32.svg" alt="Client Logo 32">
-      <img src="/lightmode/assets/clients/logo-33.svg" alt="Client Logo 33">
-      <img src="/lightmode/assets/clients/logo-34.svg" alt="Client Logo 34">
-      <img src="/lightmode/assets/clients/logo-35.svg" alt="Client Logo 35">
-      <img src="/lightmode/assets/clients/logo-36.svg" alt="Client Logo 36">
+      <img src="assets/clients/logo-01.svg" alt="Client Logo 1">
+      <img src="assets/clients/logo-02.svg" alt="Client Logo 2">
+      <img src="assets/clients/logo-03.svg" alt="Client Logo 3">
+      <img src="assets/clients/logo-04.svg" alt="Client Logo 4">
+      <img src="assets/clients/logo-05.svg" alt="Client Logo 5">
+      <img src="assets/clients/logo-06.svg" alt="Client Logo 6">
+      <img src="assets/clients/logo-07.svg" alt="Client Logo 7">
+      <img src="assets/clients/logo-08.svg" alt="Client Logo 8">
+      <img src="assets/clients/logo-09.svg" alt="Client Logo 9">
+      <img src="assets/clients/logo-10.svg" alt="Client Logo 10">
+      <img src="assets/clients/logo-11.svg" alt="Client Logo 11">
+      <img src="assets/clients/logo-12.svg" alt="Client Logo 12">
+      <img src="assets/clients/logo-13.svg" alt="Client Logo 13">
+      <img src="assets/clients/logo-14.svg" alt="Client Logo 14">
+      <img src="assets/clients/logo-15.svg" alt="Client Logo 15">
+      <img src="assets/clients/logo-16.svg" alt="Client Logo 16">
+      <img src="assets/clients/logo-17.svg" alt="Client Logo 17">
+      <img src="assets/clients/logo-18.svg" alt="Client Logo 18">
+      <img src="assets/clients/logo-19.svg" alt="Client Logo 19">
+      <img src="assets/clients/logo-20.svg" alt="Client Logo 20">
+      <img src="assets/clients/logo-21.svg" alt="Client Logo 21">
+      <img src="assets/clients/logo-22.svg" alt="Client Logo 22">
+      <img src="assets/clients/logo-23.svg" alt="Client Logo 23">
+      <img src="assets/clients/logo-24.svg" alt="Client Logo 24">
+      <img src="assets/clients/logo-25.svg" alt="Client Logo 25">
+      <img src="assets/clients/logo-26.svg" alt="Client Logo 26">
+      <img src="assets/clients/logo-27.svg" alt="Client Logo 27">
+      <img src="assets/clients/logo-28.svg" alt="Client Logo 28">
+      <img src="assets/clients/logo-29.svg" alt="Client Logo 29">
+      <img src="assets/clients/logo-30.svg" alt="Client Logo 30">
+      <img src="assets/clients/logo-31.svg" alt="Client Logo 31">
+      <img src="assets/clients/logo-32.svg" alt="Client Logo 32">
+      <img src="assets/clients/logo-33.svg" alt="Client Logo 33">
+      <img src="assets/clients/logo-34.svg" alt="Client Logo 34">
+      <img src="assets/clients/logo-35.svg" alt="Client Logo 35">
+      <img src="assets/clients/logo-36.svg" alt="Client Logo 36">
 
     </div>
   </div>
@@ -2248,11 +3415,11 @@ hr,
   </section>
 
   <!-- ================ FEATURES SECTION - AIDA: INTEREST ================ -->
-  <section class="features-modern" id="features">
+  <section class="features-modern" id="features" aria-labelledby="features-title">
     <div class="features-container">
       <div class="section-header">
         <span class="section-badge">Keunggulan Kami</span>
-        <h2 class="section-title reveal">Mengapa Pilih deartbox?</h2>
+        <h2 class="section-title reveal" id="features-title">Mengapa Pilih deartbox?</h2>
         <p class="section-subtitle">3 alasan mengapa banyak brand mempercayakan produksi packaging mereka kepada kami</p>
       </div>
 
@@ -2285,52 +3452,52 @@ hr,
   </section>
 
   <!-- ================ SHOWCASE SECTION - AIDA: INTEREST ================ -->
-  <section class="showcase-section" id="showcase">
+  <section class="showcase-section" id="showcase" aria-labelledby="showcase-title">
     <div class="showcase-container">
       <div class="section-header">
         <span class="section-badge">Portfolio</span>
-        <h2 class="section-title reveal">Hasil Kerja Kami</h2>
+        <h2 class="section-title reveal" id="showcase-title">Hasil Kerja Kami</h2>
         <p class="section-subtitle">Bagaimana kami membantu brand meningkatkan value packaging mereka</p>
       </div>
 
       <div class="showcase-grid">
         <div class="showcase-item">
-          <img src="assets/images/portfolio/box-1.webp" alt="Portfolio 1" loading="lazy" width="400" height="300">
+          <img src="assets/images/portfolio/Project_1.webp" alt="Portfolio 1" loading="lazy" width="400" height="300">
           <div class="showcase-overlay">
             <h4>Premium Beauty Box</h4>
             <p>Hotprint gold + emboss</p>
           </div>
         </div>
         <div class="showcase-item">
-          <img src="assets/images/portfolio/box-2.webp" alt="Portfolio 2" loading="lazy" width="400" height="300">
+          <img src="assets/images/portfolio/Project_2.webp" alt="Portfolio 2" loading="lazy" width="400" height="300">
           <div class="showcase-overlay">
             <h4>Luxury Fashion Packaging</h4>
             <p>Magnetic closure + UV spot</p>
           </div>
         </div>
         <div class="showcase-item">
-          <img src="assets/images/portfolio/box-3.webp" alt="Portfolio 3" loading="lazy" width="400" height="300">
+          <img src="assets/images/portfolio/Project_3.webp" alt="Portfolio 3" loading="lazy" width="400" height="300">
           <div class="showcase-overlay">
             <h4>Electronics Packaging</h4>
             <p>Matte lamination + insert custom</p>
           </div>
         </div>
         <div class="showcase-item">
-          <img src="assets/images/portfolio/box-4.webp" alt="Portfolio 4" loading="lazy" width="400" height="300">
+          <img src="assets/images/portfolio/Project_4.webp" alt="Portfolio 4" loading="lazy" width="400" height="300">
           <div class="showcase-overlay">
             <h4>F&B Gift Box</h4>
             <p>Full color printing + window</p>
           </div>
         </div>
         <div class="showcase-item">
-          <img src="assets/images/portfolio/box-5.webp" alt="Portfolio 5" loading="lazy" width="400" height="300">
+          <img src="assets/images/portfolio/Project_5.webp" alt="Portfolio 5" loading="lazy" width="400" height="300">
           <div class="showcase-overlay">
             <h4>Skincare Luxury Box</h4>
             <p>Soft touch + rose gold hotprint</p>
           </div>
         </div>
         <div class="showcase-item">
-          <img src="assets/images/portfolio/box-6.webp" alt="Portfolio 6" loading="lazy" width="400" height="300">
+          <img src="assets/images/portfolio/Project_6.webp" alt="Portfolio 6" loading="lazy" width="400" height="300">
           <div class="showcase-overlay">
             <h4>Lifestyle Product Box</h4>
             <p>Texture paper + spot UV</p>
@@ -2341,11 +3508,11 @@ hr,
   </section>
 
   <!-- ================ PROCESS SECTION - AIDA: DESIRE ================ -->
-  <section class="process-section" id="process">
+  <section class="process-section" id="process" aria-labelledby="process-title">
     <div class="process-container">
       <div class="section-header">
         <span class="section-badge">Proses Kerja</span>
-        <h2 class="section-title reveal">4 Langkah Mudah</h2>
+        <h2 class="section-title reveal" id="process-title">4 Langkah Mudah</h2>
         <p class="section-subtitle">Dari konsultasi hingga produk sampai di tangan Anda</p>
       </div>
 
@@ -2390,11 +3557,11 @@ hr,
   </section>
 
   <!-- ================ TESTIMONIALS SECTION - AIDA: DESIRE ================ -->
-  <section class="testimonials-section" id="testimonials">
+  <section class="testimonials-section" id="testimonials" aria-labelledby="testimonials-title">
     <div class="testimonials-container">
       <div class="section-header">
         <span class="section-badge">Testimoni</span>
-        <h2 class="section-title reveal">Apa Kata Klien Kami?</h2>
+        <h2 class="section-title reveal" id="testimonials-title">Apa Kata Klien Kami?</h2>
         <p class="section-subtitle">Pengalaman nyata dari brand yang sudah bekerja sama dengan kami</p>
       </div>
 
@@ -2464,7 +3631,7 @@ hr,
 
       <div class="rfq-layout">
         <!-- LEFT: FORM -->
-        <form id="rfqForm" class="rfq-form">
+        <form id="rfqForm" class="rfq-form" aria-label="Request for Quotation Form" novalidate>
           
           <div class="form-row">
             <div class="form-field">
@@ -2544,7 +3711,25 @@ hr,
               aria-required="true"></textarea>
           </div>
 
-          <button type="submit" class="btn-submit-rfq">
+          
+          <div class="form-field">
+            <label for="rfq-files">Referensi Design (Opsional)</label>
+            <div class="file-upload-wrapper">
+              <input type="file" id="rfq-files" name="files" class="file-upload-input" accept="image/*,.pdf" multiple>
+              <label for="rfq-files" class="file-upload-label">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                <span>Klik atau drag & drop file di sini</span>
+              </label>
+              <div class="file-preview" id="filePreview"></div>
+            </div>
+            <small class="form-note">Max 5MB per file. Format: JPG, PNG, PDF</small>
+          </div>
+
+<button type="submit" class="btn-submit-rfq">
             <span>Kirim Request</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M1 8h14M9 2l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -2627,6 +3812,138 @@ hr,
     </div>
   </section>
 
+  
+  <!-- ================ FAQ SECTION ================ -->
+  <section class="faq-section" id="faq">
+    <div class="faq-container">
+      <div class="section-header">
+        <span class="section-badge">FAQ</span>
+        <h2 class="section-title" id="faq-title">Pertanyaan yang Sering Ditanyakan</h2>
+        <p class="section-subtitle">Jawaban untuk pertanyaan umum tentang layanan kami</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Berapa minimum order quantity (MOQ) untuk hardbox custom?</span>
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p>MOQ kami mulai dari <strong>200 pcs</strong>. Ini adalah jumlah minimum yang memungkinkan kami memberikan harga terbaik sambil menjaga kualitas premium. Untuk brand yang baru launching atau ingin test market, ini adalah jumlah yang ideal.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Berapa lama waktu produksi hardbox custom?</span>
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p>Waktu produksi standar adalah <strong>14-21 hari kerja</strong> setelah design approved dan DP diterima. Timeline ini sudah termasuk:</p>
+            <ul>
+              <li>Proses produksi dengan quality control ketat</li>
+              <li>Finishing premium (emboss, hotprint, UV spot, dll)</li>
+              <li>Final inspection sebelum packing</li>
+            </ul>
+            <p>Untuk urgent order, kami bisa diskusikan timeline khusus dengan biaya tambahan.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Apa saja finishing premium yang tersedia?</span>
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p>Kami menyediakan berbagai finishing premium untuk meningkatkan value packaging Anda:</p>
+            <ul>
+              <li><strong>Hotprint</strong> - Gold, silver, rose gold, atau custom color</li>
+              <li><strong>Emboss/Deboss</strong> - Tekstur timbul atau tenggelam</li>
+              <li><strong>UV Spot</strong> - Glossy effect pada area tertentu</li>
+              <li><strong>Soft Touch Lamination</strong> - Permukaan halus seperti beludru</li>
+              <li><strong>Magnetic Closure</strong> - Penutup magnetik premium</li>
+              <li><strong>Custom Insert</strong> - Foam atau cardboard insert sesuai produk</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Apakah bisa request sample sebelum mass production?</span>
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>Ya, tentu saja!</strong> Kami sangat merekomendasikan untuk membuat sample terlebih dahulu. Proses sample:</p>
+            <ul>
+              <li>Design mock-up gratis untuk approval</li>
+              <li>Sample fisik dengan biaya produksi (akan dikembalikan jika jadi order)</li>
+              <li>Revisi unlimited sampai design sesuai keinginan</li>
+              <li>Waktu pembuatan sample: 7-10 hari kerja</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Bagaimana sistem pembayaran dan apakah ada DP?</span>
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p>Sistem pembayaran kami:</p>
+            <ul>
+              <li><strong>DP 50%</strong> - Saat design approved dan sebelum produksi dimulai</li>
+              <li><strong>Pelunasan 50%</strong> - Sebelum pengiriman</li>
+              <li>Metode pembayaran: Transfer bank (BCA, Mandiri, BNI, BRI)</li>
+              <li>Invoice resmi akan diberikan untuk setiap transaksi</li>
+            </ul>
+            <p>Untuk repeat order atau partnership jangka panjang, kami bisa diskusikan terms khusus.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Apakah pengiriman ke seluruh Indonesia?</span>
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>Ya, kami kirim ke seluruh Indonesia!</strong> Detail pengiriman:</p>
+            <ul>
+              <li>Packing aman dengan bubble wrap dan kardus tebal</li>
+              <li>Menggunakan ekspedisi terpercaya (JNE, J&T, Sicepat, dll)</li>
+              <li>Asuransi pengiriman tersedia</li>
+              <li>Tracking number akan diberikan</li>
+              <li>Untuk Jakarta dan sekitarnya bisa COD atau pickup</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ================ CTA SECTION - AIDA: ACTION ================ -->
   <section class="cta-section-modern">
     <div class="cta-container">
@@ -2666,6 +3983,8 @@ hr,
     </div>
   </section>
 
+  </main>
+
   <!-- ================ FOOTER ================ -->
   <footer>
     <div class="footer-container">
@@ -2681,24 +4000,24 @@ hr,
           </div>
           <p>Produsen Hardbox Premium untuk Brand Indonesia. Partner Produksi Packaging Custom yang Terpercaya.</p>
           <div class="footer-social">
-            <a href="https://www.instagram.com/de_artbox" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+            <a href="https://www.instagram.com/de_artbox" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10zm6.5-.5a1 1 0 10-1 1 1 1 0 001-1z"/>
               </svg>
             </a>
-            <a href="https://www.linkedin.com/in/deartbox-packaging-b08696376/" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/deartbox-packaging-b08696376/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Connect with us on LinkedIn">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M4.98 3.5a2.5 2.5 0 110 5 2.5 2.5 0 010-5zM3 9h4v12H3zm7 0h4v1.7c.6-1 2-2 4-2 4 0 5 2.6 5 6v6h-4v-5.3c0-1.3 0-3-2-3s-2.3 1.5-2.3 2.9V21h-4z"/>
               </svg>
             </a>
             
-            <a href="https://www.youtube.com/@deartboxPackaging-p6y" class="social-link" aria-label="YouTube">
+            <a href="https://www.youtube.com/@deartboxPackaging-p6y" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to our YouTube channel">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M23.498 6.186a2.978 2.978 0 0 0-2.094-2.106C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.404.58A2.978 2.978 0 0 0 .502 6.186 31.248 31.248 0 0 0 0 12a31.248 31.248 0 0 0 .502 5.814 2.978 2.978 0 0 0 2.094 2.106C4.495 20.5 12 20.5 12 20.5s7.505 0 9.404-.58a2.978 2.978 0 0 0 2.094-2.106A31.248 31.248 0 0 0 24 12a31.248 31.248 0 0 0-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>
             </a>
 
-            <a href="https://www.facebook.com/profile.php?id=61583673060039" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
+            <a href="https://www.facebook.com/profile.php?id=61583673060039" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Like us on Facebook">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
                 <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 24h11.494v-9.294H9.691v-3.622h3.129V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.403 24 24 23.403 24 22.674V1.326C24 .597 23.403 0 22.675 0z"/>
               </svg>
@@ -2759,7 +4078,7 @@ hr,
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                 <polyline points="22,6 12,13 2,6"/>
               </svg>
-              <a href="/cdn-cgi/l/email-protection#5f363139301f3b3a3e2d2b3d3027713c3032"><span class="__cf_email__" data-cfemail="1e777078715e7a7b7f6c6a7c7166307d7173">[email&#160;protected]</span></a>
+              <a href="mailto:info@deartbox.com">info@deartbox.com</a>
             </li>
           </ul>
         </div>
@@ -2803,7 +4122,7 @@ hr,
   </button>
 
   <!-- ================ JAVASCRIPT ================ -->
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     (function() {
       'use strict';
 
@@ -3076,7 +4395,855 @@ Deskripsi: ${message}`;
 
         targets.forEach(el => observer.observe(el));
       });
+    
+      // ================ TOUCH INTERACTIONS & SWIPE GESTURES ================
+      
+      // Swipe support for hero slideshow
+      if (slideshowContainer) {
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        slideshowContainer.addEventListener('touchstart', function(e) {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        slideshowContainer.addEventListener('touchend', function(e) {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+        }, { passive: true });
+        
+        function handleSwipe() {
+          const swipeThreshold = 50;
+          const diff = touchStartX - touchEndX;
+          
+          if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+              // Swipe left - next slide
+              nextSlide();
+              resetInterval();
+            } else {
+              // Swipe right - previous slide
+              prevSlide();
+              resetInterval();
+            }
+          }
+        }
+      }
+
+      // Swipe to close mobile menu
+      const mobileMenu = document.querySelector('.mobile-menu');
+      if (mobileMenu) {
+        let menuTouchStartX = 0;
+        let menuTouchEndX = 0;
+        
+        mobileMenu.addEventListener('touchstart', function(e) {
+          menuTouchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        mobileMenu.addEventListener('touchend', function(e) {
+          menuTouchEndX = e.changedTouches[0].screenX;
+          
+          // Swipe right to close
+          if (menuTouchEndX - menuTouchStartX > 100) {
+            document.body.classList.remove('menu-open');
+          }
+        }, { passive: true });
+      }
+
+      // ================ SMART STICKY CTA ================
+      
+      const stickyCTA = document.querySelector('.sticky-cta');
+      if (stickyCTA) {
+        let lastScrollTop = 0;
+        let scrollTimeout;
+        
+        window.addEventListener('scroll', function() {
+          clearTimeout(scrollTimeout);
+          
+          scrollTimeout = setTimeout(function() {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const footer = document.querySelector('footer');
+            const footerTop = footer ? footer.offsetTop : documentHeight;
+            
+            // Hide CTA when scrolling down, show when scrolling up
+            if (scrollTop > lastScrollTop && scrollTop > 200) {
+              // Scrolling down
+              stickyCTA.classList.add('hide');
+            } else {
+              // Scrolling up
+              stickyCTA.classList.remove('hide');
+            }
+            
+            // Hide CTA when footer is visible
+            if (scrollTop + windowHeight >= footerTop - 50) {
+              stickyCTA.style.display = 'none';
+            } else {
+              stickyCTA.style.display = 'flex';
+            }
+            
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+          }, 100);
+        }, { passive: true });
+      }
+
+      // ================ PREVENT iOS ZOOM ON INPUT FOCUS ================
+      
+      // Add viewport meta tag adjustment for iOS
+      const viewport = document.querySelector('meta[name="viewport"]');
+      if (viewport && /iPhone|iPad|iPod/.test(navigator.userAgent)) {
+        const inputs = document.querySelectorAll('input, select, textarea');
+        
+        inputs.forEach(function(input) {
+          input.addEventListener('focus', function() {
+            viewport.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1');
+          });
+          
+          input.addEventListener('blur', function() {
+            viewport.setAttribute('content', 'width=device-width, initial-scale=1');
+          });
+        });
+      }
+
+      // ================ IMPROVED MOBILE MENU ACCESSIBILITY ================
+      
+      // Trap focus in mobile menu when open
+      if (mobileMenu && mobileToggle) {
+        const focusableElements = mobileMenu.querySelectorAll(
+          'a[href], button:not([disabled])'
+        );
+        const firstFocusable = focusableElements[0];
+        const lastFocusable = focusableElements[focusableElements.length - 1];
+        
+        document.addEventListener('keydown', function(e) {
+          if (!document.body.classList.contains('menu-open')) return;
+          
+          // Close menu on Escape
+          if (e.key === 'Escape') {
+            document.body.classList.remove('menu-open');
+            mobileToggle.focus();
+            return;
+          }
+          
+          // Trap focus
+          if (e.key === 'Tab') {
+            if (e.shiftKey) {
+              if (document.activeElement === firstFocusable) {
+                e.preventDefault();
+                lastFocusable.focus();
+              }
+            } else {
+              if (document.activeElement === lastFocusable) {
+                e.preventDefault();
+                firstFocusable.focus();
+              }
+            }
+          }
+        });
+      }
+
+      
+      
+      
+      
+      
+      // ================ FAQ ACCORDION ================
+      
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(function(item) {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', function() {
+          const isActive = item.classList.contains('active');
+          
+          // Close all other items
+          faqItems.forEach(function(otherItem) {
+            if (otherItem !== item) {
+              otherItem.classList.remove('active');
+              otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            }
+          });
+          
+          // Toggle current item
+          if (isActive) {
+            item.classList.remove('active');
+            question.setAttribute('aria-expanded', 'false');
+          } else {
+            item.classList.add('active');
+            question.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+
+// ================ DARK MODE ================
+      
+      const themeToggle = document.getElementById('themeToggle');
+      const htmlElement = document.documentElement;
+      
+      // Check for saved theme preference or default to system preference
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      // Set initial theme
+      if (savedTheme) {
+        htmlElement.setAttribute('data-theme', savedTheme);
+      } else if (systemPrefersDark) {
+        htmlElement.setAttribute('data-theme', 'dark');
+      }
+      
+      // Toggle theme
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+          const currentTheme = htmlElement.getAttribute('data-theme');
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          
+          htmlElement.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
+          
+          // Update meta theme-color
+          const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+          if (metaThemeColor) {
+            metaThemeColor.setAttribute('content', newTheme === 'dark' ? '#0a0a0a' : '#ffffff');
+          }
+        });
+      }
+      
+      // Listen for system theme changes
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        if (!localStorage.getItem('theme')) {
+          htmlElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+        }
+      });
+
+
+// ================ DESIGN IMPROVEMENTS ================
+      
+      // Scroll progress indicator
+      const scrollProgress = document.createElement('div');
+      scrollProgress.className = 'scroll-progress';
+      document.body.appendChild(scrollProgress);
+      
+      window.addEventListener('scroll', function() {
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight - windowHeight;
+        const scrolled = window.scrollY;
+        const progress = (scrolled / documentHeight) * 100;
+        
+        scrollProgress.style.width = progress + '%';
+      }, { passive: true });
+
+      // Glassmorphism header on scroll
+      const header = document.querySelector('header');
+      if (header) {
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+        }, { passive: true });
+      }
+
+      // Ripple effect on buttons
+      const rippleButtons = document.querySelectorAll('.btn-hero-primary, .btn-cta-wa, .btn-submit-rfq, .sticky-cta');
+      rippleButtons.forEach(function(button) {
+        button.classList.add('btn-ripple');
+      });
+
+      // Magnetic button effect (desktop only)
+      if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        const magneticButtons = document.querySelectorAll('.btn-hero-primary, .btn-cta-wa');
+        
+        magneticButtons.forEach(function(button) {
+          button.addEventListener('mousemove', function(e) {
+            const rect = button.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            const moveX = x * 0.1;
+            const moveY = y * 0.1;
+            
+            button.style.transform = `translate(${moveX}px, ${moveY}px) translateY(-2px)`;
+          });
+          
+          button.addEventListener('mouseleave', function() {
+            button.style.transform = '';
+          });
+        });
+      }
+
+      // Parallax effect for hero section (subtle)
+      const heroSection = document.querySelector('.hero-modern');
+      if (heroSection && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+        window.addEventListener('scroll', function() {
+          const scrolled = window.scrollY;
+          const parallaxSpeed = 0.5;
+          
+          if (scrolled < window.innerHeight) {
+            heroSection.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+          }
+        }, { passive: true });
+      }
+
+      // Animate numbers (count up effect)
+      function animateNumber(element, target, duration = 2000) {
+        const start = 0;
+        const increment = target / (duration / 16);
+        let current = start;
+        
+        const timer = setInterval(function() {
+          current += increment;
+          if (current >= target) {
+            element.textContent = target + '+';
+            clearInterval(timer);
+          } else {
+            element.textContent = Math.floor(current) + '+';
+          }
+        }, 16);
+      }
+
+      // Trigger number animation when visible
+      const trustTitle = document.querySelector('.trust-title');
+      if (trustTitle && trustTitle.textContent.includes('50+')) {
+        const observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              // Animate the number
+              const numberSpan = document.createElement('span');
+              numberSpan.textContent = '0+';
+              trustTitle.innerHTML = trustTitle.innerHTML.replace('50+', '<span class="animated-number">0+</span>');
+              
+              const animatedNumber = document.querySelector('.animated-number');
+              if (animatedNumber) {
+                animateNumber(animatedNumber, 50);
+              }
+              
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.5 });
+        
+        observer.observe(trustTitle);
+      }
+
+
+// ================ PERFORMANCE OPTIMIZATIONS ================
+      
+      // Enhanced lazy loading with intersection observer
+      const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+      
+      if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              
+              // Add loaded class when image loads
+              img.addEventListener('load', function() {
+                img.classList.add('loaded');
+              });
+              
+              // If image is already cached/loaded
+              if (img.complete) {
+                img.classList.add('loaded');
+              }
+              
+              observer.unobserve(img);
+            }
+          });
+        }, {
+          rootMargin: '50px 0px',
+          threshold: 0.01
+        });
+        
+        lazyImages.forEach(function(img) {
+          imageObserver.observe(img);
+        });
+      } else {
+        // Fallback for browsers without IntersectionObserver
+        lazyImages.forEach(function(img) {
+          img.classList.add('loaded');
+        });
+      }
+
+      // Preload critical images on hover (predictive loading)
+      const criticalLinks = document.querySelectorAll('a[href^="#"]');
+      criticalLinks.forEach(function(link) {
+        link.addEventListener('mouseenter', function() {
+          const targetId = this.getAttribute('href').substring(1);
+          const targetSection = document.getElementById(targetId);
+          
+          if (targetSection) {
+            const images = targetSection.querySelectorAll('img[loading="lazy"]');
+            images.forEach(function(img) {
+              if (!img.classList.contains('loaded')) {
+                // Trigger loading
+                const src = img.getAttribute('src');
+                if (src) {
+                  const preloadImg = new Image();
+                  preloadImg.src = src;
+                }
+              }
+            });
+          }
+        }, { once: true });
+      });
+
+      // Resource hints for external domains
+      function addResourceHint(url, rel) {
+        const link = document.createElement('link');
+        link.rel = rel;
+        link.href = url;
+        document.head.appendChild(link);
+      }
+
+      // Prefetch next likely pages
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(function() {
+          // Prefetch WhatsApp if user shows interest
+          const waLinks = document.querySelectorAll('a[href*="wa.me"]');
+          waLinks.forEach(function(link) {
+            link.addEventListener('mouseenter', function() {
+              addResourceHint('https://wa.me', 'dns-prefetch');
+            }, { once: true });
+          });
+        });
+      }
+
+      // Defer non-critical CSS
+      const deferredStyles = document.querySelectorAll('link[media="print"]');
+      deferredStyles.forEach(function(link) {
+        link.addEventListener('load', function() {
+          this.media = 'all';
+        });
+      });
+
+      // Monitor performance
+      if ('PerformanceObserver' in window) {
+        try {
+          const perfObserver = new PerformanceObserver(function(list) {
+            list.getEntries().forEach(function(entry) {
+              // Log slow resources (> 1s)
+              if (entry.duration > 1000) {
+                console.warn('Slow resource:', entry.name, entry.duration + 'ms');
+              }
+            });
+          });
+          
+          perfObserver.observe({ entryTypes: ['resource', 'navigation'] });
+        } catch (e) {
+          // Silently fail if not supported
+        }
+      }
+
+      // Service Worker registration (for future PWA support)
+      if ('serviceWorker' in navigator && location.protocol === 'https:') {
+        window.addEventListener('load', function() {
+          // Uncomment when service worker is ready
+          // navigator.serviceWorker.register('/sw.js').catch(function(err) {
+          //   console.log('SW registration failed:', err);
+          // });
+        });
+      }
+
+
+// ================ FORM VALIDATION & ENHANCEMENTS ================
+      
+      // Real-time validation functions
+      const validators = {
+        name: function(value) {
+          if (!value || value.trim().length < 2) {
+            return { valid: false, message: 'Nama minimal 2 karakter' };
+          }
+          return { valid: true, message: 'Nama valid' };
+        },
+        
+        whatsapp: function(value) {
+          // Indonesian phone format: 08xx-xxxx-xxxx
+          const cleaned = value.replace(/\D/g, '');
+          if (!cleaned.startsWith('08')) {
+            return { valid: false, message: 'Nomor harus diawali 08' };
+          }
+          if (cleaned.length < 10 || cleaned.length > 13) {
+            return { valid: false, message: 'Nomor tidak valid (10-13 digit)' };
+          }
+          return { valid: true, message: 'Nomor valid' };
+        },
+        
+        email: function(value) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(value)) {
+            return { valid: false, message: 'Format email tidak valid' };
+          }
+          
+          // Common typo suggestions
+          const commonTypos = {
+            'gmial.com': 'gmail.com',
+            'gmai.com': 'gmail.com',
+            'yahooo.com': 'yahoo.com',
+            'hotmial.com': 'hotmail.com'
+          };
+          
+          const domain = value.split('@')[1];
+          if (commonTypos[domain]) {
+            return { 
+              valid: false, 
+              message: `Maksud Anda ${value.replace(domain, commonTypos[domain])}?` 
+            };
+          }
+          
+          return { valid: true, message: 'Email valid' };
+        }
+      };
+
+      // Phone number auto-formatting
+      const whatsappInput = document.getElementById('whatsapp');
+      if (whatsappInput) {
+        whatsappInput.addEventListener('input', function(e) {
+          let value = e.target.value.replace(/\D/g, '');
+          
+          // Format: 0819-1234-5678
+          if (value.length > 4 && value.length <= 8) {
+            value = value.slice(0, 4) + '-' + value.slice(4);
+          } else if (value.length > 8) {
+            value = value.slice(0, 4) + '-' + value.slice(4, 8) + '-' + value.slice(8, 12);
+          }
+          
+          e.target.value = value;
+          validateField(e.target, 'whatsapp');
+        });
+      }
+
+      // Real-time validation for all fields
+      function validateField(field, validatorName) {
+        const fieldWrapper = field.closest('.form-field');
+        if (!fieldWrapper) return;
+        
+        const value = field.value.trim();
+        const validator = validators[validatorName];
+        
+        if (!validator) return;
+        
+        const result = validator(value);
+        
+        // Remove existing error/success messages
+        let errorMsg = fieldWrapper.querySelector('.form-error');
+        let successMsg = fieldWrapper.querySelector('.form-success');
+        
+        if (!errorMsg) {
+          errorMsg = document.createElement('div');
+          errorMsg.className = 'form-error';
+          field.parentNode.appendChild(errorMsg);
+        }
+        
+        if (!successMsg) {
+          successMsg = document.createElement('div');
+          successMsg.className = 'form-success';
+          field.parentNode.appendChild(successMsg);
+        }
+        
+        if (result.valid) {
+          fieldWrapper.classList.remove('error');
+          fieldWrapper.classList.add('valid');
+          errorMsg.textContent = '';
+          successMsg.textContent = result.message;
+        } else {
+          fieldWrapper.classList.remove('valid');
+          fieldWrapper.classList.add('error');
+          errorMsg.textContent = result.message;
+          successMsg.textContent = '';
+        }
+      }
+
+      // Attach validators to form fields
+      const nameInput = document.getElementById('rfq-name');
+      const emailInput = document.getElementById('rfq-email');
+      
+      if (nameInput) {
+        nameInput.addEventListener('blur', function() {
+          validateField(this, 'name');
+        });
+      }
+      
+      if (emailInput) {
+        emailInput.addEventListener('blur', function() {
+          validateField(this, 'email');
+        });
+      }
+
+      // ================ FILE UPLOAD HANDLING ================
+      
+      const fileInput = document.getElementById('rfq-files');
+      const fileLabel = document.querySelector('.file-upload-label');
+      const filePreview = document.getElementById('filePreview');
+      let uploadedFiles = [];
+
+      if (fileInput && fileLabel) {
+        // Click to upload
+        fileInput.addEventListener('change', handleFiles);
+        
+        // Drag and drop
+        fileLabel.addEventListener('dragover', function(e) {
+          e.preventDefault();
+          this.classList.add('dragover');
+        });
+        
+        fileLabel.addEventListener('dragleave', function(e) {
+          e.preventDefault();
+          this.classList.remove('dragover');
+        });
+        
+        fileLabel.addEventListener('drop', function(e) {
+          e.preventDefault();
+          this.classList.remove('dragover');
+          
+          const files = e.dataTransfer.files;
+          handleFiles({ target: { files: files } });
+        });
+      }
+
+      function handleFiles(e) {
+        const files = Array.from(e.target.files);
+        const maxSize = 5 * 1024 * 1024; // 5MB
+        const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'application/pdf'];
+        
+        files.forEach(file => {
+          // Validate file size
+          if (file.size > maxSize) {
+            alert(`File ${file.name} terlalu besar. Maksimal 5MB.`);
+            return;
+          }
+          
+          // Validate file type
+          if (!allowedTypes.includes(file.type)) {
+            alert(`File ${file.name} format tidak didukung. Gunakan JPG, PNG, atau PDF.`);
+            return;
+          }
+          
+          uploadedFiles.push(file);
+          displayFilePreview(file);
+        });
+      }
+
+      function displayFilePreview(file) {
+        const previewItem = document.createElement('div');
+        previewItem.className = 'file-preview-item';
+        previewItem.style.cssText = 'display: flex; align-items: center; gap: 12px; padding: 12px; background: #f5f5f5; border-radius: 8px; margin-bottom: 8px;';
+        
+        // File icon or image preview
+        if (file.type.startsWith('image/')) {
+          const img = document.createElement('img');
+          img.style.cssText = 'width: 60px; height: 60px; object-fit: cover; border-radius: 4px;';
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            img.src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+          previewItem.appendChild(img);
+        } else {
+          const icon = document.createElement('div');
+          icon.style.cssText = 'width: 60px; height: 60px; background: #d71921; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;';
+          icon.textContent = 'PDF';
+          previewItem.appendChild(icon);
+        }
+        
+        // File info
+        const fileInfo = document.createElement('div');
+        fileInfo.style.flex = '1';
+        fileInfo.innerHTML = `
+          <div class="file-name">${file.name}</div>
+          <div class="file-size">${(file.size / 1024).toFixed(1)} KB</div>
+        `;
+        previewItem.appendChild(fileInfo);
+        
+        // Remove button
+        const removeBtn = document.createElement('button');
+        removeBtn.type = 'button';
+        removeBtn.className = 'file-remove';
+        removeBtn.innerHTML = 'Ã—';
+        removeBtn.onclick = function() {
+          uploadedFiles = uploadedFiles.filter(f => f !== file);
+          previewItem.remove();
+          if (uploadedFiles.length === 0) {
+            filePreview.classList.remove('show');
+          }
+        };
+        previewItem.appendChild(removeBtn);
+        
+        filePreview.appendChild(previewItem);
+        filePreview.classList.add('show');
+      }
+
+      // ================ FORM AUTO-SAVE (localStorage) ================
+      
+      const formFields = ['rfq-name', 'whatsapp', 'rfq-email', 'rfq-brand', 'rfq-industry', 'rfq-box', 'rfq-qty', 'rfq-message'];
+      
+      // Load saved data on page load
+      window.addEventListener('load', function() {
+        formFields.forEach(fieldId => {
+          const field = document.getElementById(fieldId);
+          const savedValue = localStorage.getItem('rfq_' + fieldId);
+          if (field && savedValue) {
+            field.value = savedValue;
+          }
+        });
+      });
+
+      // Auto-save every 30 seconds
+      setInterval(function() {
+        formFields.forEach(fieldId => {
+          const field = document.getElementById(fieldId);
+          if (field && field.value) {
+            localStorage.setItem('rfq_' + fieldId, field.value);
+          }
+        });
+      }, 30000);
+
+      // Clear saved data on successful submission
+      function clearFormData() {
+        formFields.forEach(fieldId => {
+          localStorage.removeItem('rfq_' + fieldId);
+        });
+      }
+
+      // ================ ENHANCED FORM SUBMISSION ================
+      
+      if (rfqForm) {
+        rfqForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Validate all required fields
+          let isValid = true;
+          const requiredFields = [
+            { id: 'rfq-name', validator: 'name' },
+            { id: 'whatsapp', validator: 'whatsapp' },
+            { id: 'rfq-email', validator: 'email' }
+          ];
+          
+          requiredFields.forEach(field => {
+            const input = document.getElementById(field.id);
+            if (input) {
+              validateField(input, field.validator);
+              const wrapper = input.closest('.form-field');
+              if (wrapper && wrapper.classList.contains('error')) {
+                isValid = false;
+              }
+            }
+          });
+          
+          if (!isValid) {
+            alert('Mohon perbaiki field yang error terlebih dahulu.');
+            return;
+          }
+          
+          // Show loading state
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;"><circle cx="12" cy="12" r="10"/></svg> <span>Mengirim...</span>';
+          
+          const formData = new FormData(rfqForm);
+          const name = formData.get('name');
+          const whatsapp = formData.get('whatsapp');
+          const email = formData.get('email');
+          const brand = formData.get('brand') || '-';
+          const industry = formData.get('industry');
+          const boxType = formData.get('boxType');
+          const quantity = formData.get('quantity') || '-';
+          const message = formData.get('message');
+
+          let waMessage = `Halo deartbox,\nSaya ingin request quotation:\n\nNama: ${name}\nWhatsApp: ${whatsapp}\nEmail: ${email}\nBrand: ${brand}\nIndustri: ${industry}\nTipe Box: ${boxType}\nKuantitas: ${quantity}\nDeskripsi: ${message}`;
+          
+          if (uploadedFiles.length > 0) {
+            waMessage += `\n\nFile referensi: ${uploadedFiles.length} file terlampir`;
+          }
+
+          const waUrl = 'https://wa.me/628195181427?text=' + encodeURIComponent(waMessage);
+          
+          // Simulate sending delay
+          setTimeout(function() {
+            // Open WhatsApp
+            window.open(waUrl, '_blank');
+            
+            // Show success modal
+            document.getElementById('successModal').classList.add('show');
+            
+            // Reset form
+            rfqForm.reset();
+            uploadedFiles = [];
+            filePreview.innerHTML = '';
+            filePreview.classList.remove('show');
+            
+            // Clear localStorage
+            clearFormData();
+            
+            // Reset button
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+            
+            // Remove validation classes
+            document.querySelectorAll('.form-field').forEach(field => {
+              field.classList.remove('valid', 'error');
+            });
+          }, 1500);
+        });
+      }
+
+      // Close modal on outside click
+      const successModal = document.getElementById('successModal');
+      if (successModal) {
+        successModal.addEventListener('click', function(e) {
+          if (e.target === this) {
+            this.classList.remove('show');
+          }
+        });
+      }
+
+
+// ================ PERFORMANCE: DEBOUNCE SCROLL EVENTS ================
+      
+      function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+          const later = function() {
+            clearTimeout(timeout);
+            func(...args);
+          };
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+        };
+      }
+
+      // Apply debounce to scroll-heavy operations
+      const debouncedScrollHandler = debounce(function() {
+        // Any additional scroll-based operations can go here
+      }, 100);
+
+      window.addEventListener('scroll', debouncedScrollHandler, { passive: true });
+
     })();
   </script>
+
+  <!-- Success Modal -->
+  <div class="success-modal" id="successModal">
+    <div class="success-modal-content">
+      <div class="success-icon">
+        <svg viewBox="0 0 24 24" fill="none">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <h3>Request Terkirim!</h3>
+      <p>Terima kasih atas minat Anda. Tim kami akan menghubungi Anda melalui WhatsApp dalam 1x24 jam.</p>
+      <div class="success-modal-actions">
+        <button class="btn-modal btn-modal-primary" onclick="window.location.href='https://wa.me/628195181427'">
+          Buka WhatsApp
+        </button>
+        <button class="btn-modal btn-modal-secondary" onclick="document.getElementById('successModal').classList.remove('show')">
+          Tutup
+        </button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
