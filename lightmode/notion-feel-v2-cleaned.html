@@ -428,6 +428,18 @@ a:not(.btn-hero-primary):not(.btn-cta-wa):not(.sticky-cta) {
 
 
 
+
+@keyframes slideIn {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 /* ================ FAQ SECTION ================ */
 
 .faq-section {
@@ -4126,6 +4138,8 @@ img[loading="lazy"]:not(.loaded) {
     (function() {
       'use strict';
 
+      'use strict';
+
       // Global error handler for graceful degradation
       window.addEventListener('error', function(e) {
         console.warn('Non-critical error caught:', e.message);
@@ -4326,6 +4340,8 @@ Deskripsi: ${message}`;
 
           // Reset button after short delay
           setTimeout(function() {
+      'use strict';
+
             submitBtn.disabled = false;
             submitBtn.innerHTML = originalBtnText;
             rfqForm.reset();
@@ -4461,6 +4477,8 @@ Deskripsi: ${message}`;
           clearTimeout(scrollTimeout);
           
           scrollTimeout = setTimeout(function() {
+      'use strict';
+
             const scrollTop = window.scrollY || document.documentElement.scrollTop;
             const windowHeight = window.innerHeight;
             const documentHeight = document.documentElement.scrollHeight;
@@ -4695,6 +4713,8 @@ Deskripsi: ${message}`;
         let current = start;
         
         const timer = setInterval(function() {
+      'use strict';
+
           current += increment;
           if (current >= target) {
             element.textContent = target + '+';
@@ -4803,6 +4823,8 @@ Deskripsi: ${message}`;
       // Prefetch next likely pages
       if ('requestIdleCallback' in window) {
         requestIdleCallback(function() {
+      'use strict';
+
           // Prefetch WhatsApp if user shows interest
           const waLinks = document.querySelectorAll('a[href*="wa.me"]');
           waLinks.forEach(function(link) {
@@ -4828,7 +4850,7 @@ Deskripsi: ${message}`;
             list.getEntries().forEach(function(entry) {
               // Log slow resources (> 1s)
               if (entry.duration > 1000) {
-                console.warn('Slow resource:', entry.name, entry.duration + 'ms');
+                // Performance monitoring - disabled for production
               }
             });
           });
@@ -4844,7 +4866,7 @@ Deskripsi: ${message}`;
         window.addEventListener('load', function() {
           // Uncomment when service worker is ready
           // navigator.serviceWorker.register('/sw.js').catch(function(err) {
-          //   console.log('SW registration failed:', err);
+          //   // console.log('SW registration failed:', err); // Disabled for production
           // });
         });
       }
@@ -5094,6 +5116,8 @@ Deskripsi: ${message}`;
 
       // Auto-save every 30 seconds
       setInterval(function() {
+      'use strict';
+
         formFields.forEach(fieldId => {
           const field = document.getElementById(fieldId);
           if (field && field.value) {
@@ -5135,7 +5159,12 @@ Deskripsi: ${message}`;
           });
           
           if (!isValid) {
-            alert('Mohon perbaiki field yang error terlebih dahulu.');
+            // Show validation error in UI
+          const errorMsg = document.createElement('div');
+          errorMsg.style.cssText = 'position: fixed; top: 20px; right: 20px; background: #ef4444; color: white; padding: 16px 24px; border-radius: 8px; z-index: 10000; animation: slideIn 0.3s ease;';
+          errorMsg.textContent = 'Mohon perbaiki field yang error terlebih dahulu.';
+          document.body.appendChild(errorMsg);
+          setTimeout(() => errorMsg.remove(), 3000);
             return;
           }
           
@@ -5163,6 +5192,8 @@ Deskripsi: ${message}`;
           
           // Simulate sending delay
           setTimeout(function() {
+      'use strict';
+
             // Open WhatsApp
             window.open(waUrl, '_blank');
             
@@ -5217,6 +5248,8 @@ Deskripsi: ${message}`;
 
       // Apply debounce to scroll-heavy operations
       const debouncedScrollHandler = debounce(function() {
+      'use strict';
+
         // Any additional scroll-based operations can go here
       }, 100);
 
