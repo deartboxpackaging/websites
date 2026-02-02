@@ -1662,7 +1662,7 @@ body.menu-open .mobile-overlay {
 
 .feature-visual {
   width: 100%;
-  height: 200px;
+  height: 240px;
   background: var(--glass);
   border-radius: 8px;
   margin-bottom: 20px;
@@ -1735,9 +1735,12 @@ body.menu-open .mobile-overlay {
 
 .showcase-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: clamp(16px, 3vw, 24px);
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 3vw, 32px);
   margin-top: 40px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .showcase-item {
@@ -1840,7 +1843,7 @@ body.menu-open .mobile-overlay {
 
 .step-visual {
   width: 100%;
-  height: 160px;
+  height: 200px;
   background: var(--glass);
   border-radius: 8px;
   margin-bottom: 20px;
@@ -1916,6 +1919,20 @@ body.menu-open .mobile-overlay {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.testimonial-avatar-initial {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d71921, #a01419);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .testimonial-info h4 {
@@ -2957,6 +2974,187 @@ hr,
   
   .header-container {
     padding: 0 16px;
+  }
+  
+  /* Hero Section - Mobile Typography */
+  .hero-modern {
+    padding: 60px 0 40px;
+  }
+  
+  .hero-badge {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  
+  .hero-cta-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+  
+  /* Section spacing - Mobile */
+  section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  
+  .section-header {
+    margin-bottom: 32px;
+  }
+  
+  /* Cards - Mobile */
+  .feature-card,
+  .process-step,
+  .testimonial-card {
+    padding: 20px;
+  }
+  
+  /* Sticky CTA - Mobile */
+  .sticky-cta {
+    bottom: 16px;
+    right: 16px;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  
+  /* Form - Mobile */
+  .rfq-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Touch Targets - Minimum 48px */
+  .mobile-nav-link {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    min-height: 48px;
+    font-size: 16px;
+  }
+  
+  .btn-submit-rfq {
+    min-height: 52px;
+    font-size: 16px;
+  }
+  
+  /* Slideshow controls - Mobile */
+  .slide-nav {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .slide-nav.prev {
+    left: 12px;
+  }
+  
+  .slide-nav.next {
+    right: 12px;
+  }
+  
+  .slide-dot {
+    width: 10px;
+    height: 10px;
+  }
+  
+  /* Back to top - Mobile */
+  .back-to-top {
+    width: 44px;
+    height: 44px;
+    bottom: 80px;
+    right: 16px;
+  }
+  
+  /* Marketplace - Mobile */
+  .marketplace-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  
+  .marketplace-card {
+    padding: 10px;
+  }
+  
+  .marketplace-card img {
+    max-width: 50px;
+  }
+  
+  /* CTA Section - Mobile */
+  .cta-section-modern {
+    padding: 48px 0;
+  }
+  
+  .cta-features {
+    gap: 12px;
+  }
+  
+  .cta-feature {
+    font-size: 12px;
+  }
+  
+  .btn-cta-wa {
+    width: 100%;
+    padding: 16px 32px;
+    font-size: 16px;
+  }
+  
+  /* Images - Mobile Optimization */
+  .hero-slideshow-container {
+    border-radius: 12px;
+    margin-top: 24px;
+  }
+  
+  .showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .showcase-item {
+    border-radius: 8px;
+  }
+  
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  /* Video - Mobile */
+  .video-wrapper {
+    border-radius: 12px;
+  }
+  
+  /* Trust marquee - Mobile */
+  .trust-marquee img {
+    height: 20px;
+  }
+  
+  /* Footer - Mobile */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .footer-payment-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
   }
 }
 
