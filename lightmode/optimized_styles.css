@@ -3433,10 +3433,7 @@ img[loading="lazy"]:not(.loaded) {
   align-items: center;
 }
 
-$10.85;
-  transition: opacity .3s ease, transform .3s ease;
-  /* Original colors preserved */
-}
+
 
 .footer-payment-icons .payment-icon:hover {
   opacity: 1;
@@ -3465,10 +3462,7 @@ $10.85;
   align-items: center;
 }
 
-$10.85;
-  transition: opacity .3s ease, transform .3s ease;
-  /* Original colors preserved */
-}
+
 
 .footer-payment-icons .payment-icon:hover {
   opacity: 1;
@@ -3624,12 +3618,6 @@ $10.85;
   transition: width 0.3s ease;
   max-width: 100%; /* Tidak lebih panjang dari text */
 }
-
-$140%; /* Hanya 60% dari lebar text */
-}
-
-
-
 
 /* ================ FORCE FIX: ADDRESS LINK UNDERLINE ================ */
 .footer-links a.footer-address-link {
