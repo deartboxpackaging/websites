@@ -46,18 +46,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- ✅ TAMBAHKAN DI SINI - DNS PREFETCH & PRELOAD -->
+    <!-- ✅ DNS PREFETCH & PRECONNECT -->
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://wa.me">
+  <link rel="preconnect" href="https://wa.me" crossorigin>
   
 <!-- Preload critical assets -->
 <link rel="preload" href="assets/logo/deartbox-logo.svg" as="image" type="image/svg+xml">
-<link rel="preload" href="assets/logo/deartbox-logo-dark.svg" as="image" type="svg+xml"> 
-<link rel="preload" href="assets/images/halamanutama/hardbox-hmns2.webp" as="image" type="image/webp">
-<link rel="preload" href="assets/images/halamanutama/hardbox-kahf2.webp" as="image" type="image/webp">
-<link rel="preload" href="assets/images/halamanutama/hardbox-wardah2.webp" as="image" type="image/webp">
-<!-- Preload favicon -->
-<link rel="preload" href="/favicon-32x32.png" as="image" type="image/png">
+<link rel="preload" href="assets/images/halamanutama/hardbox-hmns2.webp" as="image" type="image/webp" fetchpriority="high">
+<link rel="preload" href="optimized_styles.css" as="style">
+<link rel="preload" href="optimized_script.js" as="script">
 
   <!-- 7. FAVICON COMPLETE SET -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -67,9 +65,7 @@
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
   <meta name="msapplication-TileColor" content="#000000">
 
-  <link href="https://fonts.googleapis.com/css2?family=Gramatika&display=swap" rel="stylesheet" media="print" onload="this.media='all'"> 
- 
-  <link rel="preconnect" href="https://wa.me" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gramatika&display=swap" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
   
   <!-- ✅ TAMBAHKAN DI SINI - STRUCTURED DATA -->
   <script type="application/ld+json">
@@ -217,13 +213,13 @@
       <!-- Hero Slideshow -->
       <div class="hero-slideshow-container">
         <div class="hero-slide active">
-          <img src="assets/images/halamanutama/hardbox-hmns2.webp" alt="Hardbox Premium HMNS - Custom Packaging untuk Brand Beauty dengan Finishing Emboss dan Hotprint Gold" loading="eager" width="900" height="562">
+          <img src="assets/images/halamanutama/hardbox-hmns2.webp" alt="Hardbox Premium HMNS - Custom Packaging untuk Brand Beauty dengan Finishing Emboss dan Hotprint Gold" loading="eager" fetchpriority="high" decoding="async" width="900" height="562">
         </div>
         <div class="hero-slide">
-          <img src="assets/images/halamanutama/hardbox-Love in Motion.webp" alt="Hardbox Premium Kahf - Rigid Box Custom untuk Produk Grooming dengan Material Premium dan UV Spot" loading="lazy" width="900" height="562">
+          <img src="assets/images/halamanutama/hardbox-Love in Motion.webp" alt="Hardbox Premium Kahf - Rigid Box Custom untuk Produk Grooming dengan Material Premium dan UV Spot" loading="lazy" decoding="async" width="900" height="562">
         </div>
         <div class="hero-slide">
-          <img src="assets/images/halamanutama/hardbox-Custom deartbox.webp" alt="Hardbox Premium Wardah - Luxury Packaging Box untuk Skincare dengan Magnetic Closure dan Soft Touch Lamination" loading="lazy" width="900" height="562">
+          <img src="assets/images/halamanutama/hardbox-Custom deartbox.webp" alt="Hardbox Premium Wardah - Luxury Packaging Box untuk Skincare dengan Magnetic Closure dan Soft Touch Lamination" loading="lazy" decoding="async" width="900" height="562">
         </div>
 
         <!-- Slide Navigation -->
@@ -274,85 +270,85 @@
     <!-- Row 1 -->
     <div class="marquee-track">
       <!-- ===== ROW 1 - LOGO SET 1 ===== -->
-      <img src="assets/clients/logo-14.svg" alt="Client Logo 14">
-      <img src="assets/clients/logo-27.svg" alt="Client Logo 2">
-      <img src="assets/clients/logo-05.svg" alt="Client Logo 3">
-      <img src="assets/clients/logo-33.svg" alt="Client Logo 4">
-      <img src="assets/clients/logo-19.svg" alt="Client Logo 5">
-      <img src="assets/clients/logo-08.svg" alt="Client Logo 6">
-      <img src="assets/clients/logo-31.svg" alt="Client Logo 7">
-      <img src="assets/clients/logo-12.svg" alt="Client Logo 8">
-      <img src="assets/clients/logo-24.svg" alt="Client Logo 9">
-      <img src="assets/clients/logo-03.svg" alt="Client Logo 10">
-      <img src="assets/clients/logo-36.svg" alt="Client Logo 11">
-      <img src="assets/clients/logo-17.svg" alt="Client Logo 12">
-      <img src="assets/clients/logo-29.svg" alt="Client Logo 13">
-      <img src="assets/clients/logo-06.svg" alt="Client Logo 14">
-      <img src="assets/clients/logo-21.svg" alt="Client Logo 15">
-      <img src="assets/clients/logo-11.svg" alt="Client Logo 16">
-      <img src="assets/clients/logo-35.svg" alt="Client Logo 17">
-      <img src="assets/clients/logo-02.svg" alt="Client Logo 18">
+      <img src="assets/clients/logo-14.svg" alt="Client Logo 14" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-27.svg" alt="Client Logo 2" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-05.svg" alt="Client Logo 3" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-33.svg" alt="Client Logo 4" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-19.svg" alt="Client Logo 5" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-08.svg" alt="Client Logo 6" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-31.svg" alt="Client Logo 7" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-12.svg" alt="Client Logo 8" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-24.svg" alt="Client Logo 9" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-03.svg" alt="Client Logo 10" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-36.svg" alt="Client Logo 11" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-17.svg" alt="Client Logo 12" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-29.svg" alt="Client Logo 13" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-06.svg" alt="Client Logo 14" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-21.svg" alt="Client Logo 15" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-11.svg" alt="Client Logo 16" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-35.svg" alt="Client Logo 17" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-02.svg" alt="Client Logo 18" loading="lazy" decoding="async">
       <!-- ===== ROW 1 - LOGO SET 2 (DUPLICATE) ===== -->
-      <img src="assets/clients/logo-23.svg" alt="Client Logo 19">
-      <img src="assets/clients/logo-09.svg" alt="Client Logo 20">
-      <img src="assets/clients/logo-34.svg" alt="Client Logo 21">
-      <img src="assets/clients/logo-16.svg" alt="Client Logo 22">
-      <img src="assets/clients/logo-28.svg" alt="Client Logo 23">
-      <img src="assets/clients/logo-01.svg" alt="Client Logo 24">
-      <img src="assets/clients/logo-20.svg" alt="Client Logo 25">
-      <img src="assets/clients/logo-13.svg" alt="Client Logo 26">
-      <img src="assets/clients/logo-30.svg" alt="Client Logo 27">
-      <img src="assets/clients/logo-07.svg" alt="Client Logo 28">
-      <img src="assets/clients/logo-25.svg" alt="Client Logo 29">
-      <img src="assets/clients/logo-18.svg" alt="Client Logo 30">
-      <img src="assets/clients/logo-32.svg" alt="Client Logo 31">
-      <img src="assets/clients/logo-04.svg" alt="Client Logo 32">
-      <img src="assets/clients/logo-26.svg" alt="Client Logo 33">
-      <img src="assets/clients/logo-15.svg" alt="Client Logo 34">
-      <img src="assets/clients/logo-10.svg" alt="Client Logo 35">
-      <img src="assets/clients/logo-22.svg" alt="Client Logo 36">
+      <img src="assets/clients/logo-23.svg" alt="Client Logo 19" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-09.svg" alt="Client Logo 20" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-34.svg" alt="Client Logo 21" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-16.svg" alt="Client Logo 22" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-28.svg" alt="Client Logo 23" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-01.svg" alt="Client Logo 24" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-20.svg" alt="Client Logo 25" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-13.svg" alt="Client Logo 26" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-30.svg" alt="Client Logo 27" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-07.svg" alt="Client Logo 28" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-25.svg" alt="Client Logo 29" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-18.svg" alt="Client Logo 30" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-32.svg" alt="Client Logo 31" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-04.svg" alt="Client Logo 32" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-26.svg" alt="Client Logo 33" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-15.svg" alt="Client Logo 34" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-10.svg" alt="Client Logo 35" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-22.svg" alt="Client Logo 36" loading="lazy" decoding="async">
     </div>
     
     <!-- Row 2 - Randomized Mix -->
     <div class="marquee-track">
       <!-- ===== ROW 2 - LOGO SET 1 (Remaining 18 Randomized) ===== -->
-      <img src="assets/clients/logo-23.svg" alt="Client Logo 23">
-      <img src="assets/clients/logo-09.svg" alt="Client Logo 9">
-      <img src="assets/clients/logo-34.svg" alt="Client Logo 34">
-      <img src="assets/clients/logo-16.svg" alt="Client Logo 16">
-      <img src="assets/clients/logo-28.svg" alt="Client Logo 28">
-      <img src="assets/clients/logo-01.svg" alt="Client Logo 1">
-      <img src="assets/clients/logo-20.svg" alt="Client Logo 20">
-      <img src="assets/clients/logo-13.svg" alt="Client Logo 13">
-      <img src="assets/clients/logo-30.svg" alt="Client Logo 30">
-      <img src="assets/clients/logo-07.svg" alt="Client Logo 7">
-      <img src="assets/clients/logo-25.svg" alt="Client Logo 25">
-      <img src="assets/clients/logo-18.svg" alt="Client Logo 18">
-      <img src="assets/clients/logo-32.svg" alt="Client Logo 32">
-      <img src="assets/clients/logo-04.svg" alt="Client Logo 4">
-      <img src="assets/clients/logo-26.svg" alt="Client Logo 26">
-      <img src="assets/clients/logo-15.svg" alt="Client Logo 15">
-      <img src="assets/clients/logo-10.svg" alt="Client Logo 10">
-      <img src="assets/clients/logo-22.svg" alt="Client Logo 22">
+      <img src="assets/clients/logo-23.svg" alt="Client Logo 23" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-09.svg" alt="Client Logo 9" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-34.svg" alt="Client Logo 34" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-16.svg" alt="Client Logo 16" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-28.svg" alt="Client Logo 28" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-01.svg" alt="Client Logo 1" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-20.svg" alt="Client Logo 20" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-13.svg" alt="Client Logo 13" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-30.svg" alt="Client Logo 30" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-07.svg" alt="Client Logo 7" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-25.svg" alt="Client Logo 25" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-18.svg" alt="Client Logo 18" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-32.svg" alt="Client Logo 32" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-04.svg" alt="Client Logo 4" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-26.svg" alt="Client Logo 26" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-15.svg" alt="Client Logo 15" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-10.svg" alt="Client Logo 10" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-22.svg" alt="Client Logo 22" loading="lazy" decoding="async">
       <!-- ===== ROW 2 - LOGO SET 2 (Different Random Order) ===== -->
-      <img src="assets/clients/logo-16.svg" alt="">
-      <img src="assets/clients/logo-30.svg" alt="">
-      <img src="assets/clients/logo-04.svg" alt="">
-      <img src="assets/clients/logo-22.svg" alt="">
-      <img src="assets/clients/logo-13.svg" alt="">
-      <img src="assets/clients/logo-28.svg" alt="">
-      <img src="assets/clients/logo-09.svg" alt="">
-      <img src="assets/clients/logo-34.svg" alt="">
-      <img src="assets/clients/logo-01.svg" alt="">
-      <img src="assets/clients/logo-25.svg" alt="">
-      <img src="assets/clients/logo-18.svg" alt="">
-      <img src="assets/clients/logo-07.svg" alt="">
-      <img src="assets/clients/logo-32.svg" alt="">
-      <img src="assets/clients/logo-20.svg" alt="">
-      <img src="assets/clients/logo-15.svg" alt="">
-      <img src="assets/clients/logo-26.svg" alt="">
-      <img src="assets/clients/logo-10.svg" alt="">
-      <img src="assets/clients/logo-23.svg" alt="">
+      <img src="assets/clients/logo-16.svg" alt="Client Logo" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-30.svg" alt="Client Logo" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-04.svg" alt="Client Logo" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-22.svg" alt="Client Logo" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-13.svg" alt="Client Logo" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-28.svg" alt="Client Logo" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-09.svg" alt="Client Logo" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-34.svg" alt="Client Logo" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-01.svg" alt="Client Logo" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-25.svg" alt="Client Logo" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-18.svg" alt="Client Logo" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-07.svg" alt="Client Logo" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-32.svg" alt="Client Logo" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-20.svg" alt="Client Logo" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-15.svg" alt="Client Logo" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-26.svg" alt="Client Logo" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-10.svg" alt="Client Logo" loading="lazy" decoding="async">
+      <img src="assets/clients/logo-23.svg" alt="Client Logo" loading="lazy" decoding="async">
     </div>
   </div>
   <p class="trust-qualifier">
@@ -392,7 +388,7 @@
       <div class="features-grid">
         <div class="feature-card reveal delay-1">
           <div class="feature-visual">
-            <img src="assets/images/features/moq-flexible.webp" alt="MOQ Fleksibel" loading="lazy" width="400" height="200">
+            <img src="assets/images/features/moq-flexible.webp" alt="MOQ Fleksibel" loading="lazy" decoding="async" width="400" height="200">
           </div>
           <h3 class="feature-title">MOQ Fleksibel - Mulai 200 Pcs</h3>
           <p class="feature-description">Bisa mulai produksi tanpa harus stok terlalu banyak.</p>
@@ -400,7 +396,7 @@
 
         <div class="feature-card reveal delay-2">
           <div class="feature-visual">
-            <img src="assets/images/features/quality-control.webp" alt="Quality Control Ketat" loading="lazy" width="400" height="200">
+            <img src="assets/images/features/quality-control.webp" alt="Quality Control Ketat" loading="lazy" decoding="async" width="400" height="200">
           </div>
           <h3 class="feature-title">Quality Control Ketat</h3>
           <p class="feature-description">Setiap box diperiksa satu per satu sebelum dikirim, supaya kualitas tetap konsisten.</p>
@@ -408,7 +404,7 @@
 
         <div class="feature-card reveal delay-3">
           <div class="feature-visual">
-            <img src="assets/images/features/custom-design.webp" alt="Full Custom Design" loading="lazy" width="400" height="200">
+            <img src="assets/images/features/custom-design.webp" alt="Full Custom Design" loading="lazy" decoding="async" width="400" height="200">
           </div>
           <h3 class="feature-title">Full Custom Design</h3>
           <p class="feature-description">Material premium, emboss, hotprint, UV spot, dan berbagai finishing lain bisa disesuaikan dengan kebutuhan brand Anda.</p>
@@ -428,42 +424,42 @@
 
       <div class="showcase-grid">
         <div class="showcase-item">
-          <img src="assets/images/portfolio/Project_1.webp" alt="Portfolio 1" loading="lazy" width="400" height="300">
+          <img src="assets/images/portfolio/Project_1.webp" alt="Portfolio 1" loading="lazy" decoding="async" width="400" height="300">
           <div class="showcase-overlay">
             <h4>Premium Beauty Box</h4>
             <p>Hotprint gold + emboss</p>
           </div>
         </div>
         <div class="showcase-item">
-          <img src="assets/images/portfolio/Project_2.webp" alt="Portfolio 2" loading="lazy" width="400" height="300">
+          <img src="assets/images/portfolio/Project_2.webp" alt="Portfolio 2" loading="lazy" decoding="async" width="400" height="300">
           <div class="showcase-overlay">
             <h4>Luxury Fashion Packaging</h4>
             <p>Magnetic closure + UV spot</p>
           </div>
         </div>
         <div class="showcase-item">
-          <img src="assets/images/portfolio/Project_3.webp" alt="Portfolio 3" loading="lazy" width="400" height="300">
+          <img src="assets/images/portfolio/Project_3.webp" alt="Portfolio 3" loading="lazy" decoding="async" width="400" height="300">
           <div class="showcase-overlay">
             <h4>Electronics Packaging</h4>
             <p>Matte lamination + insert custom</p>
           </div>
         </div>
         <div class="showcase-item">
-          <img src="assets/images/portfolio/Project_4.webp" alt="Portfolio 4" loading="lazy" width="400" height="300">
+          <img src="assets/images/portfolio/Project_4.webp" alt="Portfolio 4" loading="lazy" decoding="async" width="400" height="300">
           <div class="showcase-overlay">
             <h4>F&B Gift Box</h4>
             <p>Full color printing + window</p>
           </div>
         </div>
         <div class="showcase-item">
-          <img src="assets/images/portfolio/Project_5.webp" alt="Portfolio 5" loading="lazy" width="400" height="300">
+          <img src="assets/images/portfolio/Project_5.webp" alt="Portfolio 5" loading="lazy" decoding="async" width="400" height="300">
           <div class="showcase-overlay">
             <h4>Skincare Luxury Box</h4>
             <p>Soft touch + rose gold hotprint</p>
           </div>
         </div>
         <div class="showcase-item">
-          <img src="assets/images/portfolio/Project_6.webp" alt="Portfolio 6" loading="lazy" width="400" height="300">
+          <img src="assets/images/portfolio/Project_6.webp" alt="Portfolio 6" loading="lazy" decoding="async" width="400" height="300">
           <div class="showcase-overlay">
             <h4>Lifestyle Product Box</h4>
             <p>Texture paper + spot UV</p>
@@ -486,7 +482,7 @@
         <div class="process-step">
           <div class="step-number">1</div>
           <div class="step-visual">
-            <img src="assets/images/process/consultation.webp" alt="Konsultasi" loading="lazy" width="300" height="160">
+            <img src="assets/images/process/consultation.webp" alt="Konsultasi" loading="lazy" decoding="async" width="300" height="160">
           </div>
           <h3 class="step-title">Konsultasi Gratis</h3>
           <p class="step-description">Diskusi kebutuhan & budget via WhatsApp</p>
@@ -495,7 +491,7 @@
         <div class="process-step">
           <div class="step-number">2</div>
           <div class="step-visual">
-            <img src="assets/images/process/design.webp" alt="Design" loading="lazy" width="300" height="160">
+            <img src="assets/images/process/design.webp" alt="Design" loading="lazy" decoding="async" width="300" height="160">
           </div>
           <h3 class="step-title">Design & Sample</h3>
           <p class="step-description">Revisi unlimited sampai hasilnya sesuai kebutuhan</p>
@@ -504,7 +500,7 @@
         <div class="process-step">
           <div class="step-number">3</div>
           <div class="step-visual">
-            <img src="assets/images/process/production.webp" alt="Production" loading="lazy" width="300" height="160">
+            <img src="assets/images/process/production.webp" alt="Production" loading="lazy" decoding="async" width="300" height="160">
           </div>
           <h3 class="step-title">Produksi</h3>
           <p class="step-description">14-21 hari kerja dengan QC ketat</p>
@@ -513,7 +509,7 @@
         <div class="process-step">
           <div class="step-number">4</div>
           <div class="step-visual">
-            <img src="assets/images/process/delivery.webp" alt="Delivery" loading="lazy" width="300" height="160">
+            <img src="assets/images/process/delivery.webp" alt="Delivery" loading="lazy" decoding="async" width="300" height="160">
           </div>
           <h3 class="step-title">Pengiriman</h3>
           <p class="step-description">Packing aman ke seluruh Indonesia</p>
@@ -535,7 +531,7 @@
         <div class="testimonial-card reveal delay-1">
           <div class="testimonial-header">
             <div class="testimonial-avatar">
-              <img src="assets/images/testimonials/client-1.jpg" alt="Client 1" loading="lazy" width="56" height="56">
+              <img src="assets/images/testimonials/client-1.jpg" alt="Client 1" loading="lazy" decoding="async" width="56" height="56">
             </div>
             <div class="testimonial-info">
               <h4>Sarah Chen</h4>
@@ -551,7 +547,7 @@
         <div class="testimonial-card reveal delay-2">
           <div class="testimonial-header">
             <div class="testimonial-avatar">
-              <img src="assets/images/testimonials/client-1.jpg" alt="Client 2" loading="lazy" width="56" height="56">
+              <img src="assets/images/testimonials/client-1.jpg" alt="Client 2" loading="lazy" decoding="async" width="56" height="56">
             </div>
             <div class="testimonial-info">
               <h4>Budi Santoso</h4>
@@ -567,7 +563,7 @@
         <div class="testimonial-card reveal delay-3">
           <div class="testimonial-header">
             <div class="testimonial-avatar">
-              <img src="assets/images/testimonials/client-1.jpg" alt="Client 3" loading="lazy" width="56" height="56">
+              <img src="assets/images/testimonials/client-1.jpg" alt="Client 3" loading="lazy" decoding="async" width="56" height="56">
             </div>
             <div class="testimonial-info">
               <h4>Diana Putri</h4>
@@ -763,11 +759,11 @@
 
       <div class="marketplace-grid">
         <a href="https://shopee.co.id/deartbox" target="_blank" rel="noopener" class="marketplace-card">
-          <img src="assets/images/marketplace/shopee-logo.svg" alt="Shopee deartbox" loading="lazy" width="120" height="40">
+          <img src="assets/images/marketplace/shopee-logo.svg" alt="Shopee deartbox" loading="lazy" decoding="async" width="120" height="40">
           <span class="marketplace-arrow">→</span>
         </a>
         <a href="https://tokopedia.com/deartbox" target="_blank" rel="noopener" class="marketplace-card">
-          <img src="assets/images/marketplace/tokopedia-logo.svg" alt="Tokopedia deartbox" loading="lazy" width="120" height="40">
+          <img src="assets/images/marketplace/tokopedia-logo.svg" alt="Tokopedia deartbox" loading="lazy" decoding="async" width="120" height="40">
           <span class="marketplace-arrow">→</span>
         </a>
         <a href="https://www.tiktok.com/deartbox" target="_blank" rel="noopener" class="marketplace-card marketplace-card-tiktok">
@@ -958,7 +954,7 @@
         <!-- Brand Column -->
         <div class="footer-brand">
           <div class="footer-logo">
-            <img src="assets/logo/deartbox-logo-dark.svg" alt="deartbox" width="40" height="40">
+            <img src="assets/logo/deartbox-logo-dark.svg" alt="deartbox" width="40" height="40" loading="lazy" decoding="async">
             <div>
               <h3>deartbox Packaging</h3>
               <p style="font-size: 12px; color: var(--text-light); margin-top: 4px;">Box Kamu, Misi Kami..!</p>
@@ -1052,12 +1048,12 @@
         <div class="footer-column">
           <h4>Metode Pembayaran</h4>
           <div class="footer-payment-grid">
-            <img src="assets/images/payments/bca.svg" alt="BCA" class="payment-logo">
-            <img src="assets/images/payments/mandiri.svg" alt="Mandiri" class="payment-logo">
-            <img src="assets/images/payments/bni.svg" alt="BNI" class="payment-logo">
-            <img src="assets/images/payments/bri.svg" alt="BRI" class="payment-logo">
-            <img src="assets/images/payments/visa.svg" alt="Visa" class="payment-logo">
-            <img src="assets/images/payments/mastercard.svg" alt="Mastercard" class="payment-logo">
+            <img src="assets/images/payments/bca.svg" alt="BCA" class="payment-logo" loading="lazy" decoding="async">
+            <img src="assets/images/payments/mandiri.svg" alt="Mandiri" class="payment-logo" loading="lazy" decoding="async">
+            <img src="assets/images/payments/bni.svg" alt="BNI" class="payment-logo" loading="lazy" decoding="async">
+            <img src="assets/images/payments/bri.svg" alt="BRI" class="payment-logo" loading="lazy" decoding="async">
+            <img src="assets/images/payments/visa.svg" alt="Visa" class="payment-logo" loading="lazy" decoding="async">
+            <img src="assets/images/payments/mastercard.svg" alt="Mastercard" class="payment-logo" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
