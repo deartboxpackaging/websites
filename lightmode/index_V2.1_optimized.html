@@ -102,8 +102,7 @@
  
   <!-- Preload fonts (update path to match your actual font file) -->
   <link rel="preload" href="assets/fonts/system-font.woff2" as="font" type="font/woff2" crossorigin>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://wa.me;">
-<meta http-equiv="Cache-Control" content="public, max-age=31536000">
+  <meta http-equiv="Cache-Control" content="public, max-age=31536000">
 
   <!-- 5. CRITICAL INLINE CSS (UI/UX ASLI LU) -->
   <!-- Optimized: External CSS for better caching and performance -->
@@ -600,7 +599,6 @@
       <div class="rfq-layout">
         <!-- LEFT: FORM -->
         <form id="rfqForm" class="rfq-form" aria-label="Request for Quotation Form" novalidate>
-          <input type="hidden" name="csrf_token" id="csrf_token" value="">
           
           <div class="form-row">
             <div class="form-field">
@@ -1049,35 +1047,24 @@
               </svg>
               <a href="mailto:deartboxpackaging@gmail.com">deartboxpackaging@gmail.com</a>
             </li>
-          
-        <!-- Payment Methods -->
+          </ul>
+        </div>
+
+        <!-- Payment Methods Column -->
         <div class="footer-column">
           <h4>Metode Pembayaran</h4>
-          <div class="footer-payment-icons">
-            <img src="assets/images/payments/bca.svg" alt="BCA" class="payment-icon">
-            <img src="assets/images/payments/mandiri.svg" alt="Mandiri" class="payment-icon">
-            <img src="assets/images/payments/bni.svg" alt="BNI" class="payment-icon">
-            <img src="assets/images/payments/bri.svg" alt="BRI" class="payment-icon">
-            <img src="assets/images/payments/visa.svg" alt="Visa" class="payment-icon">
-            <img src="assets/images/payments/mastercard.svg" alt="Mastercard" class="payment-icon">
+          <div class="footer-payment-grid">
+            <img src="assets/images/payments/bca.svg" alt="BCA" class="payment-logo">
+            <img src="assets/images/payments/mandiri.svg" alt="Mandiri" class="payment-logo">
+            <img src="assets/images/payments/bni.svg" alt="BNI" class="payment-logo">
+            <img src="assets/images/payments/bri.svg" alt="BRI" class="payment-logo">
+            <img src="assets/images/payments/visa.svg" alt="Visa" class="payment-logo">
+            <img src="assets/images/payments/mastercard.svg" alt="Mastercard" class="payment-logo">
           </div>
         </div>
       </div>
 
-<!-- ================= OLD PAYMENT SECTION REMOVED ================= -->
-<div class="footer-payments">
-  <p class="footer-payments-title">Metode Pembayaran</p>
-  <div class="footer-payments-logos">
-    <img src="assets/images/payments/bca.svg" alt="BCA">
-    <img src="assets/images/payments/mandiri.svg" alt="Mandiri">
-    <img src="assets/images/payments/bni.svg" alt="BNI">
-    <img src="assets/images/payments/bri.svg" alt="BRI">
-    <img src="assets/images/payments/visa.svg" alt="Visa">
-    <img src="assets/images/payments/mastercard.svg" alt="Mastercard">
-  </div>
-</div>
-
-      <div class="footer-bottom">
+<div class="footer-bottom">
         <p>&copy; 2026 deartbox Packaging — Bagian dari PT. Xerography Indonesia. Hak cipta dilindungi.</p>
         <div class="footer-badges">
           <span class="footer-badge-item">🇮🇩 Made in Indonesia</span>
@@ -1104,17 +1091,7 @@
 
   <!-- ================ JAVASCRIPT ================ -->
   <!-- Optimized: External JavaScript for better performance -->
-    <script>
-    // Populate CSRF token from sessionStorage
-    document.addEventListener('DOMContentLoaded', function() {
-      const token = sessionStorage.getItem('csrf_token');
-      const csrfField = document.getElementById('csrf_token');
-      if (csrfField && token) {
-        csrfField.value = token;
-      }
-    });
-  </script>
-<script defer src="optimized_script.js"></script>
+  <script defer src="optimized_script.js"></script>
   <!-- Success Modal -->
   <div class="success-modal" id="successModal">
     <div class="success-modal-content">
