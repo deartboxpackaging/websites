@@ -102,7 +102,8 @@
  
   <!-- Preload fonts (update path to match your actual font file) -->
   <link rel="preload" href="assets/fonts/system-font.woff2" as="font" type="font/woff2" crossorigin>
-  <meta http-equiv="Cache-Control" content="public, max-age=31536000">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://wa.me;">
+<meta http-equiv="Cache-Control" content="public, max-age=31536000">
 
   <!-- 5. CRITICAL INLINE CSS (UI/UX ASLI LU) -->
   <!-- Optimized: External CSS for better caching and performance -->
@@ -599,6 +600,7 @@
       <div class="rfq-layout">
         <!-- LEFT: FORM -->
         <form id="rfqForm" class="rfq-form" aria-label="Request for Quotation Form" novalidate>
+          <input type="hidden" name="csrf_token" id="csrf_token" value="">
           
           <div class="form-row">
             <div class="form-field">
@@ -1090,7 +1092,17 @@
 
   <!-- ================ JAVASCRIPT ================ -->
   <!-- Optimized: External JavaScript for better performance -->
-  <script defer src="optimized_script.js"></script>
+    <script>
+    // Populate CSRF token from sessionStorage
+    document.addEventListener('DOMContentLoaded', function() {
+      const token = sessionStorage.getItem('csrf_token');
+      const csrfField = document.getElementById('csrf_token');
+      if (csrfField && token) {
+        csrfField.value = token;
+      }
+    });
+  </script>
+<script defer src="optimized_script.js"></script>
   <!-- Success Modal -->
   <div class="success-modal" id="successModal">
     <div class="success-modal-content">
@@ -1113,3 +1125,4 @@
   </div>
 </body>
 </html>
+
