@@ -1662,7 +1662,7 @@ body.menu-open .mobile-overlay {
 
 .feature-visual {
   width: 100%;
-  height: 200px;
+  height: 240px;
   background: var(--glass);
   border-radius: 8px;
   margin-bottom: 20px;
@@ -1735,9 +1735,12 @@ body.menu-open .mobile-overlay {
 
 .showcase-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: clamp(16px, 3vw, 24px);
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 3vw, 32px);
   margin-top: 40px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .showcase-item {
@@ -1840,7 +1843,7 @@ body.menu-open .mobile-overlay {
 
 .step-visual {
   width: 100%;
-  height: 160px;
+  height: 200px;
   background: var(--glass);
   border-radius: 8px;
   margin-bottom: 20px;
@@ -1916,6 +1919,20 @@ body.menu-open .mobile-overlay {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.testimonial-avatar-initial {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d71921, #a01419);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .testimonial-info h4 {
