@@ -624,7 +624,7 @@ p {
 
 [data-theme="dark"] .trust-marquee img,
 [data-theme="dark"] .trust-logo img {
-  filter: brightness(0) invert(1);
+  /* Original colors preserved */
   opacity: 0.7;
 }
 
@@ -2248,8 +2248,8 @@ footer .footer-logo h3 {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: clamp(32px, 6vw, 48px);
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(12px, 2vw, 16px);
   margin-bottom: 40px;
 }
 
@@ -3422,3 +3422,143 @@ img[loading="lazy"]:not(.loaded) {
   }
 }
 
+
+
+/* ================ PAYMENT ICONS IN FOOTER GRID ================ */
+.footer-payment-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+  align-items: center;
+}
+
+$10.85;
+  transition: opacity .3s ease, transform .3s ease;
+  /* Original colors preserved */
+}
+
+.footer-payment-icons .payment-icon:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Mobile responsive untuk payment icons */
+@media (max-width: 767px) {
+  .footer-payment-icons {
+    gap: 8px;
+  }
+  
+  .footer-payment-icons .payment-icon {
+    height: 20px;
+    max-width: 50px;
+  }
+}
+
+
+/* ================ PAYMENT ICONS IN FOOTER GRID ================ */
+.footer-payment-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+  align-items: center;
+}
+
+$10.85;
+  transition: opacity .3s ease, transform .3s ease;
+  /* Original colors preserved */
+}
+
+.footer-payment-icons .payment-icon:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Mobile responsive untuk payment icons */
+@media (max-width: 767px) {
+  .footer-payment-icons {
+    gap: 8px;
+  }
+  
+  .footer-payment-icons .payment-icon {
+    height: 20px;
+    max-width: 50px;
+  }
+}
+
+
+
+/* ================ PAYMENT ICONS IN FOOTER GRID (5 COLUMNS) ================ */
+.footer-payment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.footer-payment-grid .payment-logo {
+  width: 60px;
+  height: 32px;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: opacity .3s ease, transform .3s ease;
+  /* Warna asli - tidak ada filter grey */
+}
+
+.footer-payment-grid .payment-logo:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Mobile responsive */
+@media (max-width: 767px) {
+  .footer-payment-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  
+  .footer-payment-grid .payment-logo {
+    width: 50px;
+    height: 28px;
+  }
+}
+
+
+/* Footer 5 columns responsive */
+@media (max-width: 1200px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+
+/* ================ FIX LOGO MANDIRI & BRI SIZE ================ */
+.footer-payment-grid .payment-logo[alt="Mandiri"],
+.footer-payment-grid .payment-logo[alt="BRI"] {
+  width: 70px !important;
+  height: 36px !important;
+}
+
+@media (max-width: 767px) {
+  .footer-payment-grid .payment-logo[alt="Mandiri"],
+  .footer-payment-grid .payment-logo[alt="BRI"] {
+    width: 58px !important;
+    height: 32px !important;
+  }
+}
