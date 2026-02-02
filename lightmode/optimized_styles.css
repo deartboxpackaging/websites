@@ -693,10 +693,14 @@ p {
 }
 
 [data-theme="dark"] .btn-hero-primary:hover,
-[data-theme="dark"] .btn-cta-wa:hover,
 [data-theme="dark"] .sticky-cta:hover,
 [data-theme="dark"] .btn-submit-rfq:hover {
   background: #d71921;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .btn-cta-wa:hover {
+  background: #128C7E;
   color: #ffffff;
 }
 
@@ -2085,7 +2089,7 @@ body.menu-open .mobile-overlay {
 
 /* ================ 16. MARKETPLACE SECTION ================ */
 .marketplace-section {
-  padding: clamp(32px, 4vw, 48px) 0;
+  padding: clamp(32px, 4vw, 48px) 0 clamp(24px, 3vw, 32px) 0;
   background: #d71921;
 }
 
@@ -2155,14 +2159,15 @@ body.menu-open .mobile-overlay {
   opacity: 1;
 }
 
-/* TikTok logo specific - change SVG fill on hover */
-.marketplace-card svg.tiktok-logo-grey {
-  fill: #888888;
-  transition: fill 0.3s ease;
+/* TikTok logo specific - swap to colored version on hover */
+.marketplace-card-tiktok .tiktok-img {
+  content: url('assets/images/marketplace/tiktok-logo.svg');
 }
 
-.marketplace-card:hover svg.tiktok-logo-grey {
-  fill: #000000;
+.marketplace-card-tiktok:hover .tiktok-img {
+  content: url('assets/images/marketplace/tiktok-logo-color.svg');
+  filter: none !important;
+  opacity: 1 !important;
 }
 
 .marketplace-arrow {
@@ -2174,7 +2179,7 @@ body.menu-open .mobile-overlay {
 /* ================ 17. CTA SECTION ================ */
 .cta-section-modern {
   padding: clamp(60px, 10vw, 100px) 0;
-  background: linear-gradient(135deg, rgba(230, 57, 70, 0.08), rgba(164, 22, 26, 0.04));
+  background: linear-gradient(135deg, #d71921 0%, #a01419 100%);
 }
 
 .cta-container {
@@ -2188,12 +2193,12 @@ body.menu-open .mobile-overlay {
   font-size: clamp(28px, 5vw, 40px);
   font-weight: 700;
   margin-bottom: 16px;
-  color: var(--text);
+  color: #ffffff;
 }
 
 .cta-subtitle {
   font-size: clamp(16px, 2.5vw, 20px);
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 32px;
   line-height: 1.6;
 }
@@ -2211,17 +2216,18 @@ body.menu-open .mobile-overlay {
   align-items: center;
   gap: 8px;
   font-size: 15px;
-  color: var(--text);
+  color: #ffffff;
 }
 
 .cta-feature svg {
-  color: #d71921;
+  color: #ffffff;
+  stroke: #ffffff;
 }
 
 .btn-cta-wa {
   padding: 18px 40px;
-  background: #d71921;
-  color: white;
+  background: #25D366;
+  color: #ffffff;
   font-size: 18px;
   font-weight: 600;
   border-radius: 8px;
@@ -2234,9 +2240,13 @@ body.menu-open .mobile-overlay {
 }
 
 .btn-cta-wa:hover {
-  background: #b01419;
+  background: #128C7E;
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(215,25,33,0.3);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.4);
+}
+
+.btn-cta-wa svg {
+  fill: #ffffff;
 }
 
 /* ================ 18. FOOTER ================ */
@@ -3760,7 +3770,7 @@ img[loading="lazy"]:not(.loaded) {
 }
 
 .btn-cta-wa:hover {
-  background: #b01419 !important;
+  background: #128C7E !important;
 }
 
 /* Dark mode - tetap hijau */
@@ -3777,7 +3787,7 @@ img[loading="lazy"]:not(.loaded) {
 }
 
 [data-theme="dark"] .btn-cta-wa:hover {
-  background: #b01419 !important;
+  background: #128C7E !important;
 }
 
 
@@ -3964,7 +3974,7 @@ img[loading="lazy"]:not(.loaded) {
 }
 
 .btn-cta-wa:hover {
-  background: #b01419 !important;
+  background: #128C7E !important;
 }
 
 [data-theme="dark"] .sticky-cta {
