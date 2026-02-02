@@ -96,12 +96,16 @@
   }
   </script>
  
-  <!-- Preload fonts (update path to match your actual font file) -->
-  <link rel="preload" href="assets/fonts/system-font.woff2" as="font" type="font/woff2" crossorigin>
-  <meta http-equiv="Cache-Control" content="public, max-age=31536000">
+  <!-- Cache Control -->
+  <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
 
-  <!-- 5. CRITICAL INLINE CSS (UI/UX ASLI LU) -->
+  <!-- 5. CRITICAL CSS -->
   <link rel="stylesheet" href="optimized_styles.css">
+  
+  <!-- Prefetch next page resources -->
+  <link rel="prefetch" href="privacy-policy.html">
+  <link rel="prefetch" href="terms-of-service.html">
+</head>
 <body>
 
   <!-- Skip to Content (Accessibility) -->
@@ -368,7 +372,7 @@
       </div>
       
       <div class="video-wrapper">
-        <video controls poster="assets/images/video-thumbnail.jpg" preload="metadata">
+        <video controls poster="assets/images/video-thumbnail.jpg" preload="none" loading="lazy">
           <source src="assets/video/company-video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
