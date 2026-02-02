@@ -1,4 +1,4 @@
-﻿/* ========================================
+/* ========================================
    DEARTBOX PACKAGING - ORGANIZED CSS
    Clean architecture, zero visual changes
    ======================================== */
@@ -283,7 +283,7 @@ a:not(.btn-hero-primary):not(.btn-cta-wa):not(.sticky-cta) {
   position: absolute;
   top: -100px;
   left: 0;
-  background: #25D366;
+  background: #d71921;
   color: white;
   padding: 12px 24px;
   text-decoration: none;
@@ -723,7 +723,7 @@ p {
 }
 
 [data-theme="dark"] .mobile-cta:hover {
-  background: #25D366;
+  background: #d71921;
   color: #ffffff;
 }
 
@@ -1088,7 +1088,7 @@ header {
   transform: translateX(-50%) scaleX(0);
   width: 24px;
   height: 2px;
-  background: #25D366;
+  background: #d71921;
   border-radius: 1px;
   transition: transform .25s ease;
 }
@@ -1116,7 +1116,7 @@ header {
 }
 
 .cta-nav:hover {
-  background: #128C7E;
+  background: #b01419;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(215,25,33,0.25);
 }
@@ -1204,7 +1204,7 @@ body.menu-open .mobile-menu {
 .mobile-cta {
   margin-top: 16px;
   padding: 14px 20px;
-  background: #25D366;
+  background: #d71921;
   color: white;
   border-radius: 6px;
   text-align: center;
@@ -1767,7 +1767,7 @@ body.menu-open .mobile-overlay {
 .step-number {
   width: 48px;
   height: 48px;
-  background: #25D366;
+  background: #d71921;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -1987,7 +1987,7 @@ body.menu-open .mobile-overlay {
 }
 
 .btn-submit-rfq:hover {
-  background: #128C7E;
+  background: #b01419;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(215,25,33,0.3);
 }
@@ -2190,7 +2190,7 @@ body.menu-open .mobile-overlay {
 
 .btn-cta-wa {
   padding: 18px 40px;
-  background: #25D366;
+  background: #d71921;
   color: white;
   font-size: 18px;
   font-weight: 600;
@@ -2204,7 +2204,7 @@ body.menu-open .mobile-overlay {
 }
 
 .btn-cta-wa:hover {
-  background: #128C7E;
+  background: #b01419;
   transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(215,25,33,0.3);
 }
@@ -2313,7 +2313,7 @@ footer .footer-logo h3 {
 }
 
 .social-link:hover {
-  background: #25D366;
+  background: #d71921;
   transform: translateY(-2px);
 }
 
@@ -2446,7 +2446,7 @@ footer .footer-logo h3 {
   bottom: 24px;
   right: 24px;
   z-index: 100;
-  background: #25D366;
+  background: #d71921;
   color: white;
   padding: 16px 32px;
   border-radius: 100px;
@@ -2492,7 +2492,7 @@ footer .footer-logo h3 {
 }
 
 .back-to-top:hover {
-  background: #25D366;
+  background: #d71921;
   color: white;
   transform: translateY(-2px);
 }
@@ -3126,12 +3126,12 @@ img[loading="lazy"]:not(.loaded) {
 }
 
 .btn-modal-primary {
-  background: #25D366;
+  background: #d71921;
   color: white;
 }
 
 .btn-modal-primary:hover {
-  background: #128C7E;
+  background: #b01419;
 }
 
 .btn-modal-secondary {
@@ -3718,7 +3718,7 @@ img[loading="lazy"]:not(.loaded) {
 }
 
 .btn-cta-wa:hover {
-  background: #128C7E !important;
+  background: #b01419 !important;
 }
 
 /* Dark mode - tetap hijau */
@@ -3735,7 +3735,7 @@ img[loading="lazy"]:not(.loaded) {
 }
 
 [data-theme="dark"] .btn-cta-wa:hover {
-  background: #128C7E !important;
+  background: #b01419 !important;
 }
 
 
@@ -3922,7 +3922,7 @@ img[loading="lazy"]:not(.loaded) {
 }
 
 .btn-cta-wa:hover {
-  background: #128C7E !important;
+  background: #b01419 !important;
 }
 
 [data-theme="dark"] .sticky-cta {
@@ -4051,3 +4051,5 @@ img[loading="lazy"]:not(.loaded) {
     padding-top: 32px !important;
   }
 }
+
+
