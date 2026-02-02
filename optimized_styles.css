@@ -136,6 +136,22 @@ header.scrolled {
   transition: none;
 }
 
+/* Performance hints for animated elements */
+.hero-slide,
+.marquee-track,
+.feature-card,
+.showcase-item,
+.process-step,
+.testimonial-card,
+.marketplace-card {
+  will-change: transform;
+}
+
+.mobile-menu,
+.mobile-overlay {
+  will-change: transform, opacity;
+}
+
 /* Focus visible improvements */
 *:focus-visible {
   outline: 3px solid #d71921;
@@ -1367,6 +1383,8 @@ body.menu-open .mobile-overlay {
 .hero-slide.active {
   display: block;
   animation: fadeIn 0.8s ease-in-out;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .hero-slide img {
@@ -1476,6 +1494,7 @@ body.menu-open .mobile-overlay {
   flex-direction: column;
   gap: 28px;
   padding: 20px 0;
+  contain: layout style paint;
 }
 
 .marquee-track {
@@ -1484,10 +1503,14 @@ body.menu-open .mobile-overlay {
   gap: 28px;
   width: max-content;
   animation: marquee 34s linear infinite;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .marquee-track:nth-child(2) {
   animation: marquee 38s linear infinite reverse;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .trust-marquee img {
