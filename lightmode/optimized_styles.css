@@ -283,7 +283,7 @@ a:not(.btn-hero-primary):not(.btn-cta-wa):not(.sticky-cta) {
   position: absolute;
   top: -100px;
   left: 0;
-  background: #d71921;
+  background: #25D366;
   color: white;
   padding: 12px 24px;
   text-decoration: none;
@@ -474,7 +474,7 @@ a:not(.btn-hero-primary):not(.btn-cta-wa):not(.sticky-cta) {
   --text-light: #8a8a8a;
   --border: #2a2a2a;
   --accent: #ff2d3a;
-  --accent-2: #d71921;
+  --accent-2: #25D366;
   --glass: rgba(255,255,255,0.05);
   --shadow: rgba(0,0,0,0.3);
 }
@@ -687,11 +687,7 @@ p {
 }
 
 /* FIX 3: Tombol CTA - Pastikan kontras yang baik */
-[data-theme="dark"] .btn-hero-primary,
-[data-theme="dark"] .btn-cta-wa,
-[data-theme="dark"] .sticky-cta,
-[data-theme="dark"] .btn-submit-rfq {
-  background: #ff2d3a;
+[data-theme="dark"] .btn-hero-primary { background: #1ea952;
   color: #ffffff;
   border: none;
 }
@@ -727,7 +723,7 @@ p {
 }
 
 [data-theme="dark"] .mobile-cta:hover {
-  background: #d71921;
+  background: #25D366;
   color: #ffffff;
 }
 
@@ -804,7 +800,9 @@ p {
 }
 
 [data-theme="dark"] .section-badge {
-  background: rgba(215, 25, 33, 0.15);
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 [data-theme="dark"] .slide-nav {
@@ -1090,7 +1088,7 @@ header {
   transform: translateX(-50%) scaleX(0);
   width: 24px;
   height: 2px;
-  background: #d71921;
+  background: #25D366;
   border-radius: 1px;
   transition: transform .25s ease;
 }
@@ -1118,7 +1116,7 @@ header {
 }
 
 .cta-nav:hover {
-  background: #a01419;
+  background: #128C7E;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(215,25,33,0.25);
 }
@@ -1206,7 +1204,7 @@ body.menu-open .mobile-menu {
 .mobile-cta {
   margin-top: 16px;
   padding: 14px 20px;
-  background: #d71921;
+  background: #25D366;
   color: white;
   border-radius: 6px;
   text-align: center;
@@ -1277,7 +1275,7 @@ body.menu-open .mobile-overlay {
 }
 
 .hero-title {
-  font-size: clamp(32px, 6vw, 56px);
+  font-size: clamp(28px, 4.5vw, 42px);
   font-weight: 700;
   line-height: 1.15;
   margin-bottom: 20px;
@@ -1769,7 +1767,7 @@ body.menu-open .mobile-overlay {
 .step-number {
   width: 48px;
   height: 48px;
-  background: #d71921;
+  background: #25D366;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -1989,7 +1987,7 @@ body.menu-open .mobile-overlay {
 }
 
 .btn-submit-rfq:hover {
-  background: #a01419;
+  background: #128C7E;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(215,25,33,0.3);
 }
@@ -2192,7 +2190,7 @@ body.menu-open .mobile-overlay {
 
 .btn-cta-wa {
   padding: 18px 40px;
-  background: #d71921;
+  background: #25D366;
   color: white;
   font-size: 18px;
   font-weight: 600;
@@ -2206,7 +2204,7 @@ body.menu-open .mobile-overlay {
 }
 
 .btn-cta-wa:hover {
-  background: #a01419;
+  background: #128C7E;
   transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(215,25,33,0.3);
 }
@@ -2315,7 +2313,7 @@ footer .footer-logo h3 {
 }
 
 .social-link:hover {
-  background: #d71921;
+  background: #25D366;
   transform: translateY(-2px);
 }
 
@@ -2448,7 +2446,7 @@ footer .footer-logo h3 {
   bottom: 24px;
   right: 24px;
   z-index: 100;
-  background: #d71921;
+  background: #25D366;
   color: white;
   padding: 16px 32px;
   border-radius: 100px;
@@ -2463,7 +2461,7 @@ footer .footer-logo h3 {
 }
 
 .sticky-cta:hover {
-  background: #a01419;
+  background: #128C7E;
   transform: translateY(-2px);
   box-shadow: 0 12px 32px rgba(215,25,33,0.5);
 }
@@ -2494,7 +2492,7 @@ footer .footer-logo h3 {
 }
 
 .back-to-top:hover {
-  background: #d71921;
+  background: #25D366;
   color: white;
   transform: translateY(-2px);
 }
@@ -3128,12 +3126,12 @@ img[loading="lazy"]:not(.loaded) {
 }
 
 .btn-modal-primary {
-  background: #d71921;
+  background: #25D366;
   color: white;
 }
 
 .btn-modal-primary:hover {
-  background: #a01419;
+  background: #128C7E;
 }
 
 .btn-modal-secondary {
@@ -3650,4 +3648,406 @@ img[loading="lazy"]:not(.loaded) {
 
 .footer-links li a.footer-address-link:hover::after {
   width: 180px !important;
+}
+
+
+
+
+
+/* ================ HEADER CENTERED NAV ================ */
+.nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 0 !important; /* Remove gap, use manual spacing */
+  padding: 16px 0 !important;
+}
+
+/* Logo stays left */
+.nav .logo {
+  flex-shrink: 0;
+}
+
+/* Nav-links centered */
+.nav .nav-links {
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* Theme-toggle stays right */
+.nav .theme-toggle {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* Mobile toggle stays right (next to theme-toggle) */
+.nav .mobile-toggle {
+  flex-shrink: 0;
+}
+
+
+/* ================ BADGE DARK MODE - BETTER READABILITY ================ */
+[data-theme="dark"] .section-badge {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-theme="dark"] .hero-badge {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+
+
+/* ================ GREEN BUTTONS - WHATSAPP ONLY ================ */
+/* Sticky CTA - Hijau WhatsApp */
+.sticky-cta {
+  background: #25D366 !important;
+}
+
+.sticky-cta:hover {
+  background: #128C7E !important;
+}
+
+/* Chat via WhatsApp button - Hijau */
+.btn-cta-wa {
+  background: #25D366 !important;
+}
+
+.btn-cta-wa:hover {
+  background: #128C7E !important;
+}
+
+/* Dark mode - tetap hijau */
+[data-theme="dark"] .sticky-cta {
+  background: #25D366 !important;
+}
+
+[data-theme="dark"] .sticky-cta:hover {
+  background: #128C7E !important;
+}
+
+[data-theme="dark"] .btn-cta-wa {
+  background: #25D366 !important;
+}
+
+[data-theme="dark"] .btn-cta-wa:hover {
+  background: #128C7E !important;
+}
+
+
+/* ================ FIX STEP NUMBER & BACK TO TOP - RED ================ */
+.step-number {
+  background: #d71921 !important;
+  color: white !important;
+}
+
+/* Back to top hover - merah di light mode */
+.back-to-top:hover {
+  background: #d71921 !important;
+  color: white !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Dark mode back to top tetap merah */
+[data-theme="dark"] .back-to-top:hover {
+  background: #ff2d3a !important;
+  color: #ffffff !important;
+  border-color: #ff2d3a !important;
+}
+
+
+/* ================ FIX HERO BUTTON DARK MODE - RED ================ */
+[data-theme="dark"] .btn-hero-primary {
+  background: #ff2d3a !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+[data-theme="dark"] .btn-hero-primary:hover {
+  background: #d71921 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .btn-hero-primary svg {
+  fill: #ffffff !important;
+  color: #ffffff !important;
+}
+
+
+/* ================ HERO TITLE - 2 LINES ONLY ================ */
+.hero-title {
+  font-size: clamp(28px, 4.5vw, 42px) !important;
+  max-width: 720px !important;
+  line-height: 1.2 !important;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: clamp(32px, 4vw, 44px) !important;
+  }
+}
+
+
+/* ================ HERO SUBTITLE - 2 LINES ONLY ================ */
+.hero-subtitle {
+  font-size: clamp(14px, 2vw, 17px) !important;
+  max-width: 580px !important;
+  line-height: 1.5 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (min-width: 768px) {
+  .hero-subtitle {
+    font-size: clamp(15px, 2.2vw, 18px) !important;
+    max-width: 600px !important;
+  }
+}
+
+
+
+
+
+
+/* ================ ALL CUSTOM FIXES ================ */
+
+/* Footer 5 columns with custom spacing */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.75fr 0.75fr 1fr 1fr;
+  column-gap: 6px;
+  row-gap: 32px;
+  margin-bottom: 40px;
+}
+
+.footer-grid .footer-brand {
+  margin-right: 40px;
+}
+
+.footer-grid .footer-column:last-child {
+  margin-left: 32px;
+}
+
+/* Payment icons styling */
+.footer-payment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.footer-payment-grid .payment-logo {
+  width: 60px;
+  height: 32px;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: opacity .3s ease, transform .3s ease;
+}
+
+.footer-payment-grid .payment-logo:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Mandiri & BRI larger */
+.footer-payment-grid .payment-logo[alt="Mandiri"],
+.footer-payment-grid .payment-logo[alt="BRI"] {
+  width: 70px !important;
+  height: 36px !important;
+}
+
+/* Address link underline fix */
+.footer-links a.footer-address-link::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -2px !important;
+  left: 0 !important;
+  width: 0 !important;
+  height: 1px !important;
+  background: currentColor !important;
+  transition: width 0.3s ease !important;
+}
+
+.footer-links a.footer-address-link:hover::after {
+  width: 100px !important;
+}
+
+/* Header centered nav */
+.nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: clamp(20px, 4vw, 40px) !important;
+  padding: 16px 0 !important;
+}
+
+.nav .nav-links {
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.nav .theme-toggle {
+  margin-left: auto !important;
+}
+
+/* Badge dark mode - white fill */
+[data-theme="dark"] .section-badge {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-theme="dark"] .hero-badge {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Green buttons - WhatsApp only */
+.sticky-cta {
+  background: #25D366 !important;
+}
+
+.sticky-cta:hover {
+  background: #128C7E !important;
+}
+
+.btn-cta-wa {
+  background: #25D366 !important;
+}
+
+.btn-cta-wa:hover {
+  background: #128C7E !important;
+}
+
+[data-theme="dark"] .sticky-cta {
+  background: #25D366 !important;
+}
+
+[data-theme="dark"] .btn-cta-wa {
+  background: #25D366 !important;
+}
+
+/* Red buttons - keep red */
+.step-number {
+  background: #d71921 !important;
+}
+
+.back-to-top:hover {
+  background: #d71921 !important;
+  color: white !important;
+}
+
+[data-theme="dark"] .btn-hero-primary {
+  background: #ff2d3a !important;
+}
+
+[data-theme="dark"] .btn-hero-primary:hover {
+  background: #d71921 !important;
+}
+
+/* Hero title & subtitle smaller */
+.hero-title {
+  font-size: clamp(28px, 4.5vw, 42px) !important;
+  max-width: 720px !important;
+  line-height: 1.2 !important;
+}
+
+.hero-subtitle {
+  font-size: clamp(14px, 2vw, 17px) !important;
+  max-width: 580px !important;
+  line-height: 1.5 !important;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .footer-payment-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .footer-payment-grid .payment-logo {
+    width: 50px;
+    height: 28px;
+  }
+  
+  .footer-payment-grid .payment-logo[alt="Mandiri"],
+  .footer-payment-grid .payment-logo[alt="BRI"] {
+    width: 58px !important;
+    height: 32px !important;
+  }
+}
+
+
+/* ================ SLIDESHOW SPACING & SOCIAL HOVER RED ================ */
+
+/* Tambahkan jarak antara slideshow dan CTA group */
+.hero-slideshow-container {
+  margin-bottom: 48px !important;
+}
+
+@media (max-width: 767px) {
+  .hero-slideshow-container {
+    margin-bottom: 32px !important;
+  }
+}
+
+/* Footer social hover - MERAH (light mode) */
+.social-link:hover {
+  background: #d71921 !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Footer social hover - MERAH (dark mode) */
+[data-theme="dark"] .social-link:hover {
+  background: #ff2d3a !important;
+  transform: translateY(-2px) !important;
+}
+
+
+
+
+
+/* ================ FOOTER SOCIAL HOVER - RED ================ */
+.footer-social .social-link:hover {
+  background: #d71921 !important;
+  transform: translateY(-2px) !important;
+}
+
+[data-theme="dark"] .footer-social .social-link:hover {
+  background: #ff2d3a !important;
+  transform: translateY(-2px) !important;
+}
+
+
+
+/* ================ HERO PADDING TOP - CLOSER TO HEADER ================ */
+.hero-modern {
+  padding-top: clamp(40px, 6vw, 70px) !important;
+}
+
+@media (max-width: 767px) {
+  .hero-modern {
+    padding-top: 32px !important;
+  }
 }
