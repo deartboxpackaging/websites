@@ -161,7 +161,7 @@ a:not(.btn-hero-primary):not(.btn-cta-wa):not(.sticky-cta) {
   position: relative;
 }
 
-.footer-links a::after {
+.footer-links a:not(.footer-address-link)::after {
   content: '';
   position: absolute;
   bottom: -2px;
@@ -2249,7 +2249,7 @@ footer .footer-logo h3 {
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: clamp(12px, 2vw, 16px);
+  /* Custom spacing - Brand separated, others close */
   margin-bottom: 40px;
 }
 
@@ -3561,4 +3561,105 @@ $10.85;
     width: 58px !important;
     height: 32px !important;
   }
+}
+
+
+
+/* ================ FOOTER GRID CUSTOM SPACING ================ */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 0.8fr 1fr 1fr;
+  column-gap: 8px;
+  row-gap: 32px;
+  margin-bottom: 40px;
+}
+
+/* Brand column dengan margin-right untuk jarak */
+.footer-grid .footer-brand {
+  margin-right: 32px;
+}
+
+/* Desktop large */
+@media (min-width: 1200px) {
+  .footer-grid {
+    grid-template-columns: 1.3fr 0.75fr 0.75fr 1fr 1fr;
+    column-gap: 6px;
+  }
+  
+  .footer-grid .footer-brand {
+    margin-right: 40px;
+  }
+}
+
+
+/* Add spacing before Metode Pembayaran column */
+.footer-grid .footer-column:last-child {
+  margin-left: 24px;
+}
+
+@media (min-width: 1200px) {
+  .footer-grid .footer-column:last-child {
+    margin-left: 32px;
+  }
+}
+
+
+
+
+
+/* Fix: Underline width untuk address link */
+.footer-address-link {
+  position: relative;
+  display: inline-block;
+}
+
+.footer-address-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease;
+  max-width: 100%; /* Tidak lebih panjang dari text */
+}
+
+$140%; /* Hanya 60% dari lebar text */
+}
+
+
+
+
+/* ================ FORCE FIX: ADDRESS LINK UNDERLINE ================ */
+.footer-links a.footer-address-link {
+  position: relative !important;
+  display: inline !important;
+}
+
+.footer-links a.footer-address-link::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -2px !important;
+  left: 0 !important;
+  width: 0 !important;
+  height: 1px !important;
+  background: currentColor !important;
+  transition: width 0.3s ease !important;
+}
+
+/* ================ ADDRESS LINK UNDERLINE - CLEAN FIX ================ */
+.footer-links li a.footer-address-link::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -2px !important;
+  left: 0 !important;
+  width: 0 !important;
+  height: 1px !important;
+  background: currentColor !important;
+  transition: width 0.3s ease !important;
+}
+
+.footer-links li a.footer-address-link:hover::after {
+  width: 180px !important;
 }
