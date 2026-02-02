@@ -2085,8 +2085,8 @@ body.menu-open .mobile-overlay {
 
 /* ================ 16. MARKETPLACE SECTION ================ */
 .marketplace-section {
-  padding: clamp(40px, 6vw, 60px) 0;
-  background: var(--bg);
+  padding: clamp(32px, 4vw, 48px) 0;
+  background: #d71921;
 }
 
 .marketplace-container {
@@ -2095,48 +2095,78 @@ body.menu-open .mobile-overlay {
   padding: 0 var(--container-pad);
 }
 
+.marketplace-section .section-header {
+  margin-bottom: clamp(20px, 4vw, 32px);
+}
+
+.marketplace-title-small {
+  font-size: clamp(16px, 2.5vw, 20px) !important;
+  line-height: 1.3;
+  margin-bottom: 8px !important;
+  color: #ffffff !important;
+}
+
+.marketplace-section .section-subtitle {
+  font-size: clamp(13px, 1.8vw, 14px) !important;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
 .marketplace-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: clamp(24px, 4vw, 32px);
-  margin-top: 48px;
+  grid-template-columns: repeat(auto-fit, minmax(55px, 1fr));
+  gap: clamp(6px, 1vw, 8px);
+  margin-top: 16px;
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .marketplace-card {
-  background: var(--card);
-  padding: clamp(32px, 5vw, 48px);
-  border-radius: 12px;
-  border: 1px solid #f0f0f0;
+  background: #ffffff;
+  padding: clamp(6px, 1vw, 8px);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 3px;
   transition: all .3s ease;
   position: relative;
 }
 
 .marketplace-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
-  border-color: #d71921;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: #ffffff;
 }
 
 .marketplace-card img {
-  max-width: 140px;
+  max-width: 28px;
   height: auto;
-  filter: grayscale(100%) !important;
-  opacity: 0.7;
+  filter: grayscale(100%) brightness(0.5) contrast(0.5) !important;
+  opacity: 0.5;
   transition: all .3s ease;
 }
 
 .marketplace-card:hover img {
-  filter: grayscale(0%) !important;
+  filter: grayscale(0%) brightness(1) contrast(1) !important;
   opacity: 1;
 }
 
+/* TikTok logo specific - change SVG fill on hover */
+.marketplace-card svg.tiktok-logo-grey {
+  fill: #888888;
+  transition: fill 0.3s ease;
+}
+
+.marketplace-card:hover svg.tiktok-logo-grey {
+  fill: #000000;
+}
+
 .marketplace-arrow {
-  font-size: 24px;
+  font-size: 12px;
   color: #d71921;
   font-weight: 700;
 }
@@ -3151,9 +3181,12 @@ img[loading="lazy"]:not(.loaded) {
 [data-theme="dark"] .trust-section,
 [data-theme="dark"] .showcase-section,
 [data-theme="dark"] .testimonials-section,
-[data-theme="dark"] .marketplace-section,
 [data-theme="dark"] .video-section {
   background: #0a0a0a !important;
+}
+
+[data-theme="dark"] .marketplace-section {
+  background: #a01419 !important;
 }
 
 [data-theme="dark"] .features-modern,
@@ -3173,10 +3206,19 @@ img[loading="lazy"]:not(.loaded) {
 [data-theme="dark"] .rfq-form,
 [data-theme="dark"] .rfq-info-card,
 [data-theme="dark"] .rfq-contact-quick,
-[data-theme="dark"] .marketplace-card,
 [data-theme="dark"] .faq-item {
   background: #1a1a1a !important;
   border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .marketplace-card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+[data-theme="dark"] .marketplace-card:hover {
+  background: #ffffff !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
 }
 
 [data-theme="dark"] .feature-visual,
