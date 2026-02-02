@@ -337,7 +337,7 @@ a:not(.btn-hero-primary):not(.btn-cta-wa):not(.sticky-cta) {
 /* ================ FAQ SECTION ================ */
 
 .faq-section {
-  padding: clamp(60px, 10vw, 100px) 0;
+  padding: clamp(40px, 6vw, 60px) 0;
   background: var(--bg);
 }
 
@@ -1283,7 +1283,7 @@ body.menu-open .mobile-overlay {
 }
 
 .hero-subtitle {
-  font-size: clamp(16px, 2.5vw, 20px);
+  font-size: clamp(14px, 2vw, 17px);
   color: var(--text-muted);
   margin-bottom: 32px;
   line-height: 1.6;
@@ -1573,7 +1573,7 @@ body.menu-open .mobile-overlay {
 
 /* ================ 10. FEATURES SECTION ================ */
 .features-modern {
-  padding: clamp(60px, 10vw, 100px) 0;
+  padding: clamp(40px, 6vw, 60px) 0;
   background: var(--card);
 }
 
@@ -1665,7 +1665,7 @@ body.menu-open .mobile-overlay {
 
 /* ================ 12. SHOWCASE / PORTFOLIO SECTION ================ */
 .showcase-section {
-  padding: clamp(60px, 10vw, 100px) 0;
+  padding: clamp(40px, 6vw, 60px) 0;
   background: var(--bg);
 }
 
@@ -1738,7 +1738,7 @@ body.menu-open .mobile-overlay {
 
 /* ================ 13. PROCESS SECTION ================ */
 .process-section {
-  padding: clamp(60px, 10vw, 100px) 0;
+  padding: clamp(40px, 6vw, 60px) 0;
   background: var(--card);
 }
 
@@ -1808,7 +1808,7 @@ body.menu-open .mobile-overlay {
 
 /* ================ 14. TESTIMONIALS SECTION ================ */
 .testimonials-section {
-  padding: clamp(60px, 10vw, 100px) 0;
+  padding: clamp(40px, 6vw, 60px) 0;
   background: var(--bg);
 }
 
@@ -1883,7 +1883,7 @@ body.menu-open .mobile-overlay {
 
 /* ================ 15. RFQ SECTION & FORM ================ */
 .rfq-section {
-  padding: clamp(60px, 10vw, 100px) 0;
+  padding: clamp(40px, 6vw, 60px) 0;
   background: var(--card);
 }
 
@@ -2085,7 +2085,7 @@ body.menu-open .mobile-overlay {
 
 /* ================ 16. MARKETPLACE SECTION ================ */
 .marketplace-section {
-  padding: clamp(60px, 10vw, 100px) 0;
+  padding: clamp(40px, 6vw, 60px) 0;
   background: var(--bg);
 }
 
@@ -3794,7 +3794,7 @@ img[loading="lazy"]:not(.loaded) {
 
 /* ================ HERO SUBTITLE - 2 LINES ONLY ================ */
 .hero-subtitle {
-  font-size: clamp(14px, 2vw, 17px) !important;
+  font-size: clamp(13px, 1.8vw, 15px) !important;
   max-width: 580px !important;
   line-height: 1.5 !important;
   margin-left: auto !important;
@@ -3803,7 +3803,7 @@ img[loading="lazy"]:not(.loaded) {
 
 @media (min-width: 768px) {
   .hero-subtitle {
-    font-size: clamp(15px, 2.2vw, 18px) !important;
+    font-size: clamp(14px, 2vw, 16px) !important;
     max-width: 600px !important;
   }
 }
@@ -3959,7 +3959,7 @@ img[loading="lazy"]:not(.loaded) {
 }
 
 .hero-subtitle {
-  font-size: clamp(14px, 2vw, 17px) !important;
+  font-size: clamp(13px, 1.8vw, 15px) !important;
   max-width: 580px !important;
   line-height: 1.5 !important;
 }
@@ -4051,5 +4051,6 @@ img[loading="lazy"]:not(.loaded) {
     padding-top: 32px !important;
   }
 }
+
 
 
