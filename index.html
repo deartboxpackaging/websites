@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html>
-<html lang="id-ID">
+<!DOCTYPE html>
+<html lang="id-ID" data-hero-variant="g">
 <head>
   <!-- 1. META TAGS SEO & SOCIAL MEDIA -->
   <meta charset="utf-8">
@@ -10,8 +10,7 @@
   
   <!-- SEO Essentials -->
   <title>Produsen Hardbox Premium Custom | deartbox Packaging Indonesia</title>
-  <meta name="description" content="deartbox Packaging adalah produsen hardbox premium custom untuk brand beauty, fashion, lifestyle, dan electronics. 
-  MOQ mulai 200 pcs, finishing premium, dan quality control ketat. Konsultasi gratis.">
+  <meta name="description" content="deartbox Packaging adalah produsen hardbox premium custom untuk brand beauty, fashion, lifestyle, dan electronics. MOQ mulai 200 pcs, finishing premium, dan quality control ketat. Konsultasi gratis.">
   <meta name="keywords" content="hardbox premium, hardbox custom, rigid box indonesia, packaging premium, produsen hardbox, custom packaging indonesia">
   
   <meta name="robots" content="index, follow">
@@ -43,11 +42,7 @@
   <link rel="canonical" href="https://deartbox.com">
   
   <!-- 2. PERFORMANCE HINTS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <!-- ✅ DNS PREFETCH & PRECONNECT -->
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://wa.me">
   <link rel="preconnect" href="https://wa.me" crossorigin>
   
@@ -57,16 +52,8 @@
 <link rel="preload" href="optimized_styles.css" as="style">
 <link rel="preload" href="optimized_script.js" as="script">
 
-  <!-- 7. FAVICON COMPLETE SET -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
-  <meta name="msapplication-TileColor" content="#000000">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/deartbox-logo-dark.svg">
 
-  <link href="https://fonts.googleapis.com/css2?family=Gramatika&display=swap" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
-  
   <!-- ✅ TAMBAHKAN DI SINI - STRUCTURED DATA -->
   <script type="application/ld+json">
   {
@@ -96,9 +83,6 @@
   }
   </script>
  
-  <!-- Cache Control -->
-  <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
-
   <!-- 5. CRITICAL CSS -->
   <link rel="stylesheet" href="optimized_styles.css">
   
@@ -147,10 +131,24 @@
 
         <!-- Desktop Navigation -->
         <div class="nav-links">
-          <a href="#features" class="nav-link">Layanan Kami</a>
-          <a href="#showcase" class="nav-link">Katalog Produk</a>
-          <a href="#testimonials" class="nav-link">Testimoni</a>
-          <a href="#rfq" class="nav-link">Hubungi Kami</a>
+          <details class="nav-dropdown">
+            <summary class="nav-link nav-dropdown-summary">Layanan Kami</summary>
+            <div class="nav-dropdown-menu" role="menu" aria-label="Layanan Kami">
+              <a href="#features" class="nav-link nav-dropdown-link" role="menuitem">Keunggulan</a>
+              <a href="#showcase" class="nav-link nav-dropdown-link" role="menuitem">Portofolio</a>
+              <a href="#process" class="nav-link nav-dropdown-link" role="menuitem">Proses Produksi</a>
+              <a href="#faq" class="nav-link nav-dropdown-link" role="menuitem">FAQ</a>
+            </div>
+          </details>
+          <a href="#" class="nav-link">Blog & Artikel</a>
+          <details class="nav-dropdown">
+            <summary class="nav-link nav-dropdown-summary">Hubungi Kami</summary>
+            <div class="nav-dropdown-menu" role="menu" aria-label="Hubungi Kami">
+              <a href="#testimonials" class="nav-link nav-dropdown-link" role="menuitem">Testimoni</a>
+              <a href="https://wa.me/628195181427" class="nav-link nav-dropdown-link" role="menuitem" target="_blank" rel="noopener noreferrer">WA</a>
+              <a href="mailto:deartboxpackaging@gmail.com" class="nav-link nav-dropdown-link" role="menuitem">Email</a>
+            </div>
+          </details>
           <a href="#rfq" class="cta-nav-secondary">Request Quote</a>
           <a href="https://wa.me/628195181427" class="cta-nav">Konsultasi Gratis</a>
         </div>
@@ -198,26 +196,60 @@
             <line x1="9" y1="9" x2="15" y2="9"></line>
             <line x1="9" y1="15" x2="15" y2="15"></line>
           </svg>
-          Layanan Kami
+          Keunggulan
         </a>
         <a href="#showcase" class="mobile-nav-link">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
             <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
           </svg>
-          Katalog Produk
+          Portofolio
+        </a>
+        <a href="#process" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M16 3h5v5"></path>
+            <path d="M4 20l5-5"></path>
+            <path d="M21 3l-7 7"></path>
+            <path d="M3 21l7-7"></path>
+          </svg>
+          Proses Produksi
+        </a>
+        <a href="#faq" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.82 1c0 2-3 2-3 4"></path>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+          FAQ
+        </a>
+        <a href="#" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16v16H4z"></path>
+            <path d="M8 8h8"></path>
+            <path d="M8 12h8"></path>
+            <path d="M8 16h5"></path>
+          </svg>
+          Blog & Artikel
         </a>
         <a href="#testimonials" class="mobile-nav-link">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
           </svg>
-          Testimoni Klien
+          Testimoni
         </a>
-        <a href="#rfq" class="mobile-nav-link">
+        <a href="https://wa.me/628195181427" class="mobile-nav-link" target="_blank" rel="noopener noreferrer">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"></path>
+            <path d="M12 22a10 10 0 1 1 8.66-5"></path>
           </svg>
-          Hubungi Kami
+          WA
+        </a>
+        <a href="mailto:deartboxpackaging@gmail.com" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16v16H4z"></path>
+            <path d="M22 6l-10 7L2 6"></path>
+          </svg>
+          Email
         </a>
         
         <div class="mobile-menu-divider"></div>
@@ -300,7 +332,7 @@
             </svg>
             Konsultasi Gratis
           </a>
-          <a href="#showcase" class="btn-hero-secondary">Lihat Portfolio</a>
+          <a href="#showcase" class="btn-hero-secondary">Lihat Portofolio</a>
         </div>
         <p class="hero-microcopy">
   MOQ 200 pcs • Gratis Konsultasi • 14-21 Hari Produksi
@@ -418,10 +450,10 @@
       </div>
       
       <div class="video-wrapper">
-        <video controls poster="assets/images/video-thumbnail.jpg" preload="none" loading="lazy">
-          <source src="assets/video/company-video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <div class="video-embed" data-video-embed="">
+          <img class="video-poster" src="assets/images/halamanutama/hardbox-hmns2.webp" alt="Company video deartbox Packaging" loading="lazy" decoding="async" width="1000" height="563">
+          <button type="button" class="video-play-btn" aria-label="Putar company video">Putar Video</button>
+        </div>
       </div>
     </div>
   </section>
@@ -466,42 +498,108 @@
   <section class="showcase-section" id="showcase" aria-labelledby="showcase-title">
     <div class="showcase-container">
       <div class="section-header">
-        <h2 class="section-title reveal" id="showcase-title">Portfolio Kami</h2>
-        <p class="section-subtitle">Premium hardbox untuk brand beauty, fashion, F&B, dan electronics</p>
+        <h2 class="section-title reveal" id="showcase-title">Portofolio Kami</h2>
+        <p class="section-subtitle">Premium packaging untuk brand beauty, fashion, F&B, dan electronics</p>
+      </div>
+
+      <div class="showcase-filters" aria-label="Kategori Katalog Produk">
+        <button type="button" class="showcase-filter-btn is-active" data-showcase-filter-btn="hardbox" aria-pressed="true">Hardbox</button>
+        <button type="button" class="showcase-filter-btn" data-showcase-filter-btn="softbox" aria-pressed="false">Softbox</button>
+        <button type="button" class="showcase-filter-btn" data-showcase-filter-btn="custom" aria-pressed="false">Custom Box</button>
       </div>
 
       <div class="showcase-grid">
-        <div class="showcase-item">
+        <div class="showcase-item" data-category="hardbox">
           <img src="assets/images/portfolio/Project_1.webp" alt="Premium Beauty Box - Hotprint Gold & Emboss" loading="lazy" decoding="async" width="400" height="300">
           <div class="showcase-overlay">
             <h4>Premium Beauty Box</h4>
             <p>Hotprint gold + emboss</p>
           </div>
         </div>
-        <div class="showcase-item">
+        <div class="showcase-item" data-category="hardbox">
           <img src="assets/images/portfolio/Project_2.webp" alt="Luxury Fashion Packaging - Magnetic Closure & UV Spot" loading="lazy" decoding="async" width="400" height="300">
           <div class="showcase-overlay">
             <h4>Luxury Fashion Packaging</h4>
             <p>Magnetic closure + UV spot</p>
           </div>
         </div>
-        <div class="showcase-item">
+        <div class="showcase-item" data-category="hardbox">
           <img src="assets/images/portfolio/Project_3.webp" alt="Electronics Packaging - Matte Lamination & Custom Insert" loading="lazy" decoding="async" width="400" height="300">
           <div class="showcase-overlay">
             <h4>Electronics Packaging</h4>
             <p>Matte lamination + insert custom</p>
           </div>
         </div>
-        <div class="showcase-item">
+        <div class="showcase-item" data-category="hardbox">
           <img src="assets/images/portfolio/Project_5.webp" alt="Skincare Luxury Box - Soft Touch & Rose Gold Hotprint" loading="lazy" decoding="async" width="400" height="300">
           <div class="showcase-overlay">
             <h4>Skincare Luxury Box</h4>
             <p>Soft touch + rose gold hotprint</p>
           </div>
         </div>
+
+        <div class="showcase-item" data-category="softbox">
+          <img src="assets/images/portfolio/Project_1.webp" alt="Softbox - Premium Beauty Box - Hotprint Gold & Emboss" loading="lazy" decoding="async" width="400" height="300">
+          <div class="showcase-overlay">
+            <h4>Softbox: Premium Beauty Box</h4>
+            <p>Hotprint gold + emboss</p>
+          </div>
+        </div>
+        <div class="showcase-item" data-category="softbox">
+          <img src="assets/images/portfolio/Project_2.webp" alt="Softbox - Luxury Fashion Packaging - Magnetic Closure & UV Spot" loading="lazy" decoding="async" width="400" height="300">
+          <div class="showcase-overlay">
+            <h4>Softbox: Luxury Fashion Packaging</h4>
+            <p>Magnetic closure + UV spot</p>
+          </div>
+        </div>
+        <div class="showcase-item" data-category="softbox">
+          <img src="assets/images/portfolio/Project_3.webp" alt="Softbox - Electronics Packaging - Matte Lamination & Custom Insert" loading="lazy" decoding="async" width="400" height="300">
+          <div class="showcase-overlay">
+            <h4>Softbox: Electronics Packaging</h4>
+            <p>Matte lamination + insert custom</p>
+          </div>
+        </div>
+        <div class="showcase-item" data-category="softbox">
+          <img src="assets/images/portfolio/Project_5.webp" alt="Softbox - Skincare Luxury Box - Soft Touch & Rose Gold Hotprint" loading="lazy" decoding="async" width="400" height="300">
+          <div class="showcase-overlay">
+            <h4>Softbox: Skincare Luxury Box</h4>
+            <p>Soft touch + rose gold hotprint</p>
+          </div>
+        </div>
+
+        <div class="showcase-item" data-category="custom">
+          <img src="assets/images/portfolio/Project_1.webp" alt="Custom Box - Premium Beauty Box - Hotprint Gold & Emboss" loading="lazy" decoding="async" width="400" height="300">
+          <div class="showcase-overlay">
+            <h4>Custom Box: Premium Beauty Box</h4>
+            <p>Hotprint gold + emboss</p>
+          </div>
+        </div>
+        <div class="showcase-item" data-category="custom">
+          <img src="assets/images/portfolio/Project_2.webp" alt="Custom Box - Luxury Fashion Packaging - Magnetic Closure & UV Spot" loading="lazy" decoding="async" width="400" height="300">
+          <div class="showcase-overlay">
+            <h4>Custom Box: Luxury Fashion Packaging</h4>
+            <p>Magnetic closure + UV spot</p>
+          </div>
+        </div>
+        <div class="showcase-item" data-category="custom">
+          <img src="assets/images/portfolio/Project_3.webp" alt="Custom Box - Electronics Packaging - Matte Lamination & Custom Insert" loading="lazy" decoding="async" width="400" height="300">
+          <div class="showcase-overlay">
+            <h4>Custom Box: Electronics Packaging</h4>
+            <p>Matte lamination + insert custom</p>
+          </div>
+        </div>
+        <div class="showcase-item" data-category="custom">
+          <img src="assets/images/portfolio/Project_5.webp" alt="Custom Box - Skincare Luxury Box - Soft Touch & Rose Gold Hotprint" loading="lazy" decoding="async" width="400" height="300">
+          <div class="showcase-overlay">
+            <h4>Custom Box: Skincare Luxury Box</h4>
+            <p>Soft touch + rose gold hotprint</p>
+          </div>
+        </div>
       </div>
+
+      <p class="showcase-empty" hidden>Produk untuk kategori ini belum tersedia.</p>
       
-      <!-- Inline CTA after Portfolio -->
+      <!-- Inline CTA after Portofolio -->
       <div class="inline-cta-visual">
         <h3>Ingin hasil seperti ini untuk brand Anda?</h3>
         <div class="cta-buttons-inline">
@@ -531,43 +629,51 @@
         <p class="section-subtitle">Dari konsultasi hingga produk sampai di tangan Anda dalam 4 langkah mudah</p>
       </div>
 
-      <div class="process-steps">
-        <div class="process-step">
-          <div class="step-number">1</div>
-          <div class="step-visual">
-            <img src="assets/images/process/consultation.webp" alt="Konsultasi" loading="lazy" decoding="async" width="300" height="160">
+      <ol class="process-stepper" aria-label="Tahapan proses kerja">
+        <li class="process-stepper-item">
+          <div class="process-stepper-marker" aria-hidden="true">1</div>
+          <div class="process-stepper-body">
+            <h3 class="process-stepper-title">Konsultasi Gratis</h3>
+            <p class="process-stepper-desc">Diskusi kebutuhan & budget via WhatsApp</p>
           </div>
-          <h3 class="step-title">Konsultasi Gratis</h3>
-          <p class="step-description">Diskusi kebutuhan & budget via WhatsApp</p>
-        </div>
+          <div class="process-stepper-media" aria-hidden="true">
+            <img src="assets/images/process/consultation.webp" alt="" loading="lazy" decoding="async" width="300" height="160">
+          </div>
+        </li>
 
-        <div class="process-step">
-          <div class="step-number">2</div>
-          <div class="step-visual">
-            <img src="assets/images/process/design.webp" alt="Design" loading="lazy" decoding="async" width="300" height="160">
+        <li class="process-stepper-item">
+          <div class="process-stepper-marker" aria-hidden="true">2</div>
+          <div class="process-stepper-body">
+            <h3 class="process-stepper-title">Design & Sample</h3>
+            <p class="process-stepper-desc">Revisi unlimited sampai hasilnya sesuai kebutuhan</p>
           </div>
-          <h3 class="step-title">Design & Sample</h3>
-          <p class="step-description">Revisi unlimited sampai hasilnya sesuai kebutuhan</p>
-        </div>
+          <div class="process-stepper-media" aria-hidden="true">
+            <img src="assets/images/process/design.webp" alt="" loading="lazy" decoding="async" width="300" height="160">
+          </div>
+        </li>
 
-        <div class="process-step">
-          <div class="step-number">3</div>
-          <div class="step-visual">
-            <img src="assets/images/process/production.webp" alt="Production" loading="lazy" decoding="async" width="300" height="160">
+        <li class="process-stepper-item">
+          <div class="process-stepper-marker" aria-hidden="true">3</div>
+          <div class="process-stepper-body">
+            <h3 class="process-stepper-title">Produksi</h3>
+            <p class="process-stepper-desc">14-21 hari kerja dengan QC ketat</p>
           </div>
-          <h3 class="step-title">Produksi</h3>
-          <p class="step-description">14-21 hari kerja dengan QC ketat</p>
-        </div>
+          <div class="process-stepper-media" aria-hidden="true">
+            <img src="assets/images/process/production.webp" alt="" loading="lazy" decoding="async" width="300" height="160">
+          </div>
+        </li>
 
-        <div class="process-step">
-          <div class="step-number">4</div>
-          <div class="step-visual">
-            <img src="assets/images/process/delivery.webp" alt="Delivery" loading="lazy" decoding="async" width="300" height="160">
+        <li class="process-stepper-item">
+          <div class="process-stepper-marker" aria-hidden="true">4</div>
+          <div class="process-stepper-body">
+            <h3 class="process-stepper-title">Pengiriman</h3>
+            <p class="process-stepper-desc">Packing aman ke seluruh Indonesia</p>
           </div>
-          <h3 class="step-title">Pengiriman</h3>
-          <p class="step-description">Packing aman ke seluruh Indonesia</p>
-        </div>
-      </div>
+          <div class="process-stepper-media" aria-hidden="true">
+            <img src="assets/images/process/delivery.webp" alt="" loading="lazy" decoding="async" width="300" height="160">
+          </div>
+        </li>
+      </ol>
       
       <!-- Inline CTA after Process -->
       <div class="inline-cta-block">
@@ -673,12 +779,13 @@
                 hanya digunakan untuk keperluan konsultasi
               </small>
             </div>
+          </div>
 
+          <div class="form-row">
             <div class="form-field">
               <label for="rfq-email">Email Bisnis *</label>
               <input id="rfq-email" name="email" type="email" required placeholder="hello@brandanda.com" autocomplete="email" aria-required="true">
             </div>
-
             <div class="form-field">
               <label for="rfq-brand">Brand / Perusahaan</label>
               <input id="rfq-brand" name="brand" type="text" placeholder="Nama brand Anda">
@@ -698,7 +805,6 @@
                 <option>Lainnya</option>
               </select>
             </div>
-          <div class="form-row">
             <div class="form-field">
               <label for="rfq-box">Tipe Packaging *</label>
               <select id="rfq-box" name="boxType" required aria-required="true">
@@ -712,12 +818,12 @@
               </select>
             </div>
           </div>
-            <div class="form-field">
-              <label for="rfq-qty">Kuantitas (pcs)</label>
-              <input id="rfq-qty" name="quantity" type="number" min="200" placeholder="Min. 200" aria-describedby="qty-help">
-              <small id="qty-help" class="form-note">Minimum order 200 pcs</small>
-            </div>
-        </div>
+
+          <div class="form-field">
+            <label for="rfq-qty">Kuantitas (pcs)</label>
+            <input id="rfq-qty" name="quantity" type="number" min="200" placeholder="Min. 200" aria-describedby="qty-help">
+            <small id="qty-help" class="form-note">Minimum order 200 pcs</small>
+          </div>
 
           <div class="form-field">
             <label for="rfq-message">Deskripsi Project *</label>
@@ -813,6 +919,20 @@
       <div class="faq-list">
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
+            <span>Saya tidak punya desain, apakah deartbox bisa bantu buatkan desain kemasannya?</span>
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p>Chill aja, deartbox siap banget bantuin kamu dari nol! Tim desain kami bakal bikin kemasan sesuai vibe yang kamu mau, jadi produknya makin standout dan gaul. Ceritain aja mau seperti apa, nanti kami buatkan yang kece dan pastinya anti monoton!</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
             <span>Berapa minimum order quantity (MOQ) untuk hardbox custom?</span>
             <div class="faq-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
@@ -822,6 +942,20 @@
           </button>
           <div class="faq-answer">
             <p>MOQ kami mulai dari <strong>200 pcs</strong>. Ini adalah jumlah minimum yang memungkinkan kami memberikan harga terbaik sambil menjaga kualitas premium. Untuk brand yang baru launching atau ingin test market, ini adalah jumlah yang ideal.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Apakah saya bisa memesan di bawah MOQ?</span>
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p>Tenang aja, kalau mau pesan di bawah MOQ, kamu tetap bisa konsultasi dulu sama tim deartbox! Kita siap bantu cari solusi terbaik biar kamu tetap bisa punya kemasan kece sesuai kebutuhan, walaupun jumlahnya belum banyak. Silakan chat kita, siapa tahu bisa diatur, kan?</p>
           </div>
         </div>
 
@@ -889,6 +1023,20 @@
 
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
+            <span>Saya punya contoh cetakan yang sebelumnya dari tempat lain, apakah warnanya bisa sama?</span>
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p>Tentu! Kami akan usahakan agar warna cetakan sesuai dengan contoh kamu, biar hasilnya kece dan pas banget. Kalau kamu bisa kirim contoh warnanya, tim kami siap bantu cocokkan supaya warna cetakan tetap vibrant dan sesuai ekspektasi.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
             <span>Bagaimana sistem pembayaran dan apakah ada DP?</span>
             <div class="faq-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
@@ -926,6 +1074,20 @@
               <li>Tracking number akan diberikan</li>
               <li>Untuk Jakarta dan sekitarnya bisa COD atau pickup</li>
             </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Apakah bisa melakukan pengiriman partial?</span>
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p>Bisa banget! Kami paham kok kadang kamu butuh pengiriman bertahap alias partial delivery supaya lebih fleksibel dan gak bikin beban dompet langsung berat. Kamu tinggal informasikan aja ke tim kami, dan kami siap atur pengiriman sesuai kebutuhan kamu.</p>
           </div>
         </div>
       </div>
@@ -1018,7 +1180,7 @@
           <h4>Perusahaan</h4>
           <ul class="footer-links">
             <li><a href="#features">Keunggulan</a></li>
-            <li><a href="#showcase">Portfolio</a></li>
+            <li><a href="#showcase">Portofolio</a></li>
             <li><a href="#process">Proses</a></li>
             <li><a href="#testimonials">Testimoni</a></li>
             <li><a href="#contact">Kontak</a></li>
@@ -1134,5 +1296,3 @@
   </div>
 </body>
 </html>
-
-
